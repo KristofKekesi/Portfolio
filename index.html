@@ -8,48 +8,57 @@
 
     <meta charset="UTF-8">
     <title>Kristóf Kékesi</title>
+
     <link rel="stylesheet" href="common-assets/main.css">
+    <script src="common-assets/barba.min.js"></script>
+    <script src="common-assets/transition.js"></script>
 </head>
 <body>
-<div style="width: 100%; height: 100%;">
-    <table class="main-table">
-        <tr>
-            <td class="menu Blur">
-                <div>
-                    <div class="profile"><img src="common-assets/profile.jpg" class="profile-pic"><span
-                            class="profile-name">Kristóf Kékesi</span></div>
-                </div>
-                <div class="skills">
-                    <p><a href="skills/web.html">Web Dev</a></p>
-                    <p><a href="skills/modelling.html">Modelling</a></p>
-                    <p><a href="skills/translation.html">Translation</a></p>
-                    <p><a href="skills/mobile.html">Mobile Dev</a></p>
-                    <p><a href="skills/photography.html">Photography</a></p>
-                </div>
-                <div class="contacts">
-                    <div class="contact"><a href="mailto:kristofkekesiofficial@gmail.com">Mail</a></div>
-                    <div class="contact"><a href="https://github.com/KristofKekesi">Github</a></div>
-                    <div class="contact"><a href="https://discord.com/invite/7URAMuc">Discord</a></div>
-                    <div class="contact"><a href="https://www.instagram.com/kristofkekesiofficial/">Instagram</a></div>
-                </div>
-            </td>
-            <td style="text-align: center;" class="content">
-                <p class="title">I do code</p>
-                <div class="project Blur">
-                    <img src="projects/nasamira/logo.png" class="project-logo">
-                    <img src="common-assets/arrow-right.svg" class="project-go">
-                </div>
-                <div class="project Blur">
-                    <img src="projects/elements/logo.svg" class="project-logo">
-                    <img src="common-assets/arrow-right.svg" class="project-go">
-                </div>
-                <div class="project Blur">
-                    <img src="projects/NotepadsApp/logo.gif" class="project-logo">
-                    <img src="common-assets/arrow-right.svg" class="project-go">
-                </div>
-            </td>
-        </tr>
-    </table>
+<div id="barba-wrapper" onload="Barba.Pjax.start();">
+    <div class="barba-container">
+        <div style="width: 100%; height: 100%;">
+            <table class="main-table">
+                <tr>
+                    <td class="menu Blur">
+                        <div>
+                            <div class="profile"><img src="common-assets/profile.jpg" class="profile-pic"><span
+                                    class="profile-name">Kristóf Kékesi</span></div>
+                        </div>
+                        <div class="skills">
+                            <p><a href="skills/web/">Web Dev</a></p>
+                            <!--<p><a href="skills/modelling/">Modelling</a></p>-->
+                            <p><a href="skills/translation/">Translation</a></p>
+                            <p><a href="skills/mobile/">Mobile Dev</a></p>
+                            <p><a href="skills/photography/">Photography</a></p>
+                        </div>
+                        <div class="contacts">
+                            <div class="contact"><a href="mailto:kristofkekesiofficial@gmail.com">Mail</a></div>
+                            <div class="contact"><a href="https://github.com/KristofKekesi">Github</a></div>
+                            <div class="contact"><a href="https://twitter.com/kristofkekesio1">Twitter</a></div>
+                            <div class="contact"><a href="https://discord.com/invite/7URAMuc">Discord</a></div>
+                            <div class="contact"><a
+                                    href="https://www.instagram.com/kristofkekesiofficial/">Instagram</a></div>
+                        </div>
+                    </td>
+                    <td style="text-align: center;" class="content">
+                        <p class="title">I do codeing</p>
+                        <div  onclick="window.location.href = 'projects/nasamira/'" class="project Blur">
+                            <img src="projects/nasamira/logo.png" class="project-logo">
+                            <img src="common-assets/arrow-right.svg" class="project-go">
+                        </div>
+                        <div onclick="window.location.href = 'projects/elements/'" class="project Blur">
+                            <img src="projects/elements/logo.svg" class="project-logo">
+                            <img src="common-assets/arrow-right.svg" class="project-go">
+                        </div>
+                        <div onclick="window.location.href = 'projects/notepadsapp/'" class="project Blur">
+                            <img src="projects/notepadsapp/logo.gif" class="project-logo">
+                            <img src="common-assets/arrow-right.svg" class="project-go">
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
 </div>
 </body>
 </html>

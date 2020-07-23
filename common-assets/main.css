@@ -13,7 +13,7 @@
 img { max-width: 100%; height: auto; }
 html { font-size:100%; }
 
-html, body {
+html, body, #barba-wrapper, .barba-container {
     height: 100%;
     font-family: Arial, serif;
 
@@ -96,6 +96,11 @@ a:active {
     margin-top: 10%;
 }
 
+.skills-active {
+    font-weight: bold;
+    color: #fcb103;
+}
+
 .contacts {
     margin-top: 10%;
 }
@@ -107,12 +112,30 @@ a:active {
 }
 
 .content {
+    padding: 5%;
+}
+
+.path-parent{
+    position: absolute;
+    left: 21%;
+    top: 1%;
+
+    color: white;
+    font-size: calc((1vh + 1vw) / 2 * 1.5);
 }
 
 .title {
     color: white;
     font-weight: bold;
-    font-size: 5em;
+    font-size: calc((1vh + 1vw) / 2 * 5);
+}
+
+.content-about {
+    color: white;
+    font-size: calc((1vh + 1vw) / 2 * 1.5);
+    text-align: justify;
+
+    margin: .5% 5% 5%;
 }
 
 .project {
