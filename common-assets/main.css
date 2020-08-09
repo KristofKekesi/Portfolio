@@ -81,13 +81,18 @@ a:active {
 
 .profile {
     margin: auto;
+    height: 15%;
+    vertical-align: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .profile-pic {
     border-radius: 50%;
     width: 15%;
     height: 15%;
-    margin-bottom: 2%;
 }
 
 .profile-name {
@@ -95,7 +100,11 @@ a:active {
     font-weight: bold;
     text-align: center;
 
-    margin-left: 1em;
+    vertical-align: middle;
+
+    height: 15%;
+    width: 90%;
+    margin-left: .7em;
 
     font-size: calc((1vh + 1vw) / 2 * 2);
     display: table-header-group;
