@@ -2,79 +2,93 @@
 <html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
 
-    <meta property="og:title" content="Translation - Kristóf Kékesi"/>
-    <meta property="og:description" content="My translations for other projects."/>
-    <meta property="og:type" content="my_namespace:Portfolio"/>
-    <meta property="og:image" content="https://www.kekesi.dev/common-assets/ogp.jpg"/>
-    <meta property="og:url" content="kekesi.dev" />
-
-    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="HandheldFriendly" content="true">
-
-    <meta charset="UTF-8">
-    <meta name="author" content="Kristóf Kékesi">
-    <meta name="description" content="I'm Kristóf Kékesi, a freelance programmer, hobby photographer. I'm currently working on Elements, a phone application.">
-    <meta name="keywords" content="HTML, CSS, JS, Kristóf, Kékesi, programmer, programming, programing, freelance, development, developer, translator, web, mobile, translation, portfolio, photography, photographer, Elements, NASA-Mira, Notepads">
-
-    <meta name="twitter:site" content="@kristofkekesio1" />
-    <meta name="twitter:site:id" content="1177222040161529858" />
-    <meta name="twitter:title" content="Translation - Kristóf Kékesi" />
-    <meta name="twitter:description" content="My translations for other projects" />
-    <meta name="twitter:card" content="player" />
-    <meta name="twitter:image:src" content="https://www.kekesi.dev/common-assets/twitter.jpg" />
-
     <title>Translation</title>
-    <link rel="icon" href="../../common-assets/profile-circullar.png" type="image/png">
 
-    <link rel="stylesheet" href="../../common-assets/main.css">
+    <link href="../../common-assets/profile-circullar.png" rel="icon" type="image/svg">
+    <link href="../../common-assets/main.css" rel="stylesheet">
+    <script src="../../common-assets/ui.js"></script>
+
+    <!-- OG -->
+    <script>
+        autoOG(
+            "My translations for other projects.",
+            "Translation",
+            "https://www.kekesi.dev/common-assets/ogp.jpg",
+            "kekesi.dev"
+        );</script>
+    <!-- OG over -->
+
+    <!-- TWITTER CARD -->
+    <script>
+        autoTWITTERAPP(
+            "@kristofkekesio1",
+            "1177222040161529858",
+            "https://www.kekesi.dev/common-assets/ogp.jpg",
+            "Translation",
+            "My translations for other projects.",
+            "https://www.kekesi.dev/common-assets/twitter.jpg",
+        );</script>
+    <!-- TWITTER CARD over -->
+
+    <!-- UI META TAGS -->
+    <script>
+        autoUIMETA();
+    </script>
+    <!-- UI META TAGS over -->
+
+    <!-- BIO -->
+    <script>
+        autoBIO();
+    </script>
+    <!-- BIO over -->
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-NMTQ12KGY9"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
         gtag('js', new Date());
 
         gtag('config', 'G-NMTQ12KGY9');
     </script>
+    <!-- Global site tag (gtag.js) - Google Analytics over -->
 
 </head>
 <body>
-<div style="width: 100%; height: 100%;">
-    <table class="main-table">
-        <tr>
-            <td class="menu Blur">
-                <div>
-                    <div class="profile"><img src="../../common-assets/profile.jpg" class="profile-pic" alt="profile-pic"><span
-                            class="profile-name">Kristóf Kékesi</span></div>
-                </div>
-                <div class="skills">
-                    <p><a href="../../skills/web/">Web Dev</a></p>
-                    <!--<p><a href="../skills/modelling/">Modelling</a></p>-->
-                    <p><a class="skills-active" href="../../skills/translation/">Translation</a></p>
-                    <p><a href="../../skills/mobile/">Mobile Dev</a></p>
-                    <p><a href="../../skills/photography/">Photography</a></p>
-                </div>
-                <div class="contacts">
-                    <div class="contact"><a href="mailto:kristofkekesiofficial@gmail.com">Mail</a></div>
-                    <div class="contact"><a href="https://github.com/KristofKekesi">Github</a></div>
-                    <div class="contact"><a href="https://twitter.com/kristofkekesio1">Twitter</a></div>
-                    <div class="contact"><a href="https://discord.com/invite/7URAMuc">Discord</a></div>
-                    <div class="contact"><a href="https://www.patreon.com/KristofKekesi">Patreon</a></div>
-                    <div class="contact"><a href="https://www.instagram.com/kristofkekesiofficial/">Instagram</a></div>
-                </div>
-            </td>
-            <td style="text-align: center;" class="content">
-                <div class="path-parent a"><a href="../../">Home</a> / <a href="#">Translation</a></div>
-                <h1 class="title">Translation</h1>
-                <div onclick="window.location.href = '../../projects/notepadsapp/'" class="project Blur">
-                    <img src="../../projects/notepadsapp/logo.gif" class="project-logo" alt="notepads-logo">
-                    <img src="../../common-assets/arrow-right.svg" class="project-go" alt="go-to-project">
-                </div>
-            </td>
-        </tr>
-    </table>
-</div>
+<div id="js-alert">This site uses javascript for building the page. Please enable it.</div>
+
+<!-- UI Frame -->
+<div id="UIFRAME" style="width: 100%; height: 100%;"></div>
+<script>
+    autoUIFRAME(
+        [
+            {"name": "Home", "url": "../../"},
+            {"name": "Translation", "url": "#"}
+        ]
+    );
+</script>
+<!-- UI Frame over -->
+
+<!-- Desktop Menu -->
+<script>
+    autoDesktopMenu("../../", "translation");
+</script>
+<!-- Desktop Menu over -->
+
+<script>
+    autoContent(
+        "Translation",
+        "",
+        "",
+        [
+            {"name": "Notepads App", "logo": "../../projects/notepadsapp/logo.gif", "url": "../../projects/notepadsapp/"},
+        ]
+    );
+</script>
+
 </body>
 </html>
