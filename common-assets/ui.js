@@ -135,7 +135,7 @@ function autoDesktopMenu(tree, active) {
     DesktopMenu += "</div>";
     DesktopMenu += "<div class=\"contacts\">";
     DesktopMenu += "<div class=\"contact\"><a href=\"mailto:kristofkekesiofficial@gmail.com\">Mail</a></div>";
-    DesktopMenu += "<div class=\"contact\"><a href=\"https://github.com/KristofKekesi\">Github</a></div>";
+    DesktopMenu += "<div class=\"contact\"><a href=\"https://github.com/KristofKekesi\">GitHub</a></div>";
     DesktopMenu += "<div class=\"contact\"><a href=\"https://twitter.com/kristofkekesio1\">Twitter</a></div>";
     DesktopMenu += "<div class=\"contact\"><a href=\"https://discord.com/invite/7URAMuc\">Discord</a></div>";
     DesktopMenu += "<div class=\"contact\"><a href=\"https://www.patreon.com/KristofKekesi\">Patreon</a></div>";
