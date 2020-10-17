@@ -6,7 +6,7 @@
 
         <loc>https://www.kekesi.dev/</loc>
 
-        <lastmod>2020-09-05</lastmod>
+        <lastmod>2020-10-17</lastmod>
 
         <changefreq>monthly</changefreq>
 
@@ -17,7 +17,7 @@
 
         <loc>https://www.kekesi.dev/skills/web/</loc>
 
-        <lastmod>2020-09-05</lastmod>
+        <lastmod>2020-10-17</lastmod>
 
         <changefreq>monthly</changefreq>
 
@@ -28,7 +28,7 @@
 
         <loc>https://www.kekesi.dev/skills/translation/</loc>
 
-        <lastmod>2020-09-05</lastmod>
+        <lastmod>2020-10-17</lastmod>
 
         <changefreq>monthly</changefreq>
 
@@ -39,7 +39,7 @@
 
         <loc>https://www.kekesi.dev/skills/mobile/</loc>
 
-        <lastmod>2020-09-05</lastmod>
+        <lastmod>2020-10-17</lastmod>
 
         <changefreq>monthly</changefreq>
 
@@ -50,7 +50,7 @@
 
         <loc>https://www.kekesi.dev/skills/photography/</loc>
 
-        <lastmod>2020-09-05</lastmod>
+        <lastmod>2020-10-17</lastmod>
 
         <changefreq>monthly</changefreq>
 
@@ -63,7 +63,7 @@
 
         <loc>https://www.kekesi.dev/projects/notepadsapp/</loc>
 
-        <lastmod>2020-09-05</lastmod>
+        <lastmod>2020-10-17</lastmod>
 
         <changefreq>monthly</changefreq>
 
@@ -74,7 +74,7 @@
 
         <loc>https://www.kekesi.dev/projects/nasamira/</loc>
 
-        <lastmod>2020-09-05</lastmod>
+        <lastmod>2020-10-17</lastmod>
 
         <changefreq>monthly</changefreq>
 
@@ -85,7 +85,7 @@
 
         <loc>https://www.kekesi.dev/projects/elements/</loc>
 
-        <lastmod>2020-09-05</lastmod>
+        <lastmod>2020-10-17</lastmod>
 
         <changefreq>monthly</changefreq>
 
@@ -96,7 +96,18 @@
 
         <loc>https://www.kekesi.dev/projects/jakimixedit/</loc>
 
-        <lastmod>2020-09-05</lastmod>
+        <lastmod>2020-10-17</lastmod>
+
+        <changefreq>monthly</changefreq>
+
+        <priority>0.6</priority>
+
+    </url>
+    <url>
+
+        <loc>https://www.kekesi.dev/projects/filesapp/</loc>
+
+        <lastmod>2020-10-17</lastmod>
 
         <changefreq>monthly</changefreq>
 
