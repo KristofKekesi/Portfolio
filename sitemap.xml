@@ -114,4 +114,15 @@
         <priority>0.6</priority>
 
     </url>
+    <url>
+
+        <loc>https://www.kekesi.dev/projects/formula/</loc>
+
+        <lastmod>2020-11-01</lastmod>
+
+        <changefreq>monthly</changefreq>
+
+        <priority>0.6</priority>
+
+    </url>
 </urlset>
