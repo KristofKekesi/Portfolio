@@ -15,6 +15,17 @@
     </url>
     <url>
 
+        <loc>https://www.kekesi.dev/policy/privacy-policy/</loc>
+
+        <lastmod>2020-11-06</lastmod>
+
+        <changefreq>monthly</changefreq>
+
+        <priority>0.8</priority>
+
+    </url>
+    <url>
+
         <loc>https://www.kekesi.dev/skills/web/</loc>
 
         <lastmod>2020-10-17</lastmod>
