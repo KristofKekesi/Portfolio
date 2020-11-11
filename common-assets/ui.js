@@ -80,17 +80,17 @@ function autoUIFRAME(tree, type) {
     UIFRAME += "<tr>";
     UIFRAME += "<td style=\"overflow: scroll;\" class=\"menu Blur\" id=\"autoDesktopMenu\"></td>";
     if (type === "fullscreen") {
-        UIFRAME += "<td class=\"fullscreen-content\" style=\"text-align: center;\">";
+        UIFRAME += "<td id='content' class=\"fullscreen-content\" style=\"text-align: center;\">";
     } else {
-        UIFRAME += "<td class=\"content\" style=\"text-align: center;\">";
+        UIFRAME += "<td id='content' class=\"content\" style=\"text-align: center;\">";
     }
     UIFRAME += "<div class=\"path-parent a\">";
     UIFRAME += treeMenu;
     UIFRAME += "</div>";
-    UIFRAME += "<h1 class=\"title\" id=\"title\"></h1>";
-    UIFRAME += "<div id=\"subtitle\"></div>";
-    UIFRAME += "<div id=\"content\"></div>";
-    UIFRAME += "<div id=\"projects\"></div>";
+    // UIFRAME += "<h1 class=\"title\" id=\"title\"></h1>";
+    // UIFRAME += "<div id=\"subtitle\"></div>";
+    // UIFRAME += "<div id=\"content\"></div>";
+    // UIFRAME += "<div id=\"projects\"></div>";
     UIFRAME += "</td>";
     UIFRAME += "</tr>";
     UIFRAME += "</table>";
@@ -132,7 +132,15 @@ function autoDesktopMenu(tree, active) {
     } else {
         DesktopMenu += "<p><a class=\"skills\" href=\"" + tree + "skills/photography/\">Photography</a></p>";
     }
-    DesktopMenu += "</div>";
+    if (active === "privacy-policy") {
+        DesktopMenu += "<div class=\"contacts\">";
+        DesktopMenu += "<a class=\"skills-active\" href=\"" + tree + "policy/privacy-policy/\">Privacy Policy</a>";
+        DesktopMenu += "</div>";
+    } else {
+        DesktopMenu += "<div class=\"contacts\">";
+        DesktopMenu += "<a class=\"skills\" href=\"" + tree + "policy/privacy-policy/\">Privacy Policy</a>";
+        DesktopMenu += "</div>";
+    }
     DesktopMenu += "<div class=\"contacts\">";
     DesktopMenu += "<div class=\"contact\"><a href=\"mailto:kristofkekesiofficial@gmail.com\">Mail</a></div>";
     DesktopMenu += "<div class=\"contact\"><a href=\"https://github.com/KristofKekesi\">GitHub</a></div>";
@@ -145,34 +153,77 @@ function autoDesktopMenu(tree, active) {
     document.getElementById("autoDesktopMenu").innerHTML = DesktopMenu;
 }
 
-function autoContent(title, subtitle, content, project) {
+function autoContent(data) { //title, subtitle, content, project) {
+    var response = "";
 
-    if (title !== false) {
-        document.getElementById("title").innerHTML = title;
-    } else {
-        document.getElementById("title").remove();
-    }
-    if (subtitle !== false) {
-        document.getElementById("subtitle").innerHTML = subtitle;
-    } else {
-        document.getElementById("subtitle").remove();
-    }
-    document.getElementById("content").innerHTML = content;
-
-    if (project.length !== 0) {
-        let projetsDiv = "";
-        for (i = 0; i < project.length; i++) {
-            projetsDiv += "<a href= \"" + project[i].url + "\"><div class=\"project Blur\">";
-            projetsDiv += "<img src=\"" + project[i].logo + "\" class=\"project-logo\" alt=\"project-logo\">";
-            projetsDiv += "<p class=\"project-name\">" + project[i].name + "</p>";
-            projetsDiv += "</div></a>";
+    var i;
+    for (i = 0; i < data.length; i++) {
+        if (data[i]["type"] === "title") {
+            response += "<h1 class=\"title\" id=\"title\">" + data[i]['value'] + "</h1>";
+        } else if (data[i]["type"] === "projects") {
+            response += "<div>";
+            var ii;
+            for (ii = 0; ii < data[i]['value'].length; ii++) {
+                response += "<a href= \"" + data[i]['value'][ii]['url'] + "\"><div class=\"project Blur\">";
+                response += "<img src=\"" + data[i]['value'][ii]['logo'] + "\" class=\"project-logo\" alt=" + data[i]['value'][ii]['name'] + ">";
+                response += "<p class=\"project-name\">" + data[i]['value'][ii]['name'] + "</p>";
+                response += "</div></a>";
+            }
+            response += "</div>";
+        } else if (data[i]["type"] === "tools") {
+            response += "<div>";
+            var ii;
+            for (ii = 0; ii < data[i]['value'].length; ii++) {
+                if (data[i]['value'][ii]['url'] === null) {
+                    response += "<a><div class=\"tool Blur\">";
+                } else {
+                    response += "<a href= \"" + data[i]['value'][ii]['url'] + "\"><div class=\"tool Blur\">";
+                }
+                response += "<img src=\"" + data[i]['value'][ii]['logo'] + "\" class=\"tool-logo\" alt=" + data[i]['value'][ii]['name'] + ">";
+                response += "<p class=\"tool-name\">" + data[i]['value'][ii]['name'] + "</p>";
+                response += "</div></a>";
+            }
+            response += "</div>";
+        } else if (data[i]["type"] === "content") {
+            response += "<div>" + data[i]['value'] + "</div>";
+        } else if (data[i]["type"] === "images") {
+            response += "<div>";
+            for (ii = 0; ii < data[i]['value'].length; ii++) {
+                response += "<div class=\"project project-photo\" style=\"background-image: url(" + data[i]['value'][ii]['src'] + ");\"></div>";
+            }
+            response += "</div>";
         }
-        document.getElementById("projects").innerHTML = projetsDiv;
     }
+    var responseContext = document.createElement('div');
+    responseContext.innerHTML = response.trim();
+    document.getElementById('content').appendChild(responseContext);
+
+    // if (title !== false) {
+    //     document.getElementById("title").innerHTML = title;
+    // } else {
+    //     document.getElementById("title").remove();
+    // }
+    // if (subtitle !== false) {
+    //     document.getElementById("subtitle").innerHTML = subtitle;
+    // } else {
+    //     document.getElementById("subtitle").remove();
+    // }
+    // document.getElementById("content").innerHTML = content;
+    //
+    // if (project.length !== 0) {
+    //     let projetsDiv = "";
+    //     for (i = 0; i < project.length; i++) {
+    //         projetsDiv += "<a href= \"" + project[i].url + "\"><div class=\"project Blur\">";
+    //         projetsDiv += "<img src=\"" + project[i].logo + "\" class=\"project-logo\" alt=\"project-logo\">";
+    //         projetsDiv += "<p class=\"project-name\">" + project[i].name + "</p>";
+    //         projetsDiv += "</div></a>";
+    //     }
+    //     document.getElementById("projects").innerHTML = projetsDiv;
+    // }
 }
 
 function autoIMG(img) {
-    
+
     let images = "";
     for (i = 0; i < img.length; i++) {
         images += "<div class=\"project project-photo\" style=\"background-image: url(" + img[i].src + ");\"></div>";

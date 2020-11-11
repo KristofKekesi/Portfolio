@@ -4,9 +4,9 @@
 
     <title>Web Dev</title>
 
-    <link href="common-assets/profile-circullar.png" rel="icon" type="image/svg">
-    <link href="common-assets/main.css" rel="stylesheet">
-    <script src="common-assets/ui.js"></script>
+    <link href="https://www.kekesi.dev/common-assets/profile-circullar.png" rel="icon" type="image/svg">
+    <link href="https://www.kekesi.dev/common-assets/main.css" rel="stylesheet">
+    <script src="https://www.kekesi.dev/common-assets/ui.js"></script>
 
     <!-- OG -->
     <script>
@@ -65,7 +65,7 @@
 <script>
     autoUIFRAME(
         [
-            {"name": "Home", "url": "index.html"},
+            {"name": "Home", "url": "https://www.kekesi.dev"},
             {"name": "404", "url": "#"}
         ]
     );
@@ -74,17 +74,18 @@
 
 <!-- Desktop Menu -->
 <script>
-    autoDesktopMenu("", "");
+    autoDesktopMenu("https://www.kekesi.dev/", "");
 </script>
 <!-- Desktop Menu over -->
 
 <script>
     autoContent(
-        "404",
-        "<a style=\"color: white;\">Not Found</a>",
-        "",
-        []
-    );
+        [
+            {"type": "title", "value": "404"},
+            {"type": "content", "value": "<a style=\"color: white;\">Not Found</a>"}
+        ]
+    )
+    ;
 </script>
 
 </body>

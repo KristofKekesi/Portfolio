@@ -81,14 +81,24 @@
 
 <script>
     autoContent(
-        "Mobile Development",
-        "<p class=\"content-about\">In December 2019 I found Flutter. A native language for almost everything. I started programming in it, but I stoped it due study. Half year later I continued developing. Now I have two mobile apps out Google Play.</p>",
-        "",
-        [
-            {"name": "Elements", "logo": "../../projects/elements/logo.svg", "url": "../../projects/elements/"},
-            {"name": "NASA Mira", "logo": "../../projects/nasamira/logo.png", "url": "../../projects/nasamira/"},
-            {"name": "Formula", "logo": "../../projects/formula/formula.svg", "url": "../../projects/formula/"}
-        ]
+            [
+            {"type": "title", "value": "Mobile Development"},
+                {
+                    "type": "projects", "value": [
+                        {"name": "Elements", "logo": "../../projects/elements/logo.svg", "url": "../../projects/elements/"},
+                        {"name": "NASA Mira", "logo": "../../projects/nasamira/logo.png", "url": "../../projects/nasamira/"},
+                        {"name": "Formula", "logo": "../../projects/formula/formula.svg", "url": "../../projects/formula/"}
+                    ]
+                },
+                {"type": "title", "value": "Tools that I used"},
+                {
+                    "type": "tools", "value": [
+                        {"name": "Flutter", "logo": "../../tools/flutter/logo.png", "url": "tools/flutter/"},
+                        {"name": "Dart", "logo": "../../tools/dart/logo.png", "url": "tools/dart/"},
+                        {"name": "GitHub", "logo": "../../tools/github/logo.png", "url": "tools/github/"},
+                    ]
+                }
+            ]
     );
 </script>
 

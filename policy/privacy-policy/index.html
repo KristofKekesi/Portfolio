@@ -74,16 +74,19 @@
 
 <!-- Desktop Menu -->
 <script>
-    autoDesktopMenu("../../", "");
+    autoDesktopMenu("../../", "privacy-policy");
 </script>
 <!-- Desktop Menu over -->
 
 <script>
     autoContent(
-        "Privacy Policy",
-        "<a style=\"color: white;\">We respect our users privacy. So we are glad to say that we only use minor analytics and don't store our users data. We use </a><a href='https://policies.google.com/privacy?hl=en-US'>Google proofed analytic services.</a> <a style=\"color: white;\">For more info contact at the given ways.</a>",
-        "",
-        []
+        [
+            {"type": "title", "value": "Privacy Policy"},
+            {
+                "type": "content",
+                "value": "<a style=\"color: white;\">We respect our users privacy. So we are glad to say that we only use minor analytics and don't store our users data. We use </a><a href='https://policies.google.com/privacy?hl=en-US'>Google proofed analytic services.</a> <a style=\"color: white;\">For more info contact at the given ways.</a>",
+            }
+        ]
     );
 </script>
 
