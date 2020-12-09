@@ -87,10 +87,6 @@ function autoUIFRAME(tree, type) {
     UIFRAME += "<div class=\"path-parent a\">";
     UIFRAME += treeMenu;
     UIFRAME += "</div>";
-    // UIFRAME += "<h1 class=\"title\" id=\"title\"></h1>";
-    // UIFRAME += "<div id=\"subtitle\"></div>";
-    // UIFRAME += "<div id=\"content\"></div>";
-    // UIFRAME += "<div id=\"projects\"></div>";
     UIFRAME += "</td>";
     UIFRAME += "</tr>";
     UIFRAME += "</table>";

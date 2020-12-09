@@ -189,7 +189,7 @@ a:active {
 }
 
 .project {
-    border-radius: 20%;
+    border-radius: 50px;
 
     margin: 5% auto;
     width: 50%;
@@ -227,7 +227,7 @@ a:active {
 }
 
 .tool {
-    border-radius: 20%;
+    border-radius: 20px;
 
     margin: 5% 5% auto;
     width: 35%;
@@ -236,10 +236,10 @@ a:active {
 }
 
 .tool-logo {
-    margin-top: 10%;
+    padding-top: 10%;
     margin-right: 10%;
     margin-left: 10%;
-    margin-bottom: 0%;
+    padding-bottom: 0%;
     width: 80%;
     height: auto;
 }
@@ -324,7 +324,7 @@ a:active {
     }
 
     .tool {
-        border-radius: 20%;
+        border-radius: 50px;
 
         margin: 2% 2% auto;
         width: 10%;

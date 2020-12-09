@@ -17,7 +17,7 @@
 
         <loc>https://www.kekesi.dev/policy/privacy-policy/</loc>
 
-        <lastmod>2020-11-11</lastmod>
+        <lastmod>2020-12-09</lastmod>
 
         <changefreq>monthly</changefreq>
 
@@ -72,7 +72,7 @@
 
     <url>
 
-        <loc>https://www.kekesi.dev/projects/notepadsapp/</loc>
+        <loc>https://www.kekesi.dev/projects/notepad/</loc>
 
         <lastmod>2020-11-11</lastmod>
 
@@ -116,7 +116,7 @@
     </url>
     <url>
 
-        <loc>https://www.kekesi.dev/projects/filesapp/</loc>
+        <loc>https://www.kekesi.dev/projects/files/</loc>
 
         <lastmod>2020-11-11</lastmod>
 
@@ -141,6 +141,17 @@
         <loc>https://www.kekesi.dev/projects/ambie/</loc>
 
         <lastmod>2020-11-11</lastmod>
+
+        <changefreq>monthly</changefreq>
+
+        <priority>0.6</priority>
+
+    </url>
+    <url>
+
+        <loc>https://www.kekesi.dev/projects/quickpad/</loc>
+
+        <lastmod>2020-12-09</lastmod>
 
         <changefreq>monthly</changefreq>
 
