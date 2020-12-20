@@ -1,17 +1,18 @@
+<!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
 
-    <title>GitHub</title>
+    <title>Preacher API</title>
 
-    <link href="../../common-assets/profile-circullar.png" rel="icon" type="image/svg">
+    <link href="logo.svg" rel="icon" type="image/svg">
     <link href="../../common-assets/main.css" rel="stylesheet">
     <script src="../../common-assets/ui.js"></script>
 
     <!-- OG -->
     <script>
         autoOG(
-            "Projects with GitHub",
-            "I'm Kristóf Kékesi, a freelance programmer, hobby photographer. I'm currently working on Elements, a phone application.",
+            "Preacher API",
+            "Preacher API",
             "https://www.kekesi.dev/common-assets/ogp.jpg",
             "kekesi.dev"
         );</script>
@@ -19,11 +20,11 @@
 
     <!-- TWITTER CARD -->
     <script>
-        autoTWITTERPLAYER(
+        autoTWITTERAPP(
             "@kristofkekesio1",
             "1177222040161529858",
-            "Kristóf Kékesi",
-            "Projects with GitHub.",
+            "Preacher API",
+            "Preacher API",
             "https://www.kekesi.dev/common-assets/twitter.jpg",
         );</script>
     <!-- TWITTER CARD over -->
@@ -65,7 +66,8 @@
     autoUIFRAME(
         [
             {"name": "Home", "url": "../../"},
-            {"name": "GitHub", "url": "#"}
+            {"name": "Web Dev", "url": "../../skills/web/"},
+            {"name": "Preacher API", "url": "#"}
         ]
     );
 </script>
@@ -73,27 +75,29 @@
 
 <!-- Desktop Menu -->
 <script>
-    autoDesktopMenu("../../", "tools");
+    autoDesktopMenu("../../", "web");
 </script>
 <!-- Desktop Menu over -->
 
 <script>
     autoContent(
         [
-            {"type": "title", "value": "Projects with GitHub"},
+            {"type": "title", "value": "Preacher API"},
             {
-                "type": "projects", "value": [
-                    {"name": "Elements", "logo": "../../projects/elements/logo.svg", "url": "../../projects/elements/"},
-                    {"name": "NASA Mira", "logo": "../../projects/nasamira/logo.png", "url": "../../projects/nasamira/"},
-                    {"name": "Preacher", "logo": "../../projects/preacher/logo.svg", "url": "../../projects/preacher/"},
-                    {"name": "PreacherAPI", "logo": "../../projects/preacherAPI/logo.svg", "url": "../../projects/preacherAPI/"},
-                    {"name": "Formula", "logo": "../../projects/formula/formula.svg", "url": "../../projects/formula/"},
-                    {"name": "Files", "logo": "../../projects/files/logo.png", "url": "../../projects/files/"},
-                    {"name": "Notepads", "logo": "../../projects/notepads/logo.gif", "url": "../../projects/notepads/"},
-                    {"name": "Ambie", "logo": "../../projects/ambie/logo.png", "url": "../../projects/ambie/"},
-                    {"name": "Quick Pad", "logo": "../../projects/quickpad/logo.png", "url": "../../projects/quickpad/"},
-                ]
+                "type": "content",
+                "value": "<a href=\"https://github.com/KristofKekesi/APIs/tree/master/Preacher\">View it on GitHub</a>"
             },
+            {"type": "title", "value": "Tools that I used"},
+            {
+                "type": "tools",
+                "value": [
+                    {
+                        "name": "Github",
+                        "logo": "../../tools/github/logo.png",
+                        "url": "../../tools/github/"
+                    },
+                ]
+            }
         ]
     );
 </script>
