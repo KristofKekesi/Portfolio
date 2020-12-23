@@ -64,11 +64,7 @@
 <div id="UIFRAME" style="width: 100%; height: 100%;"></div>
 <script>
     autoUIFRAME(
-        [
-            {"name": "Home", "url": "../../"},
-            {"name": "Translation", "url": "../../skills/translation/"},
-            {"name": "Files", "url": "#"}
-        ]
+        [], "fullscreen"
     );
 </script>
 <!-- UI Frame over -->
@@ -82,25 +78,9 @@
 <script>
     autoContent(
         [
-            {"type": "title", "value": "Files"},
             {
                 "type": "content",
-                "value": "<a href=\"https://github.com/files-community/Files/blob/master/README.md\">View it on GitHub</a>"
-            },
-            {
-                "type": "content",
-                "value": "<a class=\"orange\" href=\"https://www.microsoft.com/hu-hu/p/files-preview/9nghp3dx8hdx\">Download</a>"
-            },
-            {"type": "title", "value": "Tools that I used"},
-            {
-                "type": "tools",
-                "value": [
-                    {
-                        "name": "Github",
-                        "logo": "../../tools/github/logo.png",
-                        "url": "../../tools/github/"
-                    }
-                ]
+                "value": "<div style=\"height: 100vh\"><iframe class=\"project-readme\" src=\"https://files-community.github.io/files.github.io/\"></iframe></div>"
             }
         ]
     );
