@@ -189,7 +189,7 @@ a:active {
 }
 
 .project {
-    border-radius: 50px;
+    border-radius: calc((1vh + 1vw) / 2 * 10);
 
     margin: 5% auto;
     width: 50%;
@@ -227,7 +227,7 @@ a:active {
 }
 
 .tool {
-    border-radius: 20px;
+    border-radius: calc((1vh + 1vw) / 2 * 5);
 
     margin: 5% 5% auto;
     width: 35%;
@@ -248,7 +248,7 @@ a:active {
     color: white;
     padding-bottom: 5%;
     font-family: "Arial", serif;
-    font-size: calc((1vh + 1vw) / 2 * 1.5);
+    font-size: calc((1vh + 1vw) / 2 * 3);
 }
 
 .tool-photo {
@@ -267,6 +267,8 @@ a:active {
 
 @media (min-width:960px) {
     .project {
+        border-radius: calc((1vh + 1vw) / 2 * 3.5);
+
         margin: 1%;
         width: 15%;
 
@@ -324,7 +326,7 @@ a:active {
     }
 
     .tool {
-        border-radius: 50px;
+        border-radius: calc((1vh + 1vw) / 2 * 3.5);
 
         margin: 2% 2% auto;
         width: 10%;
