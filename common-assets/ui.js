@@ -108,11 +108,6 @@ function autoDesktopMenu(tree, active) {
     } else {
         DesktopMenu += "<p><a class=\"skills\" href=\"" + tree + "skills/web/\">Web Dev</a></p>";
     }
-    if (active === "modelling") {
-        DesktopMenu += "<p><a class=\"skills-active\" href=\"" + tree + "skills/modelling/\">Modelling</a></p>";
-    } else {
-        DesktopMenu += "<!--<p><a class=\"skills\" href=\"" + tree + "skills/modelling/\">Modelling</a></p>-->";
-    }
     if (active === "translation") {
         DesktopMenu += "<p><a class=\"skills-active\" href=\"" + tree + "skills/translation/\">Translation</a></p>";
     } else {
