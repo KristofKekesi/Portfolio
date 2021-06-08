@@ -1,0 +1,142 @@
+/* Media Queries: Tablet Landscape */
+@media screen and (max-width: 1060px) {
+    #primary { width:67%; }
+    #secondary { width:30%; margin-left:3%;}
+}
+
+/* Media Queries: Tabled Portrait */
+@media screen and (max-width: 768px) {
+    #primary { width:100%; }
+    #secondary { width:100%; margin:0; border:none; }
+}
+
+img { max-width: 100%; height: auto; }
+html { font-size:100%; }
+
+html, body {
+    height: 100%;
+    font-family: Arial, serif;
+
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    line-height: 170%;
+    color: white;
+    text-decoration: none;
+    font-size: calc((1vh + 1vw) / 2 * 1.5);
+}
+
+a:hover {
+    color: #fcb103;
+}
+
+a:active {
+    color: #fc7b03;
+}
+
+.Blur {
+    backdrop-filter: saturate(180%) blur(20px);
+    background-color: rgba(2, 2, 2, 0.7);
+}
+
+.main-table {
+    background-image: url("background.jpg");
+    background-position: center;
+    background-size: cover;
+
+    width: 100%;
+    height: 100%;
+
+    border: none;
+    border-collapse:collapse
+}
+
+.menu {
+    width: 20%;
+    height: 100%;
+
+    padding: 1%;
+    vertical-align: top;
+}
+
+.profile {
+    margin: auto;
+}
+
+.profile-pic {
+    border-radius: 50%;
+    width: 15%;
+    height: 15%;
+}
+
+.profile-name {
+    color: white;
+    font-weight: bold;
+    text-align: center;
+
+    margin-left: 1em;
+}
+
+.profile-name {
+    font-size: calc((1vh + 1vw) / 2 * 2);
+}
+
+.skills {
+    margin-top: 10%;
+}
+
+.contacts {
+    margin-top: 10%;
+}
+
+.contact {
+    line-height: 170%;
+    color: white;
+    font-size: calc((1vh + 1vw) / 2 * 1.5);
+}
+
+.content {
+}
+
+.title {
+    color: white;
+    font-weight: bold;
+    font-size: 5em;
+}
+
+.project {
+    width: 10%;
+    border-radius: 20px;
+
+    display: inline-block;
+
+    margin: .5%;
+}
+
+.project-logo {
+    margin: 10% 10% 25%;
+    width: 80%;
+    height: auto;
+}
+
+.project-go {
+    position: absolute;
+    height: 15%;
+    bottom: 5%;
+    right: 15%;
+}
+
+@media (min-width: 640px) { body {font-size:1rem;} }
+@media (min-width:960px) { body {font-size:1.2rem;} }
+@media (min-width:1100px) { body {font-size:1.5rem;} } 
