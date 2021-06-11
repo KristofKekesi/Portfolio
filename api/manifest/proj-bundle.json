@@ -2,7 +2,7 @@
 	"id": "PROJ-BUNDLE-ID",
 	"name": "Test Project Bundle",
 	"projects": ["PROJ-ID", "PROJ-ID"]
-	"style": [
+	"style": {
 		"gradient": "HEX-000000;HEX-000000"
-	]
+	}
 }

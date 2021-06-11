@@ -6,15 +6,15 @@
 	"skills": ["SKILL-ID", "SKILL-ID"],
 	"tools": ["TOOL-ID", "TOOL-ID"],
 	"description": "Description of the project.",
-	"download-link": [
+	"download-link": {
 		"google-play-store": "https://www.link.com",
 		"microsoft-store": "https://www.link.com"
-	],
+	},
 	"website": "https://www.link.com",
 	"promo-video": "VIDEO-ID",
 	"featured-article": " ARTICLE-ID",
 	"articles": ["ARTICLE-ID", "ARTICLE-ID"],
-	"style": [
+	"style": {
 		"accent": "HEX-000000"
-	]
+	}
 }
