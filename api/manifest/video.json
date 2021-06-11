@@ -1,0 +1,8 @@
+{
+	"id": "VIDEO-ID",
+	"name": "Test Video",
+	"thumbnail": "IMG-ID",
+	"url": "https://www.link.com/catvideo.mp4",
+	"description": "Cat video",
+	"copyright": null
+}
