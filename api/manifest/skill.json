@@ -1,0 +1,11 @@
+{
+	"id": "SKILL-ID",
+	"name": "Test Skill",
+	"tools": ["TOOL-ID", "TOOL-ID"],
+	"projects": ["PROJ-ID", "PROJ-ID"],
+	"featured-article": "ARTICLE-ID",
+	"articles": ["ARTICLE-ID", "ARTICLE-ID"],
+	"style": [
+		"accent": "HEX-000000"
+	]
+}
