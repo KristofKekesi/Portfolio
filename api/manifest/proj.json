@@ -6,10 +6,18 @@
 	"skills": ["SKILL-ID", "SKILL-ID"],
 	"tools": ["TOOL-ID", "TOOL-ID"],
 	"description": "Description of the project.",
-	"download-link": {
-		"google-play-store": "https://www.link.com",
-		"microsoft-store": "https://www.link.com"
-	},
+	"download-link": [
+		{
+			"type": "google-play-store",
+			"link": "https://www.link.com",
+			"isAvailable": true
+		},
+		{
+			"type": "microsoft-store",
+			"link": "https://www.link.com",
+			"isAvailable": true
+		}
+	],
 	"website": "https://www.link.com",
 	"promo-video": "VIDEO-ID",
 	"featured-article": " ARTICLE-ID",
