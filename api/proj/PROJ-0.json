@@ -1,0 +1,20 @@
+{
+	"id": "PROJ-0",
+	"name": "Elements",
+	"logo": "IMG-0",
+	"version": "1.0",
+	"skill": ["SKILL-0"],
+	"tool": ["TOOL-0", "TOOL-1", "TOOL-2"],
+	"description": "A modern app to track the cemical elements. Including all 118 elements, with their weight, radiation, consistency, type, block, and electronnegativity.",
+	"download-link": [
+		{
+			"type": "google-play-store",
+			"link": "https://play.google.com/store/apps/details?id=com.kristofkekesi.elements",
+			"isAvailable": true
+		}
+	],
+	"website": "https://www.kekesi.dev/project/elements/",
+	"featured-article": null,
+	"articles": null,
+	"style": null
+}
