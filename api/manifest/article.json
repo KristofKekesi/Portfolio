@@ -50,5 +50,8 @@
 			"type": "row",
 			"content": []
 		}
-	]
+	],
+	"style": {
+		"accent": "HEX-000000"
+	}
 }

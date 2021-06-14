@@ -5,7 +5,7 @@
 	"projects": ["PROJ-ID", "PROJ-ID"],
 	"featured-article": "ARTICLE-ID",
 	"articles": ["ARTICLE-ID", "ARTICLE-ID"],
-	"style": [
+	"style": {
 		"accent": "HEX-000000"
-	]
+	}
 }

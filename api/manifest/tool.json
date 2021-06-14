@@ -7,7 +7,7 @@
 	"website": "https://www.link.com",
 	"featured-article": "ARTICKLE-ID",
 	"articles": ["ARTICLE-ID", "ARTICLE-ID"],
-	"style": [
+	"style": {
 		"accent": "HEX-000000"
-	]
+	}
 }

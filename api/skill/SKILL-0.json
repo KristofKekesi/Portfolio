@@ -1,0 +1,9 @@
+{
+	"id": "SKILL-0",
+	"name": "Mobile Dev",
+	"tools": ["TOOL-0", "TOOL-1", "TOOL-2", "TOOL-6"],
+	"projects": ["PROJ-0", "PROJ-1", "PROJ-2", "PROJ-3", "PROJ-4", "PROJ-12"],
+	"featured-article": null,
+	"articles": null,
+	"style": null
+}

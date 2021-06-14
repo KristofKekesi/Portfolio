@@ -1,0 +1,20 @@
+{
+	"id": "PROJ-3",
+	"name": "ESA Mira",
+	"logo": "IMG-3",
+	"version": "1.0",
+	"skill": ["SKILL-0"],
+	"tool": ["TOOL-0", "TOOL-1", "TOOL-2"],
+	"description": "An app to search the european mars vehicles. It also provides specifications of the rovers, orbiters and other space vehicles.",
+	"download-link": [
+		{
+			"type": "google-play-store",
+			"link": "https://play.google.com/store/apps/details?id=com.kristofkekesi.esamria",
+			"isAvailable": false
+		}
+	],
+	"website": "https://www.kekesi.dev/project/esamira/",
+	"featured-article": null,
+	"articles": null,
+	"style": null
+}
