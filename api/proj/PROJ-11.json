@@ -2,6 +2,7 @@
 	"id": "PROJ-11",
 	"name": "Quick Picture Viewer",
 	"logo": "IMG-11",
+	"discord-icon": null,
 	"skill": ["SKILL-1"],
 	"tool": ["TOOL-0"],
 	"description": "Lightweight, versatile desktop image viewer for Windows.",

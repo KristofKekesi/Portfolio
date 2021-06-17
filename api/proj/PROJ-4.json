@@ -2,6 +2,7 @@
 	"id": "PROJ-4",
 	"name": "Preacher",
 	"logo": "IMG-4",
+	"discord-icon": "<:preacher:834421136531914773>",
 	"version": "1.0.1",
 	"skill": ["SKILL-0"],
 	"tool": ["TOOL-0", "TOOL-1", "TOOL-2"],
@@ -16,5 +17,7 @@
 	"website": "https://www.kekesi.dev/project/preacher/",
 	"featured-article": null,
 	"articles": null,
-	"style": null
+	"style": {
+		"accent": "HEX-D3BEBE"
+	}
 }

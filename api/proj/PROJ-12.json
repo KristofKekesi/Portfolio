@@ -2,6 +2,7 @@
 	"id": "PROJ-12",
 	"name": "Clen Earth",
 	"logo": "IMG-12",
+	"discord-icon": null,
 	"version": "1.0.1",
 	"skill": ["SKILL-0"],
 	"tool": ["TOOL-0", "TOOL-1", "TOOL-2"],

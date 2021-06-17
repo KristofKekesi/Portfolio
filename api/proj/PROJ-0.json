@@ -2,6 +2,7 @@
 	"id": "PROJ-0",
 	"name": "Elements",
 	"logo": "IMG-0",
+	"discord-icon": "<:elements:834421451716427837>",
 	"version": "1.0",
 	"skill": ["SKILL-0"],
 	"tool": ["TOOL-0", "TOOL-1", "TOOL-2"],
@@ -16,5 +17,7 @@
 	"website": "https://www.kekesi.dev/project/elements/",
 	"featured-article": null,
 	"articles": null,
-	"style": null
+	"style": {
+		"accent": "HEX-118D95"
+	}
 }

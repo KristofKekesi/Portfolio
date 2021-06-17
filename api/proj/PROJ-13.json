@@ -2,6 +2,7 @@
 	"id": "PROJ-13",
 	"name": "DogeHouse",
 	"logo": "IMG-13",
+	"discord-icon": null,
 	"skill": ["SKILL-1"],
 	"tool": ["TOOL-0"],
 	"description": "Taking voice conversations to the moon.",
