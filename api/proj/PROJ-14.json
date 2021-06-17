@@ -2,6 +2,7 @@
 	"id": "PROJ-14",
 	"name": "Shretsha Files",
 	"logo": "IMG-14",
+	"discord-icon": null,
 	"skill": ["SKILL-1"],
 	"tool": ["TOOL-0"],
 	"description": "A Modern Dual Pane File Manager for Windows 10 and Windows 10X Devices.",

@@ -2,6 +2,7 @@
 	"id": "PROJ-2",
 	"name": "USSR Mira",
 	"logo": "IMG-2",
+	"discord-icon": null,
 	"version": "1.0",
 	"skill": ["SKILL-0"],
 	"tool": ["TOOL-0", "TOOL-1", "TOOL-2"],
