@@ -1,7 +1,9 @@
 {
 	"id": "PROJ-ID",
+	"role": ["role-name", "role-name"],
 	"name": "Test Project",
 	"logo": "IMG-ID",
+	"discord-icon": "<discord-icon-name:discord-icon-id>",
 	"version": "1.0",
 	"skills": ["SKILL-ID", "SKILL-ID"],
 	"tools": ["TOOL-ID", "TOOL-ID"],

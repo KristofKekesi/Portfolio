@@ -1,5 +1,6 @@
 {
 	"id": "PROJ-10",
+	"role": ["translator"],
 	"name": "Replica",
 	"logo": "IMG-10",
 	"discord-icon": null,
