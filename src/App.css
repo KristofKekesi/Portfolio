@@ -1,38 +1,35 @@
-.App {
-  text-align: center;
+@font-face {
+  font-family: 'Inter';
+  src: url('./fonts/Inter-Regular.ttf'); /* IE9 Compat Modes */
+  src: url('./fonts/Inter-Regular.ttf')  format('truetype'), /* Safari, Android, iOS */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@font-face {
+  font-family: 'InterBold';
+  src: url('./fonts/Inter-Bold.ttf'); /* IE9 Compat Modes */
+  src: url('./fonts/Inter-Bold.ttf')  format('truetype'), /* Safari, Android, iOS */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  font-family: "Inter";
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+h1.white {
+  color: #EFEFEF;
+  font-family: 'Inter';
+  font-size: calc((1vh + 1vw) / 2 * 7.5);
+
+  text-align: left;
 }
 
-.App-link {
-  color: #61dafb;
-}
+h2.white {
+  color: #EFEFEF;
+  font-family: 'Inter';
+  font-size: calc((1vh + 1vw) / 2 * 5);
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  text-align: left;
 }

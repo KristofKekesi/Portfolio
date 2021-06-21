@@ -1,0 +1,21 @@
+.dock {
+    position: fixed;
+
+    bottom: 10px;
+    left: 50%;
+    /* bring your own prefixes */
+    transform: translate(-50%, 0%);
+
+    color: #EFEFEF;
+    font-size: 32px;
+}
+
+.blur-dark {
+    backdrop-filter: saturate(200%) blur(20px);
+    background-color: rgba(9,9,9,.5);
+    padding: 15px;
+}
+
+.radius24 {
+    border-radius: 14px;
+}
