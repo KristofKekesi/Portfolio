@@ -1,0 +1,48 @@
+.dock-mobile .dock-element  {
+    justify-content: space-evenly;
+
+    width: calc((1vh + 1vw) / 2 * 15);
+
+    padding-top: 12px;
+    padding-bottom: 12px;
+
+    display: inline-block;
+    font-size: calc((1vh + 1vw) / 2 * 2);
+}
+
+.dock-mobile .dock-element img {
+    height: calc((1vh + 1vw) / 2 * 5);
+    width: calc((1vh + 1vw) / 2 * 5);
+}
+
+.dock-desktop .dock-element  {
+    justify-content: space-evenly;
+    padding: 5px;
+
+    width: calc((1vh + 1vw) / 2 * 8);
+
+    display: inline-block;
+    font-size: calc((1vh + 1vw) / 2 * 1);
+}
+
+.dock-desktop .dock-element img {
+    height: calc((1vh + 1vw) / 2 * 3);
+    width: calc((1vh + 1vw) / 2 * 3);
+}
+
+@media screen and (min-width: 1000px) {
+    .dock-mobile .dock-element  {
+        justify-content: space-evenly;
+        padding: 5px;
+    
+        width: calc((1vh + 1vw) / 2 * 8);
+    
+        display: inline-block;
+        font-size: calc((1vh + 1vw) / 2 * 1);
+    }
+    
+    .dock-mobile .dock-element img {
+        height: calc((1vh + 1vw) / 2 * 3);
+        width: calc((1vh + 1vw) / 2 * 3);
+    }
+}

@@ -4,6 +4,7 @@ import background from "./bg.jpg";
 
 import Navbar from "./components/navbar/navbar.js";
 import Dock from "./components/dock/dock.js";
+import Cursor from "./components/cursor/cursor.js";
 
 function App() {
   return (
@@ -13,14 +14,15 @@ function App() {
         <center>
         <div style={{paddingTop: "calc(33vh - 75px)", display: "flex", justifyContent: "center"}}>
           <div>
-          <h1 className="white">Kristóf Kékesi</h1>
+          <h1 className="white" style={{textShadow: "6px 6px 12px rgba(0, 0, 0, .75)"}}>Kristóf Kékesi</h1>
           <span style={{flexBasis: "100%", height: "0"}} />
-          <h2 className="white">Mobile Developer</h2>
+          <h2 className="white" style={{textShadow: "6px 6px 12px rgba(0, 0, 0, .75)"}}>Mobile Developer</h2>
         </div>
         </div>
         </center>
       </div>
       <Dock />
+      <Cursor />
     </div>
   );
 }

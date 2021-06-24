@@ -1,21 +1,47 @@
-.dock {
+.dock-desktop {
+    width: fit-content;
+
     position: fixed;
+    display: inline;
 
     bottom: 10px;
     left: 50%;
-    /* bring your own prefixes */
+
+    transition: bottom .5s linear;
+
     transform: translate(-50%, 0%);
 
     color: #EFEFEF;
-    font-size: 32px;
+    padding: 10px;
+
+    border-radius: 14px;
+}
+
+.dock-desktop.inactive {
+    bottom: -10vh;
+}
+
+.dock-mobile.inactive {
+    bottom: -50vh;
+}
+
+.dock-mobile {
+    width: fit-content;
+
+    position: fixed;
+
+    bottom: 0;
+    left: 50%;
+
+    transition: bottom .5s linear;
+
+    transform: translate(-50%, 0%);
+
+    color: #EFEFEF;
+    padding: 10px;
 }
 
 .blur-dark {
     backdrop-filter: saturate(200%) blur(20px);
     background-color: rgba(9,9,9,.5);
-    padding: 15px;
-}
-
-.radius24 {
-    border-radius: 14px;
 }
