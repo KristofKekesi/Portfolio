@@ -4,6 +4,9 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+const API = require('./api/index');
+API.getURLs();
+
 
 ReactDOM.render(
   <React.StrictMode>
@@ -12,30 +15,31 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
+// navbar
+function centerNavbar() {
+  window.addEventListener("resize", () => {
+    if (window.innerWidth <= 1000) {
+      console.log(document.getElementById("navbar-links").clientHeight);
+    }
+  });
+}
+centerNavbar();
 
 function toggleNavbar() {
   document.getElementById("hamburger").addEventListener("click", () => {
+    // navbar
     document.getElementById("navbar-links").classList.toggle("navbar-links-active");
-    document.getElementById("dock").classList.toggle("inactive");
+    // dock
+    if (document.getElementById("navbar-links").classList.value.includes("navbar-links-active")) {
+      document.getElementById("dock").classList.add("inactive");
+    }
+
+    if (!document.getElementById("navbar-links").classList.value.includes("navbar-links-active")) {
+      document.getElementById("dock").classList.remove("inactive");
+    }
   });
 }
 toggleNavbar();
-
-
-function resize() {
-  //console.log(window.innerWidth);
-  //console.log(document.getElementById("dock").clientWidth);
-
-  if (window.innerWidth === document.getElementById("dock").clientWidth) {
-    document.getElementById("dock").classList = "dock-mobile blur-dark";
-  } else {
-    document.getElementById("dock").classList = "dock-desktop blur-dark";
-  }
-}
-
-window.addEventListener('resize', resize);
-resize();
-resize();
 
 
 // cursor
@@ -44,11 +48,13 @@ function setupCursor() {
       e = document.getElementById("cursor2");
 
   function n(t) {
+    if (!e.classList.contains("click")) {
       e.classList.add("hover");
+    }
   }
 
   function s(t) {
-      e.classList.remove("hover");
+    e.classList.remove("hover");
   }
 
   s();
@@ -68,8 +74,17 @@ function setupCursor() {
       e.style.top = n.clientY + "px";
       e.style.left = n.clientX + "px";
   });
-}
 
+  // cursor on click
+  document.body.onmousedown = function() {
+    e.classList.add("click");
+
+  }
+
+  document.body.onmouseup = function() {
+    e.classList.remove("click");
+  } 
+}
 setupCursor();
 
 

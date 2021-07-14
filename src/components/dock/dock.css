@@ -1,47 +1,46 @@
-.dock-desktop {
-    width: fit-content;
+@media screen and (max-width: 1001px) {
+    .dock {
+        width: 100%;
+    
+        position: fixed;
+    
+        bottom: 0;
+        left: 50%;
+    
+        transition: bottom .5s linear;
+    
+        transform: translate(-50%, 0%);
+    
+        color: #EFEFEF;
+        padding: 10px;
+    }
 
-    position: fixed;
-    display: inline;
-
-    bottom: 10px;
-    left: 50%;
-
-    transition: bottom .5s linear;
-
-    transform: translate(-50%, 0%);
-
-    color: #EFEFEF;
-    padding: 10px;
-
-    border-radius: 14px;
+    .dock.inactive {
+        bottom: -50vh;
+    }
 }
 
-.dock-desktop.inactive {
-    bottom: -10vh;
-}
+@media screen and (min-width: 1001px) {
+    .dock {
+        width: fit-content;
 
-.dock-mobile.inactive {
-    bottom: -50vh;
-}
+        position: fixed;
+        display: inline;
 
-.dock-mobile {
-    width: fit-content;
+        bottom: 10px;
+        left: 50%;
 
-    position: fixed;
+        transition: bottom .5s linear;
 
-    bottom: 0;
-    left: 50%;
+        transform: translate(-50%, 0%);
 
-    transition: bottom .5s linear;
+        color: #EFEFEF;
+        padding: 10px;
 
-    transform: translate(-50%, 0%);
+        border-radius: 14px;
+    }
 
-    color: #EFEFEF;
-    padding: 10px;
-}
-
-.blur-dark {
-    backdrop-filter: saturate(200%) blur(20px);
-    background-color: rgba(9,9,9,.5);
+    .dock.inactive {
+        bottom: 10px;
+    }
 }

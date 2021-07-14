@@ -10,6 +10,26 @@
   src: url('./fonts/Inter-Bold.ttf')  format('truetype'), /* Safari, Android, iOS */
 }
 
+/** Scrollbar **/
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  opacity: 1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background-color: rgba(9,9,9, .75);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
 
 ::selection {
   backdrop-filter: saturate(200%) blur(20px);
@@ -24,6 +44,43 @@
   box-sizing: border-box;
 
   font-family: "Inter";
+
+  /* Unselectable */
+  user-select:         none;
+  -moz-user-select:    none;
+  -khtml-user-select:  none;
+  -webkit-user-select: none;
+  -o-user-select:      none;
+
+  -webkit-user-drag:   none;
+  -khtml-user-drag:    none;
+  -moz-user-drag:      none;
+  -o-user-drag:        none;
+  -ms-user-drag:       none;
+  user-drag:           none;
+}
+
+/* todo just experimenting for the article */
+*:target {
+  border: 3px dotted;
+  border-color: invert;
+}
+
+.selectable {
+  user-select:         text;
+  -moz-user-select:    text;
+  -khtml-user-select:  text;
+  -webkit-user-select: text;
+  -o-user-select:      text;
+}
+
+.draggable {
+  -webkit-user-drag:   auto;
+  -khtml-user-drag:    auto;
+  -moz-user-drag:      auto;
+  -o-user-drag:        auto;
+  -ms-user-drag:       auto;
+  user-drag:           auto;
 }
 
 h1.white {
@@ -40,4 +97,18 @@ h2.white {
   font-size: calc((1vh + 1vw) / 2 * 5);
 
   text-align: left;
+}
+
+a {
+  -webkit-user-drag:   auto;
+  -khtml-user-drag:    auto;
+  -moz-user-drag:      auto;
+  -o-user-drag:        auto;
+  -ms-user-drag:       auto;
+  user-drag:           auto;
+}
+
+.blur-dark {
+  backdrop-filter: saturate(200%) blur(20px);
+  background-color: rgba(9,9,9,.5);
 }

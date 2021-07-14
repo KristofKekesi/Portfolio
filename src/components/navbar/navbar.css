@@ -9,7 +9,7 @@ nav.white {
     justify-content: space-between;
     align-items: center;
 
-    height: 75px;
+    height: 75px; 
 }
 
 #navbar ul {
@@ -30,7 +30,7 @@ nav.white {
     margin-right: 20px;
 
     font-family: "Inter";
-    vertical-align:middle;
+    vertical-align: middle;
 }
 
 a.active {
@@ -43,7 +43,7 @@ a.active {
 }
 
 .desktop-view {
-    display: inline;
+    display: block;
 }
 
 .mobile-view {
@@ -61,16 +61,20 @@ a.active {
     }
 
     .mobile-view {
-        display: inline;
+        display: block;
     }
 
     #navbar-links {
+        overflow-y: scroll;
+        overflow-x: hidden;
         position: absolute;
         right: 0;
         top: 75px;
 
         height: calc(100vh - 75px);
-        display: flex;
+
+        display: block;
+
         flex-direction: column;
         justify-content: center;
 
@@ -85,6 +89,10 @@ a.active {
 
     #navbar-links.navbar-links-active {
         transform: translateX(0%);
+    }
+
+    #navbar ul {
+        display: inline;
     }
 
     #navbar ul li {

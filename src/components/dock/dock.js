@@ -5,7 +5,7 @@ import './dock.css';
 
 class Dock extends Component {
     render() {
-        return <div id="dock" className="blur-dark">
+        return <div id="dock" className="dock blur-dark">
             <center>
             <DockElement name="Elements"    icon="https://www.kekesi.dev/api/src/IMG-0.svg"/>
             <DockElement name="NASA Mira"   icon="https://www.kekesi.dev/api/src/IMG-1.png"/>
