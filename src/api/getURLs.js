@@ -16,8 +16,10 @@ function getURLs(type) {
 
     // map with location and matching type
     const types = new Map([
-        [ "/proj", "project" ],
-        [ "/img",  "image"   ]
+        [ "/proj",  "project" ],
+        [ "/img",   "image"   ],
+        [ "/skill", "skill"   ],
+        [ "/tool",  "tool"    ]
     ]);
 
     const invertedTypes = new Map(Array.from(types, a => a.reverse()));
