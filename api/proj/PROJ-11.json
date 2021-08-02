@@ -7,7 +7,8 @@
 	"skill": ["SKILL-1"],
 	"tool": ["TOOL-0"],
 	"description": "Lightweight, versatile desktop image viewer for Windows.",
-    "website": "https://moduleart.github.io/quick-picture-viewer/",
+	"download-link": null,
+    	"website": "https://moduleart.github.io/quick-picture-viewer/",
 	"featured-article": null,
 	"articles": null,
 	"style": null
