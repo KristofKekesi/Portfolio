@@ -9,7 +9,12 @@
 	"description": "Vinyls is a beautiful music player built with iOS design guidelines in mind. There are no complicated user accounts or settings to configure, so you can start listening to your music right away.",
 	"download-link": [
 		{
-			"type": "appstore",
+			"type": "app-store",
+			"link": "https://apps.apple.com/app/id1556054655",
+			"isAvailable": true
+		},
+		{
+			"type": "mac-app-store",
 			"link": "https://apps.apple.com/app/id1556054655",
 			"isAvailable": true
 		}

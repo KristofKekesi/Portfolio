@@ -4,6 +4,13 @@
 	"name": "DogeHouse",
 	"logo": "IMG-13",
 	"discord-icon": null,
+	"download-link": [
+		{
+			"type": "web-app",
+			"link": null,
+			"isAvailable": false
+		}
+	]
 	"skill": ["SKILL-1"],
 	"tool": ["TOOL-0"],
 	"description": "Taking voice conversations to the moon.",
