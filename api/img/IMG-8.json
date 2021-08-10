@@ -2,6 +2,9 @@
 	"id": "IMG-8",
 	"name": "Vinyls logo",
 	"url": "https://www.kekesi.dev/api/src/IMG-8.png",
+	"width": 230,
+	"height": 230,
 	"description": "The logo of Vinyls.",
-	"copyright": null
+	"copyright": "Shibab Mehbob",
+	"copyright-link": "https://www.pnguin.app/"
 }

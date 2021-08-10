@@ -3,5 +3,9 @@
 	"name": "Firebase logo",
 	"url": "https://www.kekesi.dev/api/src/IMG-22.png",
 	"description": "The logo of Firebase.",
-	"copyright": null
+	"width": 1600,
+	"height": 1600,
+	"copyright": "Google",
+	"copyright-link": "https://www.google.com/"
+}
 }

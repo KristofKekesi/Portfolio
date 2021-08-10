@@ -3,5 +3,8 @@
 	"name": "Files logo",
 	"url": "https://www.kekesi.dev/api/src/IMG-5.png",
 	"description": "The logo of Files.",
-	"copyright": null
+	"width": 1,
+	"height": 1,
+	"copyright": "Files"
+	"copyright-link": "https://files-community.github.io/"
 }

@@ -3,5 +3,8 @@
 	"name": "HTML logo",
 	"url": "https://www.kekesi.dev/api/src/IMG-19.png",
 	"description": "The logo of HTML.",
-	"copyright": null
+	"width": 288,
+	"height": 288,
+	"copyright": "W3C",
+	"copyright-link": "https://www.w3.org/"
 }

@@ -3,5 +3,8 @@
 	"name": "USSR Mira logo",
 	"url": "https://www.kekesi.dev/api/src/IMG-2.png",
 	"description": "The logo of USSR Mira.",
-	"copyright": null
+	"width": 2048,
+	"height": 2048,
+	"copyright": null,
+	"copyright-link": null
 }

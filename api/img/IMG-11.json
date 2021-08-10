@@ -3,5 +3,8 @@
 	"name": "Quick Picture Viewer logo",
 	"url": "https://www.kekesi.dev/api/src/IMG-11.png",
 	"description": "The logo of Quick Picture Viewer.",
-	"copyright": null
+	"width": 512,
+	"height": 512,
+	"copyright": "Module Art",
+	"copyright-link": "https://moduleart.github.io/"
 }

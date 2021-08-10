@@ -3,5 +3,8 @@
 	"name": "Elements logo",
 	"url": "https://www.kekesi.dev/api/src/IMG-0.svg",
 	"description": "The logo of Elements.",
-	"copyright": null
+	"width": 1,
+	"height": 1,
+	"copyright": null,
+	"copyright-link": null
 }

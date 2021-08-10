@@ -3,5 +3,8 @@
 	"name": "Replica logo",
 	"url": "https://www.kekesi.dev/api/src/IMG-10.png",
 	"description": "The logo of Replica.",
-	"copyright": null
+	"width": 460,
+	"height": 460,
+	"copyright": "Tiago Francisco Martinho",
+	"copyright-link": "https://www.replicaapp.com/"
 }

@@ -3,5 +3,8 @@
 	"name": "Flutter logo",
 	"url": "https://www.kekesi.dev/api/src/IMG-17.png",
 	"description": "The logo of Flutter.",
-	"copyright": null
+	"width": 192,
+	"height": 192,
+	"copyright": "Google",
+	"copyright-link": "https://www.google.com/"
 }

@@ -3,5 +3,8 @@
 	"name": "JavaScript logo",
 	"url": "https://www.kekesi.dev/api/src/IMG-18.png",
 	"description": "The logo of JavaScript.",
-	"copyright": null
+	"width": 288,
+	"height": 288,
+	"copyright": "Oracle",
+	"copyright-link": "https://www.oracle."
 }
