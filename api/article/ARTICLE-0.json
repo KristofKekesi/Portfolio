@@ -1,0 +1,98 @@
+{
+    "id": "ARTICLE-0",
+    "name": "Mobile Development",
+    "skills": ["SKILL-0"],
+    "tools": null,
+    "content": [
+        {
+            "type": "text-title",
+            "value": "After Web Development"
+        },
+        {
+            "type": "text-subtitle",
+            "value": "Second platform I've learned"
+        },
+        {
+            "type": "text",
+            "value": "After web development I started learning Flutter and Dart. I started working on NASA Mira but I stoped developing it after one month. I focused on other things that time so I dropped mobile development for half a year. Next year I continued Mobile Development with another idea. I made Elements, my first commercially available mobile app. That summer I shipped NASA Mira as well. 2020 was a big year in mobile development for me, I released Preacher that autumn."
+        },
+        {
+            "type": "section",
+            "content": [
+                {
+                    "type": "text-title",
+                    "value": "Mobile projects"
+                },
+                {
+                    "type": "text-subtitle",
+                    "value": "since 2020"
+                },
+                {
+                    "type": "text-subsubtitle",
+                    "value": "NASA Mira in 2020"
+                },
+                {
+                    "type": "text",
+                    "value": "NASA Mira was my first idea I made to a mobile app. It was simple but since I had no <abbr class='target' title='User Interface'>UI</abbr> / <abbr class='target' title='User Experience'>UX</abbr> experience the design was nowhere near the final 2021 product."
+                },
+                {
+                    "type": "gallery",
+                    "value": ["IMG-26", "IMG-27", "IMG-28", "IMG-29", "IMG-30"]
+                },
+                {
+                    "type": "text-subsubtitle",
+                    "value": "Elements in 2020"
+                },
+                {
+                    "type": "text",
+                    "value": "Elements was my first downloadable mobile app. I made it in Dart with Flutter. Since it's first version it has become more powerfull and usefull. It got an isotope update, more selectors and even more."
+                },
+                {
+                    "type": "gallery",
+                    "value": ["IMG-31", "IMG-32", "IMG-33", "IMG-34", "IMG-35", "IMG-36"]
+                },
+                {
+                    "type": "text-subsubtitle",
+                    "value": "Preacher in 2020"
+                },
+                {
+                    "type": "text",
+                    "value": "Preacher is an online religious book reader. Now it's only for hungarian books, but it's waiting for it's big update in 2022."
+                },
+                {
+                    "type": "gallery",
+                    "value": ["IMG-37", "IMG-38", "IMG-39"]
+                },
+                {
+                    "type": "text-subsubtitle",
+                    "value": "NASA Mira in 2021"
+                },
+                {
+                    "type": "text",
+                    "value": "NASA Mira version 2 is all about power and functionality. Since version previous versions it got a <abbr class='target' title='User Interface'>UI</abbr> and <abbr class='target' title='User Experience'>UX</abbr> refresh, more rover support and yet more to come in 2022 with version 2.5."
+                },
+                {
+                    "type": "gallery",
+                    "value": ["IMG-40", "IMG-41", "IMG-42", "IMG-43", "IMG-44"]
+                }
+            ]
+        },
+        {
+            "type": "text-title",
+            "value": "As for the future"
+        },
+        {
+            "type": "text-subtitle",
+            "value": "Mobile technologies I want to learn in 2022"
+        },
+        {
+            "type": "text",
+            "value": "Next year I want to learn Kotlin as I will be building a simple Android app with it. For this project I'm planning to use Supabase for cloud storage."
+        },
+        {
+            "type": "text",
+            "value": "I would like to learn Swift with UIKit and SwiftUI which, however is not certain since I don't have a Mac yet (Waiting for M1X MacBook Pro)."
+        }
+    ],
+    "style": null
+}

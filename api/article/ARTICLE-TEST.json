@@ -1,0 +1,37 @@
+{
+    "id": "ARTICLE-1",
+    "name": "Translation",
+    "skills": ["SKILL-1"],
+    "tools": null,
+    "content": [
+        {
+            "type": "text-title",
+            "value": "Terminal test"
+        },
+        {
+            "type": "text-subtitle",
+            "value": "GLHF"
+        },
+        {
+            "type": "terminal",
+            "code": "<p>Hellou</p>\n<br />",
+            "language": "html"
+        },
+        {
+            "type": "terminal",
+            "code": "{\n    'type': 'section',\n    'content': [\n        'hehe'\n    ]\n}",
+            "language": "json"
+        },
+        {
+            "type": "terminal",
+            "code": "$ echo $EDITOR\nvim\n$ git checkout main\nSwitched to branch 'main'\nYour branch is up-to-date with 'origin/main'.\n$ git push\nEverything up-to-date\n$ echo 'All\n> done!'\nAll\ndone!",
+            "language": "shell"
+        },
+        {
+            "type": "terminal",
+            "code": "//    TURTLE - TEKI\n//    (°-°) _______\n//      \\ \\/ - - - \\_\n//       \\_  ___  ___>\n//         \\__) \\__)",
+            "language": "js"
+        }
+    ],
+    "style": null
+}
