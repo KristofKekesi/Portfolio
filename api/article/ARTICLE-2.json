@@ -1,6 +1,7 @@
 {
     "id": "ARTICLE-1",
     "name": "Translation",
+    "isVisible": false,
     "skills": ["SKILL-1"],
     "tools": null,
     "content": [

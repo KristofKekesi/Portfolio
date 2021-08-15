@@ -1,6 +1,8 @@
 {
 	"id": "ARTICLE-ID",
 	"name": "Test Article",
+	"description": "Test article",
+	"isVisible": true,
 	"skills": ["SKILL-ID", "SKILL-ID"],
 	"tools": ["TOOL-ID", "TOOL-ID"],
 	"content": [

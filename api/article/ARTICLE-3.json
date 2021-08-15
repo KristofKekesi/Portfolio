@@ -1,0 +1,15 @@
+{
+    "id": "ARTICLE-1",
+    "name": "Understanding SVGs",
+    "description": "Article about SVGs and SVG animations",
+    "isVisible": true, 
+    "skills": [],
+    "tools": null,
+    "content": [
+        {
+            "type": "text-title",
+            "value": "What does SVG mean?"
+        }
+    ],
+    "style": null
+}

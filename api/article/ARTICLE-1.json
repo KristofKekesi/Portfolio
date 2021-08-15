@@ -1,6 +1,7 @@
 {
     "id": "ARTICLE-1",
     "name": "Web Development",
+    "isVisible": false, 
     "skills": ["SKILL-2"],
     "tools": null,
     "content": [
