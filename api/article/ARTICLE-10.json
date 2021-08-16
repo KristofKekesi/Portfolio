@@ -1,0 +1,15 @@
+{
+    "id": "ARTICLE-10",
+    "name": "How to make a Flutter package",
+    "description": "Make a widget to use in multiple projects",
+    "isVisible": true, 
+    "skills": [],
+    "tools": null,
+    "content": [
+        {
+            "type": "text-title",
+            "value": "What is a package?"
+        }
+    ],
+    "style": null
+}

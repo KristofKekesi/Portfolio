@@ -1,0 +1,15 @@
+{
+    "id": "ARTICLE-5",
+    "name": "Animating SVGs with Rive",
+    "description": "Using Rive to make multiplatform animations",
+    "isVisible": true, 
+    "skills": [],
+    "tools": null,
+    "content": [
+        {
+            "type": "text-title",
+            "value": "What is an SVG and how do they work?"
+        }
+    ],
+    "style": null
+}

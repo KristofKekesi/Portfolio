@@ -1,14 +1,14 @@
 {
-    "id": "ARTICLE-3",
-    "name": "Understanding SVGs",
-    "description": "Article about SVGs and SVG animations",
+    "id": "ARTICLE-4",
+    "name": "ShazamKit on Android",
+    "description": "Using Apple technologies on Android",
     "isVisible": true, 
     "skills": [],
     "tools": null,
     "content": [
         {
             "type": "text-title",
-            "value": "What does SVG mean?"
+            "value": "Shazam and ShazamKit"
         }
     ],
     "style": null

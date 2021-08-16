@@ -1,0 +1,11 @@
+{
+    "id": "ARTICLE-9",
+    "name": "Hardware for Flutter",
+    "description": "Building custom hardware with bluetooth",
+    "isVisible": true, 
+    "skills": [],
+    "tools": null,
+    "content": [
+    ],
+    "style": null
+}

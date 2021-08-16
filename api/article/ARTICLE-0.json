@@ -1,6 +1,7 @@
 {
     "id": "ARTICLE-0",
     "name": "Mobile Development",
+    "description": "",
     "isVisible": false,
     "skills": ["SKILL-0"],
     "tools": null,

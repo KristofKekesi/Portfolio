@@ -1,0 +1,15 @@
+{
+    "id": "ARTICLE-6",
+    "name": "How to null safety",
+    "description": "The whys and hows of using null safety in Flutter",
+    "isVisible": true, 
+    "skills": [],
+    "tools": null,
+    "content": [
+        {
+            "type": "text-title",
+            "value": "Why should I care?"
+        }
+    ],
+    "style": null
+}

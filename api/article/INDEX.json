@@ -3,5 +3,12 @@
 	{"id": "ARTICLE-1", "location": "http://www.kekesi.dev/api/article/ARTICLE-1.json"},
 	{"id": "ARTICLE-2", "location": "http://www.kekesi.dev/api/article/ARTICLE-2.json"},
 	{"id": "ARTICLE-3", "location": "http://www.kekesi.dev/api/article/ARTICLE-3.json"},
+	{"id": "ARTICLE-4", "location": "http://www.kekesi.dev/api/article/ARTICLE-4.json"},
+	{"id": "ARTICLE-5", "location": "http://www.kekesi.dev/api/article/ARTICLE-5.json"},
+	{"id": "ARTICLE-6", "location": "http://www.kekesi.dev/api/article/ARTICLE-6.json"},
+	{"id": "ARTICLE-7", "location": "http://www.kekesi.dev/api/article/ARTICLE-7.json"},
+	{"id": "ARTICLE-8", "location": "http://www.kekesi.dev/api/article/ARTICLE-8.json"},
+	{"id": "ARTICLE-9", "location": "http://www.kekesi.dev/api/article/ARTICLE-9.json"},
+	{"id": "ARTICLE-10", "location": "http://www.kekesi.dev/api/article/ARTICLE-10.json"},
 	{"id": "ARTICLE-TEST", "location": "http://www.kekesi.dev/api/article/ARTICLE-TEST.json"}
 ]

@@ -1,14 +1,14 @@
 {
-    "id": "ARTICLE-3",
-    "name": "Understanding SVGs",
-    "description": "Article about SVGs and SVG animations",
+    "id": "ARTICLE-8",
+    "name": "Understanding shaders",
+    "description": "The basics of GLSL shaders",
     "isVisible": true, 
     "skills": [],
     "tools": null,
     "content": [
         {
             "type": "text-title",
-            "value": "What does SVG mean?"
+            "value": "Shader: Code for the GPU"
         }
     ],
     "style": null
