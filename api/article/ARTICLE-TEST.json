@@ -1,7 +1,7 @@
 {
     "id": "ARTICLE-1",
-    "name": "Translation",
-    "desctiption": "",
+    "name": "Terminal test",
+    "desctiption": "For test purposes",
     "isVisible": false, 
     "skills": ["SKILL-1"],
     "tools": null,

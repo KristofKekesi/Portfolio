@@ -1,6 +1,6 @@
 {
     "id": "ARTICLE-5",
-    "name": "Animating SVGs with Rive",
+    "name": "Animating <abbr class='target' title='Scalable Vector Graphics'>SVG</abbr>s with Rive",
     "description": "Using Rive to make multiplatform animations",
     "isVisible": true, 
     "skills": [],

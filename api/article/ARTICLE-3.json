@@ -1,7 +1,7 @@
 {
     "id": "ARTICLE-3",
-    "name": "Understanding SVGs",
-    "description": "Article about SVGs and SVG animations",
+    "name": "Understanding <abbr class='target' title='Scalable Vector Graphics'>SVG</abbr>s",
+    "description": "Article about <abbr class='target' title='Scalable Vector Graphics'>SVG</abbr>s and <abbr class='target' title='Scalable Vector Graphics'>SVG</abbr> animations",
     "isVisible": true, 
     "skills": [],
     "tools": null,
