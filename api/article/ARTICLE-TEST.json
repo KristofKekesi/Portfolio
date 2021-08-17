@@ -7,10 +7,6 @@
     "tools": null,
     "content": [
         {
-			"type": "proj-bundle",
-			"id": "PROJ-BUNDLE-0"
-		},
-        {
             "type": "text-title",
             "value": "Terminal test"
         },
@@ -37,6 +33,23 @@
             "type": "terminal",
             "code": "//    TURTLE - TEKI\n//    (°-°) _______\n//      \\ \\/ - - - \\_\n//       \\_  ___  ___>\n//         \\__) \\__)",
             "language": "js"
+        },
+        {
+			"type": "proj-bundle",
+			"id": "PROJ-BUNDLE-0"
+		},
+        {
+            "type": "text-title",
+            "value": "Terminal test"
+        },
+        {
+            "type": "text-subtitle",
+            "value": "GLHF"
+        },
+        {
+            "type": "terminal",
+            "code": "<p>Hellou</p>\n<br />",
+            "language": "html"
         }
     ],
     "style": null
