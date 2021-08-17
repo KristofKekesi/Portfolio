@@ -38,10 +38,6 @@
                     "value": "NASA Mira was my first idea I made to a mobile app. It was simple but since I had no <abbr class='target' title='User Interface'>UI</abbr> / <abbr class='target' title='User Experience'>UX</abbr> experience the design was nowhere near the final 2021 product."
                 },
                 {
-                    "type": "gallery",
-                    "value": ["IMG-26", "IMG-27", "IMG-28", "IMG-29", "IMG-30"]
-                },
-                {
                     "type": "text-subsubtitle",
                     "value": "Elements in 2020"
                 },
