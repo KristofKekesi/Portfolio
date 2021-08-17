@@ -7,6 +7,10 @@
     "tools": null,
     "content": [
         {
+			"type": "proj-bundle",
+			"id": "PROJ-BUNDLE-0"
+		},
+        {
             "type": "text-title",
             "value": "Terminal test"
         },
