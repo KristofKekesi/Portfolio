@@ -80,6 +80,10 @@
             ]
         },
         {
+			"type": "proj-bundle",
+			"id": "PROJ-BUNDLE-0"
+		},
+        {
             "type": "text-title",
             "value": "As for the future"
         },
