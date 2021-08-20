@@ -27,7 +27,7 @@
                 },
                 {
                     "type": "text",
-                    "value": "I'm fluently speaking hungarian, my mother language. I'm currently learning english which I started in 2015, and german."
+                    "value": "I'm fluently speaking hungarian, my mother language. I'm currently learning english which I started in <a href='../timeline#2015'>2015</a>, and german."
                 },
                 {
                     "type": "text",

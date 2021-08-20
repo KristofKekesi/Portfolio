@@ -16,7 +16,7 @@
         },
         {
             "type": "text",
-            "value": "I started web development back in 2018 when I was 14 (seventh grader in hungary). I started learning <abbr class='target' title='HyperText Markup Language'>HTML</abbr>, <abbr class='target' title='Cascadian Style Sheet'>CSS</abbr>, and JavaScript, the good old frontend web stack. For two years I concentrated on learning other technologies (mostly mobile)."
+            "value": "I started web development back in <a href='../timeline#2018'>2018</a> when I was 14 (seventh grader in hungary). I started learning <abbr class='target' title='HyperText Markup Language'>HTML</abbr>, <abbr class='target' title='Cascadian Style Sheet'>CSS</abbr>, and JavaScript, the good old frontend web stack. For two years I concentrated on learning other technologies (mostly mobile)."
         },
         {
             "type": "text",
@@ -31,11 +31,11 @@
                 },
                 {
                     "type": "text-subtitle",
-                    "value": "My work since 2018"
+                    "value": "My work since <a href='../timeline#2018'>2018</a>"
                 },
                 {
                     "type": "text-subsubtitle",
-                    "value": "kekesi.dev in 2020"
+                    "value": "kekesi.dev in <a href='../timeline#2020'>2020</a>"
                 },
                 {
                     "type": "text",
@@ -47,7 +47,7 @@
                 },
                 {
                     "type": "text-subsubtitle",
-                    "value": "kekesi.dev in 2021"
+                    "value": "kekesi.dev in <a href='../timeline#2021'>2021</a>"
                 },
                 {
                     "type": "text",
