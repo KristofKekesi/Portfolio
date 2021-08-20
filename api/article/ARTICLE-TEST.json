@@ -39,6 +39,14 @@
 			"id": "PROJ-BUNDLE-0"
 		},
         {
+			"type": "article-preview-big",
+			"id": "TEST"
+		},
+        {
+			"type": "article-preview-smoll",
+			"id": "TEST"
+		},
+        {
             "type": "text-title",
             "value": "Terminal test"
         },

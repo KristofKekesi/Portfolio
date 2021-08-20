@@ -31,6 +31,14 @@
 			"id": ["IMG-ID", "IMG-ID"]
 		},
 		{
+			"type": "article-preview-big",
+			"id": "ARTICLE-ID"
+		},
+		{
+			"type": "article-preview-smoll",
+			"id": "ARTICLE-ID"
+		},
+		{
 			"type": "text",
 			"value": "## Markdown stuff\nhehe"
 		},
