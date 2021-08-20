@@ -32,11 +32,11 @@
 		},
 		{
 			"type": "article-preview-big",
-			"id": "ARTICLE-ID"
+			"IDs": ["ARTICLE-ID"]
 		},
 		{
 			"type": "article-preview-smoll",
-			"id": "ARTICLE-ID"
+			"IDs": ["ARTICLE-ID"]
 		},
 		{
 			"type": "text",

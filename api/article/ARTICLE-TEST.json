@@ -40,11 +40,11 @@
 		},
         {
 			"type": "article-preview-big",
-			"id": "TEST"
+			"IDs": ["ARTICLE-TEST", "ARTICLE-4"]
 		},
         {
-			"type": "article-preview-smoll",
-			"id": "TEST"
+			"type": "article-preview-big",
+			"IDs": ["ARTICLE-TEST", "ARTICLE-4"]
 		},
         {
             "type": "text-title",
