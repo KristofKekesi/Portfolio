@@ -16,7 +16,7 @@
         },
         {
             "type": "text",
-            "value": "After web development I started learning Flutter and Dart. I started working on NASA Mira but I stoped developing it after one month. I focused on other things that time so I dropped mobile development for half a year. Next year I continued Mobile Development with another idea. I made Elements, my first commercially available mobile app. That summer I shipped NASA Mira as well. <a href='../timeline#2020'>2020</a> was a big year in mobile development for me, I released Preacher that autumn."
+            "value": "After web development I started learning Flutter and Dart. I started working on NASA Mira but I stoped developing it after one month. I focused on other things that time so I dropped mobile development for half a year. Next year I continued Mobile Development with another idea. I made Elements, my first commercially available mobile app. That summer I shipped NASA Mira as well. <a class='target' href='../timeline#2020'>2020</a> was a big year in mobile development for me, I released Preacher that autumn."
         },
         {
             "type": "section",
@@ -27,19 +27,19 @@
                 },
                 {
                     "type": "text-subtitle",
-                    "value": "since <a href='../timeline#2020'>2020</a>"
+                    "value": "since <a class='target' href='../timeline#2020'>2020</a>"
                 },
                 {
                     "type": "text-subsubtitle",
-                    "value": "NASA Mira in <a href='../timeline#2020'>2020</a>"
+                    "value": "NASA Mira in <a class='target' href='../timeline#2020'>2020</a>"
                 },
                 {
                     "type": "text",
-                    "value": "NASA Mira was my first idea I made to a mobile app. It was simple but since I had no <abbr class='target' title='User Interface'>UI</abbr> / <abbr class='target' title='User Experience'>UX</abbr> experience the design was nowhere near the final <a href='../timeline#2021'>2021</a> product."
+                    "value": "NASA Mira was my first idea I made to a mobile app. It was simple but since I had no <abbr class='target' title='User Interface'>UI</abbr> / <abbr class='target' title='User Experience'>UX</abbr> experience the design was nowhere near the final <a class='target' href='../timeline#2021'>2021</a> product."
                 },
                 {
                     "type": "text-subsubtitle",
-                    "value": "Elements in <a href='../timeline#2020'>2020</a>"
+                    "value": "Elements in <a class='target' href='../timeline#2020'>2020</a>"
                 },
                 {
                     "type": "text",
@@ -51,7 +51,7 @@
                 },
                 {
                     "type": "text-subsubtitle",
-                    "value": "Preacher in <a href='../timeline#2020'>2020</a>"
+                    "value": "Preacher in <a class='target' href='../timeline#2020'>2020</a>"
                 },
                 {
                     "type": "text",
@@ -63,7 +63,7 @@
                 },
                 {
                     "type": "text-subsubtitle",
-                    "value": "NASA Mira in <a href='../timeline#2021'>2021</a>"
+                    "value": "NASA Mira in <a class='target' href='../timeline#2021'>2021</a>"
                 },
                 {
                     "type": "text",
