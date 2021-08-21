@@ -90,6 +90,14 @@
                     "value": ["IMG-31", "IMG-32", "IMG-33", "IMG-34", "IMG-35", "IMG-36"]
                 }
             ]
+        },
+        {
+            "type": "text-title",
+            "value": "As for the future"
+        },
+        {
+            "type": "text",
+            "value": "I'm always stashing some pictures for later. For those you can wait on my Instagram account."
         }
     ],
     "style": null
