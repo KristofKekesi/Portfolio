@@ -1,5 +1,5 @@
 {
-    "id": "ARTICLE-0",
+    "id": "ARTICLE-12",
     "name": "Photography",
     "description": "",
     "isVisible": false,
@@ -12,7 +12,7 @@
         },
         {
             "type": "text",
-            "value": "Since I started making photos I'm using a Panasonic Lumix DMC-FZ200. It's an <abbr class='target' title='Single-lens Reflex Camera'>SLR</abbr> as my main camera. Since I bought my iPhone 11 I'm using that as well for taking photos."
+            "value": "Since I started making photos I'm using a Panasonic Lumix DMC-FZ200. It's an <abbr class='target' title='Single-lens Reflex Camera'>SLR</abbr> as my main camera. Since I bought my iPhone 11 I'm using that as well for taking photos as well as mirrors for some illusions."
         },
         {
             "type": "section",
