@@ -1,0 +1,15 @@
+{
+    "id": "ARTICLE-10",
+    "name": "React website to a <abbr class='target' title='Progressive Web App'>PWA</abbr>",
+    "description": "How I made my portfolio website to a <abbr class='target' title='Progressive Web App'>PWA</abbr>",
+    "isVisible": true, 
+    "skills": ["SKILL-2"],
+    "tools": null,
+    "content": [
+        {
+            "type": "text-title",
+            "value": "Border between a website and a <abbr class='target' title='Progressive Web App'>PWA</abbr>"
+        }
+    ],
+    "style": null
+}
