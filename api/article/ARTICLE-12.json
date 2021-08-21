@@ -1,0 +1,96 @@
+{
+    "id": "ARTICLE-0",
+    "name": "Photography",
+    "description": "",
+    "isVisible": false,
+    "skills": ["SKILL-3"],
+    "tools": null,
+    "content": [
+        {
+            "type": "text-title",
+            "value": "How I make my photos?"
+        },
+        {
+            "type": "text",
+            "value": "Since I started making photos I'm using a Panasonic Lumix DMC-FZ200. It's an <abbr class='target' title='Single-lens Reflex Camera'>SLR</abbr> as my main camera. Since I bought my iPhone 11 I'm using that as well for taking photos."
+        },
+        {
+            "type": "section",
+            "content": [
+                {
+                    "type": "text-title",
+                    "value": "Architectural and Interior photography"
+                },
+                {
+                    "type": "text-subsubtitle",
+                    "value": "Buildings and Monuments"
+                },
+                {
+                    "type": "gallery",
+                    "value": ["IMG-31", "IMG-32", "IMG-33", "IMG-34", "IMG-35", "IMG-36"]
+                },
+                {
+                    "type": "text-subsubtitle",
+                    "value": "Interiors"
+                },
+                {
+                    "type": "gallery",
+                    "value": ["IMG-31", "IMG-32", "IMG-33", "IMG-34", "IMG-35", "IMG-36"]
+                }
+            ]
+        },
+        {
+            "type": "section",
+            "content": [
+                {
+                    "type": "text-title",
+                    "value": "Urban photography"
+                },
+                {
+                    "type": "gallery",
+                    "value": ["IMG-31", "IMG-32", "IMG-33", "IMG-34", "IMG-35", "IMG-36"]
+                }
+            ]
+        },
+        {
+            "type": "section",
+            "content": [
+                {
+                    "type": "text-title",
+                    "value": "Nature photography"
+                },
+                {
+                    "type": "gallery",
+                    "value": ["IMG-31", "IMG-32", "IMG-33", "IMG-34", "IMG-35", "IMG-36"]
+                }
+            ]
+        },
+        {
+            "type": "section",
+            "content": [
+                {
+                    "type": "text-title",
+                    "value": "Product photography"
+                },
+                {
+                    "type": "gallery",
+                    "value": ["IMG-31", "IMG-32", "IMG-33", "IMG-34", "IMG-35", "IMG-36"]
+                }
+            ]
+        },
+        {
+            "type": "section",
+            "content": [
+                {
+                    "type": "text-title",
+                    "value": "Others"
+                },
+                {
+                    "type": "gallery",
+                    "value": ["IMG-31", "IMG-32", "IMG-33", "IMG-34", "IMG-35", "IMG-36"]
+                }
+            ]
+        }
+    ],
+    "style": null
+}

@@ -8,7 +8,7 @@
     "content": [
         {
             "type": "text-title",
-            "value": "Border between a website and a <abbr class='target' title='Progressive Web App'>PWA</abbr>"
+            "value": "The border between a website and a <abbr class='target' title='Progressive Web App'>PWA</abbr>"
         }
     ],
     "style": null
