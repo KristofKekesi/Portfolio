@@ -52,11 +52,11 @@
                 },
                 {
                     "type": "gallery",
-                    "value": ["IMG-51", "IMG-55", "IMG-65", "IMG-71"]
+                    "value": ["IMG-51", "IMG-55", "IMG-65", "IMG-84"]
                 },
                 {
                     "type": "gallery",
-                    "value": ["IMG-74", "IMG-75", "IMG-84"]
+                    "value": ["IMG-74", "IMG-75", "IMG-71"]
                 }
             ]
         },
@@ -77,11 +77,11 @@
                 },
                 {
                     "type": "gallery",
-                    "value": ["IMG-83", "IMG-90", "IMG-94", "IMG-69"]
+                    "value": ["IMG-83", "IMG-90", "IMG-94"]
                 },
                 {
                     "type": "gallery",
-                    "value": ["IMG-70", "IMG-64", "IMG-96"]
+                    "value": ["IMG-69", "IMG-70", "IMG-64", "IMG-96"]
                 },
                 {
                     "type": "text-subsubtitle",
