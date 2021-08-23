@@ -27,11 +27,11 @@
                 },
                 {
                     "type": "gallery",
-                    "value": ["IMG-100", "IMG-92", "IMG-86", "IMG-65"]
+                    "value": ["IMG-100", "IMG-92", "IMG-86", "IMG-101"]
                 },
                 {
                     "type": "gallery",
-                    "value": ["IMG-101", "IMG-93", "IMG-52", "IMG-53", "IMG-72"]
+                    "value": ["IMG-93", "IMG-81", "IMG-53", "IMG-72"]
                 },
                 {
                     "type": "text-subsubtitle",
@@ -52,7 +52,11 @@
                 },
                 {
                     "type": "gallery",
-                    "value": ["IMG-31", "IMG-32", "IMG-33", "IMG-34", "IMG-35", "IMG-36"]
+                    "value": ["IMG-51", "IMG-55", "IMG-56", "IMG-71"]
+                },
+                {
+                    "type": "gallery",
+                    "value": ["IMG-74", "IMG-75", "IMG-84"]
                 }
             ]
         },
@@ -64,21 +68,52 @@
                     "value": "Nature photography"
                 },
                 {
-                    "type": "gallery",
-                    "value": ["IMG-31", "IMG-32", "IMG-33", "IMG-34", "IMG-35", "IMG-36"]
-                }
-            ]
-        },
-        {
-            "type": "section",
-            "content": [
-                {
-                    "type": "text-title",
-                    "value": "Product photography"
+                    "type": "text-subsubtitle",
+                    "value": "Animals"
                 },
                 {
                     "type": "gallery",
                     "value": ["IMG-31", "IMG-32", "IMG-33", "IMG-34", "IMG-35", "IMG-36"]
+                },
+                {
+                    "type": "text-subsubtitle",
+                    "value": "Animals"
+                },
+                {
+                    "type": "gallery",
+                    "value": ["IMG-31", "IMG-32", "IMG-33", "IMG-34", "IMG-35", "IMG-36"]
+                },
+                {
+                    "type": "text-subsubtitle",
+                    "value": "Plants and Flowers"
+                },
+                {
+                    "type": "gallery",
+                    "value": ["IMG-59", "IMG-60", "IMG-61", "IMG-80"]
+                },
+                {
+                    "type": "gallery",
+                    "value": ["IMG-83", "IMG-90", "IMG-94", "IMG-69"]
+                },
+                {
+                    "type": "gallery",
+                    "value": ["IMG-70", "IMG-64", "IMG-96"]
+                },
+                {
+                    "type": "gallery",
+                    "value": ["IMG-54", "IMG-56", "IMG-57", "IMG-58", "IMG-62"]
+                },
+                {
+                    "type": "gallery",
+                    "value": ["IMG-76", "IMG-77", "IMG-79", "IMG-82", "IMG-85"]
+                },
+                {
+                    "type": "gallery",
+                    "value": ["IMG-87", "IMG-88", "IMG-90", "IMG-91", "IMG-94"]
+                },
+                {
+                    "type": "gallery",
+                    "value": ["IMG-98", "IMG-99", "IMG-104"]
                 }
             ]
         },
@@ -91,7 +126,11 @@
                 },
                 {
                     "type": "gallery",
-                    "value": ["IMG-31", "IMG-32", "IMG-33", "IMG-34", "IMG-35", "IMG-36"]
+                    "value": ["IMG-49", "IMG-63", "IMG-66", "IMG-67"]
+                },
+                {
+                    "type": "gallery",
+                    "value": ["IMG-68", "IMG-73", "IMG-95", "IMG-97"]
                 }
             ]
         },
