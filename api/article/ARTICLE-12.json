@@ -73,22 +73,6 @@
                 },
                 {
                     "type": "gallery",
-                    "value": ["IMG-31", "IMG-32", "IMG-33", "IMG-34", "IMG-35", "IMG-36"]
-                },
-                {
-                    "type": "text-subsubtitle",
-                    "value": "Animals"
-                },
-                {
-                    "type": "gallery",
-                    "value": ["IMG-31", "IMG-32", "IMG-33", "IMG-34", "IMG-35", "IMG-36"]
-                },
-                {
-                    "type": "text-subsubtitle",
-                    "value": "Plants and Flowers"
-                },
-                {
-                    "type": "gallery",
                     "value": ["IMG-59", "IMG-60", "IMG-61", "IMG-80"]
                 },
                 {
@@ -98,6 +82,10 @@
                 {
                     "type": "gallery",
                     "value": ["IMG-70", "IMG-64", "IMG-96"]
+                },
+                {
+                    "type": "text-subsubtitle",
+                    "value": "Plants and Flowers"
                 },
                 {
                     "type": "gallery",
