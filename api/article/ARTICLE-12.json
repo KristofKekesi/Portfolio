@@ -89,6 +89,10 @@
                 },
                 {
                     "type": "gallery",
+                    "value": ["IMG-76", "IMG-58", "IMG-99" , "IMG-88"]
+                },
+                {
+                    "type": "gallery",
                     "value": ["IMG-45", "IMG-46", "IMG-56", "IMG-85", "IMG-104"]
                 },
                 {
@@ -98,10 +102,6 @@
                 {
                     "type": "gallery",
                     "value": ["IMG-62", "IMG-52", "IMG-51", "IMG-57", "IMG-91"]
-                },
-                {
-                    "type": "gallery",
-                    "value": ["IMG-76", "IMG-58", "IMG-99" , "IMG-88"]
                 }
             ]
         },
