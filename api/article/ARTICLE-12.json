@@ -27,7 +27,11 @@
                 },
                 {
                     "type": "gallery",
-                    "value": ["IMG-31", "IMG-32", "IMG-33", "IMG-34", "IMG-35", "IMG-36"]
+                    "value": ["IMG-100", "IMG-92", "IMG-86", "IMG-65"]
+                },
+                {
+                    "type": "gallery",
+                    "value": ["IMG-101", "IMG-93", "IMG-52", "IMG-53", "IMG-72"]
                 },
                 {
                     "type": "text-subsubtitle",
@@ -35,7 +39,7 @@
                 },
                 {
                     "type": "gallery",
-                    "value": ["IMG-31", "IMG-32", "IMG-33", "IMG-34", "IMG-35", "IMG-36"]
+                    "value": ["IMG-78", "IMG-89", "IMG-102", "IMG-103"]
                 }
             ]
         },
