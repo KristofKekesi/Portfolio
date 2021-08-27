@@ -3,8 +3,8 @@
 	"name": "GitHub logo",
 	"url": "https://www.kekesi.dev/api/src/IMG-15.png",
 	"description": "The logo of GitHub.",
-	"width": 120,
-	"height": 120,
+	"width": 512,
+	"height": 512,
 	"copyright": "GitHub",
 	"copyright-link": "https://github.com/"
 }
