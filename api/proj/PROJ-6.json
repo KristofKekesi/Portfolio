@@ -5,7 +5,7 @@
 	"logo": "IMG-6",
 	"discord-icon": null,
 	"skill": ["SKILL-1"],
-	"tool": ["TOOL-0"],
+	"madeWith": ["GitHub"],
 	"description": "A modern, lightweight text editor with a minimalist design.",
 	"download-link": [
 		{

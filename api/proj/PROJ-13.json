@@ -12,7 +12,7 @@
 		}
 	],
 	"skill": ["SKILL-1"],
-	"tool": ["TOOL-0"],
+	"madeWith": ["GitHub"],
 	"description": "Taking voice conversations to the moon.",
     "website": "https://www.dogehouse.tv",
 	"featured-article": null,
