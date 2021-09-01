@@ -5,7 +5,7 @@
 	"logo": "IMG-14",
 	"discord-icon": null,
 	"skill": ["SKILL-1"],
-	"madeWith": [],
+	"tool": ["TOOL-0"],
 	"description": "A Modern Dual Pane File Manager for Windows 10 and Windows 10X Devices.",
 	"download-link": [
 		{

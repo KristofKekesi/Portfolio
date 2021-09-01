@@ -5,7 +5,7 @@
 	"logo": "IMG-7",
 	"discord-icon": null,
 	"skill": ["SKILL-1"],
-	"madeWith": ["GitHub"],
+	"tool": ["TOOL-0"],
 	"description": "Play ambient sounds and create mixes to help you focus, sleep, or meditate.",
 	"download-link": [
 		{

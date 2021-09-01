@@ -6,7 +6,7 @@
 	"discord-icon": "<:nasamira:834421272535367690>",
 	"version": "3.0",
 	"skill": ["SKILL-0"],
-	"madeWith": ["Dart", "Flutter", "GitHub", "Android Studio"],
+	"tool": ["TOOL-0", "TOOL-1", "TOOL-2"],
 	"description": "An app to search for images made by NASA's mars vehicles. It also provides specifications of the rovers.",
 	"download-link": [
 		{

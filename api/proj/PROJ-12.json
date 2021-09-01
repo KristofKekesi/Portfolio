@@ -6,7 +6,7 @@
 	"discord-icon": null,
 	"version": "1.0.1",
 	"skill": ["SKILL-0"],
-	"madeWith": ["Dart", "Firebase", "Flutter", "GitHub", "Android Studio"],
+	"tool": ["TOOL-0", "TOOL-1", "TOOL-2"],
 	"description": "A community based trash map to help you pickup trash easier.",
 	"download-link": [
 		{

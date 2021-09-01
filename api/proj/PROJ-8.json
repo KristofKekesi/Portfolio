@@ -5,7 +5,7 @@
 	"logo": "IMG-8",
 	"discord-icon": null,
 	"skill": ["SKILL-1"],
-	"madeWith": [],
+	"tool": null,
 	"description": "Vinyls is a beautiful music player built with iOS design guidelines in mind. There are no complicated user accounts or settings to configure, so you can start listening to your music right away.",
 	"download-link": [
 		{
