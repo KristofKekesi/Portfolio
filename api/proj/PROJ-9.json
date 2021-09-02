@@ -5,7 +5,7 @@
 	"logo": "IMG-9",
 	"discord-icon": null,
 	"skill": ["SKILL-1"],
-	"tool": ["TOOL-0"],
+	"madeWith": ["GitHub"],
 	"description": "Quick Pad makes note taking easy. Features such as compact overlay let you keep the app on top of other windows and be more productive.",
 	"download-link": [
 		{

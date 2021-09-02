@@ -5,7 +5,7 @@
 	"logo": "IMG-5",
 	"discord-icon": null,
 	"skill": ["SKILL-1"],
-	"tool": ["TOOL-0"],
+	"madeWith": ["GitHub"],
 	"description": "Meet Files, an enthusiast take on what a modern file explorer should be.",
 	"download-link": [
 		{

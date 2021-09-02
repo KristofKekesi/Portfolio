@@ -6,7 +6,7 @@
 	"discord-icon": null,
 	"version": "1.0",
 	"skill": ["SKILL-0"],
-	"tool": ["TOOL-0", "TOOL-1", "TOOL-2"],
+	"madeWith": ["Dart", "Flutter", "GitHub", "Android Studio"],
 	"description": "An app to search the european mars vehicles. It also provides specifications of the rovers, orbiters and other space vehicles.",
 	"download-link": [
 		{
