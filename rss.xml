@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+    <channel>
+        <title>Kristóf Kékesi RSS test</title>
+        <description>RSS test</description>
+        <link>http://www.kekesi.dev/</link>
+        <lastBuildDate>Mon, 06 Sep 2019 00:00:00 +0000 </lastBuildDate>
+        <pubDate>Sun, 06 Aug 2019 15:20:00 +0000</pubDate>
+        <ttl>1800</ttl>
+
+        <item>
+            <title>Test page</title>
+            <description>hehe</description>
+            <link>https://www.kekesi.dev/</link>
+            <guid>https://www.kekesi.dev/</guid>
+            <pubDate>Sun, 06 Sep 2019 15:20:00 +0000</pubDate>
+        </item>
+
+    </channel>
+</rss>
