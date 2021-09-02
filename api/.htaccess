@@ -1,2 +1,2 @@
-RewriteCond %{HTTP_HOST} ^kekesi.dev$ [NC]
-RewriteRule (.*) http://www.kekesi.dev/$1 [R=301,L] 
+RewriteCond %{HTTP_HOST} ^example.com$ [NC]
+RewriteRule (.*) http://www.example.com/$1 [R=301,L] 
