@@ -14,6 +14,11 @@
 			"isAvailable": true
 		},
 		{
+			"type": "apple-tv-app-store",
+			"link": "https://apps.apple.com/app/id1556054655",
+			"isAvailable": true
+		},
+		{
 			"type": "mac-app-store",
 			"link": "https://apps.apple.com/app/id1556054655",
 			"isAvailable": true
