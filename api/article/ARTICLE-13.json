@@ -1,0 +1,43 @@
+{
+    "id": "ARTICLE-13",
+    "name": "About",
+    "description": "More informations about me",
+    "isVisible": false, 
+    "skills": ["SKILL-0", "SKILL-1", "SKILL-2", "SKILL-3"],
+    "tools": ["Dart", "JavaScript", "Python", "CSS", "HTML", "Firebase", "Flutter", "React", "GitHub", "Android Studio", "PyCharm", "Visual Studio Code", "WebStorm"],
+    "content": [
+        {
+            "type": "text-title",
+            "value": "$ whoami"
+        },
+        {
+            "type": "text",
+            "value": "My name is Kristóf Kékesi. I'm a 17 years old Hungarian programmer. I'm currently studing in a Hungarian high school near Budapest, from where I will be graduating in 2023 as a math and <abbr class='target', title='Computer Science'>CS major."
+        },
+        {
+            "type": "text-title",
+            "value": "Previously"
+        },
+        {
+            "type": "text-subtitle",
+            "value": "Web Development"
+        },
+        {
+            "type": "text",
+            "value": "I started learning web development in 2018. Since then I tried myself in other platforms as well."
+        },
+        {
+            "type": "text",
+            "value": "2020 was the first year I took programming seriosly. I started making my porfolio site where I could display my projects. For that I bought this domain. The site was never really finished, so I rewrote the entire site from ground up using React and JavaScript."
+        },
+        {
+			"type": "article-preview-smoll",
+			"IDs": ["ARTICLE-1"]
+		},
+        {
+            "type": "text-subtitle",
+            "value": "Mobile Development"
+        }
+    ],
+    "style": null
+}
