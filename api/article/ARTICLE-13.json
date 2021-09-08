@@ -12,7 +12,7 @@
         },
         {
             "type": "text",
-            "value": "My name is Kristóf Kékesi. I'm a 17 years old Hungarian programmer. I'm currently studing in a Hungarian high school near Budapest, from where I will be graduating in 2023 as a math and <abbr class='target', title='Computer Science'>CS major."
+            "value": "My name is Kristóf Kékesi. I'm a 17 years old Hungarian programmer. I'm currently studing in a Hungarian high school near Budapest, from where I will be graduating in 2023 as a math and <abbr class='target', title='Computer Science'>CS</abbr> major."
         },
         {
             "type": "text-title",
