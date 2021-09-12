@@ -2,6 +2,7 @@
     "id": "ARTICLE-5",
     "name": "Animating <abbr class='target' title='Scalable Vector Graphics'>SVG</abbr>s with Rive",
     "description": "Using Rive to make multiplatform animations",
+    "cover": "IMG-115",
     "isVisible": true, 
     "skills": [],
     "tools": null,

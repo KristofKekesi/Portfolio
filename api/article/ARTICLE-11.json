@@ -2,6 +2,7 @@
     "id": "ARTICLE-11",
     "name": "React website to a <abbr class='target' title='Progressive Web App'>PWA</abbr>",
     "description": "How I made my portfolio website to a <abbr class='target' title='Progressive Web App'>PWA</abbr>",
+    "cover": "IMG-121",
     "isVisible": true, 
     "skills": ["SKILL-2"],
     "tools": null,

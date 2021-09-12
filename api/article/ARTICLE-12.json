@@ -2,6 +2,7 @@
     "id": "ARTICLE-12",
     "name": "Photography",
     "description": "",
+    "cover": "IMG-122",
     "isVisible": false,
     "skills": ["SKILL-3"],
     "tools": null,

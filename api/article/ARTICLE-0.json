@@ -2,6 +2,7 @@
     "id": "ARTICLE-0",
     "name": "Mobile Development",
     "description": "",
+    "cover": "IMG-110",
     "isVisible": false,
     "skills": ["SKILL-0"],
     "tools": null,

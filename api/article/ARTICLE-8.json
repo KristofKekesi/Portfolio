@@ -2,6 +2,7 @@
     "id": "ARTICLE-8",
     "name": "Understanding shaders",
     "description": "The basics of <abbr class='target' title='OpenGL Shading Language'>GLSL</abbr> shaders",
+    "cover": "IMG-118",
     "isVisible": true, 
     "skills": [],
     "tools": null,

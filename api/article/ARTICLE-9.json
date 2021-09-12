@@ -2,6 +2,7 @@
     "id": "ARTICLE-9",
     "name": "Hardware for Flutter",
     "description": "Building custom hardware with bluetooth",
+    "cover": "IMG-119",
     "isVisible": true, 
     "skills": [],
     "tools": null,

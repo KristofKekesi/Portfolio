@@ -2,6 +2,7 @@
     "id": "ARTICLE-2",
     "name": "Translation",
     "description": "",
+    "cover": "IMG-112",
     "isVisible": false,
     "skills": ["SKILL-1"],
     "tools": null,
