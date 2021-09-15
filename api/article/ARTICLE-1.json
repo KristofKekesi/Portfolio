@@ -2,7 +2,7 @@
     "id": "ARTICLE-1",
     "name": "Web Development",
     "description": "",
-    "cover": "IMG-111",
+    "cover": "IMG-110",
     "isVisible": false, 
     "skills": ["SKILL-2"],
     "tools": null,

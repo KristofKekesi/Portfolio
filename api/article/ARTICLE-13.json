@@ -2,7 +2,7 @@
     "id": "ARTICLE-13",
     "name": "About",
     "description": "More informations about me",
-    "cover": "IMG-123",
+    "cover": "IMG-111",
     "isVisible": false, 
     "skills": ["SKILL-0", "SKILL-1", "SKILL-2", "SKILL-3"],
     "tools": ["Dart", "JavaScript", "Python", "CSS", "HTML", "Firebase", "Flutter", "React", "GitHub", "Android Studio", "PyCharm", "Visual Studio Code", "WebStorm"],
