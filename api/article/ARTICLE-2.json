@@ -13,7 +13,7 @@
         },
         {
             "type": "text",
-            "value": "More and more people can understand english, but it's still a small portion of the hungarian population. Basic tools (like the first project I translated) should be available for anyone, especially if they are as good as <a class='target' href=\"../project?6-Notepads\">Notepads</a> or <a class='target' href=\"../project?5-Files\">Files</a>."
+            "value": "More and more people can understand english, but it's still a small portion of the hungarian population. Basic tools (like the first project I translated) should be available for anyone, especially if they are as good as <a class='target' href='../#/project?6-Notepads'>Notepads</a> or <a class='target' href='../#/project?5-Files'>Files</a>."
         },
         {
             "type": "section",
@@ -28,7 +28,7 @@
                 },
                 {
                     "type": "text",
-                    "value": "I'm fluently speaking hungarian, my mother language. I'm currently learning english which I started in <a class='target' href='../timeline#2015'>2015</a>, and german."
+                    "value": "I'm fluently speaking hungarian, my mother language. I'm currently learning english which I started in <a class='target' href='../#/timeline#2015'>2015</a>, and german."
                 },
                 {
                     "type": "text",
