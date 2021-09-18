@@ -38,6 +38,10 @@
         {
             "type": "text-subtitle",
             "value": "Mobile Development"
+        },
+        {
+            "type": "text",
+            "value": "After I learnt the basics of the web I started making apps for mobiles. In 2020 I'we released several mobile apps including Elements and NASA Mira. For now I only know Flutter, but in the future I would like to learn Swift and Kotlin."
         }
     ],
     "style": null

@@ -28,7 +28,7 @@
                 },
                 {
                     "type": "text-subtitle",
-                    "value": "since <a class='target' href='../timeline#2020'>2020</a>"
+                    "value": "since <a class='target' href='../#/timeline#2020'>2020</a>"
                 },
                 {
                     "type": "text-subsubtitle",
