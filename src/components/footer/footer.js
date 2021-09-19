@@ -46,7 +46,7 @@ function Footer() {
                     <li>
                         RSS
                         <ul>
-                            <li><a className="target" href="https://raw.githubusercontent.com/KristofKekesi/Portfolio/master/rss.xml">Subscribe</a></li>
+                            <li><a className="target" href="https://rss.kekesi.dev/rss.xml">Subscribe</a></li>
                         </ul>
                     </li>
                 </ul>
