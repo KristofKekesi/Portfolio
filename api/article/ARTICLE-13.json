@@ -50,6 +50,30 @@
         {
             "type": "text-title",
             "value": "As for the future"
+        },
+        {
+            "type": "text-subtitle",
+            "value": "Web Development"
+        },
+        {
+            "type": "text",
+            "value": "I'm planning to make Preacher available for the users of the web. For this project I'm planning to use Vue.js or Ruby on Rails."
+        },
+        {
+            "type": "text",
+            "value": "For a future yet nameless project I'm planning to use Next.js, Tailwind CSS for buildingm and Vercel for hosting."
+        },
+        {
+            "type": "text-subtitle",
+            "value": "Mobile Development"
+        },
+        {
+            "type": "text",
+            "value": "Next year I want to learn Kotlin as I will be building a simple Android app with it. For this project I'm planning to use Supabase for cloud storage."
+        },
+        {
+            "type": "text",
+            "value": "I would like to learn Swift with UIKit and SwiftUI which, however this is not certain since I don't have a Mac yet (Waiting for the M1X MacBook Pro)."
         }
     ],
     "style": null

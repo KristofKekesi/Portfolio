@@ -71,6 +71,10 @@
         {
             "type": "text",
             "value": "I'm planning to make Preacher available for the users of the web. For this project I'm planning to use Vue.js or Ruby on Rails."
+        },
+        {
+            "type": "text",
+            "value": "For a future yet nameless project I'm planning to use Next.js, Tailwind CSS for buildingm and Vercel for hosting."
         }
     ],
     "style": null
