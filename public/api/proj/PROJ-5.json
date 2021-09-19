@@ -1,0 +1,21 @@
+{
+	"id": "PROJ-5",
+	"role": ["a Translator"],
+	"name": "Files",
+	"logo": "IMG-5",
+	"discord-icon": null,
+	"skill": ["SKILL-1"],
+	"madeWith": ["GitHub"],
+	"description": "Meet Files, an enthusiast take on what a modern file explorer should be.",
+	"download-link": [
+		{
+			"type": "microsoft-store",
+			"link": "https://www.microsoft.com/p/files/9nghp3dx8hdx",
+			"isAvailable": true
+		}
+	],
+	"website": "https://files-community.github.io/",
+	"featured-article": null,
+	"articles": null,
+	"style": null
+}

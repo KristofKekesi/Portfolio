@@ -1,0 +1,9 @@
+{
+	"id": "SKILL-2",
+	"name": "Web Dev",
+	"tools": ["TOOL-0", "TOOL-3", "TOOL-4", "TOOL-5"],
+	"projects": null,
+	"featured-article": null,
+	"articles": null,
+	"style": null
+}

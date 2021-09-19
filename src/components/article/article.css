@@ -1,0 +1,139 @@
+/*  TURTLE - TEKI
+    (°-°) _______
+      \ \/ - - - \_
+       \_  ___  ___>
+         \__) \__)    */
+
+
+@font-face {
+    font-family: 'InterExtraLight';
+    src: url('../../fonts/Inter-ExtraLight.ttf'); /* IE9 Compat Modes */
+    src: url('../../fonts/Inter-ExtraLight.ttf')  format('truetype'), /* Safari, Android, iOS */
+}
+
+article {
+    background-color: #ffffff;
+}
+
+article.article-content {
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+
+    background-color: #ffffff;
+    text-align: justify;
+
+    width: 100%;
+    
+}
+
+article .article-content {
+    margin: auto;
+    max-width: 960px;
+}
+
+article a {
+    color: #173959;
+    font-weight: bold;
+}
+
+article .text-title {
+    padding-left: min(5rem, 5vw);
+    padding-right: min(5rem, 5vw);
+    padding-top: 2.5rem;
+    padding-bottom: 1rem;
+
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+article .margin-text-title {
+    margin-left: min(5rem, 5vw);
+    margin-right: min(5rem, 5vw);
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+article .text-subtitle {
+    padding-left: min(5rem, 5vw);
+    padding-right: min(5rem, 5vw);
+    padding-top: 1rem;
+    padding-bottom: .5rem;
+
+    font-family: "InterExtraLight";
+    font-size: 1.5rem;
+    font-style: italic;
+}
+
+article .text-subsubtitle {
+    padding-left: min(5rem, 5vw);
+    padding-right: min(5rem, 5vw);
+    padding-top: 0;
+    padding-bottom: .5rem;
+
+    font-size: 1.25rem;
+}
+
+article .text {
+    padding-left: min(5rem, 5vw);
+    padding-right: min(5rem, 5vw);
+    padding-top: 0;
+    padding-bottom: .75rem;
+
+    font-size: 1rem;
+}
+
+article .terminal {
+    padding-left: min(5rem, 5vw);
+    padding-right: min(5rem, 5vw);
+    padding-top: 0;
+    padding-bottom: 0;
+
+    font-size: 1rem;
+}
+
+article .gallery {
+    padding-left: calc(min(5rem, 5vw) - min(.375rem, .375vw));
+    padding-right: calc(min(5rem, 5vw) - min(.375rem, .375vw));
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+article .gallery.last {
+    box-sizing: content-box;
+    padding-bottom: 2.5rem;
+}
+
+article .project-bundle {
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+}
+
+article .project-bundle .text-title {
+    padding-top: 2.5rem;
+    padding-bottom: 1rem;
+}
+
+article .project-bundle-content {
+    padding-bottom: 2.5rem;
+}
+
+article .section {
+    background-color: #ECECEC;
+}
+
+article .article-content > div.section.last {
+    padding-bottom: 0;
+}
+
+article .last {
+    padding-bottom: 2.5rem;
+}
+
+article .section.last {
+    margin-bottom: 5rem;
+}

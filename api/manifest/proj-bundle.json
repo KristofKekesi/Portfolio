@@ -1,8 +1,0 @@
-{
-	"id": "PROJ-BUNDLE-ID",
-	"name": "Test Project Bundle",
-	"projects": ["PROJ-ID", "PROJ-ID"],
-	"style": {
-		"gradient": "HEX-ff8c2e;HEX-EA4D2C;90deg;"
-	}
-}

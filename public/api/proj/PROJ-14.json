@@ -1,0 +1,21 @@
+{
+	"id": "PROJ-14",
+	"role": ["a Translator"],
+	"name": "Shretsha Files",
+	"logo": "IMG-14",
+	"discord-icon": null,
+	"skill": ["SKILL-1"],
+	"madeWith": [],
+	"description": "A Modern Dual Pane File Manager for Windows 10 and Windows 10X Devices.",
+	"download-link": [
+		{
+			"type": "microsoft-store",
+			"link": "https://www.microsoft.com/p/shrestha-files-pro/9npnffsv2hqm",
+			"isAvailable": true
+		}
+	],
+	"website": "https://jptgamesandapps.github.io/ShresthaFiles/",
+	"featured-article": null,
+	"articles": null,
+	"style": null
+}

@@ -1,0 +1,48 @@
+/*  TURTLE - TEKI
+    (°-°) _______
+      \ \/ - - - \_
+       \_  ___  ___>
+         \__) \__)    */
+
+         
+#more-tooltip {
+    position: fixed;
+    top: 85px;
+    right: 10px;
+    border-radius: 14px;
+
+    transition: opacity .15s ease-in-out, display .15s linear;
+}
+
+#more-tooltip li {
+    list-style: none;
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+#more-tooltip li:first-child {
+    padding-top: 16px;
+}
+
+#more-tooltip li:last-child {
+    padding-bottom: 16px;
+}
+
+#more-tooltip a {
+    color: #EFEFEF;
+
+    font-size: 1.75rem;
+
+    text-decoration: none;
+
+    font-family: "Inter";
+    vertical-align: middle;
+
+    transition: color .25s ease-in-out;
+}
+
+#more-tooltip a:hover {
+    color: #FFFFFF;
+}

@@ -1,0 +1,32 @@
+#timeline {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: flex-start;
+
+    justify-content: center;
+    background-color: #ffffff;
+}
+
+#timeline .sticky {
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+}
+
+#timeline .section {
+    margin: min(2.5rem, 2.5vw);
+}
+
+#timeline > div > a {
+    color: #000000;
+}
+
+#timeline .text-subtitle {
+    padding-top: 1.5rem;
+    padding-bottom: 0rem;
+
+    font-size: 1.75rem;
+
+    font-family: "Inter";
+}

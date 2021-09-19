@@ -1,0 +1,22 @@
+{
+	"id": "PROJ-2",
+	"role": ["Lead programmer", "Lead translator"],
+	"name": "USSR Mira",
+	"logo": "IMG-2",
+	"discord-icon": null,
+	"version": "1.0",
+	"skill": ["SKILL-0"],
+	"madeWith": ["Dart", "Flutter", "GitHub", "Android Studio"],
+	"description": "An app to search the russian mars vehicles. It also provides specifications of the rovers, orbiters and other space vehicles.",
+	"download-link": [
+		{
+			"type": "google-play-store",
+			"link": "https://play.google.com/store/apps/details?id=com.kristofkekesi.ussrmira",
+			"isAvailable": false
+		}
+	],
+	"website": "https://www.kekesi.dev/project/ussrmira/",
+	"featured-article": null,
+	"articles": null,
+	"style": null
+}
