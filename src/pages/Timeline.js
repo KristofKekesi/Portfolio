@@ -119,7 +119,7 @@ useEffect(() => {
                 <div className="text-subtitle">September</div>
                 <div className="text">Math and <abbr className="target" title="Computer Science">CS</abbr> Major</div>
                 <div className="text-subtitle">October</div>
-                <div className="text last">Graduating from <abbr className="target" title="Computer Science">CS</abbr><br />(Yup that's two years before everybody else)</div>
+                <div className="text last">Graduating from <abbr className="target" title="Computer Science">CS</abbr> level B</div>
             </div>
             <div className="section">
                 <div id="2023" className="text-title">2023</div>
