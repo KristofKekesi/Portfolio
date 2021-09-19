@@ -1,0 +1,8 @@
+{
+	"id": "PROJ-BUNDLE-0",
+	"name": "MIRA Collection",
+	"projects": ["PROJ-1", "PROJ-2", "PROJ-3"],
+	"style": {
+		"gradient": "HEX-ff8c2e;HEX-EA4D2C;90deg;"
+	}
+}
