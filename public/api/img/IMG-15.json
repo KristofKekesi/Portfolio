@@ -1,10 +1,10 @@
 {
 	"id": "IMG-15",
 	"name": "GitHub logo",
-	"url": "https://www.kekesi.dev/api/src/IMG-15.svg",
+	"url": "https://www.kekesi.dev/api/src/IMG-15.png",
 	"description": "The logo of GitHub.",
-	"width": 1,
-	"height": 1,
+	"width": 2048,
+	"height": 2048,
 	"copyright": "GitHub",
 	"copyright-link": "https://github.com/"
 }
