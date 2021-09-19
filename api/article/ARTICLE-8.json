@@ -3,6 +3,7 @@
     "name": "Understanding shaders",
     "description": "The basics of <abbr class='target' title='OpenGL Shading Language'>GLSL</abbr> shaders",
     "cover": "IMG-118",
+    "redirect": null,
     "isVisible": true, 
     "skills": [],
     "tools": null,

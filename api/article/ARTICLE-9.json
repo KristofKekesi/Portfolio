@@ -3,6 +3,7 @@
     "name": "Hardware for Flutter",
     "description": "Building custom hardware with bluetooth",
     "cover": "IMG-119",
+    "redirect": null,
     "isVisible": true, 
     "skills": [],
     "tools": null,

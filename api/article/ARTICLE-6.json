@@ -3,6 +3,7 @@
     "name": "How to null safety",
     "description": "The whys and hows of using null safety in Flutter",
     "cover": "IMG-116",
+    "redirect": null,
     "isVisible": true, 
     "skills": [],
     "tools": null,

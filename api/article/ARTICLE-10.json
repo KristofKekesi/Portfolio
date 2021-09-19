@@ -3,6 +3,7 @@
     "name": "How to make a Flutter package",
     "description": "Make a widget to use in multiple projects",
     "cover": "IMG-120",
+    "redirect": null,
     "isVisible": true, 
     "skills": [],
     "tools": null,

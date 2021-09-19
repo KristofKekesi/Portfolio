@@ -3,6 +3,7 @@
     "name": "Mobile Development",
     "description": "",
     "cover": "IMG-110",
+    "redirect": "/mobile",
     "isVisible": false,
     "skills": ["SKILL-0"],
     "tools": null,

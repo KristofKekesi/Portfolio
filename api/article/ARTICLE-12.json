@@ -3,6 +3,7 @@
     "name": "Photography",
     "description": "",
     "cover": "IMG-122",
+    "redirect": "/photography",
     "isVisible": false,
     "skills": ["SKILL-3"],
     "tools": null,

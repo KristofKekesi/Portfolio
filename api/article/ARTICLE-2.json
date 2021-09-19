@@ -3,6 +3,7 @@
     "name": "Translation",
     "description": "",
     "cover": "IMG-112",
+    "redirect": "/translations",
     "isVisible": false,
     "skills": ["SKILL-1"],
     "tools": null,

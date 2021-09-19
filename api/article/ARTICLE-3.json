@@ -3,6 +3,7 @@
     "name": "Understanding <abbr class='target' title='Scalable Vector Graphics'>SVG</abbr>s",
     "description": "Article about <abbr class='target' title='Scalable Vector Graphics'>SVG</abbr>s and <abbr class='target' title='Scalable Vector Graphics'>SVG</abbr> animations",
     "cover": "IMG-113",
+    "redirect": null,
     "isVisible": true, 
     "skills": [],
     "tools": null,
