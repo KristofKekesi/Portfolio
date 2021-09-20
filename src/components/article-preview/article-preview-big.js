@@ -47,9 +47,17 @@ function ArticlePreviewBig(props) {
             </article>
         );
     } else if (props.doesCareAboutVisibility === false || article.isVisible) {
+
+        let linkURL;
+        if (article.redirect !== null) {
+            linkURL = article.redirect;
+        } else {
+            linkURL = "article?" + article.id.replace("ARTICLE-", "") + "-" + article.name.replace(/<\/?[^>]+(>|$)/g, "").replace(/\s/g, "");
+        }
+
         return(
             <article style={props.style} className="article-preview-big target">
-                <Link className="article-preview-link" to={"article?" + article.id.replace("ARTICLE-", "") + "-" + article.name.replace(/<\/?[^>]+(>|$)/g, "").replace(/\s/g, "")}>
+                <Link className="article-preview-link" to={linkURL}>
                     <img className="index-picture" src={image.url} alt="Article cover" />
                     <h1 className="text-title" dangerouslySetInnerHTML={{ __html: article.name }} />
                     <h2 className="text-subtitle" dangerouslySetInnerHTML={{ __html: article.description }} />
