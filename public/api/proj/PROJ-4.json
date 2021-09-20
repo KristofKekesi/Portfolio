@@ -12,10 +12,10 @@
 		{
 			"type": "google-play-store",
 			"link": "https://play.google.com/store/apps/details?id=com.kristofkekesi.preacher",
-			"isAvailable": false
+			"isAvailable": true
 		}
 	],
-	"website": "https://www.kekesi.dev/project/preacher/",
+	"website": "https://www.kekesi.dev/#/project?4-Preacher/",
 	"featured-article": null,
 	"articles": null,
 	"style": {

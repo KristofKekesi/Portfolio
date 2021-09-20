@@ -36,6 +36,7 @@ function Footer() {
                     <li>
                         Policies
                         <ul>
+                            <li><Link className="target" to="./generalprivacypolicy">Privacy Policy</Link></li>
                             <li><Link className="target" to="./termsandcontidions">General terms and conditions</Link></li>
                         </ul>
                     </li>
