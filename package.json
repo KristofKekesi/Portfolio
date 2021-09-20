@@ -2,7 +2,7 @@
   "name": "portfolio-2",
   "version": "0.1.9",
   "private": true,
-  "homepage": "https://beta.kekesi.dev",
+  "homepage": "https://www.kekesi.dev",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
