@@ -17,6 +17,7 @@ import './App.css';
 import './components/locale/quote.css';
 
 import localization from "./functions/localization";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 
 
 //    TURTLE - TEKI
@@ -58,6 +59,7 @@ function App() {
         <Route exact path="/about" component={ About } />
         <Route exact path="/timeline" component={ Timeline } />
         <Route exact path="/project" component={ ProjectPage } />
+        <Route exact path="/privacypolicy" component={ PrivacyPolicy } />
         <Route component={ NotFound } />
       </Switch>
     </HashRouter>

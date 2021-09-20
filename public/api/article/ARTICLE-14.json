@@ -1,0 +1,37 @@
+{
+    "id": "ARTICLE-14",
+    "name": "About",
+    "description": "More informations about me",
+    "cover": "IMG-111",
+    "redirect": "/generalprivacypolicy",
+    "isVisible": false, 
+    "skills": [],
+    "tools": [],
+    "content": [
+        {
+            "type": "text-title",
+            "value": "Privacy Policy"
+        },
+        {
+            "type": "text",
+            "value": "All apps developed by me is free from storing personal data."
+        },
+        {
+            "type": "text-subtitle",
+            "value": "Third-party services"
+        },
+        {
+            "type": "text-subtitle",
+            "value": "My apps are using Google Analytics, for this service's policy I cannot take responsibility."
+        },
+        {
+            "type": "text-subtitle",
+            "value": "Cookies"
+        },
+        {
+            "type": "text",
+            "value": "Cookies are used for analytic purposes as well as for storing the settings of the page. These settings are local and will not be sent to anywhere on the internet."
+        }
+    ],
+    "style": null
+}
