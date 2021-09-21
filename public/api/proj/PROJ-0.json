@@ -6,6 +6,9 @@
 	"discord-icon": "<:elements:834421451716427837>",
 	"version": "1.0",
 	"skill": ["SKILL-0"],
+	"screenshots": [
+		["IMG-31", "IMG-32", "IMG-33", "IMG-34", "IMG-35", "IMG-36"]
+	],
 	"madeWith": ["Dart", "Flutter", "GitHub", "Android Studio"],
 	"description": "A modern app to track the cemical elements. Including all 118 elements, with their weight, radiation, consistency, type, block, and electronnegativity.",
 	"download-link": [

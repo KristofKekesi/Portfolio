@@ -9,7 +9,7 @@ function getProject(url) {
 
     // Project class
     class Project {
-        constructor(id, role, name, logo, discord_icon, version, skills, madeWith, description,
+        constructor(id, role, name, logo, discord_icon, version, skills, screenshots, madeWith, description,
         download_link, website, promo_video, featured_article, articles, style) {
             
             this.id = id;
@@ -19,6 +19,7 @@ function getProject(url) {
             this.discord_icon = discord_icon;
             this.version = version;
             this.skills = skills;
+            this.screenshots = screenshots;
             this.madeWith = madeWith;
             this.description = description;
             this.download_link = download_link;
@@ -45,6 +46,7 @@ function getProject(url) {
             json["discord-icon"],
             json["version"],
             json["skill"],
+            json["screenshots"],
             json["madeWith"],
             json["description"],
             json["download-link"],

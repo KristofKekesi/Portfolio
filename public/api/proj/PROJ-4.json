@@ -6,6 +6,9 @@
 	"discord-icon": "<:preacher:834421136531914773>",
 	"version": "1.0.1",
 	"skill": ["SKILL-0"],
+	"screenshots": [
+		["IMG-37", "IMG-38", "IMG-39"]
+	],
 	"madeWith": ["Dart", "Flutter", "GitHub", "Android Studio"],
 	"description": "Read your religious books, with Preacher.",
 	"download-link": [

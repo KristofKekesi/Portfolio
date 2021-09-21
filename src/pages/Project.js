@@ -6,6 +6,7 @@ import Navbar from "../components/navbar/navbar";
 import Dock from "../components/dock/dock";
 import Footer from "../components/footer/footer";
 import Cursor from "../components/cursor/cursor";
+import ImageGallery from "../components/image-gallery/image-gallery";
 import { MadeWith } from "../components/technologies/made-with";
 
 import navbarToggle from "../functions/navbar";
@@ -117,7 +118,7 @@ function ProjectPage() {
 
         // platforms
         let platformDiv = null;
-        if (project.download_link !== undefined) {
+        if (project.download_link !== undefined && project.download_link !== null) {
             platformDiv = <>
                 <h1 className={"text-subtitle"} style={{paddingBottom: "0"}}>Available for</h1>
                 <div className={"text"}>{getPlatforms(project.download_link, ", ", project.name).replace(/,([^,]*)$/, ' and $1')}</div>
@@ -126,8 +127,22 @@ function ProjectPage() {
 
         // badges
         let badgesDiv = null;
-        if (project.download_link !== undefined) {
+        if (project.download_link !== undefined && project.download_link !== null) {
             badgesDiv = <Badges style={{marginLeft: "min(5rem, 5vw)", marginRight: "min(5rem, 5vw)", marginBottom: "min(5rem, 5vw)"}} downloadLinks={project.download_link} projectName={project.name} />;
+        }
+
+        // screenshots
+        let screenshotsDiv = [];
+        console.log(project.screenshots);
+        console.log(project);
+        if (project.screenshots !== undefined && project.screenshots !== null && project.screenshots.length > 0) {
+
+            screenshotsDiv = []
+            for (let i = 0; i < project.screenshots.length; i++) {
+                screenshotsDiv.push(
+                    <ImageGallery galleryTag={" last max"} className={"nosection last"} IDs={project.screenshots[i]} dataKey={i} key={i}/>
+                );
+            }
         }
 
         // made with
@@ -164,7 +179,8 @@ function ProjectPage() {
                                 {badgesDiv}
                             </div>
                         </div>
-                        <div style={{paddingBottom: "2.5rem"}} />
+                        <div style={{paddingBottom: "3rem"}} />
+                        {screenshotsDiv}
                         {madeWithDiv}
                     </div>
                 </article>

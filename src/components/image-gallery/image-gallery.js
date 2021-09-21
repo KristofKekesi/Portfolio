@@ -14,7 +14,7 @@ import API from '../../api/index';
 //         \__) \__)
 
 
-function ImageGalery(props) {
+function ImageGallery(props) {
     const [finalContent, setContent] = useState( undefined );
 
     useEffect(() => {
@@ -41,4 +41,4 @@ function ImageGalery(props) {
     }
 };
 
-export default ImageGalery;
+export default ImageGallery;

@@ -108,6 +108,11 @@ article .gallery.last {
     padding-bottom: 2.5rem;
 }
 
+article .gallery.max {
+    padding-left: 0;
+    padding-right: 0;
+}
+
 article .project-bundle {
     margin-top: 2.5rem;
     margin-bottom: 2.5rem;
