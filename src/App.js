@@ -59,7 +59,7 @@ function App() {
         <Route exact path="/about" component={ About } />
         <Route exact path="/timeline" component={ Timeline } />
         <Route exact path="/project" component={ ProjectPage } />
-        <Route exact path="/privacypolicy" component={ PrivacyPolicy } />
+        <Route exact path="/generalprivacypolicy" component={ PrivacyPolicy } />
         <Route component={ NotFound } />
       </Switch>
     </HashRouter>
