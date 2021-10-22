@@ -58,7 +58,7 @@ function MadeWith(props) {
         return (
             <div className="technologies-content" key={props.name}>
                 <img src={image.url} alt={image.name} />
-                <h3 className="text" style={{padding: "0", textAlign: "center"}}>{props.name}</h3>
+                <h3 className="text selectable" style={{padding: "0", textAlign: "center"}}>{props.name}</h3>
             </div>  
         );
     }
@@ -68,7 +68,7 @@ function MadeWith(props) {
     for(let i in props.madeWith) {
         let technology = props.madeWith[i];
         if (technologies[technology] === undefined) {
-            console.warn("No technology such " + technology);
+            console.warn("No technology such as " + technology);
         } else {
             if(!(technologyTypes[technologies[technology]["type"]] ?? []).includes(technology)) {
                 if (technologyTypes[technologies[technology]["type"]] === undefined) {
@@ -89,7 +89,7 @@ function MadeWith(props) {
 
     let content = [];
     for (let technologyType in technologyTypes) {
-        content.push(<h1 className="text-subtitle" style={{paddingTop: "min(1rem, 1vw)", paddingBottom: "min(.5rem, .5vw)"}} key={technologyType + "-title"}>{technologyType}</h1>);
+        content.push(<h1 className="text-subtitle selectable" style={{paddingTop: "min(1rem, 1vw)", paddingBottom: "min(.5rem, .5vw)"}} key={technologyType + "-title"}>{technologyType}</h1>);
         let typeContent = [];
         for (let technology in technologyTypes[technologyType]["type"]) {
             typeContent.push(<TechnologyElement name={technologyTypes[technologyType]["type"][technology]} image={technologyTypes[technologyType]["logo"][technology]} key={technology}/>);

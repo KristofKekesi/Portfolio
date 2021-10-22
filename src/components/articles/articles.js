@@ -35,7 +35,7 @@ function Articles(props) {
     if (content !== undefined) {
         return (<article className="articles">{content}</article>);
     }
-    return(
+    return (
         <article className="articles"><div style={{background: "#ECECEC", marginTop: "3rem", marginBottom: "3rem", width: "960px", paddingTop: "3rem", paddingBottom: "3rem"}} className="text-title">Loading articles...</div></article>
     );
 }

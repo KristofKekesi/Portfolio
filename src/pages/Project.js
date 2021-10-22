@@ -98,7 +98,7 @@ function ProjectPage() {
                 </div>
                 <article>
                     <div className="article-content">
-                        <h1 className={"text-title nosection"}>Error loading project...</h1>
+                        <h1 className="text-title nosection">Error loading project...</h1>
                     </div>
                 </article>
                 <Dock />
@@ -111,8 +111,8 @@ function ProjectPage() {
         let versionDiv = null;
         if (project.version !== undefined) {
             versionDiv = <>
-                <h1 className={"text-subtitle"} style={{paddingBottom: "0"}}>Latest version</h1>
-                <div className={"text"}>{project.version}</div>
+                <h1 className="text-subtitle selectable" style={{paddingBottom: "0"}}>Latest version</h1>
+                <div className="text selectable">{project.version}</div>
             </>;
         }
 
@@ -120,8 +120,8 @@ function ProjectPage() {
         let platformDiv = null;
         if (project.download_link !== undefined && project.download_link !== null) {
             platformDiv = <>
-                <h1 className={"text-subtitle"} style={{paddingBottom: "0"}}>Available for</h1>
-                <div className={"text"}>{getPlatforms(project.download_link, ", ", project.name).replace(/,([^,]*)$/, ' and $1')}</div>
+                <h1 className="text-subtitle selectable" style={{paddingBottom: "0"}}>Available for</h1>
+                <div className="text selectable">{getPlatforms(project.download_link, ", ", project.name).replace(/,([^,]*)$/, ' and $1')}</div>
             </>;
         }
 
@@ -133,8 +133,6 @@ function ProjectPage() {
 
         // screenshots
         let screenshotsDiv = [];
-        console.log(project.screenshots);
-        console.log(project);
         if (project.screenshots !== undefined && project.screenshots !== null && project.screenshots.length > 0) {
 
             screenshotsDiv = []
@@ -165,15 +163,15 @@ function ProjectPage() {
                 </div>
                 <article onLoad={cursorSetup}>
                     <div className="article-content">
-                        <h1 className={"text-title nosection"}>{project.name}</h1>
-                        <div className={"text nosection last"}>{project.description}</div>
-                        <div className={"section"} style={{display: "flex"}}>
+                        <h1 className="text-title nosection selectable">{project.name}</h1>
+                        <div className="text nosection last selectable">{project.description}</div>
+                        <div className="section" style={{display: "flex"}}>
                             <img src={image.url} alt={image.description} style={{maxWidth: "7.5rem", maxHeight: "7.5rem", width: "auto", height: "auto", marginLeft: "min(5rem, 5vw)", boxSizing: "content-box", paddingTop: "2.5rem", paddingBottom: "2.5rem", marginRight: "0"}}></img>
                             <div>
                                 <div style={{paddingTop: "2.5rem"}} />
                                 {versionDiv}
-                                <h1 className={"text-subtitle"} style={{paddingBottom: "0"}}>Worked on as</h1>
-                                <div className={"text"}>{project.role.join(", ").replace(/,([^,]*)$/, ' and $1')}</div>
+                                <h1 className="text-subtitle selectable" style={{paddingBottom: "0"}}>Worked on as</h1>
+                                <div className="text selectable">{project.role.join(", ").replace(/,([^,]*)$/, ' and $1')}</div>
                                 {platformDiv}
                                 <div style={{paddingBottom: "1.75rem"}} />
                                 {badgesDiv}

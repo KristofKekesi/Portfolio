@@ -60,22 +60,22 @@ function Article(props) {
             switch(article.content[i].type) {
                 case "text-title":
                     articleContent.push(
-                        <h1 id={article.content[i]["value"].toLowerCase().replace(" ", "-")} className={"text-title nosection" + tag} dangerouslySetInnerHTML={{ __html: article.content[i]["value"] }} key={i}/>
+                        <h1 id={article.content[i]["value"].toLowerCase().replace(" ", "-")} className={"selectable text-title nosection" + tag} dangerouslySetInnerHTML={{ __html: article.content[i]["value"] }} key={i}/>
                     );
                     break
                 case "text-subtitle":
                     articleContent.push(
-                        <h2 className={"text-subtitle nosection" + tag} dangerouslySetInnerHTML={{ __html: article.content[i]["value"] }} key={i}/>
+                        <h2 className={"selectable text-subtitle nosection" + tag} dangerouslySetInnerHTML={{ __html: article.content[i]["value"] }} key={i}/>
                     );
                     break
                 case "text-subsubtitle":
                     articleContent.push(
-                        <h3 className={"text-subtitle nosection" + tag} dangerouslySetInnerHTML={{ __html: article.content[i]["value"] }} key={i}/>
+                        <h3 className={"selectable text-subtitle nosection" + tag} dangerouslySetInnerHTML={{ __html: article.content[i]["value"] }} key={i}/>
                     );
                     break
                 case "text":
                     articleContent.push(
-                        <div className={"text nosection" + tag} dangerouslySetInnerHTML={{ __html: article.content[i]["value"] }} key={i}/>
+                        <div className={"selectable text nosection" + tag} dangerouslySetInnerHTML={{ __html: article.content[i]["value"] }} key={i}/>
                     );
                     break
                 case "terminal":
@@ -127,22 +127,22 @@ function Article(props) {
                         switch(article.content[i]["content"][k].type) {
                             case "text-title":
                                 sectionContent.push(
-                                    <h1 id={article.content[i]["content"][k]["value"].toLowerCase().replace(" ", "-")} className={"text-title" + sectionTag} dangerouslySetInnerHTML={{ __html: article.content[i]["content"][k]["value"] }}  key={i + "-" + k}/>
+                                    <h1 id={article.content[i]["content"][k]["value"].toLowerCase().replace(" ", "-")} className={"selectable text-title" + sectionTag} dangerouslySetInnerHTML={{ __html: article.content[i]["content"][k]["value"] }}  key={i + "-" + k}/>
                                 );
                                 break
                             case "text-subtitle":
                                 sectionContent.push(
-                                    <h2 className={"text-subtitle" + sectionTag} dangerouslySetInnerHTML={{ __html: article.content[i]["content"][k]["value"] }}  key={i + "-" + k}/>
+                                    <h2 className={"selectable text-subtitle" + sectionTag} dangerouslySetInnerHTML={{ __html: article.content[i]["content"][k]["value"] }}  key={i + "-" + k}/>
                                 );
                                 break
                             case "text-subsubtitle":
                                 sectionContent.push(
-                                    <h3 className={"text-subsubtitle" + sectionTag} dangerouslySetInnerHTML={{ __html: article.content[i]["content"][k]["value"] }}  key={i + "-" + k}/>
+                                    <h3 className={"selectable text-subsubtitle" + sectionTag} dangerouslySetInnerHTML={{ __html: article.content[i]["content"][k]["value"] }}  key={i + "-" + k}/>
                                 );
                                 break
                             case "text":
                                 sectionContent.push(
-                                    <div className={"text" + sectionTag} dangerouslySetInnerHTML={{ __html: article.content[i]["content"][k]["value"] }}  key={i + "-" + k}/>
+                                    <div className={"selectable text" + sectionTag} dangerouslySetInnerHTML={{ __html: article.content[i]["content"][k]["value"] }}  key={i + "-" + k}/>
                                 );
                                 break
                             case "terminal":

@@ -58,3 +58,16 @@
     /* Fix for a bug in Chrome 90 bug (https://stackoverflow.com/questions/66204563/backdrop-filter-not-working-when-mix-blend-mode-of-another-element-on-the-page-i) */
     backdrop-filter: opacity(1);
 }
+
+.cursor2.text {
+    z-index: 2000;
+
+    transform: scale(.5) translate(-25%) translateY(-25%);
+    border: none;
+    background-color: rgba(255, 255, 255, 1);
+    box-shadow: 6px 6px 12px rgba(0, 0, 0, .75);
+
+    mix-blend-mode: difference;
+    /* Fix for a bug in Chrome 90 bug (https://stackoverflow.com/questions/66204563/backdrop-filter-not-working-when-mix-blend-mode-of-another-element-on-the-page-i) */
+    backdrop-filter: opacity(1);
+}
