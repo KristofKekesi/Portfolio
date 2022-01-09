@@ -53,11 +53,11 @@
                 },
                 {
                     "type": "text",
-                    "value": "The site is a full rewrite of the original. It's mobile friendly, has animations and better refreshed <abbr class='target' title='User Interface'>UI</abbr>.  It's now home for more complex features and structure, yet has more simple code."
+                    "value": "The new site is a full rewrite of the original. It's mobile friendly, has animations and better refreshed <abbr class='target' title='User Interface'>UI</abbr>.  It's now home for more complex features and structure, yet has more simple code."
                 },
                 {
                     "type": "text",
-                    "value": "The biggest core change is that the site is using a really basic <q><abbr class='target' title='Application Programming Interface'>API</abbr></q> I made. It uses it to render projects, articles (as well as this text) and bigger objects like bundles of projects, images. It's biggest advantage is that if a projects name is changes I need to change one thing."
+                    "value": "The biggest core change is that the site is using a really basic <q><abbr class='target' title='Application Programming Interface'>API</abbr></q> I made. It uses it to render projects and articles (as well as this text) and bigger objects like bundles of projects, images. It's biggest advantage is that if a projects name is changes I need to change one thing."
                 }
             ]
         },
