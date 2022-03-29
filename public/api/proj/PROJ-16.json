@@ -1,0 +1,21 @@
+{
+	"id": "PROJ-16",
+	"role": ["a Translator"],
+	"name": "Posture Pal",
+	"logo": "IMG-124",
+	"discord-icon": null,
+	"skill": ["SKILL-1"],
+	"madeWith": ["GitHub"],
+	"description": "Posture Pal helps you improve your neck and shoulder posture.",
+	"download-link": [
+		{
+			"type": "app-store",
+			"link": "https://apps.apple.com/us/app/posture-pal-improve-stance/id1590316152",
+			"isAvailable": true
+		}
+	],
+	"website": null,
+	"featured-article": null,
+	"articles": null,
+	"style": null
+}

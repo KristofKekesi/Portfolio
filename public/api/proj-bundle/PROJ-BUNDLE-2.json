@@ -1,0 +1,8 @@
+{
+	"id": "PROJ-BUNDLE-2",
+	"name": "Swift Apps Translated",
+	"projects": ["PROJ-15", "PROJ-16", "PROJ-8"],
+	"style": {
+		"gradient": "HEX-F05138;HEX-E66855;90deg;"
+	}
+}

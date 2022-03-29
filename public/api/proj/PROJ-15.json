@@ -1,0 +1,26 @@
+{
+	"id": "PROJ-15",
+	"role": ["a Translator"],
+	"name": "Navi",
+	"logo": "IMG-123",
+	"discord-icon": null,
+	"skill": ["SKILL-1"],
+	"madeWith": ["GitHub"],
+	"description": "Navi adds subtitles and Live Translations to your FaceTime calls.",
+	"download-link": [
+		{
+			"type": "app-store",
+			"link": "https://apps.apple.com/jp/app/navi-subtitles-translation/id1573261774",
+			"isAvailable": true
+		},
+        {
+			"type": "mac-app-store",
+			"link": "https://apps.apple.com/jp/app/navi-subtitles-translation/id1573261774",
+			"isAvailable": true
+		}
+	],
+	"website": null,
+	"featured-article": null,
+	"articles": null,
+	"style": null
+}

@@ -42,9 +42,10 @@ useEffect(() => {
             <Link to="#2019" className="text-title target sticky">2019</Link>
             <Link to="#2020" className="text-title target sticky">2020</Link>
             <Link to="#2021" className="text-title target sticky">2021</Link>
+            <Link to="#2022" className="text-title target sticky">2022</Link>
             <Link to="#2023" className="text-title target sticky">2023</Link>
         </div>
-        <div className="sticky" style={{backgroundImage: `url(${background})`, marginTop: "min(2.5rem, 2.5vw)", marginBottom: "min(2.5rem, 2.5vw)", top: "50px", width: "1rem", minHeight: "100vh"}}><div className="sticky" style={{top: "50px", width: "1rem", minHeight: "100vh"}} className="blur-dark"></div></div>
+        <div className="sticky" style={{backgroundImage: `url(${background})`, marginTop: "min(2.5rem, 2.5vw)", marginBottom: "min(2.5rem, 2.5vw)", top: "50px", width: "1rem", minHeight: "100vh"}}><div className="sticky blur-dark" style={{top: "50px", width: "1rem", minHeight: "100vh"}}></div></div>
         <div>
             <div className="section">
                 <div id="2004" className="text-title selectable">2004</div>
@@ -120,7 +121,18 @@ useEffect(() => {
                 <div className="text selectable">Math and <abbr className="target" title="Computer Science">CS</abbr> Major</div>
                 <div className="text-subtitle selectable">October</div>
                 <div className="text-subsubtitle selectable">October 26</div>
-                <div className="text last selectable">Graduating from <abbr className="target" title="Computer Science">CS</abbr> level B</div>
+                <div className="text selectable">Graduated from <abbr className="target" title="Computer Science">CS</abbr> level B</div>
+                <div className="text-subtitle selectable">December</div>
+                <div className="text-subsubtitle selectable">December 23</div>
+                <div className="text last selectable">Translated Navi to Hungarian</div>
+            </div>
+            <div className="section">
+                <div id="2022" className="text-title selectable">2022</div>
+                <div className="text-subtitle selectable" style={{paddingTop: "0"}}>March</div>
+                <div className="text-subsubtitle selectable">March 6</div>
+                <div className="text selectable">Translated Posture Pal to Hungarian</div>
+                <div className="text-subsubtitle selectable">March 10</div>
+                <div className="text last selectable">Released NASA Mira version 3</div>
             </div>
             <div className="section">
                 <div id="2023" className="text-title selectable">2023</div>

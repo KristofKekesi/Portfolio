@@ -13,5 +13,7 @@
 	{"id": "PROJ-11", "location": "http://www.kekesi.dev/api/proj/PROJ-11.json"},
 	{"id": "PROJ-12", "location": "http://www.kekesi.dev/api/proj/PROJ-12.json"},
 	{"id": "PROJ-13", "location": "http://www.kekesi.dev/api/proj/PROJ-13.json"},
-	{"id": "PROJ-14", "location": "http://www.kekesi.dev/api/proj/PROJ-14.json"}
+	{"id": "PROJ-14", "location": "http://www.kekesi.dev/api/proj/PROJ-14.json"},
+	{"id": "PROJ-15", "location": "http://www.kekesi.dev/api/proj/PROJ-15.json"},
+	{"id": "PROJ-16", "location": "http://www.kekesi.dev/api/proj/PROJ-16.json"}
 ]

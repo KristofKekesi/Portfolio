@@ -42,12 +42,16 @@
 			"id": "PROJ-BUNDLE-1"
 		},
         {
+			"type": "proj-bundle",
+			"id": "PROJ-BUNDLE-2"
+		},
+        {
             "type": "text-title",
             "value": "Past projects"
         },
         {
             "type": "text-subtitle",
-            "value": "9+ projects as a translator"
+            "value": "10+ projects as a translator"
         },
         {
             "type": "text",
