@@ -22,13 +22,21 @@ const technologies = {
     "CSS":      {"type": "Computer Languages", "logo": "IMG-20"},
     "HTML":     {"type": "Computer Languages", "logo": "IMG-19"},
 
-    "Firebase":     {"type": "Cloud Computing", "logo": "IMG-22"},
+    "Firebase": {"type": "Database", "logo": "IMG-22"},
 
     "Flutter":  {"type": "Frameworks", "logo": "IMG-17"},
 
     "React":    {"type": "JavaScript Libraries", "logo": "IMG-105"},
 
     "GitHub":   {"type": "Development Tools", "logo": "IMG-15"},
+    "Node":     {"type": "Development Tools", "logo": ""},
+
+    "macOS":    {"type": "Operating Systems", "logo": ""},
+    "Windows":  {"type": "Operating Systems", "logo": ""},
+
+    "Google Analytics": {"type": "Analytics", "logo": ""},
+
+    "Google Play": {"type": "Distribution platforms", "logo": ""},
 
     "Android Studio":       {"type": "IDEs", "logo": "IMG-109"},
     "PyCharm":              {"type": "IDEs", "logo": "IMG-106"},
