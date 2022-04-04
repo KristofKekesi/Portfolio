@@ -1,0 +1,232 @@
+2022-04-01 00:24:50.303 CEST [84583] LOG:  starting PostgreSQL 14.2 on aarch64-apple-darwin20.6.0, compiled by Apple clang version 12.0.5 (clang-1205.0.22.9), 64-bit
+2022-04-01 00:24:50.305 CEST [84583] LOG:  listening on IPv6 address "::1", port 5432
+2022-04-01 00:24:50.305 CEST [84583] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2022-04-01 00:24:50.305 CEST [84583] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2022-04-01 00:24:50.307 CEST [84584] LOG:  database system was shut down at 2022-04-01 00:24:50 CEST
+2022-04-01 00:24:50.309 CEST [84583] LOG:  database system is ready to accept connections
+2022-04-02 00:07:45.651 CEST [84583] LOG:  received fast shutdown request
+2022-04-02 00:07:45.652 CEST [84583] LOG:  aborting any active transactions
+2022-04-02 00:07:45.653 CEST [84583] LOG:  background worker "logical replication launcher" (PID 84590) exited with exit code 1
+2022-04-02 00:07:45.653 CEST [84585] LOG:  shutting down
+2022-04-02 00:07:45.661 CEST [84583] LOG:  database system is shut down
+2022-04-02 00:51:04.201 CEST [87268] LOG:  starting PostgreSQL 14.2 on aarch64-apple-darwin20.6.0, compiled by Apple clang version 12.0.5 (clang-1205.0.22.9), 64-bit
+2022-04-02 00:51:04.204 CEST [87268] LOG:  listening on IPv6 address "::1", port 5432
+2022-04-02 00:51:04.204 CEST [87268] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2022-04-02 00:51:04.204 CEST [87268] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2022-04-02 00:51:04.209 CEST [87269] LOG:  database system was shut down at 2022-04-02 00:07:45 CEST
+2022-04-02 00:51:04.212 CEST [87268] LOG:  database system is ready to accept connections
+2022-04-02 00:54:54.179 CEST [87268] LOG:  received fast shutdown request
+2022-04-02 00:54:54.179 CEST [87268] LOG:  aborting any active transactions
+2022-04-02 00:54:54.180 CEST [87610] FATAL:  terminating connection due to administrator command
+2022-04-02 00:54:54.180 CEST [87268] LOG:  background worker "logical replication launcher" (PID 87275) exited with exit code 1
+2022-04-02 00:54:54.182 CEST [87270] LOG:  shutting down
+2022-04-02 00:54:54.189 CEST [87268] LOG:  database system is shut down
+2022-04-02 00:55:00.520 CEST [87652] LOG:  starting PostgreSQL 14.2 on aarch64-apple-darwin20.6.0, compiled by Apple clang version 12.0.5 (clang-1205.0.22.9), 64-bit
+2022-04-02 00:55:00.523 CEST [87652] LOG:  listening on IPv6 address "::1", port 5432
+2022-04-02 00:55:00.523 CEST [87652] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2022-04-02 00:55:00.524 CEST [87652] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2022-04-02 00:55:00.530 CEST [87653] LOG:  database system was shut down at 2022-04-02 00:54:54 CEST
+2022-04-02 00:55:00.533 CEST [87652] LOG:  database system is ready to accept connections
+2022-04-02 01:02:57.123 CEST [87932] ERROR:  syntax error at or near "CREATE" at character 27
+2022-04-02 01:02:57.123 CEST [87932] STATEMENT:  CREATE DATABASE portfolio
+	CREATE DATABASE portfolio;
+2022-04-02 01:09:38.620 CEST [88449] ERROR:  relation "portolio" does not exist at character 15
+2022-04-02 01:09:38.620 CEST [88449] STATEMENT:  SELECT *
+	FROM portolio
+	WHERE isPrivate = FALSE
+2022-04-02 19:13:21.419 CEST [95207] ERROR:  syntax error at or near "DATABASE" at character 8
+2022-04-02 19:13:21.419 CEST [95207] STATEMENT:  DELETE DATABASE articles;
+2022-04-02 19:13:31.640 CEST [95207] ERROR:  cannot drop the currently open database
+2022-04-02 19:13:31.640 CEST [95207] STATEMENT:  DROP DATABASE articles;
+2022-04-02 19:13:34.794 CEST [87652] LOG:  received fast shutdown request
+2022-04-02 19:13:34.795 CEST [87652] LOG:  aborting any active transactions
+2022-04-02 19:13:34.795 CEST [95207] FATAL:  terminating connection due to administrator command
+2022-04-02 19:13:34.796 CEST [87652] LOG:  background worker "logical replication launcher" (PID 87659) exited with exit code 1
+2022-04-02 19:13:34.795 CEST [88297] FATAL:  terminating connection due to administrator command
+2022-04-02 19:13:34.798 CEST [87654] LOG:  shutting down
+2022-04-02 19:13:34.807 CEST [87652] LOG:  database system is shut down
+2022-04-02 19:13:41.480 CEST [95241] LOG:  starting PostgreSQL 14.2 on aarch64-apple-darwin20.6.0, compiled by Apple clang version 12.0.5 (clang-1205.0.22.9), 64-bit
+2022-04-02 19:13:41.481 CEST [95241] LOG:  listening on IPv6 address "::1", port 5432
+2022-04-02 19:13:41.481 CEST [95241] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2022-04-02 19:13:41.481 CEST [95241] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2022-04-02 19:13:41.485 CEST [95242] LOG:  database system was shut down at 2022-04-02 19:13:34 CEST
+2022-04-02 19:13:41.488 CEST [95241] LOG:  database system is ready to accept connections
+2022-04-02 19:50:46.895 CEST [96944] ERROR:  syntax error at or near "portfolio" at character 1
+2022-04-02 19:50:46.895 CEST [96944] STATEMENT:  portfolio
+	CREATE DATABASE projects;
+2022-04-02 19:50:50.650 CEST [96944] ERROR:  syntax error at or near "portfolio" at character 1
+2022-04-02 19:50:50.650 CEST [96944] STATEMENT:  portfolio
+	CREATE DATABASE projects;
+2022-04-02 19:51:19.856 CEST [96944] ERROR:  syntax error at or near "portfolio" at character 1
+2022-04-02 19:51:19.856 CEST [96944] STATEMENT:  portfolio
+	CREATE TABLE projects;
+2022-04-02 19:51:24.587 CEST [96944] ERROR:  syntax error at or near "portfolio" at character 1
+2022-04-02 19:51:24.587 CEST [96944] STATEMENT:  portfolio
+	CREATE TABLE projects;
+2022-04-02 19:51:42.185 CEST [96944] ERROR:  syntax error at or near "CREATE" at character 36
+2022-04-02 19:51:42.185 CEST [96944] STATEMENT:  CREATE DATABASE projects
+	portfolio
+	CREATE TABLE projects;
+2022-04-02 19:51:43.508 CEST [96944] ERROR:  syntax error at or near "CREATE" at character 36
+2022-04-02 19:51:43.508 CEST [96944] STATEMENT:  CREATE DATABASE projects
+	portfolio
+	CREATE TABLE projects;
+2022-04-02 19:52:04.639 CEST [96944] ERROR:  syntax error at or near ";" at character 22
+2022-04-02 19:52:04.639 CEST [96944] STATEMENT:  CREATE TABLE projects;
+2022-04-02 19:52:12.760 CEST [96944] ERROR:  syntax error at or near ";" at character 22
+2022-04-02 19:52:12.760 CEST [96944] STATEMENT:  CREATE TABLE projects;
+2022-04-02 19:54:33.929 CEST [96944] ERROR:  syntax error at or near ";" at character 22
+2022-04-02 19:54:33.929 CEST [96944] STATEMENT:  CREATE TABLE projects;
+2022-04-02 20:06:59.030 CEST [96944] ERROR:  syntax error at or near "DROP" at character 25
+2022-04-02 20:06:59.030 CEST [96944] STATEMENT:  DROP DATABASE portfolio
+	DROP DATABASE portfolio;
+2022-04-02 20:07:06.641 CEST [96944] ERROR:  cannot drop the currently open database
+2022-04-02 20:07:06.641 CEST [96944] STATEMENT:  DROP DATABASE portfolio;
+2022-04-02 20:07:38.902 CEST [97910] ERROR:  database "portfolio" is being accessed by other users
+2022-04-02 20:07:38.902 CEST [97910] DETAIL:  There is 1 other session using the database.
+2022-04-02 20:07:38.902 CEST [97910] STATEMENT:  DROP DATABASE portfolio;
+2022-04-02 20:07:56.281 CEST [97910] ERROR:  database "portfolio" is being accessed by other users
+2022-04-02 20:07:56.281 CEST [97910] DETAIL:  There is 1 other session using the database.
+2022-04-02 20:07:56.281 CEST [97910] STATEMENT:  DROP DATABASE portfolio;
+2022-04-02 20:14:08.844 CEST [97910] ERROR:  syntax error at or near "CREATE" at character 26
+2022-04-02 20:14:08.844 CEST [97910] STATEMENT:  CREATE DATABASE articles
+	CREATE DATABASE articles;
+2022-04-02 20:17:58.380 CEST [98399] ERROR:  syntax error at end of input at character 20
+2022-04-02 20:17:58.380 CEST [98399] STATEMENT:  CREATE TABLE images
+2022-04-02 21:00:12.355 CEST [98399] ERROR:  cannot drop the currently open database
+2022-04-02 21:00:12.355 CEST [98399] STATEMENT:  DROP DATABASE projects
+2022-04-02 22:08:28.163 CEST [2105] ERROR:  INSERT has more target columns than expressions at character 56
+2022-04-02 22:08:28.163 CEST [2105] STATEMENT:  INSERT INTO images(ID, name, path, alt, width, height, copyrightName, copyrightURL)
+	VALUES(0, 'test', './0.img', 'test image', 1, 1)
+2022-04-02 22:11:16.403 CEST [2105] ERROR:  duplicate key value violates unique constraint "images_pkey"
+2022-04-02 22:11:16.403 CEST [2105] DETAIL:  Key (id)=(0) already exists.
+2022-04-02 22:11:16.403 CEST [2105] STATEMENT:  INSERT INTO images(ID, name, path, alt, width, height, copyrightName, copyrightURL)
+	VALUES(0, 'test', './0.img', 'test image', 1, 1, null, null)
+2022-04-02 22:40:57.040 CEST [2105] ERROR:  duplicate key value violates unique constraint "images_pkey"
+2022-04-02 22:40:57.040 CEST [2105] DETAIL:  Key (id)=(0) already exists.
+2022-04-02 22:40:57.040 CEST [2105] STATEMENT:  INSERT INTO images(ID, name, path, alt, width, height, copyrightName, copyrightURL)
+	VALUES(0, 'test', './0.img', 'test image', 1, 1, null, null)
+2022-04-02 22:41:40.946 CEST [2105] ERROR:  duplicate key value violates unique constraint "images_pkey"
+2022-04-02 22:41:40.946 CEST [2105] DETAIL:  Key (id)=(0) already exists.
+2022-04-02 22:41:40.946 CEST [2105] STATEMENT:  INSERT INTO images(ID, name, path, alt, width, height, copyrightName, copyrightURL)
+	VALUES(0, 'test', './0.img', 'test image', 1, 1, null, null)
+2022-04-02 22:41:49.815 CEST [2105] ERROR:  duplicate key value violates unique constraint "images_path_key"
+2022-04-02 22:41:49.815 CEST [2105] DETAIL:  Key (path)=(./0.img) already exists.
+2022-04-02 22:41:49.815 CEST [2105] STATEMENT:  INSERT INTO images(ID, name, path, alt, width, height, copyrightName, copyrightURL)
+	VALUES(1, 'test', './0.img', 'test image', 1, 1, null, null)
+2022-04-03 00:24:27.468 CEST [9260] ERROR:  null value in column "type" of relation "images" violates not-null constraint
+2022-04-03 00:24:27.468 CEST [9260] DETAIL:  Failing row contains (2, null, null, null, null, null, null, null, null).
+2022-04-03 00:24:27.468 CEST [9260] STATEMENT:  INSERT INTO public.images (id, type, name, path, alt, width, height, copyrightname, copyrighturl) VALUES (DEFAULT, $1::varchar(50), $2::varchar(50), $3::varchar(255), $4::varchar(255), $5::integer, $6::integer, $7::varchar(50), $8::varchar(255))
+2022-04-03 00:24:32.274 CEST [9260] ERROR:  null value in column "type" of relation "images" violates not-null constraint
+2022-04-03 00:24:32.274 CEST [9260] DETAIL:  Failing row contains (4, null, null, null, null, null, null, null, null).
+2022-04-03 00:24:32.274 CEST [9260] STATEMENT:  INSERT INTO public.images (id, type, name, path, alt, width, height, copyrightname, copyrighturl) VALUES (DEFAULT, $1::varchar(50), $2::varchar(50), $3::varchar(255), $4::varchar(255), $5::integer, $6::integer, $7::varchar(50), $8::varchar(255))
+2022-04-03 00:36:23.457 CEST [4183] ERROR:  column "items" has pseudo-type anyarray
+2022-04-03 00:36:23.457 CEST [4183] STATEMENT:  CREATE TABLE IF NOT EXISTS catalogs (
+	    ID serial PRIMARY KEY,
+	    name varchar( 50 ) NOT NULL,
+	    items anyarray NOT NULL,
+	    alt varchar( 255 )
+	)
+2022-04-03 00:37:59.169 CEST [4183] ERROR:  duplicate key value violates unique constraint "images_path_key"
+2022-04-03 00:37:59.169 CEST [4183] DETAIL:  Key (path)=(./test.jpg) already exists.
+2022-04-03 00:37:59.169 CEST [4183] STATEMENT:  INSERT INTO images(ID, type, name, path, alt, width, height, copyrightName, copyrightURL)
+	VALUES(0, 'test', 'test', './test.jpg', 'test image', 1, 1, null, null)
+2022-04-03 00:40:42.579 CEST [10361] ERROR:  malformed array literal: "1, 2, 3"
+2022-04-03 00:40:42.579 CEST [10361] DETAIL:  Array value must start with "{" or dimension information.
+2022-04-03 00:40:42.579 CEST [10361] CONTEXT:  unnamed portal parameter $2 = '...'
+2022-04-03 00:40:42.579 CEST [10361] STATEMENT:  INSERT INTO public.projectbundles (id, name, items, alt) VALUES (DEFAULT, $1::varchar(50), $2, $3::varchar(255))
+2022-04-04 00:41:17.143 CEST [25249] ERROR:  array of serial is not implemented at character 166
+2022-04-04 00:41:17.143 CEST [25249] STATEMENT:  CREATE TABLE IF NOT EXISTS projects (
+	    ID serial PRIMARY KEY,
+	    name varchar( 50 ),
+	    version varchar( 12 ),
+	    logoID serial,
+	    role varchar[],
+	    skill serial[],
+	    tools serial[],
+	    screenshotIDs serial[],
+	    description varchar( 255 ),
+	    downloadLinks hstore,
+	
+	
+	    FOREIGN KEY ( logoID ) REFERENCES images(ID)
+	)
+2022-04-04 00:42:01.103 CEST [25249] ERROR:  array of serial is not implemented at character 166
+2022-04-04 00:42:01.103 CEST [25249] STATEMENT:  CREATE TABLE IF NOT EXISTS projects (
+	    ID serial PRIMARY KEY,
+	    name varchar( 50 ),
+	    version varchar( 12 ),
+	    logoID serial,
+	    role varchar[],
+	    skill serial[],
+	    tools serial[],
+	    screenshotIDs serial[],
+	    description varchar( 255 ),
+	    downloadLinks hstore,
+	
+	
+	    FOREIGN KEY ( logoID ) REFERENCES images(ID)
+	)
+2022-04-04 00:42:05.920 CEST [25249] ERROR:  extension "hstore" already exists
+2022-04-04 00:42:05.920 CEST [25249] STATEMENT:  CREATE EXTENSION hstore
+2022-04-04 00:42:15.633 CEST [25249] ERROR:  array of serial is not implemented at character 208
+2022-04-04 00:42:15.633 CEST [25249] STATEMENT:  CREATE TABLE IF NOT EXISTS projects (
+	    ID serial PRIMARY KEY,
+	    name varchar( 50 ),
+	    version varchar( 12 ),
+	    logoID serial,
+	    role varchar[],
+	    skill INT[],
+	    tools INT[],
+	    screenshotIDs serial[],
+	    description varchar( 255 ),
+	    downloadLinks hstore,
+	
+	
+	    FOREIGN KEY ( logoID ) REFERENCES images(ID)
+	)
+2022-04-04 00:42:56.147 CEST [25249] ERROR:  syntax error at or near "*" at character 15
+2022-04-04 00:42:56.147 CEST [25249] STATEMENT:  DROP DATABASE *
+2022-04-04 00:43:10.694 CEST [25249] ERROR:  syntax error at or near "*" at character 12
+2022-04-04 00:43:10.694 CEST [25249] STATEMENT:  DROP TABLE *
+2022-04-04 00:51:42.518 CEST [25249] ERROR:  cannot drop table images because other objects depend on it
+2022-04-04 00:51:42.518 CEST [25249] DETAIL:  constraint tools_imageid_fkey on table tools depends on table images
+	constraint projects_logoid_fkey on table projects depends on table images
+2022-04-04 00:51:42.518 CEST [25249] HINT:  Use DROP ... CASCADE to drop the dependent objects too.
+2022-04-04 00:51:42.518 CEST [25249] STATEMENT:  DROP TABLE IF EXISTS images
+2022-04-04 00:52:12.084 CEST [25249] ERROR:  cannot drop table images because other objects depend on it
+2022-04-04 00:52:12.084 CEST [25249] DETAIL:  constraint tools_imageid_fkey on table tools depends on table images
+	constraint projects_logoid_fkey on table projects depends on table images
+2022-04-04 00:52:12.084 CEST [25249] HINT:  Use DROP ... CASCADE to drop the dependent objects too.
+2022-04-04 00:52:12.084 CEST [25249] STATEMENT:  DROP TABLE IF EXISTS images
+2022-04-04 00:52:28.677 CEST [25912] ERROR:  cannot drop table images because other objects depend on it
+2022-04-04 00:52:28.677 CEST [25912] DETAIL:  constraint tools_imageid_fkey on table tools depends on table images
+	constraint projects_logoid_fkey on table projects depends on table images
+2022-04-04 00:52:28.677 CEST [25912] HINT:  Use DROP ... CASCADE to drop the dependent objects too.
+2022-04-04 00:52:28.677 CEST [25912] STATEMENT:  drop table images
+2022-04-04 00:53:00.470 CEST [25249] ERROR:  relation "images" does not exist
+2022-04-04 00:53:00.470 CEST [25249] STATEMENT:  CREATE TABLE IF NOT EXISTS tools (
+	    ID serial PRIMARY KEY,
+	    imageID serial UNIQUE NOT NULL ,
+	    name varchar( 50 ) NOT NULL,
+	    type varchar( 50 ) NOT NULL,
+	
+	    FOREIGN KEY ( imageID ) REFERENCES images(ID)
+	)
+2022-04-04 21:50:03.095 CEST [40250] ERROR:  cannot drop table images because other objects depend on it
+2022-04-04 21:50:03.095 CEST [40250] DETAIL:  constraint tools_imageid_fkey on table tools depends on table images
+	constraint projects_logoid_fkey on table projects depends on table images
+2022-04-04 21:50:03.095 CEST [40250] HINT:  Use DROP ... CASCADE to drop the dependent objects too.
+2022-04-04 21:50:03.095 CEST [40250] STATEMENT:  DROP TABLE IF EXISTS images
+2022-04-04 21:53:58.361 CEST [40686] ERROR:  insert or update on table "tools" violates foreign key constraint "tools_imageid_fkey"
+2022-04-04 21:53:58.361 CEST [40686] DETAIL:  Key (imageid)=(1) is not present in table "images".
+2022-04-04 21:53:58.361 CEST [40686] STATEMENT:  INSERT INTO public.tools (id, imageid, name, type) VALUES (DEFAULT, DEFAULT, $1::varchar(50), $2::varchar(50))
+2022-04-04 21:57:46.856 CEST [40686] ERROR:  insert or update on table "tools" violates foreign key constraint "tools_imageid_fkey"
+2022-04-04 21:57:46.856 CEST [40686] DETAIL:  Key (imageid)=(3) is not present in table "images".
+2022-04-04 21:57:46.856 CEST [40686] STATEMENT:  INSERT INTO public.tools (id, imageid, name, type) VALUES ($1::integer, DEFAULT, $2::varchar(50), $3::varchar(50))
+2022-04-04 21:58:02.570 CEST [40686] ERROR:  insert or update on table "tools" violates foreign key constraint "tools_imageid_fkey"
+2022-04-04 21:58:02.570 CEST [40686] DETAIL:  Key (imageid)=(4) is not present in table "images".
+2022-04-04 21:58:02.570 CEST [40686] STATEMENT:  INSERT INTO public.tools (id, imageid, name, type) VALUES (DEFAULT, DEFAULT, $1::varchar(50), $2::varchar(50))
+2022-04-04 22:54:57.111 CEST [40795] ERROR:  null value in column "width" of relation "images" violates not-null constraint
+2022-04-04 22:54:57.111 CEST [40795] DETAIL:  Failing row contains (4, logo, Swift logo, ./swift_logo, The logo of Swift., null, null, Apple, https://www.apple.com).
+2022-04-04 22:54:57.111 CEST [40795] STATEMENT:  INSERT INTO public.images (id, type, name, path, alt, width, height, copyrightname, copyrighturl) VALUES ($1::integer, $2::varchar(50), $3::varchar(50), $4::varchar(255), $5::varchar(255), $6::integer, $7::integer, $8::varchar(50), $9::varchar(255))
