@@ -230,3 +230,7 @@
 2022-04-04 22:54:57.111 CEST [40795] ERROR:  null value in column "width" of relation "images" violates not-null constraint
 2022-04-04 22:54:57.111 CEST [40795] DETAIL:  Failing row contains (4, logo, Swift logo, ./swift_logo, The logo of Swift., null, null, Apple, https://www.apple.com).
 2022-04-04 22:54:57.111 CEST [40795] STATEMENT:  INSERT INTO public.images (id, type, name, path, alt, width, height, copyrightname, copyrighturl) VALUES ($1::integer, $2::varchar(50), $3::varchar(50), $4::varchar(255), $5::varchar(255), $6::integer, $7::integer, $8::varchar(50), $9::varchar(255))
+2022-04-04 23:26:04.309 CEST [48588] ERROR:  malformed array literal: "1, 2, 3"
+2022-04-04 23:26:04.309 CEST [48588] DETAIL:  Array value must start with "{" or dimension information.
+2022-04-04 23:26:04.309 CEST [48588] CONTEXT:  unnamed portal parameter $2 = '...'
+2022-04-04 23:26:04.309 CEST [48588] STATEMENT:  INSERT INTO public.projectbundles (id, name, items, alt, styling_background) VALUES (DEFAULT, $1::varchar(50), $2, $3::varchar(255), $4::varchar(23))
