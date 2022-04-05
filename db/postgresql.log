@@ -234,3 +234,27 @@
 2022-04-04 23:26:04.309 CEST [48588] DETAIL:  Array value must start with "{" or dimension information.
 2022-04-04 23:26:04.309 CEST [48588] CONTEXT:  unnamed portal parameter $2 = '...'
 2022-04-04 23:26:04.309 CEST [48588] STATEMENT:  INSERT INTO public.projectbundles (id, name, items, alt, styling_background) VALUES (DEFAULT, $1::varchar(50), $2, $3::varchar(255), $4::varchar(23))
+2022-04-05 20:57:11.981 CEST [63834] ERROR:  cannot cast type hstore to hstore[] at character 86
+2022-04-05 20:57:11.981 CEST [63834] STATEMENT:  alter table projects
+	    alter column downloadlinks type hstore[] using downloadlinks::hstore[]
+2022-04-05 20:57:48.649 CEST [63834] ERROR:  cannot cast type hstore to hstore[] at character 86
+2022-04-05 20:57:48.649 CEST [63834] STATEMENT:  alter table projects
+	    alter column downloadlinks type hstore[] using downloadlinks::hstore[]
+2022-04-05 20:57:51.765 CEST [63834] ERROR:  cannot cast type hstore to hstore[] at character 86
+2022-04-05 20:57:51.765 CEST [63834] STATEMENT:  alter table projects
+	    alter column downloadlinks type hstore[] using downloadlinks::hstore[]
+2022-04-05 20:59:35.274 CEST [63834] ERROR:  syntax error at or near "[" at character 58
+2022-04-05 20:59:35.274 CEST [63834] STATEMENT:  alter table projects
+	    alter column downloadlinks type [] using downloadlinks::[]
+2022-04-05 21:00:44.699 CEST [63834] ERROR:  cannot cast type hstore to ghstore[] at character 87
+2022-04-05 21:00:44.699 CEST [63834] STATEMENT:  alter table projects
+	    alter column downloadlinks type ghstore[] using downloadlinks::ghstore[]
+2022-04-05 21:02:11.283 CEST [64135] ERROR:  null value in column "description" of relation "projects" violates not-null constraint
+2022-04-05 21:02:11.283 CEST [64135] DETAIL:  Failing row contains (1, Elements, 1.0, 23, {"Lead developer","Lead translator"}, null, {1,10,12,16,17,18}, null, null, "{a"=>"1}", null).
+2022-04-05 21:02:11.283 CEST [64135] STATEMENT:  INSERT INTO public.projects (id, name, version, "logoID", role, "skillIDs", "toolIDs", "screenshotISs", description, downloadlinks) VALUES (DEFAULT, $1::varchar(50), $2::varchar(12), $3::integer, $4, $5, $6, $7, $8::varchar(255), $9::hstore)
+2022-04-05 21:02:18.765 CEST [64135] ERROR:  null value in column "description" of relation "projects" violates not-null constraint
+2022-04-05 21:02:18.765 CEST [64135] DETAIL:  Failing row contains (1, Elements, 1.0, 23, {"Lead developer","Lead translator"}, null, {1,10,12,16,17,18}, null, null, "{a"=>"1}", null).
+2022-04-05 21:02:18.765 CEST [64135] STATEMENT:  INSERT INTO public.projects (id, name, version, "logoID", role, "skillIDs", "toolIDs", "screenshotISs", description, downloadlinks) VALUES ($1::integer, $2::varchar(50), $3::varchar(12), $4::integer, $5, $6, $7, $8, $9::varchar(255), $10::hstore)
+2022-04-05 21:02:49.824 CEST [64135] ERROR:  insert or update on table "projects" violates foreign key constraint "projects_logoid_fkey"
+2022-04-05 21:02:49.824 CEST [64135] DETAIL:  Key (logoID)=(23) is not present in table "images".
+2022-04-05 21:02:49.824 CEST [64135] STATEMENT:  INSERT INTO public.projects (id, name, version, "logoID", role, "skillIDs", "toolIDs", "screenshotISs", description, downloadlinks) VALUES ($1::integer, $2::varchar(50), $3::varchar(12), $4::integer, $5, $6, $7, $8, $9::varchar(255), $10::hstore)
