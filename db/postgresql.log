@@ -258,3 +258,31 @@
 2022-04-05 21:02:49.824 CEST [64135] ERROR:  insert or update on table "projects" violates foreign key constraint "projects_logoid_fkey"
 2022-04-05 21:02:49.824 CEST [64135] DETAIL:  Key (logoID)=(23) is not present in table "images".
 2022-04-05 21:02:49.824 CEST [64135] STATEMENT:  INSERT INTO public.projects (id, name, version, "logoID", role, "skillIDs", "toolIDs", "screenshotISs", description, downloadlinks) VALUES ($1::integer, $2::varchar(50), $3::varchar(12), $4::integer, $5, $6, $7, $8, $9::varchar(255), $10::hstore)
+2022-04-06 00:49:26.535 CEST [95241] LOG:  received fast shutdown request
+2022-04-06 00:49:26.536 CEST [95241] LOG:  aborting any active transactions
+2022-04-06 00:49:26.537 CEST [97910] FATAL:  terminating connection due to administrator command
+2022-04-06 00:49:26.537 CEST [95241] LOG:  background worker "logical replication launcher" (PID 95248) exited with exit code 1
+2022-04-06 00:49:26.539 CEST [95243] LOG:  shutting down
+2022-04-06 00:49:26.550 CEST [95241] LOG:  database system is shut down
+2022-04-06 00:49:41.468 CEST [77371] LOG:  starting PostgreSQL 14.2 on aarch64-apple-darwin20.6.0, compiled by Apple clang version 12.0.5 (clang-1205.0.22.9), 64-bit
+2022-04-06 00:49:41.471 CEST [77371] LOG:  listening on IPv6 address "::1", port 5432
+2022-04-06 00:49:41.471 CEST [77371] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2022-04-06 00:49:41.471 CEST [77371] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2022-04-06 00:49:41.475 CEST [77372] LOG:  database system was shut down at 2022-04-06 00:49:26 CEST
+2022-04-06 00:49:41.479 CEST [77371] LOG:  database system is ready to accept connections
+2022-04-06 00:50:05.348 CEST [77371] LOG:  received fast shutdown request
+2022-04-06 00:50:05.349 CEST [77371] LOG:  aborting any active transactions
+2022-04-06 00:50:05.350 CEST [77371] LOG:  background worker "logical replication launcher" (PID 77378) exited with exit code 1
+2022-04-06 00:50:05.350 CEST [77373] LOG:  shutting down
+2022-04-06 00:50:05.353 CEST [77371] LOG:  database system is shut down
+2022-04-11 00:42:05.932 CEST [74283] LOG:  starting PostgreSQL 14.2 on aarch64-apple-darwin20.6.0, compiled by Apple clang version 12.0.5 (clang-1205.0.22.9), 64-bit
+2022-04-11 00:42:05.937 CEST [74283] LOG:  listening on IPv6 address "::1", port 5432
+2022-04-11 00:42:05.937 CEST [74283] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2022-04-11 00:42:05.937 CEST [74283] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2022-04-11 00:42:05.944 CEST [74284] LOG:  database system was shut down at 2022-04-06 00:50:05 CEST
+2022-04-11 00:42:05.947 CEST [74283] LOG:  database system is ready to accept connections
+2022-04-13 00:34:33.136 CEST [74283] LOG:  received fast shutdown request
+2022-04-13 00:34:33.136 CEST [74283] LOG:  aborting any active transactions
+2022-04-13 00:34:33.137 CEST [74283] LOG:  background worker "logical replication launcher" (PID 74290) exited with exit code 1
+2022-04-13 00:34:33.137 CEST [74285] LOG:  shutting down
+2022-04-13 00:34:33.142 CEST [74283] LOG:  database system is shut down
