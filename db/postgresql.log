@@ -310,3 +310,19 @@
 2022-04-18 23:27:05.686 CEST [82143] LOG:  background worker "logical replication launcher" (PID 82150) exited with exit code 1
 2022-04-18 23:27:05.687 CEST [82145] LOG:  shutting down
 2022-04-18 23:27:05.695 CEST [82143] LOG:  database system is shut down
+2022-04-19 23:38:39.721 CEST [32993] LOG:  starting PostgreSQL 14.2 on aarch64-apple-darwin20.6.0, compiled by Apple clang version 12.0.5 (clang-1205.0.22.9), 64-bit
+2022-04-19 23:38:39.723 CEST [32993] LOG:  listening on IPv6 address "::1", port 5432
+2022-04-19 23:38:39.723 CEST [32993] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2022-04-19 23:38:39.723 CEST [32993] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2022-04-19 23:38:39.729 CEST [32994] LOG:  database system was shut down at 2022-04-18 23:27:05 CEST
+2022-04-19 23:38:39.733 CEST [32993] LOG:  database system is ready to accept connections
+2022-04-19 23:45:13.071 CEST [33542] ERROR:  duplicate key value violates unique constraint "images_pkey"
+2022-04-19 23:45:13.071 CEST [33542] DETAIL:  Key (id)=(3) already exists.
+2022-04-19 23:45:13.071 CEST [33542] STATEMENT:  INSERT INTO public.images (id, type, name, path, alt, width, height, copyrightname, copyrighturl) VALUES (DEFAULT, $1::varchar(50), $2::varchar(50), $3::varchar(255), $4::varchar(255), $5::integer, $6::integer, $7::varchar(50), $8::varchar(255))
+2022-04-19 23:49:04.068 CEST [32993] LOG:  received fast shutdown request
+2022-04-19 23:49:04.068 CEST [32993] LOG:  aborting any active transactions
+2022-04-19 23:49:04.069 CEST [33786] FATAL:  terminating connection due to administrator command
+2022-04-19 23:49:04.069 CEST [33542] FATAL:  terminating connection due to administrator command
+2022-04-19 23:49:04.070 CEST [32993] LOG:  background worker "logical replication launcher" (PID 33000) exited with exit code 1
+2022-04-19 23:49:04.070 CEST [32995] LOG:  shutting down
+2022-04-19 23:49:04.076 CEST [32993] LOG:  database system is shut down
