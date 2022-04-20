@@ -326,3 +326,27 @@
 2022-04-19 23:49:04.070 CEST [32993] LOG:  background worker "logical replication launcher" (PID 33000) exited with exit code 1
 2022-04-19 23:49:04.070 CEST [32995] LOG:  shutting down
 2022-04-19 23:49:04.076 CEST [32993] LOG:  database system is shut down
+2022-04-20 23:46:41.421 CEST [52986] LOG:  starting PostgreSQL 14.2 on aarch64-apple-darwin20.6.0, compiled by Apple clang version 12.0.5 (clang-1205.0.22.9), 64-bit
+2022-04-20 23:46:41.424 CEST [52986] LOG:  listening on IPv6 address "::1", port 5431
+2022-04-20 23:46:41.424 CEST [52986] LOG:  listening on IPv4 address "127.0.0.1", port 5431
+2022-04-20 23:46:41.425 CEST [52986] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5431"
+2022-04-20 23:46:41.432 CEST [52987] LOG:  database system was shut down at 2022-04-19 23:49:04 CEST
+2022-04-20 23:46:41.435 CEST [52986] LOG:  database system is ready to accept connections
+2022-04-20 23:46:55.522 CEST [52986] LOG:  received fast shutdown request
+2022-04-20 23:46:55.523 CEST [52986] LOG:  aborting any active transactions
+2022-04-20 23:46:55.525 CEST [52986] LOG:  background worker "logical replication launcher" (PID 52993) exited with exit code 1
+2022-04-20 23:46:55.525 CEST [52988] LOG:  shutting down
+2022-04-20 23:46:55.540 CEST [52986] LOG:  database system is shut down
+2022-04-20 23:46:59.497 CEST [53024] LOG:  starting PostgreSQL 14.2 on aarch64-apple-darwin20.6.0, compiled by Apple clang version 12.0.5 (clang-1205.0.22.9), 64-bit
+2022-04-20 23:46:59.505 CEST [53024] LOG:  listening on IPv6 address "::1", port 5432
+2022-04-20 23:46:59.505 CEST [53024] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2022-04-20 23:46:59.506 CEST [53024] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2022-04-20 23:46:59.509 CEST [53025] LOG:  database system was shut down at 2022-04-20 23:46:55 CEST
+2022-04-20 23:46:59.511 CEST [53024] LOG:  database system is ready to accept connections
+2022-04-20 23:47:12.479 CEST [53024] LOG:  received fast shutdown request
+2022-04-20 23:47:12.479 CEST [53024] LOG:  aborting any active transactions
+2022-04-20 23:47:12.480 CEST [53034] FATAL:  terminating connection due to administrator command
+2022-04-20 23:47:12.480 CEST [53044] FATAL:  terminating connection due to administrator command
+2022-04-20 23:47:12.481 CEST [53024] LOG:  background worker "logical replication launcher" (PID 53031) exited with exit code 1
+2022-04-20 23:47:12.482 CEST [53026] LOG:  shutting down
+2022-04-20 23:47:12.490 CEST [53024] LOG:  database system is shut down
