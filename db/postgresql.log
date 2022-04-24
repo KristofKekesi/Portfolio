@@ -448,3 +448,26 @@
 2022-04-22 23:50:51.117 CEST [76748] LOG:  background worker "logical replication launcher" (PID 76755) exited with exit code 1
 2022-04-22 23:50:51.118 CEST [76750] LOG:  shutting down
 2022-04-22 23:50:51.131 CEST [76748] LOG:  database system is shut down
+2022-04-23 00:37:38.379 CEST [95599] LOG:  starting PostgreSQL 14.2 on aarch64-apple-darwin20.6.0, compiled by Apple clang version 12.0.5 (clang-1205.0.22.9), 64-bit
+2022-04-23 00:37:38.381 CEST [95599] LOG:  listening on IPv6 address "::1", port 5432
+2022-04-23 00:37:38.381 CEST [95599] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2022-04-23 00:37:38.381 CEST [95599] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2022-04-23 00:37:38.384 CEST [95600] LOG:  database system was shut down at 2022-04-22 23:50:51 CEST
+2022-04-23 00:37:38.388 CEST [95599] LOG:  database system is ready to accept connections
+2022-04-23 15:28:21.677 CEST [95599] LOG:  received fast shutdown request
+2022-04-23 15:28:21.678 CEST [95599] LOG:  aborting any active transactions
+2022-04-23 15:28:21.686 CEST [95599] LOG:  background worker "logical replication launcher" (PID 95606) exited with exit code 1
+2022-04-23 15:28:21.686 CEST [95601] LOG:  shutting down
+2022-04-23 15:28:21.697 CEST [95599] LOG:  database system is shut down
+2022-04-24 23:45:47.620 CEST [11304] LOG:  starting PostgreSQL 14.2 on aarch64-apple-darwin20.6.0, compiled by Apple clang version 12.0.5 (clang-1205.0.22.9), 64-bit
+2022-04-24 23:45:47.624 CEST [11304] LOG:  listening on IPv6 address "::1", port 5432
+2022-04-24 23:45:47.624 CEST [11304] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2022-04-24 23:45:47.624 CEST [11304] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2022-04-24 23:45:47.632 CEST [11305] LOG:  database system was shut down at 2022-04-23 15:28:21 CEST
+2022-04-24 23:45:47.636 CEST [11304] LOG:  database system is ready to accept connections
+2022-04-24 23:58:15.218 CEST [11304] LOG:  received fast shutdown request
+2022-04-24 23:58:15.221 CEST [11304] LOG:  aborting any active transactions
+2022-04-24 23:58:15.222 CEST [11304] LOG:  background worker "logical replication launcher" (PID 11311) exited with exit code 1
+2022-04-24 23:58:15.225 CEST [11320] FATAL:  terminating connection due to administrator command
+2022-04-24 23:58:15.226 CEST [11306] LOG:  shutting down
+2022-04-24 23:58:15.239 CEST [11304] LOG:  database system is shut down
