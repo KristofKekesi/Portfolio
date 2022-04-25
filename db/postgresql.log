@@ -471,3 +471,44 @@
 2022-04-24 23:58:15.225 CEST [11320] FATAL:  terminating connection due to administrator command
 2022-04-24 23:58:15.226 CEST [11306] LOG:  shutting down
 2022-04-24 23:58:15.239 CEST [11304] LOG:  database system is shut down
+2022-04-25 00:22:26.207 CEST [12475] LOG:  starting PostgreSQL 14.2 on aarch64-apple-darwin20.6.0, compiled by Apple clang version 12.0.5 (clang-1205.0.22.9), 64-bit
+2022-04-25 00:22:26.214 CEST [12475] LOG:  listening on IPv6 address "::1", port 5432
+2022-04-25 00:22:26.214 CEST [12475] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2022-04-25 00:22:26.218 CEST [12475] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2022-04-25 00:22:26.274 CEST [12476] LOG:  database system was shut down at 2022-04-24 23:58:15 CEST
+2022-04-25 00:22:26.298 CEST [12475] LOG:  database system is ready to accept connections
+2022-04-25 00:22:29.840 CEST [12494] ERROR:  null value in column "version" of relation "projects" violates not-null constraint
+2022-04-25 00:22:29.840 CEST [12494] DETAIL:  Failing row contains (7, Dogehouse, null, 33, {"a Translator"}, null, {12}, null, Taking voice conversations to the moon., null, {Web}).
+2022-04-25 00:22:29.840 CEST [12494] STATEMENT:  INSERT INTO public.projects (id, name, version, "logoID", role, "skillIDs", "toolIDs", "screenshotISs", description, downloadlinks, platforms) VALUES (DEFAULT, $1::varchar(50), $2::varchar(12), $3::integer, $4, $5, $6, $7, $8::varchar(255), $9::hstore, $10)
+2022-04-25 17:04:42.717 CEST [31475] ERROR:  operator does not exist: character varying = numeric at character 35
+2022-04-25 17:04:42.717 CEST [31475] HINT:  No operator matches the given name and argument types. You might need to add explicit type casts.
+2022-04-25 17:04:42.717 CEST [31475] STATEMENT:  SELECT * FROM projects
+	WHERE name = 1.0
+2022-04-25 17:04:48.750 CEST [31475] ERROR:  operator does not exist: character varying == numeric at character 35
+2022-04-25 17:04:48.750 CEST [31475] HINT:  No operator matches the given name and argument types. You might need to add explicit type casts.
+2022-04-25 17:04:48.750 CEST [31475] STATEMENT:  SELECT * FROM projects
+	WHERE name == 1.0
+2022-04-25 17:04:54.596 CEST [31475] ERROR:  column "1.0" does not exist at character 38
+2022-04-25 17:04:54.596 CEST [31475] STATEMENT:  SELECT * FROM projects
+	WHERE name == "1.0"
+2022-04-25 17:04:58.518 CEST [31475] ERROR:  column "1.0" does not exist at character 37
+2022-04-25 17:04:58.518 CEST [31475] STATEMENT:  SELECT * FROM projects
+	WHERE name = "1.0"
+2022-04-25 22:54:48.095 CEST [42447] ERROR:  Syntax error near "=" at position 20
+2022-04-25 22:54:48.095 CEST [42447] CONTEXT:  unnamed portal parameter $1 = '...'
+2022-04-25 22:54:48.095 CEST [42447] STATEMENT:  UPDATE public.projects SET downloadlinks = $1::hstore WHERE id = $2::integer
+2022-04-25 22:55:24.035 CEST [42447] ERROR:  Syntax error near "=" at position 20
+2022-04-25 22:55:24.035 CEST [42447] CONTEXT:  unnamed portal parameter $1 = '...'
+2022-04-25 22:55:24.035 CEST [42447] STATEMENT:  UPDATE public.projects SET downloadlinks = $1::hstore WHERE id = $2::integer
+2022-04-25 22:56:34.852 CEST [42569] ERROR:  syntax error at or near "[" at character 58
+2022-04-25 22:56:34.852 CEST [42569] STATEMENT:  alter table projects
+	    alter column downloadlinks type [hstore] using downloadlinks::[hstore]
+2022-04-25 22:56:47.588 CEST [42569] ERROR:  cannot cast type hstore to hstore[] at character 86
+2022-04-25 22:56:47.588 CEST [42569] STATEMENT:  alter table projects
+	    alter column downloadlinks type hstore[] using downloadlinks::hstore[]
+2022-04-25 22:56:49.793 CEST [42569] ERROR:  cannot cast type hstore to hstore[] at character 86
+2022-04-25 22:56:49.793 CEST [42569] STATEMENT:  alter table projects
+	    alter column downloadlinks type hstore[] using downloadlinks::hstore[]
+2022-04-25 23:35:23.014 CEST [42447] ERROR:  Syntax error near "a" at position 39
+2022-04-25 23:35:23.014 CEST [42447] CONTEXT:  unnamed portal parameter $1 = '...'
+2022-04-25 23:35:23.014 CEST [42447] STATEMENT:  UPDATE public.projects SET downloadlinks = $1::hstore WHERE id = $2::integer
