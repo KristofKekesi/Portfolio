@@ -512,3 +512,102 @@
 2022-04-25 23:35:23.014 CEST [42447] ERROR:  Syntax error near "a" at position 39
 2022-04-25 23:35:23.014 CEST [42447] CONTEXT:  unnamed portal parameter $1 = '...'
 2022-04-25 23:35:23.014 CEST [42447] STATEMENT:  UPDATE public.projects SET downloadlinks = $1::hstore WHERE id = $2::integer
+2022-04-26 22:57:52.925 CEST [65891] ERROR:  operator does not exist: character varying == unknown at character 41
+2022-04-26 22:57:52.925 CEST [65891] HINT:  No operator matches the given name and argument types. You might need to add explicit type casts.
+2022-04-26 22:57:52.925 CEST [65891] STATEMENT:  SELECT name FROM projects
+	WHERE version == '1.0'
+2022-04-26 23:54:29.454 CEST [66136] ERROR:  duplicate key value violates unique constraint "images_path_key"
+2022-04-26 23:54:29.454 CEST [66136] DETAIL:  Key (path)=(./quick_pad_logo.png) already exists.
+2022-04-26 23:54:29.454 CEST [66136] STATEMENT:  INSERT INTO public.images (id, type, name, path, alt, width, height, copyrightname, copyrighturl) VALUES (DEFAULT, $1::varchar(50), $2::varchar(50), $3::varchar(255), $4::varchar(255), $5::integer, $6::integer, $7::varchar(50), $8::varchar(255))
+2022-04-26 23:58:36.733 CEST [67148] ERROR:  subquery must return only one column at character 27
+2022-04-26 23:58:36.733 CEST [67148] STATEMENT:  SELECT * FROM tools
+	WHERE (
+	     SELECT * FROM projects
+	)
+2022-04-26 23:58:53.294 CEST [67148] ERROR:  argument of WHERE must be type boolean, not type character varying at character 27
+2022-04-26 23:58:53.294 CEST [67148] STATEMENT:  SELECT * FROM tools
+	WHERE (
+	     SELECT name FROM projects
+	)
+2022-04-26 23:58:54.820 CEST [67148] ERROR:  argument of WHERE must be type boolean, not type character varying at character 27
+2022-04-26 23:58:54.820 CEST [67148] STATEMENT:  SELECT * FROM tools
+	WHERE (
+	     SELECT name FROM projects
+	)
+2022-04-26 23:59:32.019 CEST [67148] ERROR:  column "toolids" does not exist at character 41
+2022-04-26 23:59:32.019 CEST [67148] HINT:  Perhaps you meant to reference the column "projects.toolIDs".
+2022-04-26 23:59:32.019 CEST [67148] STATEMENT:  SELECT * FROM tools
+	WHERE (
+	     SELECT toolIDs FROM projects
+	)
+2022-04-26 23:59:41.031 CEST [67148] ERROR:  argument of WHERE must be type boolean, not type integer[] at character 27
+2022-04-26 23:59:41.031 CEST [67148] STATEMENT:  SELECT * FROM tools
+	WHERE (
+	     SELECT "toolIDs" FROM projects
+	)
+2022-04-27 00:00:34.300 CEST [67148] ERROR:  operator does not exist: integer = integer[] at character 30
+2022-04-27 00:00:34.300 CEST [67148] HINT:  No operator matches the given name and argument types. You might need to add explicit type casts.
+2022-04-27 00:00:34.300 CEST [67148] STATEMENT:  SELECT * FROM tools
+	WHERE id = (
+	     SELECT "toolIDs" FROM projects
+	)
+2022-04-27 00:00:59.934 CEST [67148] ERROR:  operator does not exist: integer = integer[] at character 30
+2022-04-27 00:00:59.934 CEST [67148] HINT:  No operator matches the given name and argument types. You might need to add explicit type casts.
+2022-04-27 00:00:59.934 CEST [67148] STATEMENT:  SELECT * FROM tools
+	WHERE id IN (
+	     SELECT "toolIDs" FROM projects
+	)
+2022-04-27 00:01:03.645 CEST [67148] ERROR:  operator does not exist: integer = integer[] at character 30
+2022-04-27 00:01:03.645 CEST [67148] HINT:  No operator matches the given name and argument types. You might need to add explicit type casts.
+2022-04-27 00:01:03.645 CEST [67148] STATEMENT:  SELECT * FROM tools
+	WHERE id IN (
+	     SELECT "toolIDs" FROM projects
+	)
+2022-04-27 00:01:08.031 CEST [67148] ERROR:  operator does not exist: integer = integer[] at character 30
+2022-04-27 00:01:08.031 CEST [67148] HINT:  No operator matches the given name and argument types. You might need to add explicit type casts.
+2022-04-27 00:01:08.031 CEST [67148] STATEMENT:  SELECT * FROM tools
+	WHERE id IN (
+	     SELECT "toolIDs" FROM projects
+	)
+2022-04-27 00:01:08.365 CEST [67148] ERROR:  operator does not exist: integer = integer[] at character 30
+2022-04-27 00:01:08.365 CEST [67148] HINT:  No operator matches the given name and argument types. You might need to add explicit type casts.
+2022-04-27 00:01:08.365 CEST [67148] STATEMENT:  SELECT * FROM tools
+	WHERE id IN (
+	     SELECT "toolIDs" FROM projects
+	)
+2022-04-27 00:01:21.311 CEST [67148] ERROR:  operator does not exist: integer = integer[] at character 30
+2022-04-27 00:01:21.311 CEST [67148] HINT:  No operator matches the given name and argument types. You might need to add explicit type casts.
+2022-04-27 00:01:21.311 CEST [67148] STATEMENT:  SELECT * FROM tools
+	WHERE id IN (
+	     SELECT "toolIDs" FROM projects
+	)
+2022-04-27 00:01:26.555 CEST [67148] ERROR:  operator does not exist: integer = integer[] at character 30
+2022-04-27 00:01:26.555 CEST [67148] HINT:  No operator matches the given name and argument types. You might need to add explicit type casts.
+2022-04-27 00:01:26.555 CEST [67148] STATEMENT:  SELECT * FROM tools
+	WHERE id IN (
+	     SELECT "toolIDs" FROM projects
+	)
+2022-04-27 00:02:53.922 CEST [67148] ERROR:  operator does not exist: integer = integer[] at character 30
+2022-04-27 00:02:53.922 CEST [67148] HINT:  No operator matches the given name and argument types. You might need to add explicit type casts.
+2022-04-27 00:02:53.922 CEST [67148] STATEMENT:  SELECT * FROM tools
+	WHERE id IN (
+	     SELECT "toolIDs" FROM projects
+	)
+2022-04-27 00:03:07.703 CEST [67148] ERROR:  operator does not exist: integer = integer[] at character 30
+2022-04-27 00:03:07.703 CEST [67148] HINT:  No operator matches the given name and argument types. You might need to add explicit type casts.
+2022-04-27 00:03:07.703 CEST [67148] STATEMENT:  SELECT * FROM tools
+	WHERE id IN (
+	     SELECT "toolIDs" FROM projects
+	)
+2022-04-27 00:04:09.345 CEST [67148] ERROR:  operator does not exist: integer = integer[] at character 30
+2022-04-27 00:04:09.345 CEST [67148] HINT:  No operator matches the given name and argument types. You might need to add explicit type casts.
+2022-04-27 00:04:09.345 CEST [67148] STATEMENT:  SELECT * FROM tools
+	WHERE id IN (
+	     SELECT "toolIDs" FROM projects
+	)
+2022-04-27 00:04:12.318 CEST [67148] ERROR:  operator does not exist: integer = integer[] at character 30
+2022-04-27 00:04:12.318 CEST [67148] HINT:  No operator matches the given name and argument types. You might need to add explicit type casts.
+2022-04-27 00:04:12.318 CEST [67148] STATEMENT:  SELECT * FROM tools
+	WHERE id IN (
+	     SELECT "toolIDs" FROM projects
+	)
