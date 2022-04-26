@@ -4,6 +4,10 @@
        \_  ___  ___>
          \__) \__)   */
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @font-face {
   font-family: 'InterLight';
   src: url('./fonts/Inter-Light.ttf'); /* IE9 Compat Modes */

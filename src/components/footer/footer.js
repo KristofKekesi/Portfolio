@@ -23,7 +23,7 @@ function Footer() {
     return (
         <footer>
             <center>
-                <ul id="footer-content">
+                <ul id="footer-content" className="bg-red">
                     <li>
                         Contacts
                         <ul>
