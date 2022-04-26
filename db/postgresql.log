@@ -611,3 +611,72 @@
 	WHERE id IN (
 	     SELECT "toolIDs" FROM projects
 	)
+2022-04-27 00:06:38.157 CEST [67148] ERROR:  column "projects" does not exist at character 69
+2022-04-27 00:06:38.157 CEST [67148] STATEMENT:  SELECT * FROM tools
+	WHERE id IN (
+	     SELECT "toolIDs" FROM unnest(projects)
+	)
+2022-04-27 00:07:46.010 CEST [67148] ERROR:  operator does not exist: integer = integer[] at character 30
+2022-04-27 00:07:46.010 CEST [67148] HINT:  No operator matches the given name and argument types. You might need to add explicit type casts.
+2022-04-27 00:07:46.010 CEST [67148] STATEMENT:  SELECT * FROM tools
+	WHERE id IN (
+	     SELECT "toolIDs" FROM projects
+	)
+2022-04-27 00:07:56.931 CEST [67148] ERROR:  operator does not exist: integer = integer[] at character 30
+2022-04-27 00:07:56.931 CEST [67148] HINT:  No operator matches the given name and argument types. You might need to add explicit type casts.
+2022-04-27 00:07:56.931 CEST [67148] STATEMENT:  SELECT * FROM tools
+	WHERE id IN (
+	     SELECT projects."toolIDs" FROM projects
+	)
+2022-04-27 00:09:36.218 CEST [67148] ERROR:  function contains(integer, integer[]) does not exist at character 27
+2022-04-27 00:09:36.218 CEST [67148] HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+2022-04-27 00:09:36.218 CEST [67148] STATEMENT:  SELECT * FROM tools
+	WHERE CONTAINS("id", (
+	     SELECT projects."toolIDs" FROM projects
+	))
+2022-04-27 00:10:26.925 CEST [67148] ERROR:  operator does not exist: integer ~~ integer[] at character 32
+2022-04-27 00:10:26.925 CEST [67148] HINT:  No operator matches the given name and argument types. You might need to add explicit type casts.
+2022-04-27 00:10:26.925 CEST [67148] STATEMENT:  SELECT * FROM tools
+	WHERE "id" LIKE (
+	     SELECT projects."toolIDs" FROM projects
+	)
+2022-04-27 00:11:40.940 CEST [67148] ERROR:  malformed array literal: "(1,10,12,16,17,18)"
+2022-04-27 00:11:40.940 CEST [67148] DETAIL:  Array value must start with "{" or dimension information.
+2022-04-27 00:11:40.940 CEST [67148] CONTEXT:  unnamed portal parameter $1 = '...'
+2022-04-27 00:11:40.940 CEST [67148] STATEMENT:  UPDATE public.projects SET "toolIDs" = $1 WHERE id = $2::integer
+2022-04-27 00:13:22.871 CEST [67148] ERROR:  null value in column "description" of relation "projects" violates not-null constraint
+2022-04-27 00:13:22.871 CEST [67148] DETAIL:  Failing row contains (13, Quick Pad, null, 39, {"a Translator"}, null, {12}, null, null, null, null).
+2022-04-27 00:13:22.871 CEST [67148] STATEMENT:  INSERT INTO public.projects (id, name, version, "logoID", role, "skillIDs", "toolIDs", "screenshotISs", description, downloadlinks, platforms) VALUES (DEFAULT, $1::varchar(50), $2::varchar(12), $3::integer, $4, $5, $6, $7, $8::varchar(255), $9::hstore, $10)
+2022-04-27 00:14:49.474 CEST [67148] ERROR:  operator does not exist: integer = integer[] at character 32
+2022-04-27 00:14:49.474 CEST [67148] HINT:  No operator matches the given name and argument types. You might need to add explicit type casts.
+2022-04-27 00:14:49.474 CEST [67148] STATEMENT:  SELECT * FROM tools
+	WHERE "id" = ANY(
+	     SELECT projects."toolIDs" FROM projects
+	)
+2022-04-27 00:15:50.156 CEST [67148] ERROR:  operator does not exist: integer = integer[] at character 32
+2022-04-27 00:15:50.156 CEST [67148] HINT:  No operator matches the given name and argument types. You might need to add explicit type casts.
+2022-04-27 00:15:50.156 CEST [67148] STATEMENT:  SELECT * FROM tools
+	WHERE "id" = ANY(
+	     SELECT projects."toolIDs" FROM projects
+	)
+2022-04-27 00:16:49.556 CEST [67148] ERROR:  operator does not exist: integer = integer[] at character 32
+2022-04-27 00:16:49.556 CEST [67148] HINT:  No operator matches the given name and argument types. You might need to add explicit type casts.
+2022-04-27 00:16:49.556 CEST [67148] STATEMENT:  SELECT * FROM tools
+	WHERE "id" = ANY(
+	     SELECT projects."toolIDs" FROM projects
+	)
+2022-04-27 00:17:20.453 CEST [67148] ERROR:  operator does not exist: integer = integer[] at character 32
+2022-04-27 00:17:20.453 CEST [67148] HINT:  No operator matches the given name and argument types. You might need to add explicit type casts.
+2022-04-27 00:17:20.453 CEST [67148] STATEMENT:  SELECT * FROM tools
+	WHERE "id" = ANY(
+	     SELECT "toolIDs" FROM projects
+	)
+2022-04-27 00:17:29.554 CEST [67148] ERROR:  operator does not exist: integer = integer[] at character 32
+2022-04-27 00:17:29.554 CEST [67148] HINT:  No operator matches the given name and argument types. You might need to add explicit type casts.
+2022-04-27 00:17:29.554 CEST [67148] STATEMENT:  SELECT * FROM tools
+	WHERE "id" = ANY(
+	     SELECT "toolIDs" FROM projects
+	)
+2022-04-27 00:59:06.219 CEST [67148] ERROR:  column "images.id" must appear in the GROUP BY clause or be used in an aggregate function at character 8
+2022-04-27 00:59:06.219 CEST [67148] STATEMENT:  SELECT * FROM images
+	GROUP BY type
