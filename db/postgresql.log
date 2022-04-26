@@ -680,3 +680,10 @@
 2022-04-27 00:59:06.219 CEST [67148] ERROR:  column "images.id" must appear in the GROUP BY clause or be used in an aggregate function at character 8
 2022-04-27 00:59:06.219 CEST [67148] STATEMENT:  SELECT * FROM images
 	GROUP BY type
+2022-04-27 01:02:39.865 CEST [12475] LOG:  received fast shutdown request
+2022-04-27 01:02:39.866 CEST [12475] LOG:  aborting any active transactions
+2022-04-27 01:02:39.870 CEST [67148] FATAL:  terminating connection due to administrator command
+2022-04-27 01:02:39.870 CEST [66136] FATAL:  terminating connection due to administrator command
+2022-04-27 01:02:39.874 CEST [12475] LOG:  background worker "logical replication launcher" (PID 12482) exited with exit code 1
+2022-04-27 01:02:39.874 CEST [12477] LOG:  shutting down
+2022-04-27 01:02:39.883 CEST [12475] LOG:  database system is shut down
