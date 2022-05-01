@@ -778,3 +778,9 @@
 2022-04-29 20:25:15.500 CEST [73810] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
 2022-04-29 20:25:15.504 CEST [73812] LOG:  database system was shut down at 2022-04-28 00:31:17 CEST
 2022-04-29 20:25:15.510 CEST [73810] LOG:  database system is ready to accept connections
+2022-04-30 22:26:57.609 CEST [98277] ERROR:  null value in column "description" of relation "projects" violates not-null constraint
+2022-04-30 22:26:57.609 CEST [98277] DETAIL:  Failing row contains (17, Steeped, null, 48, {"a Translator"}, null, {27}, null, null, "appStore"=>"https://apps.apple.com/app/steeped-tea-brewing-comp..., {Android,iOS}).
+2022-04-30 22:26:57.609 CEST [98277] STATEMENT:  INSERT INTO public.projects (id, name, version, "logoID", role, "skillIDs", "toolIDs", "screenshotISs", description, downloadlinks, platforms) VALUES (DEFAULT, $1::varchar(50), $2::varchar(12), $3::integer, $4, $5, $6, $7, $8::varchar(255), $9::hstore, $10)
+2022-04-30 22:27:00.414 CEST [98277] ERROR:  null value in column "description" of relation "projects" violates not-null constraint
+2022-04-30 22:27:00.414 CEST [98277] DETAIL:  Failing row contains (18, Steeped, null, 48, {"a Translator"}, null, {27}, null, null, "appStore"=>"https://apps.apple.com/app/steeped-tea-brewing-comp..., {Android,iOS}).
+2022-04-30 22:27:00.414 CEST [98277] STATEMENT:  INSERT INTO public.projects (id, name, version, "logoID", role, "skillIDs", "toolIDs", "screenshotISs", description, downloadlinks, platforms) VALUES (DEFAULT, $1::varchar(50), $2::varchar(12), $3::integer, $4, $5, $6, $7, $8::varchar(255), $9::hstore, $10)
