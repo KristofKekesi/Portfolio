@@ -4,9 +4,6 @@
        \_  ___  ___>
          \__) \__)   */
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 @font-face {
   font-family: 'InterLight';

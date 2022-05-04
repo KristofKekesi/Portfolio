@@ -1,3 +1,4 @@
+import React from 'react';
 import appleTvAppStore from "./apple-tv-app-store.svg";
 import appStore from "./app-store.svg";
 import macAppStore from "./mac-app-store.svg";
@@ -48,12 +49,13 @@ function Badges(props) {
                 console.log("Badge type not found for project " + props.projectName);
         }
 
+        // possible error props.style was removed
         if(props.downloadLinks[i]["isAvailable"]) {
             final.push(<a className="target" href={props.downloadLinks[i]["link"]} key={i}><img style={{height: "4rem"}} alt={"Download " + props.projectName + " from " + platform + "."} src={badge}></img></a>);
         }
     }
     return (
-        <div style={props.style} style={{display: "flex", flexWrap: "wrap", gap: "10px", paddingLeft: "min(5rem, 5vw)", paddingRight: "min(5rem, 5vw)"}} className="last">{final}</div>
+        <div style={{display: "flex", flexWrap: "wrap", gap: "10px", paddingLeft: "min(5rem, 5vw)", paddingRight: "min(5rem, 5vw)"}} className="last">{final}</div>
     );
 }
 

@@ -13,7 +13,8 @@ import './dock.css';
 
 
 function Dock(props) {
-    const dockElementIDs = props.IDs ?? [0, 1, 4, 12, 5];
+    //const dockElementIDs = props.IDs ?? [0, 1, 4, 12, 5];
+    const dockElementIDs = [0, 1, 4, 12, 5];
     
     let projectTooltips = [];
     for (let i = 0; i < dockElementIDs.length; i++) {
