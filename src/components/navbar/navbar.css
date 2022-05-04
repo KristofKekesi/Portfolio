@@ -62,26 +62,10 @@ nav.white {
     color: #173959;
 }
 
-.desktop-view {
-    display: block;
-}
-
-.mobile-view {
-    display: none;
-}
-
 
 @media screen and (max-width: 1000px) {
     body {
         overflow-x: hidden;
-    }
-
-    .desktop-view {
-        display: none;
-    }
-
-    .mobile-view {
-        display: block;
     }
 
     #navbar-links {

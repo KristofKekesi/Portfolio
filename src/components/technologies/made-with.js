@@ -53,7 +53,7 @@ function MadeWith(props) {
             API.getImage("https://www.kekesi.dev/api/img/" + props.image + ".json").then(image => {
                 setImage(image);
             }).catch((e) => {console.error(e)})
-        }, []);
+        }, [props.image]);
         
         if (image === undefined) {
             return(
@@ -72,7 +72,7 @@ function MadeWith(props) {
     }
 
 
-    let technologyTypes = new Object();
+    let technologyTypes = {};
     for(let i in props.madeWith) {
         let technology = props.madeWith[i];
         if (technologies[technology] === undefined) {

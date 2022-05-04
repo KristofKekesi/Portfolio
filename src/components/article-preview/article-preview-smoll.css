@@ -53,7 +53,7 @@ article.article-preview-smoll .text-subtitle {
 .article-preview-smoll-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: start;
+    justify-content: flex-start;
     gap: 2.5rem;
 
     margin-left: min(5rem, 5vw);

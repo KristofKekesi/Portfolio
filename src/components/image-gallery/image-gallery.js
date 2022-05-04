@@ -28,7 +28,7 @@ function ImageGallery(props) {
                 }
             );
         }
-    }, []);
+    }, [props.IDs]);
     
     if(finalContent !== undefined) {
         return(

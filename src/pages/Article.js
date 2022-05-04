@@ -46,7 +46,7 @@ function ArticlePage() {
             if (article.redirect && (article.redirect !== window.location.href.replace(window.location.origin + "#", ""))) {
               window.location.href = window.location.origin + "#" + article.redirect;
             } else {
-              window.history.replaceState(null, article.name.replace(/<\/?[^>]+(>|$)/g, ""), window.location.protocol + '//' + window.location.host + "#/article" + "?" + article.id.replace("ARTICLE-", "") + "-" + article.name.replace(/<\/?[^>]+(>|$)/g, "").replace(/\s/g, ""));
+              window.history.replaceState(null, article.name.replace(/<\/?[^>]+(>|$)/g, ""), window.location.protocol + "//" + window.location.host + "#/article?" + article.id.replace("ARTICLE-", "") + "-" + article.name.replace(/<\/?[^>]+(>|$)/g, "").replace(/\s/g, ""));
             }
 
         }).catch(e => {

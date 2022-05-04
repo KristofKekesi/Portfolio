@@ -29,7 +29,7 @@ function ArticlePreviewSmoll(props) {
                     }
                 );
         }).catch((e) => {setArticle ( null )});
-    }, []);
+    }, [props.id]);
 
     if (article === undefined || image === undefined) {
         return(

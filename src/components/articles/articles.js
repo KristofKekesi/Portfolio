@@ -27,7 +27,7 @@ function Articles(props) {
                 cursorSetup();
             }
         );
-    }, []);
+    }, [content]);
 
     if (content !== undefined) {
         return (<article className="flex-wrap items-start bg-white justify-center">{content}</article>);

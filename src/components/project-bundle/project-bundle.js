@@ -20,7 +20,7 @@ function ProjectBundle(props) {
         API.getProjectBundle("https://www.kekesi.dev/api/proj-bundle/" + props.id + ".json").then(projectBundle => {
             setProjectBundle(projectBundle);
         });
-    }, []);
+    }, [props.id]);
 
     if (projectBundle === undefined) {
         return(

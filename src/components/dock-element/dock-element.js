@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 
 import projectTooltipPosition from "../../functions/project-tooltip";
@@ -62,7 +63,7 @@ function DockElement(props) {
           window.addEventListener('popstate', function () {
             window.location.reload();
           });
-        }, []);
+        }, [props.id]);
 
     if(project === null) {
         return(
@@ -88,14 +89,14 @@ function DockElement(props) {
         );
     } else {
         return (
-            <a href={"#"} className="target">
+            <Link to="#" className="target">
                 <div className="radius24 dock-element target">
                     <center>
                         <Loader color="white"/>
                         <p style={{flexBasis: "100%", height: "0"}}>Loading...</p>
                     </center>
                 </div>
-            </a>
+            </Link>
         );
     }
 };

@@ -20,7 +20,7 @@ function ProjectTooltip(props) {
     useEffect(() => {
         API.getProject("https://www.kekesi.dev/api/proj/PROJ-" + props.id + ".json").then(
           project => { setProject ( project ); }).catch((e) => {setProject ( null )});
-    }, []);
+    }, [props.id]);
 
     if (project == null) {
         return (<></>)

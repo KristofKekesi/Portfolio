@@ -35,7 +35,7 @@ function ProjectBundleContent(props) {
                 });
             });
         }
-    }, []);
+    }, [props.IDs]);
 
     if(isFinished === false) {
         return(

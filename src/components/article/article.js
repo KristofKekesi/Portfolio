@@ -35,7 +35,7 @@ function Article(props) {
             setImageGalleries();
           }
         );
-    }, []);
+    }, [props.id]);
 
     if(article === null) {
         return (

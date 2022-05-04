@@ -50,31 +50,31 @@ function Navbar() {
                             </Route>
                         </Switch>
                     </li>
-                    <li className="mobile-view">
+                    <li className="block sm:hidden">
                         <Link className="target" to="./translations">Translations</Link>
                     </li>
-                    <li className="mobile-view">
+                    <li className="block sm:hidden">
                         <Link className="target" to="./photography">Photograpy</Link>
                     </li>
-                    {//<li className="mobile-view">
+                    {//<li className="block sm:hidden">
                     //    <Link className="target" to="./articles">Articles</Link>
                     //</li>
                     }
-                    <li className="mobile-view">
+                    <li className="block sm:hidden">
                         <Link className="target" to="./timeline">Timeline</Link>
                     </li>
-                    <li className="mobile-view">
+                    <li className="block sm:hidden">
                         <Link className="target" to="./about">About</Link>
                     </li>
-                    <li className="desktop-view">
-                        <a id="more-button" onClick={ moreTooltipToggle } className="target last">More</a>
+                    <li className="hidden sm:block">
+                        <Link to="#" id="more-button" onClick={ moreTooltipToggle } className="target last">More</Link>
                     </li>
                 </ul>
-                <div id="hamburger" className="mobile-view target">
+                <div id="hamburger" className="block sm:hidden">
                     <Hamburger />
                 </div>
             </nav>
-            <div style={{marginRight: "12px"}} className="desktop-view target">
+            <div style={{marginRight: "12px"}} className="hidden sm:block target">
                 <MoreTooltip/>
             </div>
         </>
