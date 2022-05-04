@@ -5,12 +5,6 @@
          \__) \__)    */
 
 
-@font-face {
-    font-family: 'InterExtraLight';
-    src: url('../../fonts/Inter-ExtraLight.ttf'); /* IE9 Compat Modes */
-    src: url('../../fonts/Inter-ExtraLight.ttf')  format('truetype'), /* Safari, Android, iOS */
-}
-
 article {
     background-color: #ffffff;
 }
@@ -25,7 +19,6 @@ article.article-content {
     text-align: justify;
 
     width: 100%;
-    
 }
 
 article .article-content {

@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 
 import "./project-bundle.css";
-import "../articles/articles.css";
 
 import API from "../../api";
 import ProjectBundleContent from "./project-bundle-content";

@@ -6,6 +6,12 @@
 
 
 @font-face {
+  font-family: 'InterExtraLight';
+  src: url('./fonts/Inter-ExtraLight.ttf'); /* IE9 Compat Modes */
+  src: url('./fonts/Inter-ExtraLight.ttf')  format('truetype'), /* Safari, Android, iOS */
+}
+
+@font-face {
   font-family: 'InterLight';
   src: url('./fonts/Inter-Light.ttf'); /* IE9 Compat Modes */
   src: url('./fonts/Inter-Light.ttf')  format('truetype'), /* Safari, Android, iOS */
@@ -118,6 +124,8 @@ body {
 h1.white {
   color: #EFEFEF;
   font-family: 'Inter';
+  line-height: 100%;
+  font-weight: bold;
   font-size: min(5rem, 10vw); /*4rem;*/
 
   text-align: left;
@@ -126,6 +134,8 @@ h1.white {
 h2.white {
   color: #EFEFEF;
   font-family: 'Inter';
+  line-height: 100%;
+  font-weight: bold;
   font-size: min(2.5rem, 5vw); /*2.5rem;*/
 
   text-align: left;

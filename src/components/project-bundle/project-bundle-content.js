@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 import "./project-bundle.css";
-import "../articles/articles.css";
 
 import API from "../../api";
 

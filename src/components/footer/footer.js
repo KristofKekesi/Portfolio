@@ -23,14 +23,15 @@ function Footer() {
     return (
         <footer>
             <center>
-                <ul id="footer-content" className="bg-red">
+                <ul id="footer-content">
                     <li>
                         Contacts
                         <ul>
-                            <li><a className="target" href="mailto:kristof@kekesi.dev">Email</a></li>
+                            <li><a className="target bg-red underline-offset-4" href="mailto:kristof@kekesi.dev">Email</a></li>
                             <li><a className="target" href="https://github.com/KristofKekesi">GitHub</a></li>
                             <li><a className="target" href="https://twitter.com/KristofKekesi">Twitter</a></li>
                             <li><a className="target" href="https://www.instagram.com/kristofkekesiofficial/">Instagram</a></li>
+                            <div className="p-10 m-10 bg-amber-700"></div>
                         </ul>
                     </li>
                     <li>

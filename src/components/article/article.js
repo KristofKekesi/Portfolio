@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 
 import './article.css';
-import '../articles/articles.css';
 
 import cursorSetup from "../../functions/cursor";
 
@@ -10,7 +9,6 @@ import ImageGallery from "../image-gallery/image-gallery";
 
 import API from '../../api/index';
 
-import bg from "../articles/ARTICLE-0.png";
 import ProjectBundle from "../project-bundle/project-bundle";
 import setImageGalleries from "../../functions/image-gallery";
 import { ArticlePreviewsBig, ArticlePreviewsSmoll } from "../article-preview/index";
@@ -40,9 +38,13 @@ function Article(props) {
     }, []);
 
     if(article === null) {
-        return(
-            <article cl="articles"><div style={{background: "#ECECEC", marginTop: "3rem", marginBottom: "3rem", width: "960px", paddingTop: "3rem", paddingBottom: "3rem"}} className="text-title">Error loading articles.</div></article>
-        );
+        return (
+			<article>
+				<div style={{marginTop: "3rem", marginBottom: "3rem", width: "960px", paddingTop: "3rem", paddingBottom: "3rem"}} className="bg-secondaryLight-500 text-title article-content">
+					Error loading article.
+				</div>
+			</article>
+		);
     }
     else if(article !== undefined) {
         let terminalId = 0;
@@ -184,7 +186,11 @@ function Article(props) {
         );
     } else {
         return (
-            <article className="articles"><div style={{background: "#ECECEC", marginTop: "3rem", marginBottom: "3rem", width: "960px", paddingTop: "3rem", paddingBottom: "3rem"}} className="text-title">Loading articles...</div></article>
+			<article>
+				<div style={{marginTop: "3rem", marginBottom: "3rem", width: "960px", paddingTop: "3rem", paddingBottom: "3rem"}} className="bg-secondaryLight-500 text-title article-content">
+					Loading article...
+				</div>
+			</article>
         );
     }
 }
