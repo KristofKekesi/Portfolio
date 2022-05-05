@@ -89,7 +89,11 @@ function ArticlePage() {
                     </h1>
               </center>
             </div>
-            Loading...
+            <article>
+				<div style={{marginTop: "3rem", marginBottom: "3rem", width: "960px", paddingTop: "3rem", paddingBottom: "3rem"}} className="bg-secondaryLight-500 text-title article-content">
+                	Loading article...
+				</div>
+			</article>
             <Dock />
             <Footer />
             <Cursor />

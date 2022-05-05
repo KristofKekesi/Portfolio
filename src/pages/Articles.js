@@ -36,7 +36,9 @@ function ArticlesPage() {
         <Navbar />
         <div style={{width: "100%", paddingTop: "150px", paddingBottom: "75px", backgroundImage: `url(${background})`, backgroundSize: "cover"}}>
           <center>
-                <h1 className="white selectable" style={{textShadow: "6px 6px 12px rgba(0, 0, 0, .75)", textAlign: "center"}}>Articles</h1>
+                <h1 className="white selectable" style={{textShadow: "6px 6px 12px rgba(0, 0, 0, .75)", textAlign: "center"}}>
+                  Articles
+                </h1>
           </center>
         </div>
         <Articles />

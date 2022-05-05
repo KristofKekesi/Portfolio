@@ -30,7 +30,7 @@ function Articles(props) {
     }, [content]);
 
     if (content !== undefined) {
-        return (<article className="flex-wrap items-start bg-white justify-center">{content}</article>);
+        return (<article className="flex-wrap items-start bg-white justify-center article-preview-big-container">{content}</article>);
     }
     return (
         <article className="flex-wrap items-start bg-white justify-center"><div className="bg-secondaryLight-500 text-title" style={{ marginTop: "3rem", marginBottom: "3rem", width: "960px", paddingTop: "3rem", paddingBottom: "3rem"}} >Loading articles...</div></article>
