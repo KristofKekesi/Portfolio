@@ -9,6 +9,12 @@ module.exports = {
         secondaryLight: {
           500: '#ECECEC',
         },
+        activeAccentLight: {
+          500: '#BE4245',
+        },
+        homeAccentLight: {
+          500: '#173959',
+        },
       }
     },
   },

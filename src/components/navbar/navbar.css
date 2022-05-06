@@ -5,19 +5,8 @@
          \__) \__)    */
 
 
-nav.white {
-    background-color: #ffffff;
-    color: #000000;
-    font-size: 1.5rem;
-}
-
 #navbar {
     z-index: 1000;
-
-    position: fixed;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 
     width: 100vw;
     height: 75px; 
@@ -32,10 +21,6 @@ nav.white {
 }
 
 #navbar a {
-    color: #000000;
-
-    font-size: 2rem;
-
     text-decoration: none;
     padding-left: 20px;
     padding-right: 20px;
@@ -53,21 +38,15 @@ nav.white {
 
 #navbar a.active {
     font-weight: bold;
-    color: #BE4245;
 }
 
 #navbar a.home {
     font-weight: bold;
     font-family: "InterBold";
-    color: #173959;
 }
 
 
-@media screen and (max-width: 1000px) {
-    body {
-        overflow-x: hidden;
-    }
-
+@media screen and (max-width: calc(768px - 1px)) {
     #navbar-links {
         overflow-y: visible;
         overflow: hidden;
@@ -101,10 +80,6 @@ nav.white {
 
     #navbar ul li {
         padding: 12px;
-    }
-
-    #navbar a {
-        color: #EFEFEF;
     }
 
     #navbar a.active {
