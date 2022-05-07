@@ -5,7 +5,11 @@
 
 @layer components {
   #navbar a.inactive {
-	  @apply text-black
+	  @apply text-white md:text-black
+  }
+
+  #navbar a.active {
+	  @apply text-white md:text-activeAccentLight-500
   }
 }
 
