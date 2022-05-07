@@ -4,33 +4,8 @@
        \_  ___  ___>
          \__) \__)    */
 
-
-@media screen and (max-width: 1001px) {
-    .dock {
-        z-index: 1000;
-
-        width: 100%;
-    
-        position: fixed;
-    
-        bottom: 0;
-        left: 50%;
-    
-        transition: bottom .4s linear;
-    
-        transform: translate(-50%, 0%);
-    
-        color: #EFEFEF;
-        padding: 10px;
-    }
-
-    .dock.inactive {
-        bottom: -50vh;
-    }
-}
-
-@media screen and (min-width: 1001px) {
-    .dock {
+@media screen and (min-width: calc(768px - 1px)) {
+    #dock {
         z-index: 1000;
 
         width: fit-content;
@@ -51,7 +26,31 @@
         border-radius: 14px;
     }
 
-    .dock.inactive {
+    #dock.inactive {
         bottom: 10px;
+    }
+}
+
+@media screen and (max-width: calc(768px - 1px)) {
+    #dock {
+        z-index: 1000;
+
+        width: 100%;
+    
+        position: fixed;
+    
+        bottom: 0;
+        left: 50%;
+    
+        transition: bottom .4s linear;
+    
+        transform: translate(-50%, 0%);
+    
+        color: #EFEFEF;
+        padding: 10px;
+    }
+
+    .dock.inactive {
+        bottom: -50vh;
     }
 }

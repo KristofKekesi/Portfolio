@@ -11,6 +11,10 @@
   #navbar a.active {
 	  @apply text-white md:text-activeAccentLight-500
   }
+
+  .nowrap {
+	  @apply whitespace-nowrap
+  }
 }
 
 body {

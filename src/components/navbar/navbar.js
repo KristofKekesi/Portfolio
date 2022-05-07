@@ -69,9 +69,7 @@ function Navbar() {
                         <Link to="#" id="more-button" onClick={ moreTooltipToggle } className="inactive target last">More</Link>
                     </li>
                 </ul>
-                <div id="hamburger" className="block md:hidden">
-                    <Hamburger />
-                </div>
+                <Hamburger />
             </nav>
             <div style={{marginRight: "12px"}} className="hidden md:block target">
                 <MoreTooltip/>

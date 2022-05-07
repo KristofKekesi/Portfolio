@@ -6,7 +6,7 @@
 
 
 @media screen and (max-width: 1001px) {
-    .dock .dock-element  {
+    #dock .dock-element  {
 
         justify-content: space-evenly;
 
@@ -19,14 +19,14 @@
         font-size: /*calc((1vh + 1vw) / 2 * 2.5);*/ 1.15rem;
     }
 
-    .dock .dock-element img {
+    #dock .dock-element img {
         height: calc((1vh + 1vw) / 2 * 5.5);
         width: auto;
     }
 }
 
 @media screen and (min-width: 1001px) {
-    .dock .dock-element  {
+    #dock .dock-element  {
         justify-content: space-evenly;
         padding-top: calc((1vh + 1vw) / 2);
         padding-left: calc((1vh + 1vw) / 2);
@@ -41,7 +41,7 @@
         line-height: 2rem;
     }
 
-    .dock .dock-element img {
+    #dock .dock-element img {
         height: calc((1vh + 1vw) / 2 * 3);
         width: calc((1vh + 1vw) / 2 * 3);
     }

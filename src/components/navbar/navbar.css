@@ -90,8 +90,4 @@
     #navbar a.home {
         color: #173959;
     }
-
-    #navbar #hamburger {
-        padding-right: min(5rem, 5vw);
-    }
 }

@@ -29,7 +29,7 @@ function Dock(props) {
     return(
         <>
             {projectTooltips}
-            <div id="dock" className="dock blur-dark">
+            <div id="dock" className="blur-dark">
                 <center>
                     {dockElements}
                 </center>
