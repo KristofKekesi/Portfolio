@@ -6,7 +6,7 @@
 
 @media screen and (min-width: calc(768px - 1px)) {
     #dock {
-        z-index: 1000;
+        z-index: 30;
 
         width: fit-content;
 
@@ -33,7 +33,7 @@
 
 @media screen and (max-width: calc(768px - 1px)) {
     #dock {
-        z-index: 1000;
+        z-index: 30;
 
         width: 100%;
     

@@ -75,7 +75,7 @@ function ProjectPage() {
                 </center>
                 </div>
                 <article>
-				<div style={{marginTop: "3rem", marginBottom: "3rem", width: "960px", paddingTop: "3rem", paddingBottom: "3rem"}} className="bg-secondaryLight-500 text-title article-content">
+				<div style={{marginTop: "3rem", marginBottom: "3rem", width: "960px", paddingTop: "3rem", paddingBottom: "3rem"}} className="bg-secondaryLight text-title article-content">
                     Loading article...
 				</div>
 			</article>

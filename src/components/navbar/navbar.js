@@ -23,17 +23,17 @@ function Navbar() {
             <nav id="navbar" className="bg-white text-black visited:text-black top blur-white text-xl fixed flex justify-between items-center">
                 <Switch>
                     <Route exact path="/">
-                        <Link className="home first text-homeAccentLight-500" to="./#">Home</Link>
+                        <Link className="home first text-homeAccentLight" to="./#">Home</Link>
                     </Route>
                     <Route>
-                        <Link className="home target first text-homeAccentLight-500" to="./#">Home</Link>
+                        <Link className="home target first text-homeAccentLight" to="./#">Home</Link>
                     </Route>
                 </Switch>
                 <ul id="navbar-links">
                     <li>
                         <Switch>
                             <Route path="/mobile">
-                                <Link className="active target text-activeAccentLight-500" to="./mobile">Mobile Development</Link>
+                                <Link className="active target text-activeAccentLight" to="./mobile">Mobile Development</Link>
                             </Route>
                             <Route>
                                 <Link className="inactive target" to="./mobile">Mobile Development</Link>
@@ -43,7 +43,7 @@ function Navbar() {
                     <li>
                         <Switch>
                             <Route path="/web">
-                                <Link className="active target text-activeAccentLight-500" to="./web">Web Development</Link>
+                                <Link className="active target text-activeAccentLight" to="./web">Web Development</Link>
                             </Route>
                             <Route>
                                 <Link className="inactive target" to="./web">Web Development</Link>

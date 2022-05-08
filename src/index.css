@@ -9,12 +9,24 @@
   }
 
   #navbar a.active {
-	  @apply text-white md:text-activeAccentLight-500
+	  @apply text-white md:text-activeAccentLight
+  }
+
+  article {
+	  @apply bg-white
   }
 
   .nowrap {
 	  @apply whitespace-nowrap
   }
+
+  footer {
+	  @apply z-10 bg-tertiaryLight w-screen mx-0 my-auto
+  }
+
+  footer a {
+	@apply text-primaryLight
+}
 }
 
 body {

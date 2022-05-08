@@ -40,7 +40,7 @@ function Article(props) {
     if(article === null) {
         return (
 			<article>
-				<div style={{marginTop: "3rem", marginBottom: "3rem", width: "960px", paddingTop: "3rem", paddingBottom: "3rem"}} className="bg-secondaryLight-500 text-title article-content">
+				<div style={{marginTop: "3rem", marginBottom: "3rem", width: "960px", paddingTop: "3rem", paddingBottom: "3rem"}} className="bg-secondaryLight text-title article-content">
 					Error loading article.
 				</div>
 			</article>
@@ -187,7 +187,7 @@ function Article(props) {
     } else {
         return (
 			<article>
-				<div style={{marginTop: "3rem", marginBottom: "3rem", width: "960px", paddingTop: "3rem", paddingBottom: "3rem"}} className="bg-secondaryLight-500 text-title article-content">
+				<div className="bg-secondaryLight text-title article-content" style={{marginTop: "3rem", marginBottom: "3rem", paddingTop: "3rem", paddingBottom: "3rem"}} >
                     Loading article...
 				</div>
 			</article>

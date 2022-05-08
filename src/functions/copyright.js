@@ -24,7 +24,7 @@ function setCopyright(product, name, link) {
     }
 
     try {
-        copyright.style.display = "inline";
+        copyright.classList.toggle = "hidden";
 
         for (let i = 0; i < content.children.length; i++) {
             if (content.children[i].children[0].innerHTML === finalString) {
@@ -32,7 +32,7 @@ function setCopyright(product, name, link) {
             }
         }
 
-        content.insertAdjacentHTML("beforeend", "<li><a className='target' href='" + link + "'>" + finalString +"</a></li>")
+        content.insertAdjacentHTML("beforeend", "<li><a class='target' href='" + link + "'>" + finalString +"</a></li>")
         cursorSetup();
     } catch (e) {
         console.log(e);

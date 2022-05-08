@@ -178,7 +178,7 @@ abbr[title]:hover::after,
 abbr[title]:focus::after {
   content: attr(title);
   
-  z-index: 1001;
+  z-index: 40;
 
   /* position tooltip like the native one */
   position: absolute;

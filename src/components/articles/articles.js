@@ -21,7 +21,7 @@ function Articles(props) {
             articles => {
                 let final = content ? content : [];
                 for (let i = 0; i < articles.length; i++) {
-                    final.push(<ArticlePreviewBig style={{margin: "3rem"}} key={i} id={articles[i]["id"]}></ArticlePreviewBig>);
+                    final.push(<ArticlePreviewBig key={i} id={articles[i]["id"]} className="m-12"></ArticlePreviewBig>);
                 }
                 setContent(final);
                 cursorSetup();
@@ -33,7 +33,7 @@ function Articles(props) {
         return (<article className="flex-wrap items-start bg-white justify-center article-preview-big-container">{content}</article>);
     }
     return (
-        <article className="flex-wrap items-start bg-white justify-center"><div className="bg-secondaryLight-500 text-title" style={{ marginTop: "3rem", marginBottom: "3rem", width: "960px", paddingTop: "3rem", paddingBottom: "3rem"}} >Loading articles...</div></article>
+        <article className="flex-wrap items-start bg-white justify-center"><div className="bg-secondaryLight my-12 py-12 text-title" style={{ width: "960px" }} >Loading articles...</div></article>
     );
 }
 
