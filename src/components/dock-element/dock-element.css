@@ -4,49 +4,9 @@
        \_  ___  ___>
          \__) \__)    */
 
-
-@media screen and (max-width: 1001px) {
+@media screen and (min-width: calc(768px)) {
     #dock .dock-element  {
-
-        justify-content: space-evenly;
-
-        width: 8rem;
-
-        padding-top: 12px;
-        padding-bottom: 12px;
-
-        display: inline-block;
-        font-size: /*calc((1vh + 1vw) / 2 * 2.5);*/ 1.15rem;
-    }
-
-    #dock .dock-element img {
-        height: calc((1vh + 1vw) / 2 * 5.5);
-        width: auto;
-    }
-}
-
-@media screen and (min-width: 1001px) {
-    #dock .dock-element  {
-        justify-content: space-evenly;
-        padding-top: calc((1vh + 1vw) / 2);
-        padding-left: calc((1vh + 1vw) / 2);
-        padding-right: calc((1vh + 1vw) / 2);
-        margin-bottom: calc((1vh + 1vw) / 2);
-
         min-width: 6rem;
         max-width: fit-content;
-
-        display: inline-block;
-        font-size: calc((1vh + 1vw) / 2 * 1.25);
-        line-height: 2rem;
     }
-
-    #dock .dock-element img {
-        height: calc((1vh + 1vw) / 2 * 3);
-        width: calc((1vh + 1vw) / 2 * 3);
-    }
-}
-
-.dock-element-error {
-    display: inline-block;
 }

@@ -18,7 +18,7 @@ import Loader from "../loader/loader";
 //         \__) \__)
 
 
-function DockElement(props) {
+export default function DockElement(props) {
     const [project, setProject] = useState( undefined );
     const [image,   setImage]   = useState( undefined );
     
@@ -82,7 +82,7 @@ function DockElement(props) {
                 <div className="radius24 dock-element target">
                     <center>
                         <img src={image.url} alt={image.name}/>
-                        <p className="nowrap" style={{flexBasis: "100%", height: "0"}}>{ projectName }</p>
+                        <p className="nowrap basis-full h-0">{ projectName }</p>
                     </center>
                 </div>
             </a>
@@ -93,12 +93,10 @@ function DockElement(props) {
                 <div className="radius24 dock-element target">
                     <center>
                         <Loader color="white"/>
-                        <p style={{flexBasis: "100%", height: "0"}}>Loading...</p>
+                        <p className="nowrap basis-full h-0">Loading...</p>
                     </center>
                 </div>
             </Link>
         );
     }
 };
-
-export default DockElement;

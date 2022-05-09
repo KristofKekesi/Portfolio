@@ -46,7 +46,7 @@
 }
 
 
-@media screen and (max-width: calc(768px - 1px)) {
+@media screen and (max-width: calc(768px)) {
     #navbar-links {
         overflow-y: visible;
         overflow: hidden;

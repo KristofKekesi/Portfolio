@@ -5,64 +5,14 @@
          \__) \__)    */
 
 
-footer #footer-content {
-    padding-left: min(2.5rem, 2.5vw);
-    padding-right: min(2.5rem, 2.5vw);
-    padding-bottom: min(1.75rem, 1.75vh);
-
-    width: 100vw;
-    
-    justify-content: center;
-    display: flex;
-    flex-wrap: wrap;
-}
-
 footer a {
     transition: color .25s;
-
-    word-wrap: break-word;
-}
-
-footer a:hover {
-    color: #EFEFEF;
-}
-
-footer .br {
-    width: 100%;
-}
-
-#footer-content li {
-    list-style: none;
-    text-align: left;
 }
 
 #footer-content>li {
-    padding-top: calc(min(1.75rem, 1.75vh) + 10px);
-    padding-left: min(2.5rem, 2.5vw);
-    padding-right: min(2.5rem, 2.5vw);
-
-    display:inline-table;
     width: fit-content;
-
-    color: #EFEFEF;
-    font-size: 1.5rem;
-}
-
-#footer-content li>ul {
-    padding-top: min(.5rem, .5vw);
-}
-
-#footer-content li>ul>li {
-    color: #AAAAAA;
-    font-size: 1rem;
-
-    padding-bottom: .25rem;
 }
 
 #footer-content li>ul :last-child {
     padding-bottom: 0;
-}
-
-#footer .footer-dock-spacer {
-    width: 100%;
 }

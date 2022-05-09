@@ -9,8 +9,6 @@ import hamburger from './hamburger.svg';
 //         \__) \__)
 
 
-function Hamburger() {
+export default function Hamburger() {
   return <img src={hamburger} id="hamburger"  className="target block md:hidden mr-10 h-10 w-10" alt="Hamburger" />;
 }
-
-export default Hamburger;

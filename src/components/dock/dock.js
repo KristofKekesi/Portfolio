@@ -12,7 +12,7 @@ import './dock.css';
 //         \__) \__)
 
 
-function Dock(props) {
+export default function Dock(props) {
     //const dockElementIDs = props.IDs ?? [0, 1, 4, 12, 5];
     const dockElementIDs = [0, 1, 4, 12, 5];
     
@@ -29,7 +29,7 @@ function Dock(props) {
     return(
         <>
             {projectTooltips}
-            <div id="dock" className="blur-dark">
+            <div id="dock" className="blur-dark z-30 fixed inline-block text-primaryLightHover bottom-0 md:bottom-3 left-1/2 p-3 rounded-none md:rounded-2xl">
                 <center>
                     {dockElements}
                 </center>
@@ -37,5 +37,3 @@ function Dock(props) {
         </>
     );
 };
-
-export default Dock;
