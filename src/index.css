@@ -1,15 +1,38 @@
+/*  TURTLE - TEKI
+    (°-°) _______
+      \ \/ - - - \_
+       \_  ___  ___>
+         \__) \__)    */
+
+
 /** Couses error on abbr tags with title attribute **/
 /*@tailwind base;*/
 @tailwind components;
 @tailwind utilities;
 
 @layer components {
+  #navbar li {
+    @apply list-none
+  }
+
+  #navbar a {
+    @apply no-underline px-5 align-middle
+  }
+
   #navbar a.inactive {
 	  @apply text-white md:text-black
   }
 
   #navbar a.active {
-	  @apply text-white md:text-activeAccentLight
+	  @apply text-white md:text-activeAccentLight font-normal md:font-bold
+  }
+
+  #more-tooltip li {
+    @apply list-none px-6 py-1
+  }
+
+  #more-tooltip a {
+    @apply align-middle text-primaryLightHover text-2xl no-underline hover:text-white
   }
 
   article {
@@ -18,6 +41,10 @@
 
   .nowrap {
 	  @apply whitespace-nowrap
+  }
+
+  .gallery img {
+    @apply max-h-64 max-w-full
   }
 
   #dock.inactive {

@@ -5,29 +5,10 @@
          \__) \__)    */
 
 
-#navbar {
-    z-index: 30;
-
-    width: 100vw;
-    height: 75px; 
-}
-
-#navbar ul {
-    display: flex;
-}
-
-#navbar li {
-    list-style: none;
-}
-
 #navbar a {
-    text-decoration: none;
-    padding-left: 20px;
-    padding-right: 20px;
-
     font-family: "Inter";
-    vertical-align: middle;
 }
+
 #navbar a.first {
     padding-left: min(5rem, 5vw);
 }
@@ -36,12 +17,7 @@
     padding-right: min(5rem, 5vw);
 }
 
-#navbar a.active {
-    font-weight: bold;
-}
-
 #navbar a.home {
-    font-weight: bold;
     font-family: "InterBold";
 }
 

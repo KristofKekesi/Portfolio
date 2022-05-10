@@ -23,7 +23,7 @@ function MoreTooltip() {
       }, []);
 
     return (
-        <div id="more-tooltip" className="blur-dark hidden fixed">
+        <div id="more-tooltip" className="blur-dark hidden fixed right-3 rounded-2xl">
             <ul>
                 <li>
                     <Link className="target" to="/translations">Translations</Link>
@@ -34,7 +34,7 @@ function MoreTooltip() {
                 <li>
                     <Link className="target" to="/articles">Articles</Link>
                 </li>
-                <hr width="100%"/>
+                <hr className="w-full"/>
                 <li>
                     <Link className="target" to="/timeline">Timeline</Link>
                 </li>

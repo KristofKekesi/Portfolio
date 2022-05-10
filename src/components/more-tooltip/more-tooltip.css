@@ -6,19 +6,9 @@
 
          
 #more-tooltip {
-    top: 85px;
-    right: 10px;
-    border-radius: 14px;
+    top: 74px;
 
-    transition: opacity .15s ease-in-out, display .15s linear;
-}
-
-#more-tooltip li {
-    list-style: none;
-    padding-left: 24px;
-    padding-right: 24px;
-    padding-top: 4px;
-    padding-bottom: 4px;
+    transition: opacity .15s ease-in-out, display .3s linear;
 }
 
 #more-tooltip li:first-child {
@@ -30,18 +20,6 @@
 }
 
 #more-tooltip a {
-    color: #EFEFEF;
-
-    font-size: 1.75rem;
-
-    text-decoration: none;
-
     font-family: "Inter";
-    vertical-align: middle;
-
     transition: color .25s ease-in-out;
-}
-
-#more-tooltip a:hover {
-    color: #FFFFFF;
 }

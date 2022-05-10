@@ -32,11 +32,11 @@ export default function ImageGallery(props) {
     
     if(finalContent !== undefined) {
         return(
-            <center onLoad={setImageGallery("gallery-" + props.dataKey)} id={"gallery-" + props.dataKey} className={"gallery flex mb-3 " + props.galleryTag}>{ finalContent }</center>
+            <center onLoad={setImageGallery("gallery-" + props.dataKey)} id={"gallery-" + props.dataKey} className={"gallery text overflow-hidden max-h-64 flex mb-3 gap-3 " + props.galleryTag}>{ finalContent }</center>
         );
     } else if (finalContent === null) {
-        return(<div className={"gallery text flex mb-3" + props.galleryTag}>Error loading images</div>);
+        return(<div className={"gallery text overflow-hidden max-h-64 flex mb-3 gap-3 " + props.galleryTag}>Error loading images</div>);
     } else {
-        return(<div className={"gallery text flex mb-3 " + props.galleryTag}>Loading...</div>)
+        return(<div className={"gallery text overflow-hidden max-h-64 flex mb-3 gap-3" + props.galleryTag}>Loading...</div>)
     }
 };

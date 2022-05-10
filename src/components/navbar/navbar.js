@@ -20,7 +20,7 @@ import './navbar.css';
 function Navbar() {
     return(
         <>
-            <nav id="navbar" className="bg-white text-black visited:text-black top blur-white text-xl fixed flex justify-between items-center">
+            <nav id="navbar" className="bg-white text-black visited:text-black top blur-white text-xl fixed flex justify-between items-center w-screen h-16">
                 <Switch>
                     <Route exact path="/">
                         <Link className="home first text-homeAccentLight" to="./#">Home</Link>
@@ -29,7 +29,7 @@ function Navbar() {
                         <Link className="home target first text-homeAccentLight" to="./#">Home</Link>
                     </Route>
                 </Switch>
-                <ul id="navbar-links">
+                <ul id="navbar-links" className="flex">
                     <li>
                         <Switch>
                             <Route path="/mobile">
