@@ -39,15 +39,15 @@ function ProjectBundleContent(props) {
 
     if(isFinished === false) {
         return(
-            <h1 className="text nowrap" style={{padding: "0", color: "#ffffff", fontWeight: "normal", textAlign: "center"}}>Loading projects...</h1>
+            <h1 className="text nowrap p-0 text-white font-normal text-center">Loading projects...</h1>
         );
     } else {
         let final = [];
         for (let i = 0; i < props.IDs.length; i++) {
             final.push(
                 <Link key={i} to={"project?" + data[i]["proj"].id.replace("PROJ-", "") + "-" + data[i]["proj"].name.replace(/[^a-zA-Z]/g, "")} className="target">
-                    <img src={data[i]["img"].url} alt={data[i]["img"].description} />
-                    <h2 className="text nowrap" style={{padding: "0", color: "#ffffff", textAlign: "center"}}>{data[i]["proj"].name}</h2>
+                    <img className="w-auto" src={data[i]["img"].url} alt={data[i]["img"].description} />
+                    <h2 className="text nowrap w-auto p-0 text-white text-center">{data[i]["proj"].name}</h2>
                 </Link>
             );
         }
