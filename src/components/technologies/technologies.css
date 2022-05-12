@@ -4,18 +4,8 @@
        \_  ___  ___>
          \__) \__)    */
 
-.technologies {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 2rem;
 
-    padding-left: min(5rem, 5vw);
-    padding-right: min(5rem, 5vw);
-}
-
-.technologies > div.technologies-content {
+div.technologies-content {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -29,13 +19,4 @@
     max-height: 5rem;
     margin-top: 1rem;
     margin-bottom: .5rem;
-}
-
-.technologies-dummydiv {
-    padding-bottom: 2.5rem;
-    margin-top: 2.5rem;
-
-    width: 100%;
-    background-color: #ffffff;
-    height: min(2.5rem, 2.5vw);
 }

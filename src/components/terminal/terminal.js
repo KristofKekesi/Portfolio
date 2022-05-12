@@ -20,8 +20,8 @@ function Terminal(props) {
 
     return (
         <div id={"terminal-" + props.id} className="terminal">
-            <pre className="terminal-inner"><code dangerouslySetInnerHTML={{ __html: html }}/></pre>
-            <center className="terminal-label">{languageMap[props.language] ?? props.language}</center>
+            <pre className="terminal-inner text-white p-4 rounded-2xl"><code dangerouslySetInnerHTML={{ __html: html }}/></pre>
+            <center className="font-bold m-0 pb-6">{languageMap[props.language] ?? props.language}</center>
         </div>
     )
 }

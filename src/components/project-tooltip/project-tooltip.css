@@ -6,8 +6,8 @@
 
 
 .project-tooltip {
+    transform: translateX(-50%);
     min-width: 300px;
-
     transition: opacity .15s ease-in-out, display .15s linear;
 }
 

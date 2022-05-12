@@ -15,19 +15,10 @@
 }
 
 pre.terminal-inner {
-    color: #ffffff;
-    padding: 1rem;
     background-color: #202124;
-    border-radius: 14px;
 }
 
 /*.terminal:target>.terminal-inner {
     border: 3px solid #ff4a4d;
     width: min-content;
 }*/
-
-.terminal-label {
-    font-weight: bold;
-    padding-bottom: min(1.5rem, 1.5vw) !important;
-    margin: 0;
-}

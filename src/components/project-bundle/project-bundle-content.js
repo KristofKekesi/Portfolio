@@ -45,9 +45,9 @@ function ProjectBundleContent(props) {
         let final = [];
         for (let i = 0; i < props.IDs.length; i++) {
             final.push(
-                <Link key={i} to={"project?" + data[i]["proj"].id.replace("PROJ-", "") + "-" + data[i]["proj"].name.replace(/[^a-zA-Z]/g, "")} className="target">
+                <Link key={i} to={"project?" + data[i]["proj"].id.replace("PROJ-", "") + "-" + data[i]["proj"].name.replace(/[^a-zA-Z]/g, "")} className="target flex flex-col items-center">
                     <img className="w-auto" src={data[i]["img"].url} alt={data[i]["img"].description} />
-                    <h2 className="text nowrap w-auto p-0 text-white text-center">{data[i]["proj"].name}</h2>
+                    <h2 className="text nowrap w-auto mt-3 p-0 text-white text-center">{data[i]["proj"].name}</h2>
                 </Link>
             );
         }

@@ -66,16 +66,16 @@ function ProjectPage() {
         return (
             <>
                 <Navbar />
-                <div style={{width: "100%", paddingTop: "150px", paddingBottom: "75px", backgroundImage: `url(${background})`, backgroundSize: "cover"}}>
+                <div className="w-full bg-cover" style={{paddingTop: "150px", paddingBottom: "75px", backgroundImage: `url(${background})`}}>
                 <center>
-                        <h1 className="white selectable" style={{textShadow: "6px 6px 12px rgba(0, 0, 0, .75)", textAlign: "center"}}>
+                        <h1 className="white selectable text-center" style={{textShadow: "6px 6px 12px rgba(0, 0, 0, .75)"}}>
                             <div id="title">Loading</div>
                             <span id="subtitle" className="nowrap"></span>
                         </h1>
                 </center>
                 </div>
                 <article>
-				<div style={{marginTop: "3rem", marginBottom: "3rem", width: "960px", paddingTop: "3rem", paddingBottom: "3rem"}} className="bg-secondaryLight text-title article-content">
+				<div style={{width: "960px"}} className="bg-secondaryLight text-title article-content my-12 py-12">
                     Loading article...
 				</div>
 			</article>
@@ -88,9 +88,9 @@ function ProjectPage() {
         return(
             <>
                 <Navbar />
-                <div style={{width: "100%", paddingTop: "150px", paddingBottom: "75px", backgroundImage: `url(${background})`, backgroundSize: "cover"}}>
+                <div className="w-full bg-cover" style={{paddingTop: "150px", paddingBottom: "75px", backgroundImage: `url(${background})`}}>
                 <center>
-                        <h1 className="white selectable" style={{textShadow: "6px 6px 12px rgba(0, 0, 0, .75)", textAlign: "center"}}>
+                        <h1 className="white selectable text-center" style={{textShadow: "6px 6px 12px rgba(0, 0, 0, .75)"}}>
                             <div id="title">Loading</div>
                             <span id="subtitle" className="nowrap"></span>
                         </h1>
@@ -111,7 +111,9 @@ function ProjectPage() {
         let versionDiv = null;
         if (project.version !== undefined) {
             versionDiv = <>
-                <h1 className="text-subtitle selectable" style={{paddingBottom: "0"}}>Latest version</h1>
+                <h1 className="text-subtitle selectable pb-0">
+                    Latest version
+                </h1>
                 <div className="text selectable">{project.version}</div>
             </>;
         }
@@ -120,7 +122,7 @@ function ProjectPage() {
         let platformDiv = null;
         if (project.download_link !== undefined && project.download_link !== null) {
             platformDiv = <>
-                <h1 className="text-subtitle selectable" style={{paddingBottom: "0"}}>Available for</h1>
+                <h1 className="text-subtitle selectable pb-0">Available for</h1>
                 <div className="text selectable">{getPlatforms(project.download_link, ", ", project.name).replace(/,([^,]*)$/, ' and $1')}</div>
             </>;
         }
@@ -128,7 +130,7 @@ function ProjectPage() {
         // badges
         let badgesDiv = null;
         if (project.download_link !== undefined && project.download_link !== null) {
-            badgesDiv = <Badges style={{marginLeft: "min(5rem, 5vw)", marginRight: "min(5rem, 5vw)", marginBottom: "min(5rem, 5vw)"}} downloadLinks={project.download_link} projectName={project.name} />;
+            badgesDiv = <Badges className="mx-20 mb-20" downloadLinks={project.download_link} projectName={project.name} />;
         }
 
         // screenshots
@@ -153,10 +155,10 @@ function ProjectPage() {
         return (
             <>
                 <Navbar />
-                <div style={{width: "100%", paddingTop: "150px", paddingBottom: "75px", backgroundImage: `url(${background})`, backgroundSize: "cover"}}>
+                <div className="w-full bg-cover" style={{paddingTop: "150px", paddingBottom: "75px", backgroundImage: `url(${background})`}}>
                 <center>
-                        <h1 className="white selectable" style={{textShadow: "6px 6px 12px rgba(0, 0, 0, .75)", textAlign: "center"}}>
-                            <div id="title">Loading</div>
+                        <h1 className="white selectable text-center" style={{textShadow: "6px 6px 12px rgba(0, 0, 0, .75)"}}>
+                            <div id="title">Loading...</div>
                             <span id="subtitle" className="nowrap"></span>
                         </h1>
                 </center>
@@ -165,19 +167,19 @@ function ProjectPage() {
                     <div className="article-content">
                         <h1 className="text-title nosection selectable">{project.name}</h1>
                         <div className="text nosection last selectable">{project.description}</div>
-                        <div className="section" style={{display: "flex"}}>
-                            <img src={image.url} alt={image.description} style={{maxWidth: "7.5rem", maxHeight: "7.5rem", width: "auto", height: "auto", marginLeft: "min(5rem, 5vw)", boxSizing: "content-box", paddingTop: "2.5rem", paddingBottom: "2.5rem", marginRight: "0"}}></img>
+                        <div className="section flex">
+                            <img src={image.url} alt={image.description} className="w-auto h-auto ml-20 mr-0 py-10" style={{maxWidth: "7.5rem", maxHeight: "7.5rem", boxSizing: "content-box"}}></img>
                             <div>
-                                <div style={{paddingTop: "2.5rem"}} />
+                                <div className="pt-10" />
                                 {versionDiv}
-                                <h1 className="text-subtitle selectable" style={{paddingBottom: "0"}}>Worked on as</h1>
+                                <h1 className="text-subtitle selectable pb-0">Worked on as</h1>
                                 <div className="text selectable">{project.role.join(", ").replace(/,([^,]*)$/, ' and $1')}</div>
                                 {platformDiv}
-                                <div style={{paddingBottom: "1.75rem"}} />
+                                <div className="pb-7" />
                                 {badgesDiv}
                             </div>
                         </div>
-                        <div style={{paddingBottom: "3rem"}} />
+                        <div className="pb-12" />
                         {screenshotsDiv}
                         {madeWithDiv}
                     </div>
