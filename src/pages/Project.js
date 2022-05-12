@@ -68,7 +68,7 @@ function ProjectPage() {
                 <Navbar />
                 <div className="w-full bg-cover" style={{paddingTop: "150px", paddingBottom: "75px", backgroundImage: `url(${background})`}}>
                 <center>
-                        <h1 className="white selectable text-center" style={{textShadow: "6px 6px 12px rgba(0, 0, 0, .75)"}}>
+                        <h1 className="white selectable text-center w-max" style={{textShadow: "6px 6px 12px rgba(0, 0, 0, .75)"}}>
                             <div id="title">Loading</div>
                             <span id="subtitle" className="nowrap"></span>
                         </h1>
@@ -90,7 +90,7 @@ function ProjectPage() {
                 <Navbar />
                 <div className="w-full bg-cover" style={{paddingTop: "150px", paddingBottom: "75px", backgroundImage: `url(${background})`}}>
                 <center>
-                        <h1 className="white selectable text-center" style={{textShadow: "6px 6px 12px rgba(0, 0, 0, .75)"}}>
+                        <h1 className="white selectable text-center w-max" style={{textShadow: "6px 6px 12px rgba(0, 0, 0, .75)"}}>
                             <div id="title">Loading</div>
                             <span id="subtitle" className="nowrap"></span>
                         </h1>
@@ -157,7 +157,7 @@ function ProjectPage() {
                 <Navbar />
                 <div className="w-full bg-cover" style={{paddingTop: "150px", paddingBottom: "75px", backgroundImage: `url(${background})`}}>
                 <center>
-                        <h1 className="white selectable text-center" style={{textShadow: "6px 6px 12px rgba(0, 0, 0, .75)"}}>
+                        <h1 className="white selectable text-center w-max" style={{textShadow: "6px 6px 12px rgba(0, 0, 0, .75)"}}>
                             <div id="title">Loading...</div>
                             <span id="subtitle" className="nowrap"></span>
                         </h1>
