@@ -13,7 +13,7 @@ import './footer.css';
 //         \__) \__)
 
 
-function Footer() {
+export default function Footer() {
     useEffect(() => {
         // footer
         footerDockSpacer();
@@ -23,7 +23,7 @@ function Footer() {
     return (
         <footer>
             <center>
-                <ul id="footer-content">
+                <ul id="footer-content" className="w-screen flex justify-center wrap px-10 pb-7">
                     <li>
                         Contacts
                         <ul>
@@ -39,7 +39,7 @@ function Footer() {
                             <li><Link className="target" to="./generalprivacypolicy">Privacy Policy</Link></li>
                         </ul>
                     </li>
-                    <li id="copyright" style={{display: "none"}}>
+                    <li id="copyright" className="hidden">
                         Copyright
                         <ul id="copyright-content" />
                     </li>
@@ -51,9 +51,7 @@ function Footer() {
                     </li>
                 </ul>
                 </center>
-            <div id="footer-dock-spacer"></div>
+            <div id="footer-dock-spacer" className="w-full"></div>
         </footer>
     )
 }
-
-export default Footer;

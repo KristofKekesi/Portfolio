@@ -1,7 +1,9 @@
-.gallery img {
-    max-width: 100%;
-    max-height: 17.5rem;
-}
+/*  TURTLE - TEKI
+    (°-°) _______
+      \ \/ - - - \_
+       \_  ___  ___>
+         \__) \__)    */
+
 
 .gallery > div {
     height: min-content;
@@ -9,11 +11,5 @@
 }
 
 .gallery {
-    margin-bottom: min(.75rem, .75vw);
-    display: flex;
-
-    max-height: 17.5rem;
     height: min-content;
-    overflow: hidden;
-    gap: min(.750rem, .750vw);
 }

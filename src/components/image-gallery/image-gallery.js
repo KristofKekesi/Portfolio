@@ -14,7 +14,7 @@ import API from '../../api/index';
 //         \__) \__)
 
 
-function ImageGallery(props) {
+export default function ImageGallery(props) {
     const [finalContent, setContent] = useState( undefined );
 
     useEffect(() => {
@@ -28,17 +28,15 @@ function ImageGallery(props) {
                 }
             );
         }
-    }, []);
+    }, [props.IDs]);
     
     if(finalContent !== undefined) {
         return(
-            <center onLoad={setImageGallery("gallery-" + props.dataKey)} id={"gallery-" + props.dataKey} className={"gallery" + props.galleryTag}>{ finalContent }</center>
+            <center onLoad={setImageGallery("gallery-" + props.dataKey)} id={"gallery-" + props.dataKey} className={"gallery text overflow-hidden max-h-64 flex mb-3 gap-3 " + props.galleryTag}>{ finalContent }</center>
         );
     } else if (finalContent === null) {
-        return(<div className={"gallery text " + props.galleryTag}>Error loading images</div>);
+        return(<div className={"gallery text overflow-hidden max-h-64 flex mb-3 gap-3 " + props.galleryTag}>Error loading images</div>);
     } else {
-        return(<div className={"gallery text " + props.galleryTag}>Loading...</div>)
+        return(<div className={"gallery text overflow-hidden max-h-64 flex mb-3 gap-3" + props.galleryTag}>Loading...</div>)
     }
 };
-
-export default ImageGallery;

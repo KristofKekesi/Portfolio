@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 
 import "./project-bundle.css";
-import "../articles/articles.css";
 
 import API from "../../api";
 import ProjectBundleContent from "./project-bundle-content";
@@ -21,7 +20,7 @@ function ProjectBundle(props) {
         API.getProjectBundle("https://www.kekesi.dev/api/proj-bundle/" + props.id + ".json").then(projectBundle => {
             setProjectBundle(projectBundle);
         });
-    }, []);
+    }, [props.id]);
 
     if (projectBundle === undefined) {
         return(
@@ -33,9 +32,9 @@ function ProjectBundle(props) {
         );
     } else {
         return(
-            <div className="project-bundle" style={{backgroundImage: `linear-gradient(${projectBundle.style["gradient"].split(";")[2]}, #${projectBundle.style["gradient"].split(";")[0].replace("HEX-", "")} 0%, #${projectBundle.style["gradient"].split(";")[1].replace("HEX-", "")} 75%)`}}>
+            <div className="project-bundle text-white" style={{backgroundImage: `linear-gradient(${projectBundle.style["gradient"].split(";")[2]}, #${projectBundle.style["gradient"].split(";")[0].replace("HEX-", "")} 0%, #${projectBundle.style["gradient"].split(";")[1].replace("HEX-", "")} 75%)`}}>
                 <h1 className="text-title">{projectBundle.name}</h1>
-                <div className="project-bundle-content">
+                <div className="project-bundle-content w-full flex justify-between px-20">
                     <ProjectBundleContent IDs={projectBundle.projects}/>
                 </div>
             </div>

@@ -32,7 +32,7 @@ function Home() {
   return (
     <>
       <Navbar />
-      <div style={{width: "100%", height: "100vh", display: "flex", justifyContent: "center", backgroundImage: `url(${background})`, backgroundSize: "cover"}}>
+      <div className="w-full h-screen flex justify-center bg-cover" style={{backgroundImage: `url(${background})`}}>
           <div>
           <h1 className="white" style={{paddingTop: "33vh", textShadow: "6px 6px 12px rgba(0, 0, 0, .75)"}}>Kristóf Kékesi</h1>
           <h2 className="white" style={{textShadow: "6px 6px 12px rgba(0, 0, 0, .75)"}}>Mobile Developer</h2>

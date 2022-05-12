@@ -10,17 +10,16 @@ window.addEventListener("touchstart",  function() {isMobile = true;});
 module.exports = isMobile;
 
 function cursorSetup() {
-  var t = document.getElementById("cursor1"),
-      e = document.getElementById("cursor2");
+  var cursor = document.getElementById("cursor");
 
   function n(t) {
-    if (!e.classList.contains("click")) {
-      e.classList.add("hover");
+    if (!cursor.classList.contains("click")) {
+      cursor.classList.add("hover");
     }
   }
 
   function s(t) {
-    e.classList.remove("hover");
+    cursor.classList.remove("hover");
   }
 
   s();
@@ -39,21 +38,19 @@ function cursorSetup() {
 
   document.getElementsByTagName("body")[0].addEventListener("mousemove", function(n) {
     if (!isMobile) {
-      t.style.top = n.clientX + "px";
-      t.style.left = n.clientY + "px";
-      e.style.top = n.clientY + "px";
-      e.style.left = n.clientX + "px";
+      cursor.style.top = n.clientY + "px";
+      cursor.style.left = n.clientX + "px";
     }
   });
 
   // cursor on click
   document.body.onmousedown = function() {
-    e.classList.add("click");
+    cursor.classList.add("click");
 
   }
 
   document.body.onmouseup = function() {
-    e.classList.remove("click");
+    cursor.classList.remove("click");
   } 
 }
 

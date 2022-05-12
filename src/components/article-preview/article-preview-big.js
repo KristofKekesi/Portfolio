@@ -30,12 +30,12 @@ function ArticlePreviewBig(props) {
                     }
                 );
         }).catch((e) => {setArticle ( null )});
-    }, []);
+    }, [props.id]);
 
     if (article === undefined || image === undefined) {
         return(
             <article style={props.style} className="article-preview-big">
-                <div style={{width: "100%", height: "25rem"}} />
+                <div style={{width: "1005", height: "25rem"}} />
                 <h1 className="text-title">Loading article...</h1>
             </article>
         );

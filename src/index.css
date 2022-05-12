@@ -1,13 +1,99 @@
+/*  TURTLE - TEKI
+    (°-°) _______
+      \ \/ - - - \_
+       \_  ___  ___>
+         \__) \__)    */
+
+
+/** Couses error on abbr tags with title attribute **/
+/*@tailwind base;*/
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  #navbar li {
+    @apply list-none
+  }
+
+  #navbar a {
+    @apply no-underline px-5 align-middle
+  }
+
+  #navbar a.inactive {
+	  @apply text-white md:text-black
+  }
+
+  #navbar a.active {
+	  @apply text-white md:text-activeAccentLight font-normal md:font-bold
+  }
+
+  #more-tooltip li {
+    @apply list-none px-6 py-1
+  }
+
+  #more-tooltip a {
+    @apply align-middle text-primaryLightHover text-2xl no-underline hover:text-white
+  }
+
+  article {
+	  @apply bg-white
+  }
+
+  .nowrap {
+	  @apply whitespace-nowrap
+  }
+
+  .gallery img {
+    @apply max-h-64 max-w-full
+  }
+
+  #dock.inactive {
+    @apply -bottom-1/2 md:bottom-3
+  }
+
+  .dock-element {
+    @apply content-evenly w-32 py-3 inline-block text-lg md:text-base leading-8 md:p-2
+  }
+
+  .dock-element img {
+    @apply w-auto h-10 md:h-12
+  }
+
+  footer {
+	  @apply z-10 bg-tertiaryLight w-screen mx-0 my-auto
+  }
+
+  #footer-content li {
+	  @apply text-left list-none
+  }
+
+  #footer-content>li {
+	  @apply pt-7 px-10 inline-table text-xl text-primaryLightHover
+  }
+
+  #footer-content li>ul {
+	  @apply pt-2
+  }
+
+  #footer-content li>ul>li {
+	  @apply text-primaryLight text-base pb-1
+  }
+
+  footer a {
+	@apply text-primaryLight hover:text-primaryLightHover break-words
+  }
+}
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+	overflow-x: hidden;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+		'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+		sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+		monospace;
 }
