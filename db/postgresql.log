@@ -784,3 +784,27 @@
 2022-04-30 22:27:00.414 CEST [98277] ERROR:  null value in column "description" of relation "projects" violates not-null constraint
 2022-04-30 22:27:00.414 CEST [98277] DETAIL:  Failing row contains (18, Steeped, null, 48, {"a Translator"}, null, {27}, null, null, "appStore"=>"https://apps.apple.com/app/steeped-tea-brewing-comp..., {Android,iOS}).
 2022-04-30 22:27:00.414 CEST [98277] STATEMENT:  INSERT INTO public.projects (id, name, version, "logoID", role, "skillIDs", "toolIDs", "screenshotISs", description, downloadlinks, platforms) VALUES (DEFAULT, $1::varchar(50), $2::varchar(12), $3::integer, $4, $5, $6, $7, $8::varchar(255), $9::hstore, $10)
+2022-05-13 21:10:24.662 CEST [11071] LOG:  starting PostgreSQL 14.2 on aarch64-apple-darwin20.6.0, compiled by Apple clang version 12.0.5 (clang-1205.0.22.9), 64-bit
+2022-05-13 21:10:24.664 CEST [11071] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2022-05-13 21:10:24.664 CEST [11071] LOG:  listening on IPv6 address "::1", port 5432
+2022-05-13 21:10:24.664 CEST [11071] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2022-05-13 21:10:24.668 CEST [11072] LOG:  database system was interrupted; last known up at 2022-05-01 23:20:36 CEST
+2022-05-13 21:10:24.704 CEST [11072] LOG:  database system was not properly shut down; automatic recovery in progress
+2022-05-13 21:10:24.706 CEST [11072] LOG:  redo starts at 0/1BA02B0
+2022-05-13 21:10:24.706 CEST [11072] LOG:  invalid record length at 0/1BA0398: wanted 24, got 0
+2022-05-13 21:10:24.706 CEST [11072] LOG:  redo done at 0/1BA0360 system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 0.00 s
+2022-05-13 21:10:24.709 CEST [11071] LOG:  database system is ready to accept connections
+2022-05-13 21:11:12.358 CEST [11115] ERROR:  relation "public.timetable" does not exist at character 17
+2022-05-13 21:11:12.358 CEST [11115] STATEMENT:  SELECT t.*
+	FROM public.timetable t
+	LIMIT 501
+2022-05-13 21:11:43.831 CEST [11125] ERROR:  relation "timetable" does not exist
+2022-05-13 21:11:43.831 CEST [11125] STATEMENT:  alter table timetable
+	    add column_6 int
+2022-05-13 21:12:22.038 CEST [11125] ERROR:  table "timetable" does not exist
+2022-05-13 21:12:22.038 CEST [11125] STATEMENT:  drop table timetable
+2022-05-13 23:47:38.167 CEST [11071] LOG:  received fast shutdown request
+2022-05-13 23:47:38.168 CEST [11071] LOG:  aborting any active transactions
+2022-05-13 23:47:38.169 CEST [11071] LOG:  background worker "logical replication launcher" (PID 11078) exited with exit code 1
+2022-05-13 23:47:38.169 CEST [11073] LOG:  shutting down
+2022-05-13 23:47:38.174 CEST [11071] LOG:  database system is shut down
