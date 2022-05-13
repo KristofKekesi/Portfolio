@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import background from "../bg.jpg";
 
 import "../components/timeline/timeline.css";
+import "../components/article/article.css";
 
 import Navbar from "../components/navbar/navbar";
 import Dock from "../components/dock/dock";
@@ -35,7 +36,9 @@ useEffect(() => {
     }, []);
 
     let timeline = <article id="timeline" className="flex flex-nowrap flex-row items-start justify-center bg-white">
-        <div className="sticky top-0" style={{top: "75px", display: "flex", margin: "min(2.5rem, 2.5vw)",  flexDirection: "column"}}>
+        <div className="sticky flex mt-10" style={{flexDirection: "column" 
+        // 75px
+        }}>
             <Link to="#2004" className="text-title target sticky">2004</Link>
             <Link to="#2015" className="text-title target sticky">2015</Link>
             <Link to="#2018" className="text-title target sticky">2018</Link>
@@ -45,26 +48,26 @@ useEffect(() => {
             <Link to="#2022" className="text-title target sticky">2022</Link>
             <Link to="#2023" className="text-title target sticky">2023</Link>
         </div>
-        <div className="sticky" style={{backgroundImage: `url(${background})`, marginTop: "min(2.5rem, 2.5vw)", marginBottom: "min(2.5rem, 2.5vw)", top: "50px", width: "1rem", minHeight: "100vh"}}><div className="sticky blur-dark" style={{top: "50px", width: "1rem", minHeight: "100vh"}}></div></div>
+        <div className="sticky mt-10" style={{backgroundImage: `url(${background})`, top: "50px", width: "1rem", minHeight: "100vh"}}><div className="sticky blur-dark" style={{top: "50px", width: "1rem", minHeight: "100vh"}}></div></div>
         <div>
-            <div className="m-10">
+            <div className="m-10 section">
                 <div id="2004" className="text-title selectable">2004</div>
                 <div className="text last selectable">Born</div>
             </div>
-            <div className="m-10">
+            <div className="m-10 section">
                 <div id="2015" className="text-title selectable">2015</div>
                 <div className="text last selectable">Started learning English</div>
             </div>
-            <div className="m-10">
+            <div className="m-10 section">
                 <div id="2018" className="text-title selectable">2018</div>
                 <div className="text last selectable">Started learning <abbr className="target" title="HyperText Markup Language">HTML</abbr>, <abbr className="target" title="Cascadian Style Sheet">CSS</abbr> and JavaScript</div>
             </div>
-            <div className="m-10">
+            <div className="m-10 section">
                 <div id="2019" className="text-title selectable">2019</div>
                 <div className="text-subtitle selectable" style={{paddingTop: "0"}}>December</div>
                 <div className="text last selectable">Started learning Flutter and Dart</div>
             </div>
-            <div className="m-10">
+            <div className="m-10 section">
                 <div id="2020" className="text-title selectable">2020</div>
                 <div className="text-subtitle selectable" style={{paddingTop: "0"}}>May</div>
                 <div className="text-subsubtitle selectable">May 16</div>
@@ -98,7 +101,7 @@ useEffect(() => {
                 <div className="text-subsubtitle selectable">December 14</div>
                 <div className="text last selectable">Released Preacher</div>
             </div>
-            <div className="m-10">
+            <div className="m-10 section">
                 <div id="2021" className="text-title selectable">2021</div>
                 <div className="text-subtitle selectable" style={{paddingTop: "0"}}>February</div>
                 <div className="text-subsubtitle selectable">February 15</div>
@@ -126,7 +129,7 @@ useEffect(() => {
                 <div className="text-subsubtitle selectable">December 23</div>
                 <div className="text last selectable">Translated Navi to Hungarian</div>
             </div>
-            <div className="m-10">
+            <div className="m-10 section">
                 <div id="2022" className="text-title selectable">2022</div>
                 <div className="text-subtitle selectable" style={{paddingTop: "0"}}>March</div>
                 <div className="text-subsubtitle selectable">March 6</div>
@@ -134,7 +137,7 @@ useEffect(() => {
                 <div className="text-subsubtitle selectable">March 10</div>
                 <div className="text last selectable">Released NASA Mira version 3</div>
             </div>
-            <div className="m-10">
+            <div className="m-10 section">
                 <div id="2023" className="text-title selectable">2023</div>
                 <div className="text last selectable">Graduating from Chernel István High School Hungary</div>
             </div>
