@@ -36,9 +36,7 @@ useEffect(() => {
     }, []);
 
     let timeline = <article id="timeline" className="flex flex-nowrap flex-row items-start justify-center bg-white">
-        <div className="sticky flex mt-10" style={{flexDirection: "column" 
-        // 75px
-        }}>
+        <div className="sticky flex mt-10 flex-col">
             <Link to="#2004" className="text-title target sticky">2004</Link>
             <Link to="#2015" className="text-title target sticky">2015</Link>
             <Link to="#2018" className="text-title target sticky">2018</Link>
