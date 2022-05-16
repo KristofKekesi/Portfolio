@@ -83,17 +83,20 @@ function ArticlePage() {
             <Navbar />
             <div className="w-full bg-cover" style={{paddingTop: "150px", paddingBottom: "75px", backgroundImage: `url(${background})`}}>
               <center>
-                    <h1 className="white selectable text-center" style={{textShadow: "6px 6px 12px rgba(0, 0, 0, .75)"}}>
-                        <div id="title">Loading</div>
-                        <span id="subtitle" className="nowrap"></span>
+                    <h1 className="white selectable text-center w-max" style={{textShadow: "6px 6px 12px rgba(0, 0, 0, .75)"}}>
+                        <center>
+							<span id="title" className="text-center w-screen">Loading</span>
+							<br />
+							<span id="subtitle" className="nowrap"></span>
+						</center>
                     </h1>
               </center>
             </div>
             <article>
-				      <div style={{width: "960px"}} className="bg-secondaryLight text-title article-content m-12 p-12">
+				<div style={{width: "960px"}} className="bg-secondaryLight text-title article-content m-12 p-12">
                 	Loading article...
-				      </div>
-			      </article>
+				</div>
+			</article>
             <Dock />
             <Footer />
             <Cursor />

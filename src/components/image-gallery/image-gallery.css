@@ -5,11 +5,16 @@
          \__) \__)    */
 
 
-.gallery > div {
+article .gallery > div {
     height: min-content;
     width: min-content;
 }
 
-.gallery {
+article .gallery {
     height: min-content;
+}
+
+article .gallery.max {
+    padding-left: 0;
+    padding-right: 0;
 }

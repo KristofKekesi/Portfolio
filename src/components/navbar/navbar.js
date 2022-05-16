@@ -60,7 +60,7 @@ function Navbar() {
                      //   <Link className="target" to="./articles">Articles</Link>
                     //</li>
                     }
-                    <li className="block sm:hidden">
+                    <li className="block md:hidden">
                         <Link className="target" to="./timeline">Timeline</Link>
                     </li>
                     <li className="block md:hidden">

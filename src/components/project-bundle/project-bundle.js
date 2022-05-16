@@ -34,7 +34,7 @@ function ProjectBundle(props) {
         return(
             <div className="project-bundle text-white" style={{backgroundImage: `linear-gradient(${projectBundle.style["gradient"].split(";")[2]}, #${projectBundle.style["gradient"].split(";")[0].replace("HEX-", "")} 0%, #${projectBundle.style["gradient"].split(";")[1].replace("HEX-", "")} 75%)`}}>
                 <h1 className="text-title">{projectBundle.name}</h1>
-                <div className="project-bundle-content w-full flex justify-between px-20">
+                <div className="project-bundle-content w-full flex justify-between px-12">
                     <ProjectBundleContent IDs={projectBundle.projects}/>
                 </div>
             </div>
