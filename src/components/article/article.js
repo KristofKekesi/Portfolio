@@ -114,7 +114,9 @@ function Article(props) {
                     );
                     break
                 case "section":
-                    let sectionContent = [];                    
+                    let sectionContent = [];
+                    sectionContent.push(<div className="mb-10 h-px"></div>)
+
                     for (let k = 0; k < article.content[i]["content"].length; k++) {
                         let sectionTag = "";
                         if (k === article.content[i]["content"].length - 1) {
@@ -165,6 +167,7 @@ function Article(props) {
                                 break
                         }
                     }
+                    sectionContent.push(<div className="mb-10 h-px"></div>)
                     articleContent.push(<div className={"section" + tag} key={i}>{ sectionContent }</div>);
                     break
                 default:
@@ -176,6 +179,8 @@ function Article(props) {
         if (article.madeWith !== null && article.madeWith !== undefined && article.madeWith.length > 0) {
             articleContent.push(<MadeWith madeWith={article.madeWith} title={"Tools I used"} key={"made-with"}/>);
         }
+
+        articleContent.push(<div className="mt-10 h-px"></div>)
 
         return(
             <article>

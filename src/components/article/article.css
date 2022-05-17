@@ -23,7 +23,7 @@ article .article-content > div.section.last {
 }
 
 article .last {
-    padding-bottom: 2.5rem;
+    margin-bottom: 2.5rem;
 }
 
 article .section.last {

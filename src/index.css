@@ -40,7 +40,7 @@
   }
 
   article .section {
-    @apply bg-secondaryLight
+    @apply bg-secondaryLight mt-10
   }
 
   article a {
@@ -48,27 +48,27 @@
   }
 
   article .text-title {
-    @apply text-3xl font-bold pt-10 pb-4 px-12
+    @apply text-3xl font-bold mt-10 mb-4 px-12
   }
 
   article .text-subtitle {
-    @apply text-2xl italic pt-4 pb-2 px-12
+    @apply text-2xl italic mt-4 mb-2 mx-12
   }
 
   article .text-subsubtitle {
-    @apply text-xl pt-0 pb-2 px-12
+    @apply text-xl mt-0 mb-2 px-12
   }
 
   article .text {
-    @apply text-base pt-0 pb-3 px-12 text-justify
+    @apply text-base mt-0 mb-3 px-12 text-justify
   }
 
-  article .null-padding {
-    @apply p-0
+  article .null-margin {
+    @apply m-0
   }
 
   article .terminal {
-    @apply text-base py-0 px-12
+    @apply text-base my-0 px-12
   }
 
   .nowrap {
@@ -76,11 +76,11 @@
   }
 
   article .gallery {
-    @apply px-12 py-0
+    @apply px-12 py-0 my-10
   }
 
   article .gallery.last {
-    @apply box-content pb-10
+    @apply box-content
   }
 
   article .gallery img {

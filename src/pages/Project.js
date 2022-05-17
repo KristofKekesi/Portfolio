@@ -182,7 +182,7 @@ function ProjectPage() {
                                 {badgesDiv}
                             </div>
                         </div>
-                        <div className="pb-12" />
+                        <div className="mb-10" />
                         {screenshotsDiv}
                         {madeWithDiv}
                     </div>
