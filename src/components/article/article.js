@@ -167,7 +167,7 @@ function Article(props) {
                                 break
                         }
                     }
-                    sectionContent.push(<div className="mb-10 h-px"></div>)
+                    sectionContent.push(<div className="mt-10 h-px"></div>)
                     articleContent.push(<div className={"section" + tag} key={i}>{ sectionContent }</div>);
                     break
                 default:

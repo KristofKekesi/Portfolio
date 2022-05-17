@@ -15,11 +15,11 @@ article .text-subtitle {
 }
 
 article .project-bundle-content {
-    padding-bottom: 2.5rem;
+    margin-bottom: 2.5rem;
 }
 
 article .article-content > div.section.last {
-    padding-bottom: 0;
+    margin-bottom: 0;
 }
 
 article .last {

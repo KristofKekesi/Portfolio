@@ -59,14 +59,14 @@ function MadeWith(props) {
             return(
                 <div className="technologies-content" key={props.name}>
                     <Loader color="black" />
-                    <h3 className="text p-0 text-center">Loading...</h3>
+                    <h3 className="text null-padding text-center">Loading...</h3>
                 </div> 
             )
         }
         return (
             <div className="technologies-content" key={props.name}>
                 <img src={image.url} alt={image.name} />
-                <h3 className="text selectable null-margin text-center">{props.name}</h3>
+                <h3 className="text selectable null-padding text-center">{props.name}</h3>
             </div>  
         );
     }
