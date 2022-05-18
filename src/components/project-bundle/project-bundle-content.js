@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 import "./project-bundle.css";
-import "../articles/articles.css";
 
 import API from "../../api";
 
@@ -36,19 +35,19 @@ function ProjectBundleContent(props) {
                 });
             });
         }
-    }, []);
+    }, [props.IDs]);
 
     if(isFinished === false) {
         return(
-            <h1 className="text nowrap" style={{padding: "0", color: "#ffffff", fontWeight: "normal", textAlign: "center"}}>Loading projects...</h1>
+            <h1 className="text nowrap p-0 text-white font-normal text-center">Loading...</h1>
         );
     } else {
         let final = [];
         for (let i = 0; i < props.IDs.length; i++) {
             final.push(
-                <Link key={i} to={"project?" + data[i]["proj"].id.replace("PROJ-", "") + "-" + data[i]["proj"].name.replace(/[^a-zA-Z]/g, "")} className="target">
-                    <img src={data[i]["img"].url} alt={data[i]["img"].description} />
-                    <h2 className="text nowrap" style={{padding: "0", color: "#ffffff", textAlign: "center"}}>{data[i]["proj"].name}</h2>
+                <Link key={i} to={"project?" + data[i]["proj"].id.replace("PROJ-", "") + "-" + data[i]["proj"].name.replace(/[^a-zA-Z]/g, "")} className="target flex flex-col items-center">
+                    <img className="w-auto" src={data[i]["img"].url} alt={data[i]["img"].description} />
+                    <h2 className="text null-padding nowrap w-auto mt-3 text-white text-center">{data[i]["proj"].name}</h2>
                 </Link>
             );
         }

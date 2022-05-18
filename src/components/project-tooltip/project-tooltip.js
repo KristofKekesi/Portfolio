@@ -20,7 +20,7 @@ function ProjectTooltip(props) {
     useEffect(() => {
         API.getProject("https://www.kekesi.dev/api/proj/PROJ-" + props.id + ".json").then(
           project => { setProject ( project ); }).catch((e) => {setProject ( null )});
-    }, []);
+    }, [props.id]);
 
     if (project == null) {
         return (<></>)
@@ -47,7 +47,7 @@ function ProjectTooltip(props) {
 
         return(
             <div style={{ overflow: "hidden"}}>
-                <div id={ "project-tooltip-" + props.id } style={{ position: "fixed", display: "none" }} className="blur-dark project-tooltip">
+                <div id={ "project-tooltip-" + props.id } style={{ position: "fixed", display: "none" }} className="blur-dark project-tooltip z-40 w-min sticky rounded-2xl text-primaryLightHover">
                     <ul>
                         <li>
                             <center className="nowrap" id={ "project-tooltip-" + props.id + "-name" }>{ project["name"] }</center>
@@ -66,7 +66,7 @@ function ProjectTooltip(props) {
     } else {
         return(
             <div style={{ overflow: "hidden" }}>
-                <div id={ "project-tooltip-" + props.id } style={{ position: "fixed", display: "none"  }} className="blur-dark project-tooltip">
+                <div id={ "project-tooltip-" + props.id } style={{ position: "fixed", display: "none"  }} className="blur-dark project-tooltip z-40 w-min sticky rounded-2xl text-primaryLightHover">
                     <ul>
                         <li>
                             <center id={ "project-tooltip-" + props.id + "-name" }>Loading...</center>

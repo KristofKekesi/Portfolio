@@ -1,3 +1,4 @@
+import React from 'react';
 import hamburger from './hamburger.svg';
 
 
@@ -8,8 +9,6 @@ import hamburger from './hamburger.svg';
 //         \__) \__)
 
 
-function Hamburger() {
-  return <img src={hamburger} alt="Hamburger" style={{height: "40px", width: "40px"}}/>;
+export default function Hamburger() {
+  return <img src={hamburger} id="hamburger"  className="target block md:hidden mr-10 h-10 w-10" alt="Hamburger" />;
 }
-
-export default Hamburger;

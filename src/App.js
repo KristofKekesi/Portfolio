@@ -1,3 +1,4 @@
+import React from 'react';
 import { HashRouter, Route, Switch } from "react-router-dom";
 import { useEffect } from "react";
 
@@ -16,7 +17,6 @@ import NotFound from "./pages/404";
 import './App.css';
 import './components/locale/quote.css';
 
-import localization from "./functions/localization";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 
 
@@ -37,8 +37,6 @@ function scrollToElement(element) {
 
 function App() {
   useEffect(() => {
-    localization();
-
     if (!window.location.href.replace("/#/", "").includes("#")) {
       window.scrollTo(0, 0);
     } else {

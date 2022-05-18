@@ -20,61 +20,59 @@ import './navbar.css';
 function Navbar() {
     return(
         <>
-            <nav id="navbar" className="white top blur-white">
+            <nav id="navbar" className="bg-white text-black visited:text-black top blur-white text-xl fixed flex justify-between items-center w-screen h-16 z-40">
                 <Switch>
                     <Route exact path="/">
-                        <Link className="home active target first" to="./#">Home</Link>
+                        <Link className="home first text-homeAccentLight" to="./#">Home</Link>
                     </Route>
                     <Route>
-                        <Link className="home target first" to="./#">Home</Link>
+                        <Link className="home target first text-homeAccentLight" to="./#">Home</Link>
                     </Route>
                 </Switch>
-                <ul id="navbar-links">
+                <ul id="navbar-links" className="flex">
                     <li>
                         <Switch>
                             <Route path="/mobile">
-                                <Link className="active target" to="./mobile">Mobile Development</Link>
+                                <Link className="active target text-activeAccentLight" to="./mobile">Mobile Development</Link>
                             </Route>
                             <Route>
-                                <Link className="target" to="./mobile">Mobile Development</Link>
+                                <Link className="inactive target" to="./mobile">Mobile Development</Link>
                             </Route>
                         </Switch>
                     </li>
                     <li>
                         <Switch>
                             <Route path="/web">
-                                <Link className="active target" to="./web">Web Development</Link>
+                                <Link className="active target text-activeAccentLight" to="./web">Web Development</Link>
                             </Route>
                             <Route>
-                                <Link className="target" to="./web">Web Development</Link>
+                                <Link className="inactive target" to="./web">Web Development</Link>
                             </Route>
                         </Switch>
                     </li>
-                    <li className="mobile-view">
+                    <li className="block md:hidden">
                         <Link className="target" to="./translations">Translations</Link>
                     </li>
-                    <li className="mobile-view">
+                    <li className="block md:hidden">
                         <Link className="target" to="./photography">Photograpy</Link>
                     </li>
-                    {//<li className="mobile-view">
-                    //    <Link className="target" to="./articles">Articles</Link>
+                    {//<li className="block md:hidden">
+                     //   <Link className="target" to="./articles">Articles</Link>
                     //</li>
                     }
-                    <li className="mobile-view">
+                    <li className="block md:hidden">
                         <Link className="target" to="./timeline">Timeline</Link>
                     </li>
-                    <li className="mobile-view">
+                    <li className="block md:hidden">
                         <Link className="target" to="./about">About</Link>
                     </li>
-                    <li className="desktop-view">
-                        <a id="more-button" onClick={ moreTooltipToggle } className="target last">More</a>
+                    <li className="hidden md:block">
+                        <Link to="#" id="more-button" onClick={ moreTooltipToggle } className="inactive target last">More</Link>
                     </li>
                 </ul>
-                <div id="hamburger" className="mobile-view target">
-                    <Hamburger />
-                </div>
+                <Hamburger />
             </nav>
-            <div style={{marginRight: "12px"}} className="desktop-view target">
+            <div style={{marginRight: "12px"}} className="hidden md:block target">
                 <MoreTooltip/>
             </div>
         </>

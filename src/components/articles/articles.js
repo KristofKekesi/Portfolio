@@ -2,9 +2,6 @@ import React, { useState, useEffect } from "react";
 
 import { getArticles } from "../../api/getArticle";
 
-
-import "./articles.css";
-
 import { ArticlePreviewBig } from "../article-preview/index";
 import cursorSetup from "../../functions/cursor";
 
@@ -24,19 +21,29 @@ function Articles(props) {
             articles => {
                 let final = content ? content : [];
                 for (let i = 0; i < articles.length; i++) {
-                    final.push(<ArticlePreviewBig style={{margin: "3rem"}} key={i} id={articles[i]["id"]}></ArticlePreviewBig>);
+                    final.push(<ArticlePreviewBig key={i} id={articles[i]["id"]} className="m-12"></ArticlePreviewBig>);
                 }
                 setContent(final);
                 cursorSetup();
             }
         );
-    }, []);
+    }, [content]);
 
     if (content !== undefined) {
-        return (<article className="articles">{content}</article>);
+        return (
+            <article className="flex-wrap items-start bg-white justify-center gap-4 flex mx-20">
+                { content }
+            </article>);
     }
     return (
-        <article className="articles"><div style={{background: "#ECECEC", marginTop: "3rem", marginBottom: "3rem", width: "960px", paddingTop: "3rem", paddingBottom: "3rem"}} className="text-title">Loading articles...</div></article>
+        <article className="flex-wrap items-start bg-white justify-center">
+            <div
+                className="bg-secondaryLight my-12 py-12 text-title"
+                style={{ width: "960px" }}
+            >
+                Loading articles...
+            </div>
+        </article>
     );
 }
 

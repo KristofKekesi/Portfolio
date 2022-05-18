@@ -1,3 +1,4 @@
+import React from 'react';
 import loaderWhite from "./white.svg";
 import loaderBlack from "./black.svg";
 

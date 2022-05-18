@@ -6,17 +6,8 @@
 
 
 .project-tooltip {
-    z-index: 1001;
-
-    width: min-content;
-    min-width: 300px;
-
     transform: translateX(-50%);
-    position: sticky;
-    border-radius: 14px;
-
-    color: #fefefe;
-
+    min-width: 300px;
     transition: opacity .15s ease-in-out, display .15s linear;
 }
 

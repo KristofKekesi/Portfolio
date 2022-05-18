@@ -1,3 +1,4 @@
+import React from 'react';
 import ArticlePreviewBig from "./article-preview-big";
 import ArticlePreviewSmoll from "./article-preview-smoll";
 
@@ -14,9 +15,7 @@ function ArticlePreviewsBig(props) {
     }
 
     return (
-        <div className="article-preview-smoll-container">
-            {final}
-        </div>
+        {final}
     );
 }
 function ArticlePreviewsSmoll(props) {
@@ -26,7 +25,7 @@ function ArticlePreviewsSmoll(props) {
     }
 
     return (
-        <div className="article-preview-smoll-container">
+        <div className="article-preview-smoll-container flex flex-wrap justify-start gap-10 px-12 my-2">
             {final}
         </div>
     );

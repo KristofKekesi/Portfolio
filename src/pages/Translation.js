@@ -34,9 +34,11 @@ function Translations() {
     return (
       <>
         <Navbar />
-        <div style={{width: "100%", paddingTop: "150px", paddingBottom: "75px", backgroundImage: `url(${background})`, backgroundSize: "cover"}}>
+        <div className="w-full bg-cover" style={{paddingTop: "150px", paddingBottom: "75px", backgroundImage: `url(${background})`}}>
           <center>
-                <h1 className="white selectable" style={{textShadow: "6px 6px 12px rgba(0, 0, 0, .75)", textAlign: "center"}}>Translations</h1>
+                <h1 className="white selectable text-center w-max" style={{textShadow: "6px 6px 12px rgba(0, 0, 0, .75)"}}> 
+                  Translations
+                </h1>
           </center>
         </div>
         <Article id="2"></Article>

@@ -10,15 +10,10 @@ import './cursor.css';
 //         \__) \__)
 
 
-class Cursor extends Component {
+export default class Cursor extends Component {
     render() {
         return(
-            <>
-                <div className="cursor1" id="cursor1"></div>
-                <div className="cursor2" id="cursor2"></div>
-            </>
+            <div className="z-50 fixed rounded-full -translate-x-1/2 -translate-y-1/2 pointer-events-none top-1/2 -left-full opacity-100 h-8 w-8" id="cursor"></div>
         );
     }
 }
-
-export default Cursor;

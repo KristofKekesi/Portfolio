@@ -12,10 +12,10 @@ function moreTooltipToggle() {
     const moreButton = document.getElementById("more-button");
     const moreTooltip = document.getElementById("more-tooltip");
     
-    if (moreTooltip.style.display === "none") {
+    if (moreTooltip.classList.contains("hidden")) {
         localStorage.setStorage("more-tooltip", "true");
 
-        moreTooltip.style.display = "inline";
+        moreTooltip.classList.toggle("hidden");
         moreTooltip.style.opacity = "0";
         setTimeout(() => {
             moreTooltip.style.opacity = "1";
@@ -27,7 +27,7 @@ function moreTooltipToggle() {
 
         // wait for animation to complete
         setTimeout(() => {
-            moreTooltip.style.display = "none";
+            moreTooltip.classList.toggle("hidden");
         }, 150);
         moreTooltip.style.opacity = "0";
 

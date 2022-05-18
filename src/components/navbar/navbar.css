@@ -5,44 +5,10 @@
          \__) \__)    */
 
 
-nav.white {
-    background-color: #ffffff;
-    color: #000000;
-    font-size: 1.5rem;
-}
-
-#navbar {
-    z-index: 1000;
-
-    position: fixed;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    width: 100vw;
-    height: 75px; 
-}
-
-#navbar ul {
-    display: flex;
-}
-
-#navbar li {
-    list-style: none;
-}
-
 #navbar a {
-    color: #000000;
-
-    font-size: 2rem;
-
-    text-decoration: none;
-    padding-left: 20px;
-    padding-right: 20px;
-
     font-family: "Inter";
-    vertical-align: middle;
 }
+
 #navbar a.first {
     padding-left: min(5rem, 5vw);
 }
@@ -51,47 +17,20 @@ nav.white {
     padding-right: min(5rem, 5vw);
 }
 
-#navbar a.active {
-    font-weight: bold;
-    color: #BE4245;
-}
-
 #navbar a.home {
-    font-weight: bold;
     font-family: "InterBold";
-    color: #173959;
-}
-
-.desktop-view {
-    display: block;
-}
-
-.mobile-view {
-    display: none;
 }
 
 
-@media screen and (max-width: 1000px) {
-    body {
-        overflow-x: hidden;
-    }
-
-    .desktop-view {
-        display: none;
-    }
-
-    .mobile-view {
-        display: block;
-    }
-
+@media screen and (max-width: calc(768px)) {
     #navbar-links {
         overflow-y: visible;
         overflow: hidden;
         position: absolute;
         right: 0;
-        top: 75px;
+        top: 4rem; /* 75px was the height of the navbar */
 
-        height: calc(100vh - 75px);
+        height: calc(100vh - 4rem);
 
         display: block;
 
@@ -119,10 +58,6 @@ nav.white {
         padding: 12px;
     }
 
-    #navbar a {
-        color: #EFEFEF;
-    }
-
     #navbar a.active {
         font-weight: normal;
         color: #EFEFEF;
@@ -130,9 +65,5 @@ nav.white {
 
     #navbar a.home {
         color: #173959;
-    }
-
-    #navbar #hamburger {
-        padding-right: min(5rem, 5vw);
     }
 }
