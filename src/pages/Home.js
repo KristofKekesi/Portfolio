@@ -35,7 +35,10 @@ function Home() {
       <div className="w-full h-screen flex justify-center bg-cover" style={{backgroundImage: `url(${background})`}}>
           <div className="w-max">
           <h1 className="white" style={{paddingTop: "33vh", textShadow: "6px 6px 12px rgba(0, 0, 0, .75)"}}>Kristóf Kékesi</h1>
-          <h2 className="white" style={{textShadow: "6px 6px 12px rgba(0, 0, 0, .75)"}}>Mobile Developer</h2>
+          <h2 className="white" style={{textShadow: "6px 6px 12px rgba(0, 0, 0, .75)"}}>
+            Mobile Developer
+            <span className="text-2xl ml-5" style={{color: "#CCCCCCDD"}}>(from Hungary)</span>
+          </h2>
         </div>
       </div>
       <Dock />

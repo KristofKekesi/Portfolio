@@ -40,7 +40,7 @@ function Article(props) {
     if(article === null) {
         return (
 			<article>
-				<div style={{marginTop: "3rem", marginBottom: "3rem", width: "960px", paddingTop: "3rem", paddingBottom: "3rem"}} className="bg-secondaryLight text-title article-content">
+				<div style={{width: "960px"}} className="bg-secondaryLight text-title article-content my-12 py-12">
 					Error loading article.
 				</div>
 			</article>
@@ -131,7 +131,12 @@ function Article(props) {
                         switch(article.content[i]["content"][k].type) {
                             case "text-title":
                                 sectionContent.push(
-                                    <h1 id={article.content[i]["content"][k]["value"].toLowerCase().replace(" ", "-")} className={"selectable text-title" + sectionTag} dangerouslySetInnerHTML={{ __html: article.content[i]["content"][k]["value"] }}  key={i + "-" + k}/>
+                                    <h1
+                                        id={article.content[i]["content"][k]["value"].toLowerCase().replace(" ", "-")}
+                                        className={"selectable text-title" + sectionTag}
+                                        dangerouslySetInnerHTML={{ __html: article.content[i]["content"][k]["value"] }}
+                                        key={i + "-" + k}
+                                    />
                                 );
                                 break
                             case "text-subtitle":
@@ -151,13 +156,24 @@ function Article(props) {
                                 break
                             case "terminal":
                                 sectionContent.push(
-                                    <Terminal id={terminalId} className={"terminal" + sectionTag} language={article.content[i]["content"][k]["language"]} code={article.content[i]["content"][k]["code"]}  key={i + "-" + k}/>
+                                    <Terminal
+                                        id={terminalId}
+                                        className={"terminal" + sectionTag}
+                                        language={article.content[i]["content"][k]["language"]}
+                                        code={article.content[i]["content"][k]["code"]}
+                                        key={i + "-" + k}
+                                    />
                                 );
                                 terminalId++;
                                 break
                             case "gallery":
                                 sectionContent.push(
-                                    <ImageGallery galleryTag={galleryTag} IDs={article.content[i]["content"][k]["value"]} dataKey={i + "-" + k} key={i + "-" + k}/>
+                                    <ImageGallery
+                                        galleryTag={galleryTag}
+                                        IDs={article.content[i]["content"][k]["value"]}
+                                        dataKey={i + "-" + k}
+                                        key={i + "-" + k}
+                                    />
                                 );
                                 galleries.push(article.content[i]["content"][k]["value"]);
 
@@ -192,7 +208,7 @@ function Article(props) {
     } else {
         return (
 			<article>
-				<div className="bg-secondaryLight text-title article-content" style={{marginTop: "3rem", marginBottom: "3rem", paddingTop: "3rem", paddingBottom: "3rem"}} >
+				<div className="bg-secondaryLight text-title article-content my-12 py-12">
                     Loading article...
 				</div>
 			</article>

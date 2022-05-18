@@ -6,26 +6,9 @@
 
 
 article .article-content {
-    margin: auto;
     max-width: 960px;
 }
 
 article .text-subtitle {
     font-family: "InterExtraLight";
-}
-
-article .project-bundle-content {
-    margin-bottom: 2.5rem;
-}
-
-article .article-content > div.section.last {
-    margin-bottom: 0;
-}
-
-article .last {
-    margin-bottom: 2.5rem;
-}
-
-article .section.last {
-    margin-bottom: 5rem;
 }

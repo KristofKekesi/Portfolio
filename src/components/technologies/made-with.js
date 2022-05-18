@@ -110,7 +110,7 @@ function MadeWith(props) {
             <div className="mh-10 h-px"></div>
             <h1 className="text-title">{props.title}</h1>
             { content }
-            <div className="technologies-dummydiv pb-10 mt-10 w-full bg-white h-10"/>
+            <div className="mt-10 w-full bg-white h-px"/>
         </div>
     );
 }

@@ -5,7 +5,7 @@
          \__) \__)    */
 
 
-article .gallery > div {
+article .gallery div {
     height: min-content;
     width: min-content;
 }

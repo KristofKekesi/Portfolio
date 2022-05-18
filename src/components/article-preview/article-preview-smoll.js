@@ -33,8 +33,11 @@ function ArticlePreviewSmoll(props) {
 
     if (article === undefined || image === undefined) {
         return(
-            <article style={props.style} className="article-preview-smoll">
-                <div style={{width: "100%", height: "25rem"}} />
+            <article
+                style={props.style}
+                className="article-preview-smoll w-96 h-28 flex flex-col bg-secondaryLight"
+            >
+                <div className="w-full h-96" />
                 <h1 className="text-title">Loading article...</h1>
             </article>
         );
@@ -55,11 +58,24 @@ function ArticlePreviewSmoll(props) {
         }
 
         return(
-            <article style={props.style} className="article-preview-smoll target">
-                <Link className="article-preview-link-smoll" to={linkURL}>
-                    <img className="index-picture" src={image.url} alt="Article cover" />
-                    <div style={{display: "flex", flexDirection: "column", justifyContent: "center", paddingBottom: ".5rem"}}>
-                        <h1 className="text-title" dangerouslySetInnerHTML={{ __html: article.name}} />
+            <article
+                style={props.style}
+                className="article-preview-smoll target font-bold"
+            >
+                <Link
+                    className="article-preview-link-smoll flex w-full h-full bg-secondaryLight"
+                    to={ linkURL }
+                >
+                    <img
+                        className="w-28 h-28 bg-cover"
+                        src={ image.url }
+                        alt="Article cover"
+                    />
+                    <div className="justify-center pb-2">
+                        <h1
+                            className="text-title" 
+                            dangerouslySetInnerHTML={{ __html: article.name}}
+                        />
                     </div>
                 </Link>
             </article>

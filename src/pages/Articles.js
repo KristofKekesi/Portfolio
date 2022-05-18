@@ -41,7 +41,9 @@ function ArticlesPage() {
                 </h1>
           </center>
         </div>
+        <div className="h-px mb-10"></div>
         <Articles />
+        <div className="h-px mb-10"></div>
         <Dock />
         <Footer />
         <Cursor />
