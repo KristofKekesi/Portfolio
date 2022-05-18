@@ -85,7 +85,7 @@
 }
 
 html {
-  scroll-padding-top: 75px; /* height of sticky header*/
+  scroll-padding-top: 4rem; /* height of sticky header*/
 
   scroll-behavior: smooth;
   overscroll-behavior-y: none;

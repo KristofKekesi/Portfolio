@@ -24,7 +24,7 @@
                     "value": "Architectural and Interior photography"
                 },
                 {
-                    "type": "text-subsubtitle",
+                    "type": "text-subtitle",
                     "value": "Buildings and Monuments"
                 },
                 {
@@ -36,7 +36,7 @@
                     "value": ["IMG-93", "IMG-81", "IMG-53", "IMG-72"]
                 },
                 {
-                    "type": "text-subsubtitle",
+                    "type": "text-subtitle",
                     "value": "Interiors"
                 },
                 {
@@ -70,7 +70,7 @@
                     "value": "Nature photography"
                 },
                 {
-                    "type": "text-subsubtitle",
+                    "type": "text-subtitle",
                     "value": "Animals"
                 },
                 {
@@ -86,7 +86,7 @@
                     "value": ["IMG-69", "IMG-70", "IMG-64", "IMG-96"]
                 },
                 {
-                    "type": "text-subsubtitle",
+                    "type": "text-subtitle",
                     "value": "Plants and Flowers"
                 },
                 {

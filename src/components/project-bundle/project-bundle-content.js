@@ -39,7 +39,7 @@ function ProjectBundleContent(props) {
 
     if(isFinished === false) {
         return(
-            <h1 className="text nowrap p-0 text-white font-normal text-center">Loading projects...</h1>
+            <h1 className="text nowrap p-0 text-white font-normal text-center">Loading...</h1>
         );
     } else {
         let final = [];
@@ -47,7 +47,7 @@ function ProjectBundleContent(props) {
             final.push(
                 <Link key={i} to={"project?" + data[i]["proj"].id.replace("PROJ-", "") + "-" + data[i]["proj"].name.replace(/[^a-zA-Z]/g, "")} className="target flex flex-col items-center">
                     <img className="w-auto" src={data[i]["img"].url} alt={data[i]["img"].description} />
-                    <h2 className="text nowrap w-auto mt-3 p-0 text-white text-center">{data[i]["proj"].name}</h2>
+                    <h2 className="text null-padding nowrap w-auto mt-3 text-white text-center">{data[i]["proj"].name}</h2>
                 </Link>
             );
         }

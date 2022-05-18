@@ -36,7 +36,7 @@ function Web() {
         <Navbar />
         <div className="w-full bg-cover" style={{paddingTop: "150px", paddingBottom: "75px", backgroundImage: `url(${background})`}}>
           <center>
-                <h1 className="white selectable text-center" style={{textShadow: "6px 6px 12px rgba(0, 0, 0, .75)"}}>Web Development</h1>
+                <h1 className="white selectable text-center w-max" style={{textShadow: "6px 6px 12px rgba(0, 0, 0, .75)"}}>Web Development</h1>
           </center>
         </div>
         <Article id="1"></Article>

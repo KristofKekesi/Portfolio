@@ -59,14 +59,14 @@ function MadeWith(props) {
             return(
                 <div className="technologies-content" key={props.name}>
                     <Loader color="black" />
-                    <h3 className="text p-0 text-center">Loading...</h3>
+                    <h3 className="text null-padding text-center">Loading...</h3>
                 </div> 
             )
         }
         return (
             <div className="technologies-content" key={props.name}>
                 <img src={image.url} alt={image.name} />
-                <h3 className="text selectable p-0 text-center">{props.name}</h3>
+                <h3 className="text selectable null-padding text-center">{props.name}</h3>
             </div>  
         );
     }
@@ -102,14 +102,15 @@ function MadeWith(props) {
         for (let technology in technologyTypes[technologyType]["type"]) {
             typeContent.push(<TechnologyElement name={technologyTypes[technologyType]["type"][technology]} image={technologyTypes[technologyType]["logo"][technology]} key={technology}/>);
         }
-        content.push(<div className="w-full flex flex-wrap flex-row gap-8 px-20" key={technologyType + "-content"}>{typeContent}</div>);
+        content.push(<div className="w-full flex flex-wrap flex-row gap-8 px-12" key={technologyType + "-content"}>{typeContent}</div>);
     }
 
     return(
         <div className="section">
+            <div className="mh-10 h-px"></div>
             <h1 className="text-title">{props.title}</h1>
             { content }
-            <div className="technologies-dummydiv pb-10 mt-10 w-full bg-white h-10"/>
+            <div className="mt-10 w-full bg-white h-px"/>
         </div>
     );
 }

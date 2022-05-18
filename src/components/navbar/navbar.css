@@ -28,9 +28,9 @@
         overflow: hidden;
         position: absolute;
         right: 0;
-        top: 75px;
+        top: 4rem; /* 75px was the height of the navbar */
 
-        height: calc(100vh - 75px);
+        height: calc(100vh - 4rem);
 
         display: block;
 

@@ -34,15 +34,18 @@ function ArticlePreviewBig(props) {
 
     if (article === undefined || image === undefined) {
         return(
-            <article style={props.style} className="article-preview-big">
-                <div style={{width: "1005", height: "25rem"}} />
+            <article
+                style={props.style}
+                className="article-preview-big"
+            >
+                <div className="w-fill" />
                 <h1 className="text-title">Loading article...</h1>
             </article>
         );
     } else if (article === null || image === null) {
         return(
             <article style={props.style} className="article-preview-big">
-                <div style={{width: "100%", height: "25rem"}} />
+                <div className="w-fill" />
                 <h1 className="text-title">Error loading article.</h1>
             </article>
         );
@@ -56,11 +59,24 @@ function ArticlePreviewBig(props) {
         }
 
         return(
-            <article style={props.style} className="article-preview-big target">
-                <Link className="article-preview-link" to={linkURL}>
-                    <img className="index-picture" src={image.url} alt="Article cover" />
-                    <h1 className="text-title" dangerouslySetInnerHTML={{ __html: article.name }} />
-                    <h2 className="text-subtitle" dangerouslySetInnerHTML={{ __html: article.description }} />
+            <article style={props.style} className="article-preview-big target w-96 flex flex-col bg-secondaryLight font-bold"> 
+                <Link
+                    className="w-full h-full bg-secondaryLight"
+                    to={ linkURL }
+                >
+                    <img
+                        className="max-w-full max-h-96"
+                        src={image.url}
+                        alt="Article cover"
+                    />
+                    <h1
+                        className="text-title"
+                        dangerouslySetInnerHTML={{ __html: article.name }}
+                    />
+                    <h2
+                        className="text-smallsubtitle" 
+                        dangerouslySetInnerHTML={{ __html: article.description }}
+                    />
                 </Link>
             </article>
         );

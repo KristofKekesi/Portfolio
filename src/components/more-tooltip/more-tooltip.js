@@ -31,9 +31,10 @@ function MoreTooltip() {
                 <li>
                     <Link className="target" to="/photography">Photography</Link>
                 </li>
-                <li>
-                    <Link className="target" to="/articles">Articles</Link>
-                </li>
+                {//<li>
+                 //   <Link className="target" to="/articles">Articles</Link>
+                //</li>
+                }
                 <hr className="w-full"/>
                 <li>
                     <Link className="target" to="/timeline">Timeline</Link>

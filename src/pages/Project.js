@@ -68,20 +68,23 @@ function ProjectPage() {
                 <Navbar />
                 <div className="w-full bg-cover" style={{paddingTop: "150px", paddingBottom: "75px", backgroundImage: `url(${background})`}}>
                 <center>
-                        <h1 className="white selectable text-center" style={{textShadow: "6px 6px 12px rgba(0, 0, 0, .75)"}}>
-                            <div id="title">Loading</div>
-                            <span id="subtitle" className="nowrap"></span>
-                        </h1>
+                    <h1 className="white selectable text-center w-max" style={{textShadow: "6px 6px 12px rgba(0, 0, 0, .75)"}}>
+                        <center>
+							<span id="title" className="text-center w-screen">Loading</span>
+							<br />
+							<span id="subtitle" className="nowrap"></span>
+						</center>
+                    </h1>
                 </center>
                 </div>
                 <article>
-				<div style={{width: "960px"}} className="bg-secondaryLight text-title article-content my-12 py-12">
-                    Loading article...
-				</div>
-			</article>
-                <Dock />
-                <Footer />
-                <Cursor />
+                    <div style={{width: "960px"}} className="bg-secondaryLight text-title article-content m-12 p-12">
+                        Loading...
+                    </div>
+			    </article>
+            <Dock />
+            <Footer />
+            <Cursor />
             </>
         );
     } else if (project === null || image === null) {
@@ -90,15 +93,15 @@ function ProjectPage() {
                 <Navbar />
                 <div className="w-full bg-cover" style={{paddingTop: "150px", paddingBottom: "75px", backgroundImage: `url(${background})`}}>
                 <center>
-                        <h1 className="white selectable text-center" style={{textShadow: "6px 6px 12px rgba(0, 0, 0, .75)"}}>
-                            <div id="title">Loading</div>
+                        <h1 className="white selectable text-center w-max" style={{textShadow: "6px 6px 12px rgba(0, 0, 0, .75)"}}>
+                            <div id="title">Error</div>
                             <span id="subtitle" className="nowrap"></span>
                         </h1>
                 </center>
                 </div>
                 <article>
                     <div className="article-content">
-                        <h1 className="text-title nosection">Error loading project...</h1>
+                        <h1 className="text-title nosection">Error loading project.</h1>
                     </div>
                 </article>
                 <Dock />
@@ -157,7 +160,7 @@ function ProjectPage() {
                 <Navbar />
                 <div className="w-full bg-cover" style={{paddingTop: "150px", paddingBottom: "75px", backgroundImage: `url(${background})`}}>
                 <center>
-                        <h1 className="white selectable text-center" style={{textShadow: "6px 6px 12px rgba(0, 0, 0, .75)"}}>
+                        <h1 className="white selectable text-center w-max" style={{textShadow: "6px 6px 12px rgba(0, 0, 0, .75)"}}>
                             <div id="title">Loading...</div>
                             <span id="subtitle" className="nowrap"></span>
                         </h1>
@@ -168,18 +171,18 @@ function ProjectPage() {
                         <h1 className="text-title nosection selectable">{project.name}</h1>
                         <div className="text nosection last selectable">{project.description}</div>
                         <div className="section flex">
-                            <img src={image.url} alt={image.description} className="w-auto h-auto ml-20 mr-0 py-10" style={{maxWidth: "7.5rem", maxHeight: "7.5rem", boxSizing: "content-box"}}></img>
+                            <img src={image.url} alt={image.description} className="w-auto h-auto ml-12 mr-0 py-12" style={{maxWidth: "7.5rem", maxHeight: "7.5rem", boxSizing: "content-box"}}></img>
                             <div>
-                                <div className="pt-10" />
+                                <div className="pt-8" />
                                 {versionDiv}
                                 <h1 className="text-subtitle selectable pb-0">Worked on as</h1>
                                 <div className="text selectable">{project.role.join(", ").replace(/,([^,]*)$/, ' and $1')}</div>
                                 {platformDiv}
-                                <div className="pb-7" />
+                                <div className="pb-4" />
                                 {badgesDiv}
                             </div>
                         </div>
-                        <div className="pb-12" />
+                        <div className="mb-10" />
                         {screenshotsDiv}
                         {madeWithDiv}
                     </div>

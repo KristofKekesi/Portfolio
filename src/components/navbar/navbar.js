@@ -20,7 +20,7 @@ import './navbar.css';
 function Navbar() {
     return(
         <>
-            <nav id="navbar" className="bg-white text-black visited:text-black top blur-white text-xl fixed flex justify-between items-center w-screen h-16">
+            <nav id="navbar" className="bg-white text-black visited:text-black top blur-white text-xl fixed flex justify-between items-center w-screen h-16 z-40">
                 <Switch>
                     <Route exact path="/">
                         <Link className="home first text-homeAccentLight" to="./#">Home</Link>
@@ -56,10 +56,11 @@ function Navbar() {
                     <li className="block md:hidden">
                         <Link className="target" to="./photography">Photograpy</Link>
                     </li>
+                    {//<li className="block md:hidden">
+                     //   <Link className="target" to="./articles">Articles</Link>
+                    //</li>
+                    }
                     <li className="block md:hidden">
-                        <Link className="target" to="./articles">Articles</Link>
-                    </li>
-                    <li className="block sm:hidden">
                         <Link className="target" to="./timeline">Timeline</Link>
                     </li>
                     <li className="block md:hidden">
