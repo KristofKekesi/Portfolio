@@ -1,7 +1,7 @@
 {
     "id": "ARTICLE-13",
     "name": "About",
-    "description": "More informations about me",
+    "description": "More about me",
     "cover": "IMG-111",
     "redirect": "/about",
     "isVisible": false, 
@@ -14,7 +14,7 @@
         },
         {
             "type": "text",
-            "value": "My name is Kristóf Kékesi. I'm a 17 years old Hungarian programmer. I'm currently studing in a Hungarian high school near Budapest, from where I will be graduating in <a class='target' href='../#/timeline#2023'>2023</a> as a math and <abbr class='target', title='Computer Science'>CS</abbr> major."
+            "value": "My name is Kristóf Kékesi. I'm a 18 years old Hungarian programmer. I'm currently studing in a Hungarian high school near Budapest, from where I will be graduating in <a class='target' href='../#/timeline#2023'>2023</a> as a math and <abbr class='target', title='Computer Science'>CS</abbr> major."
         },
         {
             "type": "text-title",
