@@ -23,10 +23,10 @@ function Navbar() {
             <nav id="navbar" className="bg-white text-black visited:text-black top blur-white text-xl fixed flex justify-between items-center w-screen h-16 z-40">
                 <Switch>
                     <Route exact path="/">
-                        <Link className="home first text-homeAccentLight" to="./#">Home</Link>
+                        <Link className="home first pl-20 text-homeAccentLight" to="./#">Home</Link>
                     </Route>
                     <Route>
-                        <Link className="home target first text-homeAccentLight" to="./#">Home</Link>
+                        <Link className="home target first pl-20 text-homeAccentLight" to="./#">Home</Link>
                     </Route>
                 </Switch>
                 <ul id="navbar-links" className="flex">

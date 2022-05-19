@@ -55,6 +55,6 @@ export default function Badges(props) {
         }
     }
     return (
-        <div className="last flex flex-wrap gap-3 px-12">{final}</div>
+        <div className="flex flex-wrap gap-3 px-12">{final}</div>
     );
 }

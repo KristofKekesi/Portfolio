@@ -36,7 +36,7 @@ useEffect(() => {
     }, []);
 
     let timeline = <article id="timeline" className="flex flex-nowrap flex-row items-start justify-center bg-white">
-        <div className="sticky flex mt-10 flex-col">
+        <div className="sticky hidden md:flex mt-10 flex-col">
             <Link to="#2004" className="text-title target sticky">2004</Link>
             <Link to="#2015" className="text-title target sticky">2015</Link>
             <Link to="#2018" className="text-title target sticky">2018</Link>
@@ -46,31 +46,31 @@ useEffect(() => {
             <Link to="#2022" className="text-title target sticky">2022</Link>
             <Link to="#2023" className="text-title target sticky">2023</Link>
         </div>
-        <div className="sticky mt-10" style={{backgroundImage: `url(${background})`, top: "50px", width: "1rem", minHeight: "100vh"}}><div className="sticky blur-dark" style={{top: "50px", width: "1rem", minHeight: "100vh"}}></div></div>
+        <div className="sticky mt-10 hidden md:flex" style={{backgroundImage: `url(${background})`, top: "50px", width: "1rem", minHeight: "100vh"}}><div className="sticky blur-dark" style={{top: "50px", width: "1rem", minHeight: "100vh"}}></div></div>
         <div>
             <div className="m-10 section">
                 <div className="h-px mb-10" />
                 <div id="2004" className="text-title selectable">2004</div>
-                <div className="text last selectable">Born</div>
+                <div className="text selectable">Born</div>
                 <div className="h-px mt-10" />
             </div>
             <div className="m-10 section">
                 <div className="h-px mb-10" />
                 <div id="2015" className="text-title selectable">2015</div>
-                <div className="text last selectable">Started learning English</div>
+                <div className="text selectable">Started learning English</div>
                 <div className="h-px mt-10" />
             </div>
             <div className="m-10 section">
                 <div className="h-px mb-10" />
                 <div id="2018" className="text-title selectable">2018</div>
-                <div className="text last selectable">Started learning <abbr className="target" title="HyperText Markup Language">HTML</abbr>, <abbr className="target" title="Cascadian Style Sheet">CSS</abbr> and JavaScript</div>
+                <div className="text selectable">Started learning <abbr className="target" title="HyperText Markup Language">HTML</abbr>, <abbr className="target" title="Cascadian Style Sheet">CSS</abbr> and JavaScript</div>
                 <div className="h-px mt-10" />
             </div>
             <div className="m-10 section">
                 <div className="h-px mb-10" />
                 <div id="2019" className="text-title selectable">2019</div>
                 <div className="text-subtitle selectable" style={{paddingTop: "0"}}>December</div>
-                <div className="text last selectable">Started learning Flutter and Dart</div>
+                <div className="text selectable">Started learning Flutter and Dart</div>
                 <div className="h-px mt-10" />
             </div>
             <div className="m-10 section">
@@ -106,7 +106,7 @@ useEffect(() => {
                 <div className="text-subsubtitle selectable">December 8</div>
                 <div className="text selectable">Translated Quick Pad to Hungarian</div>
                 <div className="text-subsubtitle selectable">December 14</div>
-                <div className="text last selectable">Released Preacher</div>
+                <div className="text selectable">Released Preacher</div>
                 <div className="h-px mt-10" />
             </div>
             <div className="m-10 section">
@@ -136,7 +136,7 @@ useEffect(() => {
                 <div className="text selectable">Graduated from <abbr className="target" title="Computer Science">CS</abbr> level B</div>
                 <div className="text-subtitle selectable">December</div>
                 <div className="text-subsubtitle selectable">December 23</div>
-                <div className="text last selectable">Translated Navi to Hungarian</div>
+                <div className="text selectable">Translated Navi to Hungarian</div>
                 <div className="h-px mt-10" />
             </div>
             <div className="m-10 section">
@@ -146,13 +146,13 @@ useEffect(() => {
                 <div className="text-subsubtitle selectable">March 6</div>
                 <div className="text selectable">Translated Posture Pal to Hungarian</div>
                 <div className="text-subsubtitle selectable">March 10</div>
-                <div className="text last selectable">Released NASA Mira version 3</div>
+                <div className="text selectable">Released NASA Mira version 3</div>
                 <div className="h-px mt-10" />
             </div>
             <div className="m-10 section">
                 <div className="h-px mb-10" />
                 <div id="2023" className="text-title selectable">2023</div>
-                <div className="text last selectable">Graduating from Chernel István High School Hungary</div>
+                <div className="text selectable">Graduating from Chernel István High School Hungary</div>
                 <div className="h-px mt-10" />
             </div>
         </div>

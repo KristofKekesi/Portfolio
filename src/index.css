@@ -19,6 +19,14 @@
     @apply no-underline px-5 align-middle
   }
 
+  #navbar:first-child > a {
+    @apply pl-12
+  }
+
+  #navbar .last {
+    @apply pr-12
+  }
+
   #navbar a.inactive {
 	  @apply text-white md:text-black
   }

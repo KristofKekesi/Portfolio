@@ -143,7 +143,7 @@ function ProjectPage() {
             screenshotsDiv = []
             for (let i = 0; i < project.screenshots.length; i++) {
                 screenshotsDiv.push(
-                    <ImageGallery galleryTag={" last max"} className={"nosection last"} IDs={project.screenshots[i]} dataKey={i} key={i}/>
+                    <ImageGallery galleryTag={"max"} className={"nosection"} IDs={project.screenshots[i]} dataKey={i} key={i}/>
                 );
             }
         }
@@ -168,23 +168,27 @@ function ProjectPage() {
                 </div>
                 <article onLoad={cursorSetup}>
                     <div className="article-content">
-                        <h1 className="text-title nosection selectable">{project.name}</h1>
-                        <div className="text nosection last selectable">{project.description}</div>
-                        <div className="section flex">
-                            <img src={image.url} alt={image.description} className="w-auto h-auto ml-12 mr-0 py-12" style={{maxWidth: "7.5rem", maxHeight: "7.5rem", boxSizing: "content-box"}}></img>
-                            <div>
-                                <div className="pt-8" />
-                                {versionDiv}
-                                <h1 className="text-subtitle selectable pb-0">Worked on as</h1>
-                                <div className="text selectable">{project.role.join(", ").replace(/,([^,]*)$/, ' and $1')}</div>
-                                {platformDiv}
-                                <div className="pb-4" />
-                                {badgesDiv}
+                        <h1 className="text-title nosection selectable">{ project.name }</h1>
+                        <div className="text nosection selectable">{ project.description }</div>
+                        <div className="section">
+                            <div className="flex">
+                                <img src={ image.url } alt={ image.description } className="w-auto h-auto ml-12 mr-0 py-12" style={{maxWidth: "7.5rem", maxHeight: "7.5rem", boxSizing: "content-box"}}></img>
+                                <div>
+                                    <div className="mt-8 h-px" />
+                                    { versionDiv }
+                                    <h1 className="text-subtitle selectable pb-0">Worked on as</h1>
+                                    <div className="text selectable">{project.role.join(", ").replace(/,([^,]*)$/, ' and $1')}</div>
+                                    { platformDiv }
+                                    <div className="mb-4 h-px" />
+                                    <div className="hidden sm:block">{ badgesDiv }</div>
+                                </div>
                             </div>
+                            <div className="block sm:hidden">{ badgesDiv }</div>
+                            <div className="mt-12 h-px" />
                         </div>
-                        <div className="mb-10" />
-                        {screenshotsDiv}
-                        {madeWithDiv}
+                        <div className="mb-10 h-px" />
+                        { screenshotsDiv }
+                        { madeWithDiv }
                     </div>
                 </article>
                 <Dock />

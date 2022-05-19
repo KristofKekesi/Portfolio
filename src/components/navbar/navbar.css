@@ -9,14 +9,6 @@
     font-family: "Inter";
 }
 
-#navbar a.first {
-    padding-left: min(5rem, 5vw);
-}
-
-#navbar a.last {
-    padding-right: min(5rem, 5vw);
-}
-
 #navbar a.home {
     font-family: "InterBold";
 }
