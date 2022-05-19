@@ -831,3 +831,15 @@
 2022-05-19 18:04:54.280 CEST [78038] LOG:  background worker "logical replication launcher" (PID 78045) exited with exit code 1
 2022-05-19 18:04:54.280 CEST [78040] LOG:  shutting down
 2022-05-19 18:04:54.287 CEST [78038] LOG:  database system is shut down
+2022-05-19 18:40:25.285 CEST [79115] LOG:  starting PostgreSQL 14.2 on aarch64-apple-darwin20.6.0, compiled by Apple clang version 12.0.5 (clang-1205.0.22.9), 64-bit
+2022-05-19 18:40:25.288 CEST [79115] LOG:  listening on IPv6 address "::1", port 5432
+2022-05-19 18:40:25.288 CEST [79115] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2022-05-19 18:40:25.289 CEST [79115] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2022-05-19 18:40:25.293 CEST [79116] LOG:  database system was shut down at 2022-05-19 18:04:54 CEST
+2022-05-19 18:40:25.297 CEST [79115] LOG:  database system is ready to accept connections
+2022-05-19 23:18:59.887 CEST [79115] LOG:  received fast shutdown request
+2022-05-19 23:18:59.888 CEST [79115] LOG:  aborting any active transactions
+2022-05-19 23:18:59.888 CEST [84386] FATAL:  terminating connection due to administrator command
+2022-05-19 23:18:59.889 CEST [79115] LOG:  background worker "logical replication launcher" (PID 79122) exited with exit code 1
+2022-05-19 23:18:59.890 CEST [79117] LOG:  shutting down
+2022-05-19 23:18:59.897 CEST [79115] LOG:  database system is shut down
