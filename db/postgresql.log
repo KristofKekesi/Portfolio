@@ -859,3 +859,28 @@
 2022-05-21 18:16:11.095 CEST [921] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
 2022-05-21 18:16:11.098 CEST [922] LOG:  database system was shut down at 2022-05-21 18:14:34 CEST
 2022-05-21 18:16:11.100 CEST [921] LOG:  database system is ready to accept connections
+2022-05-22 00:52:47.916 CEST [3953] ERROR:  syntax error at or near ")" at character 96
+2022-05-22 00:52:47.916 CEST [3953] STATEMENT:  alter table projectskills
+	    add constraint "projectskills_projectID_fk"
+	        foreign key () references projects
+2022-05-22 00:54:14.752 CEST [3953] ERROR:  column "projectid" referenced in foreign key constraint does not exist
+2022-05-22 00:54:14.752 CEST [3953] STATEMENT:  alter table projectskills
+	    add constraint "projectskills_projectID_fk"
+	        foreign key (projectID) references projects
+2022-05-22 00:54:47.544 CEST [4036] ERROR:  insert or update on table "projectskills" violates foreign key constraint "projectskills_projectID_fk"
+2022-05-22 00:54:47.544 CEST [4036] DETAIL:  Key (projectID)=(99) is not present in table "projects".
+2022-05-22 00:54:47.544 CEST [4036] STATEMENT:  INSERT INTO public.projectskills ("projectID") VALUES ($1::integer)
+2022-05-22 12:21:31.611 CEST [4757] ERROR:  insert or update on table "projects" violates foreign key constraint "projects_logoid_fkey"
+2022-05-22 12:21:31.611 CEST [4757] DETAIL:  Key (logoID)=(141) is not present in table "images".
+2022-05-22 12:21:31.611 CEST [4757] STATEMENT:  UPDATE public.projects SET version = $1::varchar(12), "logoID" = $2::integer WHERE id = $3::integer
+2022-05-22 23:08:27.329 CEST [7993] ERROR:  null value in column "isVisible" of relation "articles" violates not-null constraint
+2022-05-22 23:08:27.329 CEST [7993] DETAIL:  Failing row contains (3, Understanding <abbr class='target' title='Scalable Vector Graphi..., null, null, null, null, null).
+2022-05-22 23:08:27.329 CEST [7993] STATEMENT:  INSERT INTO public.articles (id, name, description, "coverID", redirect, "isVisible", content) VALUES ($1::integer, $2::varchar, $3::varchar, $4::integer, $5::varchar, $6::boolean, $7::varchar)
+2022-05-22 23:27:50.147 CEST [921] LOG:  received fast shutdown request
+2022-05-22 23:27:50.147 CEST [921] LOG:  aborting any active transactions
+2022-05-22 23:27:50.148 CEST [7993] FATAL:  terminating connection due to administrator command
+2022-05-22 23:27:50.148 CEST [8020] FATAL:  terminating connection due to administrator command
+2022-05-22 23:27:50.148 CEST [8056] FATAL:  terminating connection due to administrator command
+2022-05-22 23:27:50.149 CEST [921] LOG:  background worker "logical replication launcher" (PID 928) exited with exit code 1
+2022-05-22 23:27:50.150 CEST [923] LOG:  shutting down
+2022-05-22 23:27:50.170 CEST [921] LOG:  database system is shut down
