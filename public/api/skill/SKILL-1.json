@@ -1,9 +1,0 @@
-{
-	"id": "SKILL-1",
-	"name": "Translation",
-	"tools": ["TOOL-0"],
-	"projects": ["PROJ-5", "PROJ-6", "PROJ-7", "PROJ-8", "PROJ-9", "PROJ-10", "PROJ-11", "PROJ-13", "PROJ-14"],
-	"featured-article": null,
-	"articles": null,
-	"style": null
-}
