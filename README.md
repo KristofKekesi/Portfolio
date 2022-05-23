@@ -1,10 +1,9 @@
-<center><h1>Second iteration of my portfolio website</h1></center>
+<center><h1>Third iteration of my portfolio website</h1></center>
 
 # Features
 
 ## Kinda unique features
     · RSS reader support
-    · Noscript page
     · Custom cursor
 
 ## Not unique features
@@ -12,7 +11,7 @@
 
 # Made with
 
-    · HTML, CSS, Javascript
-    · React
-
+    · HTML, CSS, Javascript, TailwindCSS
+    · React, Next.js
+    · PostgreSQL
 #
