@@ -898,3 +898,20 @@
 2022-05-23 00:04:36.129 CEST [8454] LOG:  background worker "logical replication launcher" (PID 8461) exited with exit code 1
 2022-05-23 00:04:36.129 CEST [8456] LOG:  shutting down
 2022-05-23 00:04:36.136 CEST [8454] LOG:  database system is shut down
+2022-05-23 20:06:37.064 CEST [10241] LOG:  starting PostgreSQL 14.2 on aarch64-apple-darwin20.6.0, compiled by Apple clang version 12.0.5 (clang-1205.0.22.9), 64-bit
+2022-05-23 20:06:37.066 CEST [10241] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2022-05-23 20:06:37.066 CEST [10241] LOG:  listening on IPv6 address "::1", port 5432
+2022-05-23 20:06:37.066 CEST [10241] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2022-05-23 20:06:37.068 CEST [10242] LOG:  database system was shut down at 2022-05-23 00:04:36 CEST
+2022-05-23 20:06:37.070 CEST [10241] LOG:  database system is ready to accept connections
+2022-05-23 20:53:02.370 CEST [11014] ERROR:  insert or update on table "article_tools" violates foreign key constraint "article_tools_toolID_fk"
+2022-05-23 20:53:02.370 CEST [11014] DETAIL:  Key (toolID)=(49) is not present in table "tools".
+2022-05-23 20:53:02.370 CEST [11014] STATEMENT:  INSERT INTO public.article_tools ("articleID", "toolID") VALUES ($1::integer, $2::integer)
+2022-05-23 20:57:51.158 CEST [11014] ERROR:  insert or update on table "article_tools" violates foreign key constraint "article_tools_toolID_fk"
+2022-05-23 20:57:51.158 CEST [11014] DETAIL:  Key (toolID)=(43) is not present in table "tools".
+2022-05-23 20:57:51.158 CEST [11014] STATEMENT:  INSERT INTO public.article_tools ("articleID", "toolID") VALUES ($1::integer, $2::integer)
+2022-05-23 23:44:59.190 CEST [10241] LOG:  received fast shutdown request
+2022-05-23 23:44:59.191 CEST [10241] LOG:  aborting any active transactions
+2022-05-23 23:44:59.191 CEST [10241] LOG:  background worker "logical replication launcher" (PID 10248) exited with exit code 1
+2022-05-23 23:44:59.192 CEST [10243] LOG:  shutting down
+2022-05-23 23:44:59.195 CEST [10241] LOG:  database system is shut down
