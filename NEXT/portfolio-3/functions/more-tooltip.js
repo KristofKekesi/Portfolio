@@ -1,6 +1,3 @@
-const localStorage = require('./storage');
-
-
 //    TURTLE - TEKI
 //    (°-°) _______
 //      \ \/ - - - \_
@@ -13,8 +10,6 @@ function moreTooltipToggle() {
     const moreTooltip = document.getElementById("more-tooltip");
     
     if (moreTooltip.classList.contains("hidden")) {
-        localStorage.setStorage("more-tooltip", "true");
-
         moreTooltip.classList.toggle("hidden");
         moreTooltip.style.opacity = "0";
         setTimeout(() => {
@@ -23,8 +18,6 @@ function moreTooltipToggle() {
         
         moreButton.style.fontWeight = "bold";
     } else {
-        localStorage.setStorage("more-tooltip", "false");
-
         // wait for animation to complete
         setTimeout(() => {
             moreTooltip.classList.toggle("hidden");

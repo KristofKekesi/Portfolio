@@ -4,10 +4,10 @@ import background from "../bg.jpg";
 
 import Navbar from "../components/navbar/navbar";
 import Dock from "../components/dock/dock";
-import Cursor from "../components/cursor/cursor";
+import Cursor from "../../NEXT/portfolio-3/components/Cursor/Cursor";
 
 import navbarToggle from "../functions/navbar";
-import cursorSetup from "../functions/cursor";
+import cursorSetup from "../../NEXT/portfolio-3/functions/cursor";
 
 
 //    TURTLE - TEKI

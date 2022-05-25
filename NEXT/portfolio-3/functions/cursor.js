@@ -6,7 +6,9 @@
 
 
 let isMobile = false;
-window.addEventListener("touchstart",  function() {isMobile = true;});
+if (typeof window !== "undefined") {
+  window.addEventListener("touchstart",  function() {isMobile = true;});
+}
 module.exports = isMobile;
 
 function cursorSetup() {

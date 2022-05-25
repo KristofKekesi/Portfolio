@@ -1,11 +1,6 @@
-import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
+import Link from 'next/link';
 
-import moreTooltipToggle from "../../functions/more-tooltip";
-
-import './more-tooltip.css';
-
-const localStorage = require('../../functions/storage');
+import './MoreTooltip.module.css';
 
 
 //    TURTLE - TEKI
@@ -16,12 +11,6 @@ const localStorage = require('../../functions/storage');
 
 
 function MoreTooltip() {
-    useEffect(() => {
-        if(localStorage.getStorage("more-tooltip") === "true") {
-            moreTooltipToggle();
-        }
-      }, []);
-
     return (
         <div id="more-tooltip" className="blur-dark hidden fixed right-3 rounded-2xl">
             <ul>

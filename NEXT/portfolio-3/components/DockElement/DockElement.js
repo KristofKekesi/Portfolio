@@ -5,10 +5,10 @@ import { Link } from "react-router-dom";
 import projectTooltipPosition from "../../functions/project-tooltip";
 
 
-import './dock-element.css';
+import './DockElement.module.css';
 
 import API from '../../api/index';
-import Loader from "../loader/loader";
+import Loader from "../Loader/Loader";
 
 
 //    TURTLE - TEKI

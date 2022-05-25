@@ -1,4 +1,4 @@
-import cursorSetup from "../functions/cursor";
+import cursorSetup from "./cursor";
 
 
 //    TURTLE - TEKI

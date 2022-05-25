@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-import './project-tooltip.css';
+import './ProjectTooltip.module.css';
 
 import { getPlatforms } from "../../functions/platforms";
 

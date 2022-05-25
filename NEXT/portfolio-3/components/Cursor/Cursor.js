@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import './cursor.css';
+import './Cursor.module.css';
 
 
 //    TURTLE - TEKI

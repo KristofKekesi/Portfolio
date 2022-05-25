@@ -1,8 +1,7 @@
-import React from "react";
-import DockElement from "../dock-element/dock-element";
-import ProjectTooltip from "../project-tooltip/project-tooltip";
+import DockElement from "../DockElement/DockElement";
+import ProjectTooltip from "../ProjectTooltip/ProjectTooltip";
 
-import './dock.css';
+import './Dock.module.css';
 
 
 //    TURTLE - TEKI
@@ -13,7 +12,6 @@ import './dock.css';
 
 
 export default function Dock(props) {
-    //const dockElementIDs = props.IDs ?? [0, 1, 4, 12, 5];
     const dockElementIDs = [0, 1, 4, 12, 5];
     
     let projectTooltips = [];

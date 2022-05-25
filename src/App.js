@@ -1,5 +1,5 @@
 import React from 'react';
-import { HashRouter, Route, Switch } from "react-router-dom";
+import { useRouter } from 'next/router';
 import { useEffect } from "react";
 
 import Home from "./pages/Home";
@@ -26,6 +26,10 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 //       \_  ___  ___>
 //         \__) \__)
 
+
+const router = useRouter()
+const { slug } = router.query
+console.log(slug);
 
 function scrollToElement(element) {
   try {document.getElementById(element).scrollIntoView();

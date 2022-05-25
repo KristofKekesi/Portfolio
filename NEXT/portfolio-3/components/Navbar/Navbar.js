@@ -1,13 +1,12 @@
-import React from "react";
-import { Link, Route, Switch } from "react-router-dom";
+import Hamburger from '../Hamburger/Hamburger.js';
+import MoreTooltip from "../MoreTooltip/MoreTooltip.js";
 
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 
-import Hamburger from './../hamburger/hamburger.js'
-import MoreTooltip from "../more-tooltip/more-tooltip.js";
+import moreTooltipToggle from '../../functions/more-tooltip.js';
 
-
-import moreTooltipToggle from "../../functions/more-tooltip";
-import './navbar.css';
+import './Navbar.module.css';
 
 
 //    TURTLE - TEKI
@@ -18,27 +17,23 @@ import './navbar.css';
 
 
 function Navbar() {
+    function linkStyle(path) {
+        const router = useRouter();
+        console.log(router.pathname);
+        if (router.pathname === path) {
+            return " active";
+        } else {
+            return " inactive target";
+        }
+    }
+
     return(
         <>
             <nav id="navbar" className="bg-white text-black visited:text-black top blur-white text-xl fixed flex justify-between items-center w-screen h-16 z-40">
-                <Switch>
-                    <Route exact path="/">
-                        <Link className="home first pl-20 text-homeAccentLight" to="./#">Home</Link>
-                    </Route>
-                    <Route>
-                        <Link className="home target first pl-20 text-homeAccentLight" to="./#">Home</Link>
-                    </Route>
-                </Switch>
+                <Link className={"home first pl-20 text-homeAccentLight" + linkStyle("/")} to="./#">Home</Link>
                 <ul id="navbar-links" className="flex">
                     <li>
-                        <Switch>
-                            <Route path="/mobile">
-                                <Link className="active target text-activeAccentLight" to="./mobile">Mobile Development</Link>
-                            </Route>
-                            <Route>
-                                <Link className="inactive target" to="./mobile">Mobile Development</Link>
-                            </Route>
-                        </Switch>
+                        <Link className={"active text-activeAccentLight" + linkStyle("/mobile")} to="./mobile">Mobile Development</Link>
                     </li>
                     <li>
                         <Switch>

@@ -39,6 +39,8 @@ function projectTooltipPosition() {
     }
 }
 
-window.addEventListener('resize', projectTooltipPosition);
+if (typeof window !== "undefined") {
+    window.addEventListener('resize', projectTooltipPosition);
+  }
 
 module.exports = projectTooltipPosition;
