@@ -6,8 +6,6 @@ import { useRouter } from 'next/router';
 
 import moreTooltipToggle from '../../functions/more-tooltip.js';
 
-import './Navbar.module.css';
-
 
 //    TURTLE - TEKI
 //    (°-°) _______
@@ -21,7 +19,7 @@ function Navbar() {
         const router = useRouter();
         console.log(router.pathname);
         if (router.pathname === path) {
-            return " active";
+            return " active textAccentLight";
         } else {
             return " inactive target";
         }
@@ -30,39 +28,32 @@ function Navbar() {
     return(
         <>
             <nav id="navbar" className="bg-white text-black visited:text-black top blur-white text-xl fixed flex justify-between items-center w-screen h-16 z-40">
-                <Link className={"home first pl-20 text-homeAccentLight" + linkStyle("/")} to="./#">Home</Link>
+                <Link className={"home first pl-20 text-homeAccentLight" + linkStyle("/")} href="./#">Home</Link>
                 <ul id="navbar-links" className="flex">
                     <li>
-                        <Link className={"active text-activeAccentLight" + linkStyle("/mobile")} to="./mobile">Mobile Development</Link>
+                        <Link className={linkStyle("/mobile")} href="./mobile">Mobile Development</Link>
                     </li>
                     <li>
-                        <Switch>
-                            <Route path="/web">
-                                <Link className="active target text-activeAccentLight" to="./web">Web Development</Link>
-                            </Route>
-                            <Route>
-                                <Link className="inactive target" to="./web">Web Development</Link>
-                            </Route>
-                        </Switch>
+                        <Link className={linkStyle("/web")} href="./web">Web Development</Link>
                     </li>
                     <li className="block md:hidden">
-                        <Link className="target" to="./translations">Translations</Link>
+                        <Link className="target" href="./translations">Translations</Link>
                     </li>
                     <li className="block md:hidden">
-                        <Link className="target" to="./photography">Photograpy</Link>
+                        <Link className="target" href="./photography">Photograpy</Link>
                     </li>
                     {//<li className="block md:hidden">
-                     //   <Link className="target" to="./articles">Articles</Link>
+                     //   <Link className="target" href="./articles">Articles</Link>
                     //</li>
                     }
                     <li className="block md:hidden">
-                        <Link className="target" to="./timeline">Timeline</Link>
+                        <Link className="target" href="./timeline">Timeline</Link>
                     </li>
                     <li className="block md:hidden">
-                        <Link className="target" to="./about">About</Link>
+                        <Link className="target" href="./about">About</Link>
                     </li>
                     <li className="hidden md:block">
-                        <Link to="#" id="more-button" onClick={ moreTooltipToggle } className="inactive target last">More</Link>
+                        <Link href="#" id="more-button" onClick={ moreTooltipToggle } className="inactive target last">More</Link>
                     </li>
                 </ul>
                 <Hamburger />

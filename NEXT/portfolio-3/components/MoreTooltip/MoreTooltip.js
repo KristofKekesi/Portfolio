@@ -1,7 +1,5 @@
 import Link from 'next/link';
 
-import './MoreTooltip.module.css';
-
 
 //    TURTLE - TEKI
 //    (°-°) _______
@@ -15,21 +13,21 @@ function MoreTooltip() {
         <div id="more-tooltip" className="blur-dark hidden fixed right-3 rounded-2xl">
             <ul>
                 <li>
-                    <Link className="target" to="/translations">Translations</Link>
+                    <Link className="target" href="/translations">Translations</Link>
                 </li>
                 <li>
-                    <Link className="target" to="/photography">Photography</Link>
+                    <Link className="target" href="/photography">Photography</Link>
                 </li>
                 {//<li>
-                 //   <Link className="target" to="/articles">Articles</Link>
+                 //   <Link className="target" href="/articles">Articles</Link>
                 //</li>
                 }
                 <hr className="w-full"/>
                 <li>
-                    <Link className="target" to="/timeline">Timeline</Link>
+                    <Link className="target" href="/timeline">Timeline</Link>
                 </li>
                 <li>
-                    <Link className="target" to="/about">About</Link>
+                    <Link className="target" href="/about">About</Link>
                 </li>
             </ul>
         </div>

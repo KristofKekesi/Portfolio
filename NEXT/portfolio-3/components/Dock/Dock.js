@@ -1,8 +1,6 @@
 import DockElement from "../DockElement/DockElement";
 import ProjectTooltip from "../ProjectTooltip/ProjectTooltip";
 
-import './Dock.module.css';
-
 
 //    TURTLE - TEKI
 //    (°-°) _______

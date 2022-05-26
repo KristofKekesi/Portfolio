@@ -1,14 +1,13 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import Script from 'next/script'
+import Head from 'next/head';
+import Script from 'next/script';
 
-import Navbar from '../components/Navbar/Navbar'
-import Cursor from '../components/Cursor/Cursor'
-import Dock from '../components/Dock/Dock'
+import Navbar from '../components/Navbar/Navbar';
+import Cursor from '../components/Cursor/Cursor';
+import Dock from '../components/Dock/Dock';
 
-import background from '../public/bg.jpg'
-import favicon from '../public/favicon.png'
-import opengraphImage from '../public/opengraph.jpg'
+import background from '../public/bg.jpg';
+import favicon from '../public/favicon.png';
+import opengraphImage from '../public/opengraph.jpg';
 
 export default function Home() {
   return (
@@ -46,7 +45,7 @@ export default function Home() {
 
       <Navbar />
 
-      <div className="w-full h-screen flex justify-center bg-cover" style={{backgroundImage: `url(${background})`}}>
+      <div className="w-full h-screen flex justify-center bg-cover" style={{backgroundImage: "url('bg.jpg')"}}>
           <div className="w-max">
           <h1 className="white" style={{paddingTop: "33vh", textShadow: "6px 6px 12px rgba(0, 0, 0, .75)"}}>Kristóf Kékesi</h1>
           <h2 className="white" style={{textShadow: "6px 6px 12px rgba(0, 0, 0, .75)"}}>

@@ -1,11 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-
+import Link from 'next/link';
 
 import projectTooltipPosition from "../../functions/project-tooltip";
-
-
-import './DockElement.module.css';
 
 import API from '../../api/index';
 import Loader from "../Loader/Loader";
@@ -89,7 +85,7 @@ export default function DockElement(props) {
         );
     } else {
         return (
-            <Link to="#" className="target">
+            <Link href="#" className="target">
                 <div className="radius24 dock-element target">
                     <center>
                         <Loader color="white"/>
