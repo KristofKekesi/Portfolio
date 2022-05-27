@@ -15,20 +15,21 @@ import moreTooltipToggle from '../../functions/more-tooltip.js';
 
 
 function Navbar() {
-    function linkStyle(path) {
+    function linkStyle(path, additionalClasses) {
         const router = useRouter();
         console.log(router.pathname);
+        console.log
         if (router.pathname === path) {
-            return " active textAccentLight";
+            return "active textAccentLight " + additionalClasses;
         } else {
-            return " inactive target";
+            return "inactive target " + additionalClasses;
         }
     }
 
     return(
         <>
             <nav id="navbar" className="bg-white text-black visited:text-black top blur-white text-xl fixed flex justify-between items-center w-screen h-16 z-40">
-                <Link className={"home first pl-20 text-homeAccentLight" + linkStyle("/")} href="./#">Home</Link>
+                <Link className={"home first pl-20 text-homeAccentLight"} href="./#">Home</Link>
                 <ul id="navbar-links" className="flex">
                     <li>
                         <Link className={linkStyle("/mobile")} href="./mobile">Mobile Development</Link>
