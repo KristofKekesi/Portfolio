@@ -45,15 +45,15 @@ export default function Home() {
 
       <Navbar />
 
-      <div className="w-full h-screen flex justify-center bg-cover" style={{backgroundImage: "url('bg.jpg')"}}>
+      <main className="w-full h-screen flex justify-center bg-cover" style={{backgroundImage: "url('bg.jpg')"}}>
           <div className="w-max">
-          <h1 className="white" style={{paddingTop: "33vh", textShadow: "6px 6px 12px rgba(0, 0, 0, .75)"}}>Kristóf Kékesi</h1>
-          <h2 className="white" style={{textShadow: "6px 6px 12px rgba(0, 0, 0, .75)"}}>
+          <h1 className="text-white text-7xl font-bold text-left" style={{paddingTop: "33vh", textShadow: "6px 6px 12px rgba(0, 0, 0, .75)"}}>Kristóf Kékesi</h1>
+          <h2 className="text-white text-4xl font-bold text-left" style={{textShadow: "6px 6px 12px rgba(0, 0, 0, .75)"}}>
             Mobile Developer
-            <span className="text-2xl ml-5" style={{color: "#CCCCCCDD"}}>(from Hungary)</span>
+            <span className="text-xl ml-5" style={{color: "#CCCCCCDD"}}>(from Hungary)</span>
           </h2>
         </div>
-      </div>
+      </main>
 
       <Dock />
 

@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 
 import moreTooltipToggle from '../../functions/more-tooltip.js';
+import NavbarLink from './NavbarLink.js';
 
 
 //    TURTLE - TEKI
@@ -18,7 +19,6 @@ function Navbar() {
     function linkStyle(path, additionalClasses) {
         const router = useRouter();
         console.log(router.pathname);
-        console.log
         if (router.pathname === path) {
             return "active textAccentLight " + additionalClasses;
         } else {
@@ -28,11 +28,11 @@ function Navbar() {
 
     return(
         <>
-            <nav id="navbar" className="bg-white text-black visited:text-black top blur-white text-xl fixed flex justify-between items-center w-screen h-16 z-40">
+            <nav className="bg-white text-black visited:text-black top blur-white text-xl fixed flex justify-between items-center w-screen h-16 z-40">
                 <Link className={"home first pl-20 text-homeAccentLight"} href="./#">Home</Link>
                 <ul id="navbar-links" className="flex">
                     <li>
-                        <Link className={linkStyle("/mobile")} href="./mobile">Mobile Development</Link>
+                        <NavbarLink path="/">Mobile Development</NavbarLink>
                     </li>
                     <li>
                         <Link className={linkStyle("/web")} href="./web">Web Development</Link>

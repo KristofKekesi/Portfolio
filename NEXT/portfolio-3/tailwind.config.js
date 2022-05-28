@@ -1,3 +1,4 @@
+const defaultTheme = require('tailwindcss/defaultTheme')
 const colors = require('tailwindcss/colors')
 
 module.exports = {
@@ -5,6 +6,10 @@ module.exports = {
   darkMode: false, // false or 'media' or 'class'
   theme: {
     extend: {
+      fontFamily: {
+        'inter': ['Inter', defaultTheme.fontFamily.sans],
+        'interBold': ['InterBold', defaultTheme.fontFamily.sans],
+      },
       colors: {
         primaryLight: "#AAAAAA",
         primaryLightHover: "#EFEFEF",

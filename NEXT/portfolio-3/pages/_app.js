@@ -1,3 +1,4 @@
+import '../styles/legacy.css';
 import '../styles/globals.css';
 
 import '../components/Cursor/Cursor.css';
