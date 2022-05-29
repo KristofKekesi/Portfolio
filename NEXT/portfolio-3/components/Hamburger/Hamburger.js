@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import hamburgerImage from '../../public/hamburger.svg'
+import hamburgerImage from './hamburger.svg'
 
 
 //    TURTLE - TEKI
@@ -10,5 +10,9 @@ import hamburgerImage from '../../public/hamburger.svg'
 
 
 export default function Hamburger() {
-  return <Image src={hamburgerImage} id="hamburger"  className="target block md:hidden mr-10 h-10 w-10" alt="Hamburger" />;
+  return(
+    <div className="target relative md:hidden mr-10 h-7 w-7">
+      <Image src={ hamburgerImage } id="hamburger" alt="Hamburger" layout="fill" objectFit="contain" />
+    </div>
+  );
 }

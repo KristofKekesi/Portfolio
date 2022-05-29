@@ -47,11 +47,11 @@ export default function DockElement(props) {
                                 projectTooltip.style.opacity = "0";
                             });
                         } catch (e) {
-                            console.log(e);
+                            console.error(e);
                         }
                     }
                 );
-          }).catch((e) => {setProject ( null )});
+          }).catch((e) => {setProject( null )});
 
           window.removeEventListener('popstate', function () {
             window.location.reload();
@@ -74,22 +74,22 @@ export default function DockElement(props) {
 
         let href = "/project?" + project.id.replace("PROJ-", "") + "-" + project.name.replace(/[^a-zA-Z]/g, "");
         return(
-            <a href={"./#" + href} id={"dock-element-" + project.id} className="target">
+            <Link href={"./#" + href} id={"dock-element-" + project.id}>
                 <div className="radius24 dock-element target">
                     <center>
                         <img src={image.url} alt={image.name}/>
-                        <p className="nowrap basis-full h-0">{ projectName }</p>
+                        <p className="nowrap basis-full h-0 text-white">{ projectName }</p>
                     </center>
                 </div>
-            </a>
+            </Link>
         );
     } else {
         return (
-            <Link href="#" className="target">
+            <Link href="#">
                 <div className="radius24 dock-element target">
                     <center>
                         <Loader color="white"/>
-                        <p className="nowrap basis-full h-0">Loading...</p>
+                        <p className="nowrap basis-full h-0 text-white">Loading...</p>
                     </center>
                 </div>
             </Link>

@@ -4,14 +4,11 @@
 //       \_  ___  ___>
 //         \__) \__)
 
-
 let isMobile = false;
-if (typeof window !== "undefined") {
-  window.addEventListener("touchstart",  function() {isMobile = true;});
-}
-module.exports = isMobile;
 
 function cursorSetup() {
+  window.addEventListener("touchstart",  function() {isMobile = true;});
+
   var cursor = document.getElementById("cursor");
 
   function n(t) {

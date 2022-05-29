@@ -48,19 +48,15 @@
   }
 
   nav a {
-    @apply no-underline px-5 align-middle text-black
-  }
-
-  nav a.home {
-    @apply text-homeAccentLight
+    @apply no-underline mx-5 align-middle text-white md:text-black
   }
 
   nav:first-child > a {
-    @apply pl-12
+    @apply ml-12
   }
 
   nav .last {
-    @apply pr-12
+    @apply mr-12
   }
 
   #more-tooltip li {

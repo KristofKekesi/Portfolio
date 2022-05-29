@@ -29,39 +29,37 @@ function Navbar() {
     return(
         <>
             <nav className="bg-white text-black visited:text-black top blur-white text-xl fixed flex justify-between items-center w-screen h-16 z-40">
-                <Link className={"home first pl-20 text-homeAccentLight"} href="./#">Home</Link>
+                <NavbarLink className={"first ml-20 text-homeAccentLight"} path="/">Home</NavbarLink>
                 <ul id="navbar-links" className="flex">
                     <li>
-                        <NavbarLink path="/">Mobile Development</NavbarLink>
+                        <NavbarLink path="/mobile">Mobile Development</NavbarLink>
                     </li>
                     <li>
-                        <Link className={linkStyle("/web")} href="./web">Web Development</Link>
+                    <NavbarLink path="/web">Web Development</NavbarLink>
                     </li>
                     <li className="block md:hidden">
-                        <Link className="target" href="./translations">Translations</Link>
+                    <NavbarLink path="/translations">Translations</NavbarLink>
                     </li>
                     <li className="block md:hidden">
-                        <Link className="target" href="./photography">Photograpy</Link>
+                        <NavbarLink path="/photography">Photography</NavbarLink>
                     </li>
                     {//<li className="block md:hidden">
-                     //   <Link className="target" href="./articles">Articles</Link>
+                    //    <NavbarLink path="/articles">Articles</NavbarLink>
                     //</li>
                     }
                     <li className="block md:hidden">
-                        <Link className="target" href="./timeline">Timeline</Link>
+                        <NavbarLink path="/timeline">Timeline</NavbarLink>
                     </li>
                     <li className="block md:hidden">
-                        <Link className="target" href="./about">About</Link>
+                        <NavbarLink path="/about">About</NavbarLink>
                     </li>
                     <li className="hidden md:block">
-                        <Link href="#" id="more-button" onClick={ moreTooltipToggle } className="inactive target last">More</Link>
+                        <a id="more-button" onClick={ moreTooltipToggle } className="inactive target last">More</a>
                     </li>
                 </ul>
                 <Hamburger />
             </nav>
-            <div style={{marginRight: "12px"}} className="hidden md:block target">
-                <MoreTooltip/>
-            </div>
+            <MoreTooltip/>
         </>
     );
 }

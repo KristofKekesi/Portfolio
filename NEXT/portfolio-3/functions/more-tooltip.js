@@ -15,8 +15,9 @@ function moreTooltipToggle() {
         setTimeout(() => {
             moreTooltip.style.opacity = "1";
         }, 0);
+
+        moreButton.style.textShadow = "1px 0px 0px black";
         
-        moreButton.style.fontWeight = "bold";
     } else {
         // wait for animation to complete
         setTimeout(() => {
@@ -24,7 +25,7 @@ function moreTooltipToggle() {
         }, 150);
         moreTooltip.style.opacity = "0";
 
-        moreButton.style.fontWeight = "normal";
+        moreButton.style.textShadow = "none";
     }
 }
 
