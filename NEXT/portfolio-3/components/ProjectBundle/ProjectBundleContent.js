@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-
-import "./project-bundle.css";
+import Link from 'next/link';
 
 import API from "../../api";
 
@@ -45,9 +43,11 @@ function ProjectBundleContent(props) {
         let final = [];
         for (let i = 0; i < props.IDs.length; i++) {
             final.push(
-                <Link key={i} to={"project?" + data[i]["proj"].id.replace("PROJ-", "") + "-" + data[i]["proj"].name.replace(/[^a-zA-Z]/g, "")} className="target flex flex-col items-center">
-                    <img className="w-auto" src={data[i]["img"].url} alt={data[i]["img"].description} />
-                    <h2 className="text null-padding nowrap w-auto mt-3 text-white text-center">{data[i]["proj"].name}</h2>
+                <Link key={i} href='{"project?" + data[i]["proj"].id.replace("PROJ-", "") + "-" + data[i]["proj"].name.replace(/[^a-zA-Z]/g, "")}"'>
+                    <div className="target flex flex-col items-center">
+                        <img className="w-auto" src={data[i]["img"].url} alt={data[i]["img"].description} />
+                        <h2 className="text null-padding nowrap w-auto mt-3 text-white text-center">{data[i]["proj"].name}</h2>
+                    </div>
                 </Link>
             );
         }

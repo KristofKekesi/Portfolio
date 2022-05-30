@@ -1,8 +1,6 @@
 import React, {useState, useEffect} from "react";
 
-import "./technologies.css";
-
-import Loader from "../loader/loader";
+import SpinnerLoader from "../SpinnerLoader/SpinnerLoader";
 
 import API from "../../api/index";
 
@@ -58,7 +56,7 @@ function MadeWith(props) {
         if (image === undefined) {
             return(
                 <div className="technologies-content" key={props.name}>
-                    <Loader color="black" />
+                    <SpinnerLoader color="black" />
                     <h3 className="text null-padding text-center">Loading...</h3>
                 </div> 
             )

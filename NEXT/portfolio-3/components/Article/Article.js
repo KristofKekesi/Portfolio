@@ -1,18 +1,16 @@
 import React, { useState, useEffect } from "react";
 
-import './article.css';
-
+import setImageGalleries from "../../functions/image-gallery";
 import cursorSetup from "../../functions/cursor";
 
-import Terminal from "../terminal/terminal";
-import ImageGallery from "../image-gallery/image-gallery";
+import Terminal from "../Terminal/Terminal";
+import ImageGallery from "../ImageGallery/ImageGallery";
 
 import API from '../../api/index';
 
-import ProjectBundle from "../project-bundle/project-bundle";
-import setImageGalleries from "../../functions/image-gallery";
-import { ArticlePreviewsBig, ArticlePreviewsSmoll } from "../article-preview/index";
-import { MadeWith } from "../technologies/made-with";
+import ProjectBundle from "../ProjectBundle/ProjectBundle";
+import { ArticlePreviewsBig, ArticlePreviewsSmoll } from "../ArticlePreview/index";
+import { MadeWith } from "../MadeWith/MadeWith";
 
 
 //    TURTLE - TEKI
@@ -107,7 +105,7 @@ function Article(props) {
                     break
                 case "made-with":
                     articleContent.push(
-                        <MadeWith madeWith={article.content[i]["value"]} title={article.content[i]["title"]}/>
+                        <MadeWith madeWith={article.content[i]["value"]} title={article.content[i]["title"]} key={i}/>
                     );
                     break
                 case "section":
@@ -176,7 +174,7 @@ function Article(props) {
                         }
                     }
                     sectionContent.push(<div className="mt-10 h-px"></div>)
-                    articleContent.push(<div className={"section"} key={i}>{ sectionContent }</div>);
+                    articleContent.push(<div className={"section"}>{ sectionContent }</div>);
                     break
                 default:
                     console.warn(article.content[i])
@@ -188,7 +186,7 @@ function Article(props) {
             articleContent.push(<MadeWith madeWith={article.madeWith} title={"Tools I used"} key={"made-with"}/>);
         }
 
-        articleContent.push(<div className="mt-10 h-px"></div>)
+        articleContent.push(<div className="mt-10 h-px" key={"last"}></div>)
 
         return(
             <article>

@@ -1,6 +1,5 @@
-import React from 'react';
-import ArticlePreviewBig from "./article-preview-big";
-import ArticlePreviewSmoll from "./article-preview-smoll";
+import ArticlePreviewBig from "./ArticlePreviewBig";
+import ArticlePreviewSmoll from "./ArticlePreviewSmoll";
 
 //    TURTLE - TEKI
 //    (°-°) _______

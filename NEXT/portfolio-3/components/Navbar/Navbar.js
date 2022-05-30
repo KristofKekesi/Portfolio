@@ -35,7 +35,7 @@ function Navbar() {
                         <NavbarLink path="/mobile">Mobile Development</NavbarLink>
                     </li>
                     <li>
-                    <NavbarLink path="/web">Web Development</NavbarLink>
+                        <NavbarLink path="/web">Web Development</NavbarLink>
                     </li>
                     <li className="block md:hidden">
                     <NavbarLink path="/translations">Translations</NavbarLink>

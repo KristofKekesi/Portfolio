@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from "react";
 
-import "./project-bundle.css";
-
 import API from "../../api";
-import ProjectBundleContent from "./project-bundle-content";
+import ProjectBundleContent from "./ProjectBundleContent";
 
 
 //    TURTLE - TEKI

@@ -2,8 +2,6 @@ import React from 'react';
 import highlight from 'highlight.js';
 import 'highlight.js/styles/github-dark.css';
 
-import "./terminal.css";
-
 const languageMap = {
     "html": "HTML",
     "js": "JavaScript",

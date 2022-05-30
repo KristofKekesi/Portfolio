@@ -4,7 +4,7 @@ import Link from 'next/link';
 import projectTooltipPosition from "../../functions/project-tooltip";
 
 import API from '../../api/index';
-import Loader from "../Loader/Loader";
+import SpinnerLoader from "../SpinnerLoader/SpinnerLoader";
 
 
 //    TURTLE - TEKI
@@ -74,8 +74,8 @@ export default function DockElement(props) {
 
         let href = "/project?" + project.id.replace("PROJ-", "") + "-" + project.name.replace(/[^a-zA-Z]/g, "");
         return(
-            <Link href={"./#" + href} id={"dock-element-" + project.id}>
-                <div className="radius24 dock-element target">
+            <Link href={"/#" + href}>
+                <div className="radius24 dock-element target" id={"dock-element-" + project.id}>
                     <center>
                         <img src={image.url} alt={image.name}/>
                         <p className="nowrap basis-full h-0 text-white">{ projectName }</p>
@@ -86,9 +86,9 @@ export default function DockElement(props) {
     } else {
         return (
             <Link href="#">
-                <div className="radius24 dock-element target">
+                <div className="radius24 dock-element target" id={"dock-element-" + props.id}>
                     <center>
-                        <Loader color="white"/>
+                        <SpinnerLoader color="white"/>
                         <p className="nowrap basis-full h-0 text-white">Loading...</p>
                     </center>
                 </div>

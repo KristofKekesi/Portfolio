@@ -55,14 +55,12 @@ export default function Home() {
       <Navbar />
 
       <main className="w-full h-screen flex absolute justify-center bg-cover" style={{backgroundImage: "url('bg.jpeg')"}}>
-        <div className="relative">
           <div className="w-max">
           <h1 className="text-white text-7xl font-bold text-left font-interBold" style={{paddingTop: "33vh", textShadow: "6px 6px 12px rgba(0, 0, 0, .5)"}}>Kristóf Kékesi</h1>
           <h2 className="text-white text-4xl font-bold text-left font-interBold" style={{textShadow: "6px 6px 12px rgba(0, 0, 0, .5)"}}>
             Mobile Developer
-            <span className="text-xl ml-5 italic" style={{color: "#ffffffAA"}}>[from Hungary]</span>
+            <span className="text-xl ml-5 italic" style={{color: "#ffffff"}}>[from Hungary]</span>
           </h2>
-        </div>
         </div>
       </main>
 

@@ -11,12 +11,16 @@ import { useRouter } from 'next/router';
 export default function NavbarLink(props) {
     const router = useRouter();
 
-    var href = props.path;
-
     if (router.pathname === "/" && props.path === "/") {
         return (
             <Link href={ props.path }>
                 <a className="target text-homeAccentLight font-normal font-interBold md:font-bold">{ props.children }</a>
+            </Link>
+        );
+    } else if (router.pathname !== "/" && props.path === "/") {
+        return (
+            <Link href={ props.path }>
+                <a className="text-homeAccentLight font-normal font-interBold md:font-bold">{ props.children }</a>
             </Link>
         );
     } else if (router.pathname === props.path) {

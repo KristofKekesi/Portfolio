@@ -1,15 +1,16 @@
-import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
+import { useEffect } from 'react';
 
-import background from "../bg.jpg";
+import Script from 'next/script';
+import Head from 'next/head';
+import Link from 'next/link';
 
-import "../components/timeline/timeline.css";
-import "../components/article/article.css";
+import opengraphImage from '../public/opengraph.jpg';
+import favicon from '../public/favicon.png';
 
-import Navbar from "../components/navbar/navbar";
-import Dock from "../components/dock/dock";
-import Footer from "../components/footer/footer";
-import Cursor from "../components/cursor/cursor";
+import Navbar from "../components/Navbar/Navbar";
+import Dock from "../components/Dock/Dock";
+import Footer from "../components/Footer/Footer";
+import Cursor from "../components/Cursor/Cursor";
 
 import navbarToggle from "../functions/navbar";
 import cursorSetup from "../functions/cursor";
@@ -22,31 +23,40 @@ import cursorSetup from "../functions/cursor";
 //         \__) \__)
 
 
-function Timeline() {
-useEffect(() => {
-        // title
-        document.title = "Timeline";
+export default function Home() {
+  useEffect(() => {
+    navbarToggle();
+    cursorSetup();
+  }, []);
 
-        // navbar
-        navbarToggle();
-
-        // cursor
-        cursorSetup();
-
-    }, []);
-
-    let timeline = <article id="timeline" className="flex flex-nowrap flex-row items-start justify-center bg-white">
-        <div className="sticky hidden md:flex mt-10 flex-col">
-            <Link to="#2004" className="text-title target sticky">2004</Link>
-            <Link to="#2015" className="text-title target sticky">2015</Link>
-            <Link to="#2018" className="text-title target sticky">2018</Link>
-            <Link to="#2019" className="text-title target sticky">2019</Link>
-            <Link to="#2020" className="text-title target sticky">2020</Link>
-            <Link to="#2021" className="text-title target sticky">2021</Link>
-            <Link to="#2022" className="text-title target sticky">2022</Link>
-            <Link to="#2023" className="text-title target sticky">2023</Link>
+  let timeline = <article id="timeline" className="flex flex-nowrap flex-row items-start justify-center bg-white">
+        <div className="hidden md:flex mt-10 flex-col">
+            <Link href="#2004">
+                <a className="text-title target">2004</a>
+            </Link>
+            <Link href="#2015">
+                <a className="text-title target">2015</a>
+            </Link>
+            <Link href="#2018">
+                <a className="text-title target">2018</a>
+            </Link>
+            <Link href="#2019">
+                <a className="text-title target">2019</a>
+            </Link>
+            <Link href="#2020">
+                <a className="text-title target">2020</a>
+            </Link>
+            <Link href="#2021">
+                <a className="text-title target">2021</a>
+            </Link>
+            <Link href="#2022">
+                <a className="text-title target">2022</a>
+            </Link>
+            <Link href="#2023">
+                <a className="text-title target">2023</a>
+            </Link>
         </div>
-        <div className="sticky mt-10 hidden md:flex" style={{backgroundImage: `url(${background})`, top: "50px", width: "1rem", minHeight: "100vh"}}><div className="sticky blur-dark" style={{top: "50px", width: "1rem", minHeight: "100vh"}}></div></div>
+        <div className="sticky mt-10 hidden md:flex" style={{backgroundImage: `url('bg.jpeg')`, top: "50px", left: "0px", width: "1rem", height: "calc(100vh)", marginBottom: "40px"}}><div className="sticky blur-dark" style={{width: "1rem", height: "100"}}></div></div>
         <div>
             <div className="m-10 section">
                 <div className="h-px mb-10" />
@@ -158,20 +168,54 @@ useEffect(() => {
         </div>
         </article>
 
-    return (
+  return (
     <>
+      <Head>
+        <meta charSet="utf-8" />
+
+        <link rel="icon" href={favicon} />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#ffffff" />
+
+        <meta name="author" content="Kristóf Kékesi" />
+        <meta name="description" content="I'm Kristóf Kékesi, developer of Elements and more." />
+        <meta name="keywords" content="HTML,CSS,JavaScript,Flutter,React,Dart,Programming,Programmer,Developer,Mobile,Web" />
+
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@KristofKekesi" />
+        <meta name="twitter:title" content="Kristóf Kékesi" />
+        <meta name="twitter:description" content="I'm Kristóf Kékesi, developer of Elements and more." />
+        <meta name="twitter:image" content={opengraphImage}/>
+
+        <meta name="og:url" content="%PUBLIC_URL%" />
+        <meta name="og:type" content="website" />
+        <meta name="og:description" content="I'm Kristóf Kékesi, developer of Elements and more." />
+        <meta name="og:image" content={opengraphImage} />
+
+        <link rel="apple-touch-icon" href={favicon} />
+        <link rel="manifest" href="manifest.json" />
+
+        <Script async="" src="https://www.googletagmanager.com/gtag/js?id=G-NMTQ12KGY9"></Script>
+
+        <title>Timeline</title>
+      </Head>
+
         <Navbar />
-        <div className="w-full bg-cover" style={{paddingTop: "150px", paddingBottom: "75px", backgroundImage: `url(${background})`}}>
-        <center>
-                <h1 className="white selectable" style={{textShadow: "6px 6px 12px rgba(0, 0, 0, .75)", textAlign: "center"}}>Timeline</h1>
-        </center>
-        </div>
-        {timeline}
+
+        <main>
+          <center className="w-full bg-cover" style={{paddingTop: "150px", paddingBottom: "75px", backgroundImage: `url('bg.jpeg')`}}>
+          <div className="w-max">
+          <h1 className="text-white text-7xl font-bold text-left font-interBold" style={{paddingTop: "0vh", textShadow: "6px 6px 12px rgba(0, 0, 0, .5)"}}>Timeline</h1>
+          </div>
+          </center>
+          {timeline}
+        </main>
+
         <Dock />
         <Footer />
+
         <Cursor />
     </>
-    );
+  )
 }
-
-export default Timeline;

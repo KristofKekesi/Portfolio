@@ -1,9 +1,7 @@
 import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
+import Link from 'next/link';
 
 import footerDockSpacer from "../../functions/footer";
-
-import './footer.css';
 
 
 //    TURTLE - TEKI
@@ -36,7 +34,9 @@ export default function Footer() {
                     <li>
                         Policies
                         <ul>
-                            <li><Link className="target" to="./generalprivacypolicy">Privacy Policy</Link></li>
+                            <li><Link href="/generalprivacypolicy">
+                                <a className="target">Privacy Policy</a>
+                            </Link></li>
                         </ul>
                     </li>
                     <li id="copyright" className="hidden">

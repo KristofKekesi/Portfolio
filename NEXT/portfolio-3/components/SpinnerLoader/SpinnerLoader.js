@@ -1,8 +1,8 @@
 import Image from "next/image";
-import loaderWhite from "./white.svg";
-import loaderBlack from "./black.svg";
+import loaderWhite from "./SpinnerWhite.svg";
+import loaderBlack from "./SpinnerBlack.svg";
 
-export default function Loader(props) {
+export default function SpinnerLoader(props) {
     if (props.color === "white") {
         return(
             <div className="loader">

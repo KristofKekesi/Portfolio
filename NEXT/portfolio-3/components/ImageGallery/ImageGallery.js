@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
 
-import './image-gallery.css';
-
 import setImageGallery from "../../functions/image-gallery";
 
 import API from '../../api/index';

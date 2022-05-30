@@ -1,11 +1,9 @@
 import React, {useState, useEffect} from "react";
-import { Link } from "react-router-dom";
+import Link from 'next/link';
 
-import API from "../../api/";
+import API from "../../api";
 
 import cursorSetup from "../../functions/cursor";
-
-import "./article-preview-big.css";
 
 
 //    TURTLE - TEKI
@@ -15,7 +13,7 @@ import "./article-preview-big.css";
 //         \__) \__)
 
 
-function ArticlePreviewBig(props) {
+function ArticlePreviewSmoll(props) {
     const [article, setArticle] = useState( undefined );
     const [image, setImage] = useState( undefined );
 
@@ -36,17 +34,17 @@ function ArticlePreviewBig(props) {
         return(
             <article
                 style={props.style}
-                className="article-preview-big"
+                className="article-preview-smoll w-96 h-28 flex flex-col bg-secondaryLight"
             >
-                <div className="w-fill" />
+                <div className="w-full h-96" />
                 <h1 className="text-title">Loading article...</h1>
             </article>
         );
     } else if (article === null || image === null) {
         return(
-            <article style={props.style} className="article-preview-big">
-                <div className="w-fill" />
-                <h1 className="text-title">Error loading article.</h1>
+            <article style={props.style} className="article-preview-smoll">
+                <div style={{width: "100%", height: "25rem"}} />
+                <h1 className="text-title nowrap">Error loading article.</h1>
             </article>
         );
     } else if (props.doesCareAboutVisibility === false || article.isVisible) {
@@ -59,24 +57,24 @@ function ArticlePreviewBig(props) {
         }
 
         return(
-            <article style={props.style} className="article-preview-big target w-96 flex flex-col bg-secondaryLight font-bold"> 
-                <Link
-                    className="w-full h-full bg-secondaryLight"
-                    to={ linkURL }
-                >
-                    <img
-                        className="max-w-full max-h-96"
-                        src={image.url}
-                        alt="Article cover"
-                    />
-                    <h1
-                        className="text-title"
-                        dangerouslySetInnerHTML={{ __html: article.name }}
-                    />
-                    <h2
-                        className="text-smallsubtitle" 
-                        dangerouslySetInnerHTML={{ __html: article.description }}
-                    />
+            <article
+                style={props.style}
+                className="article-preview-smoll target font-bold"
+            >
+                <Link href={ linkURL }>
+                    <div className="article-preview-link-smoll flex w-full h-full bg-secondaryLight">
+                        <img
+                            className="w-28 h-28 bg-cover"
+                            src={ image.url }
+                            alt="Article cover"
+                        />
+                        <div className="justify-center pb-2">
+                            <h1
+                                className="text-title nowrap" 
+                                dangerouslySetInnerHTML={{ __html: article.name}}
+                            />
+                        </div>
+                    </div>
                 </Link>
             </article>
         );
@@ -87,4 +85,4 @@ function ArticlePreviewBig(props) {
     }
 }
 
-export default ArticlePreviewBig;
+export default ArticlePreviewSmoll;

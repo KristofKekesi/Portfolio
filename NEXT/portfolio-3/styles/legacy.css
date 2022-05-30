@@ -1,3 +1,9 @@
+/*  TURTLE - TEKI
+    (°-°) _______
+      \ \/ - - - \_
+       \_  ___  ___>
+         \__) \__)    */
+
 body {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
@@ -52,7 +58,7 @@ code {
 }
 
 html {
-  scroll-padding-top: 4rem; /* height of sticky header*/
+  scroll-padding-top: 104px; /* height of sticky header*/
 
   scroll-behavior: smooth;
   overscroll-behavior-y: none;
@@ -79,6 +85,11 @@ body {
   -o-user-drag:        auto;
   -ms-user-drag:       auto;
   user-drag:           auto;
+}
+
+.sticky {
+  position: sticky;
+  position: -webkit-sticky;
 }
 
 a {
