@@ -59,7 +59,7 @@ export default function Home() {
 
         <Script async="" src="https://www.googletagmanager.com/gtag/js?id=G-NMTQ12KGY9"></Script>
 
-        <title>Web Development</title>
+        <title>Photography</title>
       </Head>
 
         <Navbar />
@@ -67,10 +67,10 @@ export default function Home() {
         <main>
           <center className="w-full bg-cover" style={{paddingTop: "150px", paddingBottom: "75px", backgroundImage: `url('bg.jpeg')`}}>
           <div className="w-max">
-          <h1 className="text-white text-7xl font-bold text-left font-interBold" style={{paddingTop: "0vh", textShadow: "6px 6px 12px rgba(0, 0, 0, .5)"}}>Mobile Development</h1>
+          <h1 className="text-white text-7xl font-bold text-left font-interBold" style={{paddingTop: "0vh", textShadow: "6px 6px 12px rgba(0, 0, 0, .5)"}}>Photography</h1>
           </div>
           </center>
-          <Article id="1"></Article>
+          <Article id="12"></Article>
         </main>
 
         <Dock />
