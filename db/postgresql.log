@@ -927,3 +927,27 @@
 2022-05-31 09:58:56.786 CEST [47612] LOG:  background worker "logical replication launcher" (PID 47619) exited with exit code 1
 2022-05-31 09:58:56.786 CEST [47614] LOG:  shutting down
 2022-05-31 09:58:56.792 CEST [47612] LOG:  database system is shut down
+2022-06-02 19:57:37.255 CEST [52837] LOG:  starting PostgreSQL 14.2 on aarch64-apple-darwin20.6.0, compiled by Apple clang version 12.0.5 (clang-1205.0.22.9), 64-bit
+2022-06-02 19:57:37.257 CEST [52837] LOG:  listening on IPv6 address "::1", port 5432
+2022-06-02 19:57:37.258 CEST [52837] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2022-06-02 19:57:37.258 CEST [52837] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2022-06-02 19:57:37.262 CEST [52838] LOG:  database system was shut down at 2022-05-31 09:58:56 CEST
+2022-06-02 19:57:37.268 CEST [52837] LOG:  database system is ready to accept connections
+2022-06-02 23:22:20.915 CEST [58435] ERROR:  relation "posts" does not exist at character 13
+2022-06-02 23:22:20.915 CEST [58435] STATEMENT:  INSERT INTO posts(content) VALUES($1)
+2022-06-02 23:22:31.808 CEST [58440] ERROR:  relation "posts" does not exist at character 13
+2022-06-02 23:22:31.808 CEST [58440] STATEMENT:  INSERT INTO posts(content) VALUES($1)
+2022-06-02 23:23:05.102 CEST [58633] ERROR:  relation "posts" does not exist at character 13
+2022-06-02 23:23:05.102 CEST [58633] STATEMENT:  INSERT INTO posts(content) VALUES($1)
+2022-06-02 23:23:10.585 CEST [58654] ERROR:  relation "posts" does not exist at character 13
+2022-06-02 23:23:10.585 CEST [58654] STATEMENT:  INSERT INTO posts(content) VALUES($1)
+2022-06-02 23:25:03.005 CEST [58733] ERROR:  relation "posts" does not exist at character 13
+2022-06-02 23:25:03.005 CEST [58733] STATEMENT:  INSERT INTO posts(content) VALUES($1)
+2022-06-02 23:25:06.474 CEST [58738] ERROR:  relation "posts" does not exist at character 13
+2022-06-02 23:25:06.474 CEST [58738] STATEMENT:  INSERT INTO posts(content) VALUES($1)
+2022-06-02 23:25:24.079 CEST [58768] ERROR:  relation "posts" does not exist at character 13
+2022-06-02 23:25:24.079 CEST [58768] STATEMENT:  INSERT INTO posts(content) VALUES($1)
+2022-06-02 23:27:39.687 CEST [58873] ERROR:  relation "articles" does not exist at character 15
+2022-06-02 23:27:39.687 CEST [58873] STATEMENT:  SELECT * FROM articles
+2022-06-02 23:31:11.521 CEST [58982] ERROR:  bind message supplies 1 parameters, but prepared statement "" requires 0
+2022-06-02 23:31:11.521 CEST [58982] STATEMENT:  SELECT * FROM articles
