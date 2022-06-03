@@ -970,3 +970,21 @@
 2022-06-03 16:57:36.895 CEST [63256] ERROR:  column "articleid" does not exist at character 35
 2022-06-03 16:57:36.895 CEST [63256] HINT:  Perhaps you meant to reference the column "article_tools.articleID".
 2022-06-03 16:57:36.895 CEST [63256] STATEMENT:  SELECT * FROM article_tools WHERE articleID = 1
+2022-06-04 00:13:48.837 CEST [66445] ERROR:  column "undefined" does not exist at character 47
+2022-06-04 00:13:48.837 CEST [66445] STATEMENT:  SELECT * FROM articles WHERE id = 1AND name = undefined
+2022-06-04 00:13:50.382 CEST [66446] ERROR:  column "undefined" does not exist at character 47
+2022-06-04 00:13:50.382 CEST [66446] STATEMENT:  SELECT * FROM articles WHERE id = 1AND name = undefined
+2022-06-04 00:13:53.338 CEST [66449] ERROR:  column "undefined" does not exist at character 47
+2022-06-04 00:13:53.338 CEST [66449] STATEMENT:  SELECT * FROM articles WHERE id = 1AND name = undefined
+2022-06-04 00:14:49.615 CEST [66460] ERROR:  syntax error at end of input at character 47
+2022-06-04 00:14:49.615 CEST [66460] STATEMENT:  SELECT * FROM articles WHERE id = 1AND name = 
+2022-06-04 00:14:51.106 CEST [66463] ERROR:  syntax error at end of input at character 47
+2022-06-04 00:14:51.106 CEST [66463] STATEMENT:  SELECT * FROM articles WHERE id = 1AND name = 
+2022-06-04 00:15:03.391 CEST [66466] ERROR:  syntax error at or near "Development" at character 54
+2022-06-04 00:15:03.391 CEST [66466] STATEMENT:  SELECT * FROM articles WHERE id = 1AND name = Mobile Development
+2022-06-04 00:15:05.058 CEST [66471] ERROR:  syntax error at or near "Development" at character 54
+2022-06-04 00:15:05.058 CEST [66471] STATEMENT:  SELECT * FROM articles WHERE id = 1AND name = Mobile Development
+2022-06-04 00:15:10.719 CEST [66477] ERROR:  syntax error at or near "Development" at character 54
+2022-06-04 00:15:10.719 CEST [66477] STATEMENT:  SELECT * FROM articles WHERE id = 1AND name = Mobile Development
+2022-06-04 00:15:25.223 CEST [66483] ERROR:  syntax error at or near "Development" at character 54
+2022-06-04 00:15:25.223 CEST [66483] STATEMENT:  SELECT * FROM articles WHERE id = 1AND name = Mobile Development

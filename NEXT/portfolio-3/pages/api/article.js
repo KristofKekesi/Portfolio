@@ -13,8 +13,14 @@ if (!conn) {
 }
 
 export default async (req, res) => {
+    const {
+        query: { id },
+        method,
+    } = req;
+    console.log(id);
+
 	try {
-		const mainQuery = 'SELECT * FROM articles';
+		const mainQuery = 'SELECT * FROM articles WHERE id = ' + id;
 		const mainResult = await conn.query(mainQuery);
 
 		for (let i = 0; i < mainResult.rows.length; i++) {
@@ -36,7 +42,7 @@ export default async (req, res) => {
 			}
 
 			if (i === mainResult.rows.length - 1) {
-				return res.status(200).json(mainResult.rows);
+				return res.status(200).json(mainResult.rows[0]);
 			}
 		}
 
