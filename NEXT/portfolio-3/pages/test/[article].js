@@ -1,6 +1,5 @@
 import { useRouter } from "next/router";
 
-import "../api/articles";
 
 export default function Article({ props }) {
     const router = useRouter();

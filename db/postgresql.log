@@ -951,3 +951,22 @@
 2022-06-02 23:27:39.687 CEST [58873] STATEMENT:  SELECT * FROM articles
 2022-06-02 23:31:11.521 CEST [58982] ERROR:  bind message supplies 1 parameters, but prepared statement "" requires 0
 2022-06-02 23:31:11.521 CEST [58982] STATEMENT:  SELECT * FROM articles
+2022-06-03 16:18:35.458 CEST [62470] ERROR:  there is no parameter $1 at character 36
+2022-06-03 16:18:35.458 CEST [62470] STATEMENT:  SELECT * FROM articles WHERE id =  $1
+2022-06-03 16:19:39.955 CEST [62491] ERROR:  there is no parameter $1 at character 36
+2022-06-03 16:19:39.955 CEST [62491] STATEMENT:  SELECT * FROM articles WHERE id =  $1
+2022-06-03 16:56:36.751 CEST [63196] ERROR:  column "article_id" does not exist at character 35
+2022-06-03 16:56:36.751 CEST [63196] HINT:  Perhaps you meant to reference the column "article_tools.articleID".
+2022-06-03 16:56:36.751 CEST [63196] STATEMENT:  SELECT * FROM article_tools WHERE article_id = 1
+2022-06-03 16:57:13.527 CEST [63230] ERROR:  column "articleid" does not exist at character 35
+2022-06-03 16:57:13.527 CEST [63230] HINT:  Perhaps you meant to reference the column "article_tools.articleID".
+2022-06-03 16:57:13.527 CEST [63230] STATEMENT:  SELECT * FROM article_tools WHERE articleId = 1
+2022-06-03 16:57:15.109 CEST [63231] ERROR:  column "articleid" does not exist at character 35
+2022-06-03 16:57:15.109 CEST [63231] HINT:  Perhaps you meant to reference the column "article_tools.articleID".
+2022-06-03 16:57:15.109 CEST [63231] STATEMENT:  SELECT * FROM article_tools WHERE articleId = 1
+2022-06-03 16:57:35.758 CEST [63255] ERROR:  column "articleid" does not exist at character 35
+2022-06-03 16:57:35.758 CEST [63255] HINT:  Perhaps you meant to reference the column "article_tools.articleID".
+2022-06-03 16:57:35.758 CEST [63255] STATEMENT:  SELECT * FROM article_tools WHERE articleID = 1
+2022-06-03 16:57:36.895 CEST [63256] ERROR:  column "articleid" does not exist at character 35
+2022-06-03 16:57:36.895 CEST [63256] HINT:  Perhaps you meant to reference the column "article_tools.articleID".
+2022-06-03 16:57:36.895 CEST [63256] STATEMENT:  SELECT * FROM article_tools WHERE articleID = 1
