@@ -14,13 +14,36 @@ if (!conn) {
 
 export default async (req, res) => {
     const {
-        query: { id },
+        query: { id, name, redirect, isVisible, content },
         method,
     } = req;
     console.log(id);
 
+	let selectorQueries = [];
+	if (id != undefined) {
+		selectorQueries.push("id = " + id);
+	}
+	if (name != undefined) {
+		selectorQueries.push("name = '" + name + "'");
+	}
+	if (redirect != undefined) {
+		selectorQueries.push("redirect = '" + redirect + "'");
+	}
+	if (isVisible != undefined) {
+		selectorQueries.push("isVisible = " + isVisible);
+	}
+	if (content != undefined) {
+		selectorQueries.push("content = '" + content + "'");
+	}
+	selectorQueries = "WHERE " + selectorQueries.join(" AND ");
+
+
+    if (id == undefined && name == undefined && redirect == undefined && isVisible == undefined && content == undefined) {
+        return res.status(400).json("No query parameters provided");
+    }
+
 	try {
-		const mainQuery = 'SELECT * FROM articles WHERE id = ' + id;
+		const mainQuery = 'SELECT * FROM articles ' + selectorQueries;
 		const mainResult = await conn.query(mainQuery);
 
 		for (let i = 0; i < mainResult.rows.length; i++) {
@@ -45,6 +68,7 @@ export default async (req, res) => {
 				return res.status(200).json(mainResult.rows[0]);
 			}
 		}
+		return res.status(400).json("No results found");
 
 	} catch ( error ) {
 		console.log( error );

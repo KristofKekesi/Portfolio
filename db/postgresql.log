@@ -988,3 +988,61 @@
 2022-06-04 00:15:10.719 CEST [66477] STATEMENT:  SELECT * FROM articles WHERE id = 1AND name = Mobile Development
 2022-06-04 00:15:25.223 CEST [66483] ERROR:  syntax error at or near "Development" at character 54
 2022-06-04 00:15:25.223 CEST [66483] STATEMENT:  SELECT * FROM articles WHERE id = 1AND name = Mobile Development
+2022-06-05 14:54:46.880 CEST [69216] ERROR:  relation "article_bundles" does not exist at character 15
+2022-06-05 14:54:46.880 CEST [69216] STATEMENT:  SELECT * FROM article_bundles WHERE "articleID" = 3
+2022-06-05 14:54:50.042 CEST [69219] ERROR:  relation "article_bundles" does not exist at character 15
+2022-06-05 14:54:50.042 CEST [69219] STATEMENT:  SELECT * FROM article_bundles WHERE "articleID" = 3
+2022-06-05 14:55:28.980 CEST [69228] ERROR:  relation "article_bundles" does not exist at character 15
+2022-06-05 14:55:28.980 CEST [69228] STATEMENT:  SELECT * FROM article_bundles WHERE "articleID" = 3
+2022-06-05 14:55:39.717 CEST [69240] ERROR:  relation "article_bundles" does not exist at character 15
+2022-06-05 14:55:39.717 CEST [69240] STATEMENT:  SELECT * FROM article_bundles WHERE "articleID" = 3
+2022-06-05 14:55:42.065 CEST [69245] ERROR:  relation "article_bundles" does not exist at character 15
+2022-06-05 14:55:42.065 CEST [69245] STATEMENT:  SELECT * FROM article_bundles WHERE "articleID" = 3
+2022-06-05 14:55:58.284 CEST [69267] ERROR:  relation "article_bundles" does not exist at character 15
+2022-06-05 14:55:58.284 CEST [69267] STATEMENT:  SELECT * FROM article_bundles WHERE "articleID" = 3
+2022-06-05 14:56:31.767 CEST [69295] ERROR:  column "articleID" does not exist at character 37
+2022-06-05 14:56:31.767 CEST [69295] STATEMENT:  SELECT * FROM project_bundles WHERE "articleID" = 3
+2022-06-05 14:56:33.877 CEST [69298] ERROR:  column "articleID" does not exist at character 37
+2022-06-05 14:56:33.877 CEST [69298] STATEMENT:  SELECT * FROM project_bundles WHERE "articleID" = 3
+2022-06-05 14:56:37.714 CEST [69303] ERROR:  column "articleID" does not exist at character 37
+2022-06-05 14:56:37.714 CEST [69303] STATEMENT:  SELECT * FROM project_bundles WHERE "articleID" = 3
+2022-06-05 14:57:10.699 CEST [69338] ERROR:  column "articleID" does not exist at character 37
+2022-06-05 14:57:10.699 CEST [69338] STATEMENT:  SELECT * FROM project_bundles WHERE "articleID" = 3
+2022-06-05 14:57:30.639 CEST [69360] ERROR:  column "articleID" does not exist at character 37
+2022-06-05 14:57:30.639 CEST [69360] STATEMENT:  SELECT * FROM project_bundles WHERE "articleID" = 3
+2022-06-05 14:57:32.670 CEST [69361] ERROR:  column "articleID" does not exist at character 37
+2022-06-05 14:57:32.670 CEST [69361] STATEMENT:  SELECT * FROM project_bundles WHERE "articleID" = 3
+2022-06-05 15:50:43.134 CEST [70350] ERROR:  column "undefined" does not exist at character 34
+2022-06-05 15:50:43.134 CEST [70350] STATEMENT:  SELECT * FROM projects WHERE id =undefined
+2022-06-05 19:13:41.555 CEST [71339] ERROR:  syntax error at or near "WHERE" at character 1
+2022-06-05 19:13:41.555 CEST [71339] STATEMENT:  WHERE id =1
+2022-06-05 19:13:52.705 CEST [71350] ERROR:  syntax error at or near "WHERE" at character 1
+2022-06-05 19:13:52.705 CEST [71350] STATEMENT:  WHERE id =1
+2022-06-05 19:13:54.438 CEST [71359] ERROR:  syntax error at or near "WHERE" at character 1
+2022-06-05 19:13:54.438 CEST [71359] STATEMENT:  WHERE id =1
+2022-06-05 19:13:55.679 CEST [71360] ERROR:  syntax error at or near "WHERE" at character 1
+2022-06-05 19:13:55.679 CEST [71360] STATEMENT:  WHERE id =1
+2022-06-05 19:13:58.968 CEST [71363] ERROR:  syntax error at or near "WHERE" at character 1
+2022-06-05 19:13:58.968 CEST [71363] STATEMENT:  WHERE id =1
+2022-06-05 19:14:01.727 CEST [71365] ERROR:  syntax error at or near "WHERE" at character 1
+2022-06-05 19:14:01.727 CEST [71365] STATEMENT:  WHERE id =
+2022-06-05 19:14:03.715 CEST [71368] ERROR:  syntax error at or near "WHERE" at character 1
+2022-06-05 19:14:03.715 CEST [71368] STATEMENT:  WHERE id =a
+2022-06-05 19:14:05.427 CEST [71370] ERROR:  syntax error at or near "WHERE" at character 1
+2022-06-05 19:14:05.427 CEST [71370] STATEMENT:  WHERE id =1
+2022-06-05 19:14:18.127 CEST [71400] ERROR:  syntax error at or near "WHERE" at character 1
+2022-06-05 19:14:18.127 CEST [71400] STATEMENT:  WHERE id =1
+2022-06-05 19:14:19.622 CEST [71403] ERROR:  syntax error at or near "WHERE" at character 1
+2022-06-05 19:14:19.622 CEST [71403] STATEMENT:  WHERE id =1
+2022-06-05 19:14:21.248 CEST [71404] ERROR:  syntax error at or near "WHERE" at character 1
+2022-06-05 19:14:21.248 CEST [71404] STATEMENT:  WHERE id =1
+2022-06-05 19:15:12.442 CEST [71441] ERROR:  syntax error at or near "WHERE" at character 1
+2022-06-05 19:15:12.442 CEST [71441] STATEMENT:  WHERE id =1
+2022-06-05 19:15:40.089 CEST [71473] ERROR:  syntax error at or near "WHERE" at character 1
+2022-06-05 19:15:40.089 CEST [71473] STATEMENT:  WHERE id =1
+2022-06-05 19:16:06.266 CEST [71478] ERROR:  syntax error at or near "WHERE" at character 1
+2022-06-05 19:16:06.266 CEST [71478] STATEMENT:  WHERE id =1
+2022-06-05 19:16:21.517 CEST [71500] ERROR:  syntax error at or near "WHERE" at character 1
+2022-06-05 19:16:21.517 CEST [71500] STATEMENT:  WHERE id =1
+2022-06-05 19:17:01.430 CEST [71542] ERROR:  column "undefined" does not exist at character 34
+2022-06-05 19:17:01.430 CEST [71542] STATEMENT:  SELECT * FROM projects WHERE id =undefined
