@@ -1,5 +1,4 @@
 import { Pool } from "pg";
-import main from "../../functions/navbar";
 
 let conn;
 
@@ -14,39 +13,55 @@ if (!conn) {
 }
 
 export default async (req, res) => {
+    const {
+        query: { id, name, version, role, platform, bundle, download, skill, tool },
+        method,
+    } = req;
+    console.log("ID: " + id + " Name: " + name + " Version: " + version + " Role: " + role + " Platform: " + platform + " Bundle: " + bundle + " Download: " + download + " Skill: " + skill + " Tool: " + tool);
+
+	let imports = ['"projects"'];
+	let selectorQueries = [];
+
+	if (id != undefined) {
+		selectorQueries.push('"projects"."id" = ' + id);
+	}
+	if (name != undefined) {
+		selectorQueries.push('"projects"."name" = ' + '\'' + name + '\'');
+	}
+	if (version != undefined) {
+		selectorQueries.push('"projects"."version" = ' + '\'' + version + '\'');
+	}
+	if (role != undefined) {
+		// search if role is in array
+		imports.push('"project_roles"');
+	}
+	if (platform != undefined) {
+		selectorQueries.push('"projects"."platform" = ' + '\'' + platform + '\'');
+	}
+	if (skill != undefined) {
+		imports.push('"project_skills"');
+		selectorQueries.push('"project_skills"."skillID" = ' + skill + ' AND "projects"."id" = "project_skills"."projectID"');
+	}
+	if (tool != undefined) {
+		imports.push('"project_tools"');
+		selectorQueries.push('"project_tools"."toolID" = ' + tool + ' AND "projects"."id" = "project_tools"."projectID"');
+	}
+
+	imports = 'FROM ' + imports.join(", ");
+	if (selectorQueries.length > 0) {
+		selectorQueries = 'WHERE ' + selectorQueries.join(' AND ');
+	} else {
+		selectorQueries = '';
+	}
+
 	try {
-		const mainQuery = 'SELECT * FROM projects';
+		const mainQuery = 'SELECT "projects".* ' + imports + ' ' + selectorQueries + ';';
+		console.log(mainQuery);
 		const mainResult = await conn.query(mainQuery);
 
 		for (let i = 0; i < mainResult.rows.length; i++) {
-            mainResult.rows[i].bundleIDs = [];
-            mainResult.rows[i].downloads = [];
-            mainResult.rows[i].screenshotImageIDs = [];
 			mainResult.rows[i].skillIDs = [];
 			mainResult.rows[i].toolIDs  = [];
-
-            // Bundles
-			const bundlesSideQuery = "SELECT * FROM project_bundles WHERE \"projectID\" = " + mainResult.rows[i].id;
-			const bundlesSideResult = await conn.query(bundlesSideQuery);
-			for (let j = 0; j < bundlesSideResult.rows.length; j++) {
-				mainResult.rows[i].bundleIDs.push(bundlesSideResult.rows[j].bundleID);
-			}
-
-            // Downloads
-			const downloadsSideQuery = "SELECT * FROM project_downloads WHERE \"projectID\" = " + mainResult.rows[i].id;
-			const downloadsSideResult = await conn.query(downloadsSideQuery);
-			for (let j = 0; j < downloadsSideResult.rows.length; j++) {
-                delete downloadsSideResult.rows[j].projectID;
-				mainResult.rows[i].downloads.push(downloadsSideResult.rows[j]);
-			}
-
-            // Screenshots
-			const screenshotsSideQuery = "SELECT * FROM project_screenshots WHERE \"projectID\" = " + mainResult.rows[i].id;
-			const screenshotsSideResult = await conn.query(screenshotsSideQuery);
-			for (let j = 0; j < screenshotsSideResult.rows.length; j++) {
-                delete screenshotsSideResult.rows[j].projectID;
-				mainResult.rows[i].screenshotImageIDs.push(screenshotsSideResult.rows[j].imageID);
-			}
 
 			// Skills
 			const skillsSideQuery = "SELECT * FROM project_skills WHERE \"projectID\" = " + mainResult.rows[i].id;
@@ -66,6 +81,8 @@ export default async (req, res) => {
 				return res.status(200).json(mainResult.rows);
 			}
 		}
+		return res.status(404).json("No results found");
+
 
 	} catch ( error ) {
 		console.log( error );

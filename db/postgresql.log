@@ -1046,3 +1046,186 @@
 2022-06-05 19:16:21.517 CEST [71500] STATEMENT:  WHERE id =1
 2022-06-05 19:17:01.430 CEST [71542] ERROR:  column "undefined" does not exist at character 34
 2022-06-05 19:17:01.430 CEST [71542] STATEMENT:  SELECT * FROM projects WHERE id =undefined
+2022-06-06 11:01:22.468 CEST [76302] ERROR:  column "undefined" does not exist at character 51
+2022-06-06 11:01:22.468 CEST [76302] STATEMENT:  SELECT * FROM project_bundles WHERE "projectID" = undefined
+2022-06-06 11:01:23.806 CEST [76303] ERROR:  column "undefined" does not exist at character 51
+2022-06-06 11:01:23.806 CEST [76303] STATEMENT:  SELECT * FROM project_bundles WHERE "projectID" = undefined
+2022-06-06 11:10:34.265 CEST [76475] ERROR:  column "id" does not exist at character 36
+2022-06-06 11:10:34.265 CEST [76475] STATEMENT:  SELECT * FROM article_skills WHERE id = 0
+2022-06-06 11:10:35.507 CEST [76476] ERROR:  column "id" does not exist at character 36
+2022-06-06 11:10:35.507 CEST [76476] STATEMENT:  SELECT * FROM article_skills WHERE id = 0
+2022-06-06 11:10:43.928 CEST [76489] ERROR:  column "id" does not exist at character 36
+2022-06-06 11:10:43.928 CEST [76489] STATEMENT:  SELECT * FROM article_skills WHERE id = 1
+2022-06-06 11:10:45.262 CEST [76490] ERROR:  column "id" does not exist at character 36
+2022-06-06 11:10:45.262 CEST [76490] STATEMENT:  SELECT * FROM article_skills WHERE id = 1
+2022-06-06 11:10:59.037 CEST [76508] ERROR:  column "articleid" does not exist at character 36
+2022-06-06 11:10:59.037 CEST [76508] HINT:  Perhaps you meant to reference the column "article_skills.articleID".
+2022-06-06 11:10:59.037 CEST [76508] STATEMENT:  SELECT * FROM article_skills WHERE articleID = 1
+2022-06-06 11:11:00.328 CEST [76509] ERROR:  column "articleid" does not exist at character 36
+2022-06-06 11:11:00.328 CEST [76509] HINT:  Perhaps you meant to reference the column "article_skills.articleID".
+2022-06-06 11:11:00.328 CEST [76509] STATEMENT:  SELECT * FROM article_skills WHERE articleID = 1
+2022-06-06 11:37:19.132 CEST [76925] ERROR:  column "articleid" does not exist at character 49
+2022-06-06 11:37:19.132 CEST [76925] HINT:  Perhaps you meant to reference the column "article_skills.articleID".
+2022-06-06 11:37:19.132 CEST [76925] STATEMENT:  SELECT * FROM articles WHERE skillID IN (SELECT articleID, skillID FROM article_skills WHERE articleID = 14 AND skillID = 1)
+2022-06-06 11:37:52.454 CEST [76950] ERROR:  column "skillID" does not exist at character 32
+2022-06-06 11:37:52.454 CEST [76950] STATEMENT:  SELECT * FROM "articles" WHERE "skillID" IN (SELECT "articleID", "skillID" FROM "article_skills" WHERE "articleID" = 14 AND "skillID" = 1)
+2022-06-06 11:37:56.483 CEST [76953] ERROR:  column "skillID" does not exist at character 32
+2022-06-06 11:37:56.483 CEST [76953] STATEMENT:  SELECT * FROM "articles" WHERE "skillID" IN (SELECT "articleID", "skillID" FROM "article_skills" WHERE "articleID" = 14 AND "skillID" = 1)
+2022-06-06 11:39:53.719 CEST [77021] ERROR:  column "skillID" does not exist at character 32
+2022-06-06 11:39:53.719 CEST [77021] STATEMENT:  SELECT * FROM "articles" WHERE "skillID" IN (SELECT "articleID", "skillID" FROM "article_skills" WHERE "articleID" = 14 AND "skillID" = 1)
+2022-06-06 11:40:45.278 CEST [77066] ERROR:  subquery has too many columns at character 37
+2022-06-06 11:40:45.278 CEST [77066] STATEMENT:  SELECT * FROM "articles" WHERE "id" IN (SELECT "articleID", "skillID" FROM "article_skills" WHERE "articleID" = 14 AND "skillID" = 1)
+2022-06-06 11:44:20.531 CEST [77212] ERROR:  syntax error at or near ")" at character 43
+2022-06-06 11:44:20.531 CEST [77212] STATEMENT:  SELECT * FROM "articles", "article_skills")
+2022-06-06 11:54:56.730 CEST [77688] ERROR:  syntax error at or near "HIDE" at character 144
+2022-06-06 11:54:56.730 CEST [77688] STATEMENT:  SELECT * FROM "articles", "article_skills" WHERE "articles"."id" = 14 AND "article_skills"."articleID" = 14 AND "article_skills"."skillID" = 1 HIDE "article_skills"."articleID"
+2022-06-06 11:56:34.795 CEST [77743] ERROR:  syntax error at or near "HIDE" at character 155
+2022-06-06 11:56:34.795 CEST [77743] STATEMENT:  SELECT "articles".* FROM "articles", "article_skills" WHERE "articles"."id" = 14 AND "article_skills"."articleID" = 14 AND "article_skills"."skillID" = 1 HIDE "article_skills"."articleID"
+2022-06-06 11:56:36.817 CEST [77744] ERROR:  syntax error at or near "HIDE" at character 155
+2022-06-06 11:56:36.817 CEST [77744] STATEMENT:  SELECT "articles".* FROM "articles", "article_skills" WHERE "articles"."id" = 14 AND "article_skills"."articleID" = 14 AND "article_skills"."skillID" = 1 HIDE "article_skills"."articleID"
+2022-06-06 17:46:06.898 CEST [81504] ERROR:  syntax error at or near ";" at character 43
+2022-06-06 17:46:06.898 CEST [81504] STATEMENT:  SELECT "articles".* FROM "articles" WHERE ;
+2022-06-06 18:00:59.491 CEST [82032] ERROR:  syntax error at or near ";" at character 61
+2022-06-06 18:00:59.491 CEST [82032] STATEMENT:  SELECT "articles".* FROM "articles" WHERE "articles"."id" = ;
+2022-06-06 18:03:34.138 CEST [82112] ERROR:  syntax error at or near "." at character 140
+2022-06-06 18:03:34.138 CEST [82112] STATEMENT:  SELECT "articles".* FROM "articles", "article_skills" WHERE "articles"."id" = 14 AND "articles"."name" = About AND "articles"."redirect" = ./about AND "articles"."isVisible" = false AND "articles"."content" = article_about.json AND "article_skills"."skillID" = 4 AND "articles"."id" = "article_skills"."articleID";
+2022-06-06 18:03:40.269 CEST [82119] ERROR:  syntax error at or near "." at character 140
+2022-06-06 18:03:40.269 CEST [82119] STATEMENT:  SELECT "articles".* FROM "articles", "article_skills" WHERE "articles"."id" = 14 AND "articles"."name" = About AND "articles"."redirect" = ./about AND "articles"."isVisible" = False AND "articles"."content" = article_about.json AND "article_skills"."skillID" = 4 AND "articles"."id" = "article_skills"."articleID";
+2022-06-06 18:04:51.216 CEST [82162] ERROR:  syntax error at or near "." at character 140
+2022-06-06 18:04:51.216 CEST [82162] STATEMENT:  SELECT "articles".* FROM "articles", "article_skills" WHERE "articles"."id" = 14 AND "articles"."name" = About AND "articles"."redirect" = ./about AND "articles"."isVisible" = False AND "articles"."content" = article_aboutjson AND "article_skills"."skillID" = 4 AND "articles"."id" = "article_skills"."articleID";
+2022-06-06 18:05:15.461 CEST [82176] ERROR:  syntax error at or near "/" at character 140
+2022-06-06 18:05:15.461 CEST [82176] STATEMENT:  SELECT "articles".* FROM "articles", "article_skills" WHERE "articles"."id" = 14 AND "articles"."name" = About AND "articles"."redirect" = /about AND "articles"."isVisible" = False AND "articles"."content" = article_aboutjson AND "article_skills"."skillID" = 4 AND "articles"."id" = "article_skills"."articleID";
+2022-06-06 18:05:38.661 CEST [82184] ERROR:  column "about" does not exist at character 106
+2022-06-06 18:05:38.661 CEST [82184] STATEMENT:  SELECT "articles".* FROM "articles", "article_skills" WHERE "articles"."id" = 14 AND "articles"."name" = About AND "articles"."isVisible" = False AND "article_skills"."skillID" = 4 AND "articles"."id" = "article_skills"."articleID";
+2022-06-06 18:06:42.797 CEST [82233] ERROR:  column "About" does not exist at character 106
+2022-06-06 18:06:42.797 CEST [82233] STATEMENT:  SELECT "articles".* FROM "articles", "article_skills" WHERE "articles"."id" = 14 AND "articles"."name" = "About" AND "articles"."isVisible" = False AND "article_skills"."skillID" = 4 AND "articles"."id" = "article_skills"."articleID";
+2022-06-06 21:35:31.639 CEST [83337] ERROR:  syntax error at or near "AND" at character 97
+2022-06-06 21:35:31.639 CEST [83337] STATEMENT:  SELECT "projects".* FROM "projects", "project_skills", "project_tools" WHERE "projects"."id" =  AND "projects"."name" = '' AND "projects"."version" = '' AND "projects"."role" = '' AND "projects"."platform" = '' AND "project_skills"."skillID" =  AND "projects"."id" = "project_skills"."projectID" AND "project_tools"."toolID" =  AND "projects"."id" = "project_tools"."projectID";
+2022-06-06 21:41:12.901 CEST [83409] ERROR:  syntax error at or near "AND" at character 62
+2022-06-06 21:41:12.901 CEST [83409] STATEMENT:  SELECT "projects".* FROM "projects" WHERE "projects"."id" =  AND "projects"."name" = '';
+2022-06-06 21:42:54.359 CEST [83451] ERROR:  malformed array literal: "a Translator" at character 119
+2022-06-06 21:42:54.359 CEST [83451] DETAIL:  Array value must start with "{" or dimension information.
+2022-06-06 21:42:54.359 CEST [83451] STATEMENT:  SELECT "projects".* FROM "projects" WHERE "projects"."id" = 6 AND "projects"."name" = 'Files' AND "projects"."role" = 'a Translator';
+2022-06-06 21:45:02.802 CEST [83560] ERROR:  unterminated quoted identifier at or near ""role INCLUDES 'a Translator';" at character 110
+2022-06-06 21:45:02.802 CEST [83560] STATEMENT:  SELECT "projects".* FROM "projects" WHERE "projects"."id" = 6 AND "projects"."name" = 'Files' AND "projects"."role INCLUDES 'a Translator';
+2022-06-06 21:47:33.255 CEST [83660] ERROR:  function CONTAINS(character varying[], unknown) does not exist at character 99
+2022-06-06 21:47:33.255 CEST [83660] HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+2022-06-06 21:47:33.255 CEST [83660] STATEMENT:  SELECT "projects".* FROM "projects" WHERE "projects"."id" = 6 AND "projects"."name" = 'Files' AND "CONTAINS"("projects"."role", 'a Translator');
+2022-06-06 21:48:18.982 CEST [83699] ERROR:  function contains(character varying[], unknown) does not exist at character 99
+2022-06-06 21:48:18.982 CEST [83699] HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+2022-06-06 21:48:18.982 CEST [83699] STATEMENT:  SELECT "projects".* FROM "projects" WHERE "projects"."id" = 6 AND "projects"."name" = 'Files' AND CONTAINS("projects"."role", 'a Translator');
+2022-06-06 21:48:45.289 CEST [83730] ERROR:  operator does not exist: character varying[] ~~ unknown at character 117
+2022-06-06 21:48:45.289 CEST [83730] HINT:  No operator matches the given name and argument types. You might need to add explicit type casts.
+2022-06-06 21:48:45.289 CEST [83730] STATEMENT:  SELECT "projects".* FROM "projects" WHERE "projects"."id" = 6 AND "projects"."name" = 'Files' AND "projects"."role" LIKE 'a Translator';
+2022-06-06 21:51:49.787 CEST [83808] ERROR:  malformed array literal: "a Translator" at character 99
+2022-06-06 21:51:49.787 CEST [83808] DETAIL:  Array value must start with "{" or dimension information.
+2022-06-06 21:51:49.787 CEST [83808] STATEMENT:  SELECT "projects".* FROM "projects" WHERE "projects"."id" = 6 AND "projects"."name" = 'Files' AND 'a Translator' IN("projects"."role");
+2022-06-06 22:23:33.931 CEST [84190] ERROR:  malformed array literal: "a Translator" at character 99
+2022-06-06 22:23:33.931 CEST [84190] DETAIL:  Array value must start with "{" or dimension information.
+2022-06-06 22:23:33.931 CEST [84190] STATEMENT:  SELECT "projects".* FROM "projects" WHERE "projects"."id" = 6 AND "projects"."name" = 'Files' AND 'a Translator' IN("projects"."role");
+2022-06-06 22:34:46.831 CEST [84429] ERROR:  syntax error at or near ")" at character 57
+2022-06-06 22:34:46.831 CEST [84429] STATEMENT:  create index project_roles__index
+	    on project_roles ()
+2022-06-06 22:36:41.627 CEST [84429] ERROR:  relation "project_roles" already exists
+2022-06-06 22:36:41.627 CEST [84429] STATEMENT:  create table project_roles
+	(
+	    "projectID" int     not null
+	        constraint project_roles_pk
+	            primary key
+	        constraint "project_roles_projectID_fk"
+	            references projects,
+	    role        varchar not null
+	)
+2022-06-06 22:36:59.463 CEST [84429] ERROR:  relation "project_roles" already exists
+2022-06-06 22:36:59.463 CEST [84429] STATEMENT:  create table project_roles
+	(
+	    "projectID" int     not null
+	        constraint "project_roles_projectID_fk"
+	            references projects,
+	    role        varchar not null
+	)
+2022-06-06 22:37:01.299 CEST [84429] ERROR:  relation "project_roles" already exists
+2022-06-06 22:37:01.299 CEST [84429] STATEMENT:  create table project_roles
+	(
+	    "projectID" int     not null
+	        constraint "project_roles_projectID_fk"
+	            references projects,
+	    role        varchar not null
+	)
+2022-06-06 22:37:01.765 CEST [84429] ERROR:  relation "project_roles" already exists
+2022-06-06 22:37:01.765 CEST [84429] STATEMENT:  create table project_roles
+	(
+	    "projectID" int     not null
+	        constraint "project_roles_projectID_fk"
+	            references projects,
+	    role        varchar not null
+	)
+2022-06-06 22:37:02.013 CEST [84429] ERROR:  relation "project_roles" already exists
+2022-06-06 22:37:02.013 CEST [84429] STATEMENT:  create table project_roles
+	(
+	    "projectID" int     not null
+	        constraint "project_roles_projectID_fk"
+	            references projects,
+	    role        varchar not null
+	)
+2022-06-06 22:37:17.313 CEST [84429] ERROR:  relation "project_roles" already exists
+2022-06-06 22:37:17.313 CEST [84429] STATEMENT:  create table project_roles
+	(
+	    "projectID" int     not null
+	        constraint "project_roles_projectID_fk"
+	            references projects,
+	    role        varchar not null
+	)
+2022-06-06 22:38:03.907 CEST [84429] ERROR:  cannot drop index project_roles_pk because constraint project_roles_pk on table project_roles requires it
+2022-06-06 22:38:03.907 CEST [84429] HINT:  You can drop constraint project_roles_pk on table project_roles instead.
+2022-06-06 22:38:03.907 CEST [84429] STATEMENT:  drop index project_roles_pk
+2022-06-06 22:38:19.592 CEST [84429] ERROR:  cannot drop index project_roles_pk because constraint project_roles_pk on table project_roles requires it
+2022-06-06 22:38:19.592 CEST [84429] HINT:  You can drop constraint project_roles_pk on table project_roles instead.
+2022-06-06 22:38:19.592 CEST [84429] STATEMENT:  drop index project_roles_pk
+2022-06-06 23:23:20.810 CEST [84993] ERROR:  duplicate key value violates unique constraint "project_platforms_pk"
+2022-06-06 23:23:20.810 CEST [84993] DETAIL:  Key ("projectID")=(9) already exists.
+2022-06-06 23:23:20.810 CEST [84993] STATEMENT:  INSERT INTO public.project_platforms ("projectID", platform) VALUES ($1::integer, $2::varchar)
+2022-06-06 23:23:42.514 CEST [84429] ERROR:  cannot drop index project_platforms_pk because constraint project_platforms_pk on table project_platforms requires it
+2022-06-06 23:23:42.514 CEST [84429] HINT:  You can drop constraint project_platforms_pk on table project_platforms instead.
+2022-06-06 23:23:42.514 CEST [84429] STATEMENT:  drop index project_platforms_pk
+2022-06-06 23:24:03.396 CEST [84429] ERROR:  cannot drop index project_platforms_pk because constraint project_platforms_pk on table project_platforms requires it
+2022-06-06 23:24:03.396 CEST [84429] HINT:  You can drop constraint project_platforms_pk on table project_platforms instead.
+2022-06-06 23:24:03.396 CEST [84429] STATEMENT:  drop index project_platforms_pk
+2022-06-06 23:24:20.334 CEST [84429] ERROR:  column "projectID" is in a primary key
+2022-06-06 23:24:20.334 CEST [84429] STATEMENT:  alter table project_platforms
+	    alter column "projectID" drop not null
+2022-06-06 23:24:29.434 CEST [84429] ERROR:  column "projectID" is in a primary key
+2022-06-06 23:24:29.434 CEST [84429] STATEMENT:  alter table project_platforms
+	    alter column "projectID" drop not null
+2022-06-06 23:24:32.348 CEST [84429] ERROR:  column "projectID" is in a primary key
+2022-06-06 23:24:32.348 CEST [84429] STATEMENT:  alter table project_platforms
+	    alter column "projectID" drop not null
+2022-06-06 23:24:40.839 CEST [84429] ERROR:  column "projectID" is in a primary key
+2022-06-06 23:24:40.839 CEST [84429] STATEMENT:  alter table project_platforms
+	    alter column "projectID" drop not null
+2022-06-06 23:24:41.641 CEST [84429] ERROR:  column "projectID" is in a primary key
+2022-06-06 23:24:41.641 CEST [84429] STATEMENT:  alter table project_platforms
+	    alter column "projectID" drop not null
+2022-06-06 23:24:43.501 CEST [84429] ERROR:  column "projectID" is in a primary key
+2022-06-06 23:24:43.501 CEST [84429] STATEMENT:  alter table project_platforms
+	    alter column "projectID" drop not null
+2022-06-06 23:24:50.552 CEST [84993] ERROR:  duplicate key value violates unique constraint "project_platforms_pk"
+2022-06-06 23:24:50.552 CEST [84993] DETAIL:  Key ("projectID")=(9) already exists.
+2022-06-06 23:24:50.552 CEST [84993] STATEMENT:  INSERT INTO public.project_platforms ("projectID", platform) VALUES ($1::integer, $2::varchar)
+2022-06-06 23:24:54.751 CEST [84993] ERROR:  duplicate key value violates unique constraint "project_platforms_pk"
+2022-06-06 23:24:54.751 CEST [84993] DETAIL:  Key ("projectID")=(9) already exists.
+2022-06-06 23:24:54.751 CEST [84993] STATEMENT:  INSERT INTO public.project_platforms ("projectID", platform) VALUES ($1::integer, $2::varchar)
+2022-06-06 23:25:07.335 CEST [84429] ERROR:  cannot drop index project_platforms_pk because constraint project_platforms_pk on table project_platforms requires it
+2022-06-06 23:25:07.335 CEST [84429] HINT:  You can drop constraint project_platforms_pk on table project_platforms instead.
+2022-06-06 23:25:07.335 CEST [84429] STATEMENT:  drop index project_platforms_pk
+2022-06-06 23:25:09.367 CEST [84429] ERROR:  cannot drop index project_platforms_pk because constraint project_platforms_pk on table project_platforms requires it
+2022-06-06 23:25:09.367 CEST [84429] HINT:  You can drop constraint project_platforms_pk on table project_platforms instead.
+2022-06-06 23:25:09.367 CEST [84429] STATEMENT:  drop index project_platforms_pk
+2022-06-06 23:25:13.331 CEST [84429] ERROR:  cannot drop index project_platforms_pk because constraint project_platforms_pk on table project_platforms requires it
+2022-06-06 23:25:13.331 CEST [84429] HINT:  You can drop constraint project_platforms_pk on table project_platforms instead.
+2022-06-06 23:25:13.331 CEST [84429] STATEMENT:  drop index project_platforms_pk
+2022-06-06 23:25:31.744 CEST [84520] ERROR:  duplicate key value violates unique constraint "project_roles_pk"
+2022-06-06 23:25:31.744 CEST [84520] DETAIL:  Key ("projectID")=(1) already exists.
+2022-06-06 23:25:31.744 CEST [84520] STATEMENT:  INSERT INTO public.project_roles ("projectID", role) VALUES ($1::integer, $2::varchar)
+2022-06-06 23:27:46.053 CEST [85086] ERROR:  syntax error at or near "public" at character 1
+2022-06-06 23:27:46.053 CEST [85086] STATEMENT:  public
