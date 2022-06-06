@@ -1229,3 +1229,9 @@
 2022-06-06 23:25:31.744 CEST [84520] STATEMENT:  INSERT INTO public.project_roles ("projectID", role) VALUES ($1::integer, $2::varchar)
 2022-06-06 23:27:46.053 CEST [85086] ERROR:  syntax error at or near "public" at character 1
 2022-06-06 23:27:46.053 CEST [85086] STATEMENT:  public
+2022-06-07 00:07:10.909 CEST [86076] ERROR:  column projects.platform does not exist at character 43
+2022-06-07 00:07:10.909 CEST [86076] STATEMENT:  SELECT "projects".* FROM "projects" WHERE "projects"."platform" = 'iOS';
+2022-06-07 00:07:28.134 CEST [86102] ERROR:  column projects.platform does not exist at character 43
+2022-06-07 00:07:28.134 CEST [86102] STATEMENT:  SELECT "projects".* FROM "projects" WHERE "projects"."platform" = 'iOS';
+2022-06-07 01:00:47.186 CEST [86998] ERROR:  syntax error at or near "=" at character 10
+2022-06-07 01:00:47.186 CEST [86998] STATEMENT:  SELECT * = "timeline"
