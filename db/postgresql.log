@@ -1235,3 +1235,51 @@
 2022-06-07 00:07:28.134 CEST [86102] STATEMENT:  SELECT "projects".* FROM "projects" WHERE "projects"."platform" = 'iOS';
 2022-06-07 01:00:47.186 CEST [86998] ERROR:  syntax error at or near "=" at character 10
 2022-06-07 01:00:47.186 CEST [86998] STATEMENT:  SELECT * = "timeline"
+2022-06-07 12:04:18.601 CEST [88420] ERROR:  missing FROM-clause entry for table "images" at character 28
+2022-06-07 12:04:18.601 CEST [88420] STATEMENT:  SELECT * FROM "tools"WHERE "images"."id" = 1;
+2022-06-07 12:04:20.171 CEST [88423] ERROR:  missing FROM-clause entry for table "images" at character 28
+2022-06-07 12:04:20.171 CEST [88423] STATEMENT:  SELECT * FROM "tools"WHERE "images"."id" = 1;
+2022-06-07 12:07:02.241 CEST [88552] ERROR:  column images.copyrightHolder does not exist at character 29
+2022-06-07 12:07:02.241 CEST [88552] HINT:  Perhaps you meant to reference the column "images.copyrighHolder".
+2022-06-07 12:07:02.241 CEST [88552] STATEMENT:  SELECT * FROM "images"WHERE "images"."copyrightHolder" = 'Apple';
+2022-06-07 12:07:04.026 CEST [88557] ERROR:  column images.copyrightHolder does not exist at character 29
+2022-06-07 12:07:04.026 CEST [88557] HINT:  Perhaps you meant to reference the column "images.copyrighHolder".
+2022-06-07 12:07:04.026 CEST [88557] STATEMENT:  SELECT * FROM "images"WHERE "images"."copyrightHolder" = 'Apple';
+2022-06-07 12:07:04.986 CEST [88560] ERROR:  column images.copyrightHolder does not exist at character 29
+2022-06-07 12:07:04.986 CEST [88560] HINT:  Perhaps you meant to reference the column "images.copyrighHolder".
+2022-06-07 12:07:04.986 CEST [88560] STATEMENT:  SELECT * FROM "images"WHERE "images"."copyrightHolder" = 'Apple';
+2022-06-07 12:07:07.796 CEST [88561] ERROR:  column images.copyrightHolder does not exist at character 29
+2022-06-07 12:07:07.796 CEST [88561] HINT:  Perhaps you meant to reference the column "images.copyrighHolder".
+2022-06-07 12:07:07.796 CEST [88561] STATEMENT:  SELECT * FROM "images"WHERE "images"."copyrightHolder" = 'Apple';
+2022-06-07 12:07:16.244 CEST [88572] ERROR:  column "images.copyrightHolder" does not exist at character 29
+2022-06-07 12:07:16.244 CEST [88572] STATEMENT:  SELECT * FROM "images"WHERE "images.copyrightHolder" = 'Apple';
+2022-06-07 12:07:51.128 CEST [88591] ERROR:  column images.copyrightHolder does not exist at character 29
+2022-06-07 12:07:51.128 CEST [88591] HINT:  Perhaps you meant to reference the column "images.copyrighHolder".
+2022-06-07 12:07:51.128 CEST [88591] STATEMENT:  SELECT * FROM "images"WHERE "images"."copyrightHolder" = 'Apple';
+2022-06-07 12:07:59.734 CEST [88598] ERROR:  column images.copyrightHolder does not exist at character 29
+2022-06-07 12:07:59.734 CEST [88598] HINT:  Perhaps you meant to reference the column "images.copyrighHolder".
+2022-06-07 12:07:59.734 CEST [88598] STATEMENT:  SELECT * FROM "images"WHERE "images"."copyrightHolder" = 'Oracle';
+2022-06-07 12:08:43.805 CEST [88630] ERROR:  column images.copyrightHolder does not exist at character 29
+2022-06-07 12:08:43.805 CEST [88630] HINT:  Perhaps you meant to reference the column "images.copyrighHolder".
+2022-06-07 12:08:43.805 CEST [88630] STATEMENT:  SELECT * FROM "images"WHERE "images"."copyrightHolder" = 'Oracle';
+2022-06-07 12:10:32.267 CEST [88684] ERROR:  column images.copyrightHolder does not exist at character 29
+2022-06-07 12:10:32.267 CEST [88684] HINT:  Perhaps you meant to reference the column "images.copyrighHolder".
+2022-06-07 12:10:32.267 CEST [88684] STATEMENT:  SELECT * FROM "images"WHERE "images"."copyrightHolder" = 'Oracle' OR "images"."copyrightURL" = 'Oracle';
+2022-06-07 12:24:39.305 CEST [88895] ERROR:  column images.copyrightHolder does not exist at character 29
+2022-06-07 12:24:39.305 CEST [88895] HINT:  Perhaps you meant to reference the column "images.copyrighHolder".
+2022-06-07 12:24:39.305 CEST [88895] STATEMENT:  SELECT * FROM "images"WHERE "images"."copyrightHolder" = 'Oracle' OR "images"."copyrightURL" = 'Oracle';
+2022-06-07 12:25:41.889 CEST [88960] ERROR:  column images.copyrightHolder does not exist at character 30
+2022-06-07 12:25:41.889 CEST [88960] HINT:  Perhaps you meant to reference the column "images.copyrighHolder".
+2022-06-07 12:25:41.889 CEST [88960] STATEMENT:  SELECT * FROM "images" WHERE "images"."copyrightHolder" = 'Apple' OR "images"."copyrightURL" = 'Apple';
+2022-06-07 12:31:48.876 CEST [89204] ERROR:  column images.copyrightHolder does not exist at character 31
+2022-06-07 12:31:48.876 CEST [89204] HINT:  Perhaps you meant to reference the column "images.copyrighHolder".
+2022-06-07 12:31:48.876 CEST [89204] STATEMENT:  SELECT * FROM "images" WHERE ("images"."copyrightHolder" = 'Apple' OR "images"."copyrightURL" = 'Apple');
+2022-06-07 12:32:24.105 CEST [89232] ERROR:  column images.copyrightholder does not exist at character 31
+2022-06-07 12:32:24.105 CEST [89232] HINT:  Perhaps you meant to reference the column "images.copyrighHolder".
+2022-06-07 12:32:24.105 CEST [89232] STATEMENT:  SELECT * FROM "images" WHERE ("images"."copyrightholder" = 'Apple' OR "images"."copyrightURL" = 'Apple');
+2022-06-07 12:32:42.326 CEST [89251] ERROR:  column "copyrightHolder" does not exist at character 31
+2022-06-07 12:32:42.326 CEST [89251] HINT:  Perhaps you meant to reference the column "images.copyrighHolder".
+2022-06-07 12:32:42.326 CEST [89251] STATEMENT:  SELECT * FROM "images" WHERE ("copyrightHolder" = 'Apple' OR "images"."copyrightURL" = 'Apple');
+2022-06-07 22:41:10.099 CEST [96440] ERROR:  column "redirect" of relation "articles" contains null values
+2022-06-07 22:41:10.099 CEST [96440] STATEMENT:  alter table articles
+	    alter column redirect set not null

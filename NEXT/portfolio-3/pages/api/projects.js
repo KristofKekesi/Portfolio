@@ -33,27 +33,27 @@ export default async (req, res) => {
 	}
 	if (role != undefined) {
 		imports.push('"project_roles"');
-		selectorQueries.push('"project_roles"."role" = \'' + role + '\' AND "projects"."id" = "project_roles"."projectID"');
+		selectorQueries.push('("project_roles"."role" = \'' + role + '\' AND "projects"."id" = "project_roles"."projectID")');
 	}
 	if (platform != undefined) {
 		imports.push('"project_platforms"');
-		selectorQueries.push('"project_platforms"."platform" = \'' + platform + '\' AND "projects"."id" = "project_platforms"."projectID"');
+		selectorQueries.push('("project_platforms"."platform" = \'' + platform + '\' AND "projects"."id" = "project_platforms"."projectID")');
 	}
 	if (bundle != undefined) {
 		imports.push('"project_bundles"');
-		selectorQueries.push('"project_bundles"."bundleID" = \'' + bundle + '\' AND "projects"."id" = "project_bundles"."projectID"');
+		selectorQueries.push('("project_bundles"."bundleID" = \'' + bundle + '\' AND "projects"."id" = "project_bundles"."projectID")');
 	}
 	if (download != undefined) {
 		imports.push('"project_downloads"');
-		selectorQueries.push('"project_downloads"."type" = \'' + download + '\' AND "projects"."id" = "project_downloads"."projectID"');
+		selectorQueries.push('("project_downloads"."type" = \'' + download + '\' AND "projects"."id" = "project_downloads"."projectID")');
 	}
 	if (skill != undefined) {
 		imports.push('"project_skills"');
-		selectorQueries.push('"project_skills"."skillID" = ' + skill + ' AND "projects"."id" = "project_skills"."projectID"');
+		selectorQueries.push('("project_skills"."skillID" = ' + skill + ' AND "projects"."id" = "project_skills"."projectID")');
 	}
 	if (tool != undefined) {
 		imports.push('"project_tools"');
-		selectorQueries.push('"project_tools"."toolID" = ' + tool + ' AND "projects"."id" = "project_tools"."projectID"');
+		selectorQueries.push('("project_tools"."toolID" = ' + tool + ' AND "projects"."id" = "project_tools"."projectID")');
 	}
 
 	imports = 'FROM ' + imports.join(", ");

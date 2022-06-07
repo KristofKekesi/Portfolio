@@ -32,16 +32,7 @@ function getArticle(url) {
         const json = await response.json();
 
         return new Article(
-            json["id"],
-            json["name"],
-            json["description"],
-            json["cover"],
-            json["redirect"],
-            json["isVisible"],
-            json["skills"],
-            json["tools"],
-            json["content"],
-            json["style"]
+            json
         );
     }
 

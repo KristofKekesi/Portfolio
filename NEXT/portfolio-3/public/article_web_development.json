@@ -1,0 +1,71 @@
+[
+    {
+        "type": "text-title",
+        "value": "From the beggining"
+    },
+    {
+        "type": "text-subtitle",
+        "value": "My first platform"
+    },
+    {
+        "type": "text",
+        "value": "I started web development back in <a class='target' href='../#/timeline#2018'>2018</a> when I was 14 (seventh grader in hungary). I started learning <abbr class='target' title='HyperText Markup Language'>HTML</abbr>, <abbr class='target' title='Cascadian Style Sheet'>CSS</abbr>, and JavaScript, the good old frontend web stack. For two years I concentrated on learning other technologies (mostly mobile)."
+    },
+    {
+        "type": "text",
+        "value": "My comeback for web dev was the first iteration of my website. For that I used the same frontend stack. In 2021 I released the second version of my website, in which I used React."
+    },
+    {
+        "type": "section",
+        "content": [
+            {
+                "type": "text-title",
+                "value": "My projects"
+            },
+            {
+                "type": "text-subtitle",
+                "value": "My work since <a class='target' href='../#/timeline#2018'>2018</a>"
+            },
+            {
+                "type": "text-subsubtitle",
+                "value": "kekesi.dev in <a class='target' href='../#/timeline#2020'>2020</a>"
+            },
+            {
+                "type": "text",
+                "value": "I bought the domain then I made the first version all in some weeks. It was up to date with the projects but wasn't feeling that responsive since it had no support for mobile screens."
+            },
+            {
+                "type": "gallery",
+                "value": ["IMG-24", "IMG-25"]
+            },
+            {
+                "type": "text-subsubtitle",
+                "value": "kekesi.dev in <a class='target' href='../#/timeline#2021'>2021</a>"
+            },
+            {
+                "type": "text",
+                "value": "The new site is a full rewrite of the original. It's mobile friendly, has animations and better refreshed <abbr class='target' title='User Interface'>UI</abbr>.  It's now home for more complex features and structure, yet has more simple code."
+            },
+            {
+                "type": "text",
+                "value": "The biggest core change is that the site is using a really basic <q><abbr class='target' title='Application Programming Interface'>API</abbr></q> I made. It uses it to render projects and articles (as well as this text) and bigger objects like bundles of projects, images. It's biggest advantage is that if a projects name is changes I need to change one thing."
+            }
+        ]
+    },
+    {
+        "type": "text-title",
+        "value": "As for the future"
+    },
+    {
+        "type": "text-subtitle",
+        "value": "Web technologies I want to learn in 2022"
+    },
+    {
+        "type": "text",
+        "value": "I'm planning to make Preacher available for the users of the web. For this project I'm planning to use Vue.js or Ruby on Rails."
+    },
+    {
+        "type": "text",
+        "value": "For a future yet nameless project I'm planning to use Next.js, Tailwind CSS for building and Vercel for hosting it."
+    }
+]

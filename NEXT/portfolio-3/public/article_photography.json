@@ -1,0 +1,126 @@
+[
+    {
+        "type": "text-title",
+        "value": "How I make my photos?"
+    },
+    {
+        "type": "text",
+        "value": "Since I started making photos I'm using a Panasonic Lumix DMC-FZ200. It's an <abbr class='target' title='Single-lens Reflex Camera'>SLR</abbr> as my main camera. Since I bought my iPhone 11 I'm using that as well for taking photos as well as mirrors for some illusions."
+    },
+    {
+        "type": "section",
+        "content": [
+            {
+                "type": "text-title",
+                "value": "Architectural and Interior photography"
+            },
+            {
+                "type": "text-subtitle",
+                "value": "Buildings and Monuments"
+            },
+            {
+                "type": "gallery",
+                "value": ["IMG-100", "IMG-92", "IMG-86", "IMG-101"]
+            },
+            {
+                "type": "gallery",
+                "value": ["IMG-93", "IMG-81", "IMG-53", "IMG-72"]
+            },
+            {
+                "type": "text-subtitle",
+                "value": "Interiors"
+            },
+            {
+                "type": "gallery",
+                "value": ["IMG-78", "IMG-89", "IMG-102", "IMG-103"]
+            }
+        ]
+    },
+    {
+        "type": "section",
+        "content": [
+            {
+                "type": "text-title",
+                "value": "Urban photography"
+            },
+            {
+                "type": "gallery",
+                "value": ["IMG-51", "IMG-55", "IMG-65", "IMG-84"]
+            },
+            {
+                "type": "gallery",
+                "value": ["IMG-74", "IMG-75", "IMG-71"]
+            }
+        ]
+    },
+    {
+        "type": "section",
+        "content": [
+            {
+                "type": "text-title",
+                "value": "Nature photography"
+            },
+            {
+                "type": "text-subtitle",
+                "value": "Animals"
+            },
+            {
+                "type": "gallery",
+                "value": ["IMG-59", "IMG-60", "IMG-61", "IMG-80"]
+            },
+            {
+                "type": "gallery",
+                "value": ["IMG-83", "IMG-90", "IMG-94"]
+            },
+            {
+                "type": "gallery",
+                "value": ["IMG-69", "IMG-70", "IMG-64", "IMG-96"]
+            },
+            {
+                "type": "text-subtitle",
+                "value": "Plants and Flowers"
+            },
+            {
+                "type": "gallery",
+                "value": ["IMG-76", "IMG-58", "IMG-99" , "IMG-88"]
+            },
+            {
+                "type": "gallery",
+                "value": ["IMG-45", "IMG-46", "IMG-56", "IMG-85", "IMG-104"]
+            },
+            {
+                "type": "gallery",
+                "value": ["IMG-82", "IMG-79", "IMG-87", "IMG-98", "IMG-54"]
+            },
+            {
+                "type": "gallery",
+                "value": ["IMG-62", "IMG-52", "IMG-51", "IMG-57", "IMG-91"]
+            }
+        ]
+    },
+    {
+        "type": "section",
+        "content": [
+            {
+                "type": "text-title",
+                "value": "Others"
+            },
+            {
+                "type": "gallery",
+                "value": ["IMG-49", "IMG-63", "IMG-66", "IMG-67"]
+            },
+            {
+                "type": "gallery",
+                "value": ["IMG-68", "IMG-73", "IMG-95", "IMG-97"]
+            }
+        ]
+    },
+    {
+        "type": "text-title",
+        "value": "As for the future"
+    },
+    {
+        "type": "text",
+        "value": "I'm always stashing some pictures for later. For those you can wait on my Instagram account."
+    }
+]
