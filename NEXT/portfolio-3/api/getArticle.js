@@ -7,18 +7,8 @@
 
 // Article class
 class Article {
-    constructor(id, name, description, cover, redirect,  isVisible, skills, madeWith, content, style) {
-        
-        this.id = id;
-        this.name = name;
-        this.description = description;
-        this.cover = cover;
-        this.redirect = redirect;
-        this.isVisible = isVisible;
-        this.skills = skills;
-        this.madeWith = madeWith;
+    constructor(content) {
         this.content = content;
-        this.style = style;
     }
 }
 

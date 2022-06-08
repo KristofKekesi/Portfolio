@@ -39,7 +39,7 @@ export default async (req, res) => {
 	}
 	if (skill != undefined) {
 		imports.push('"article_skills"');
-		selectorQueries.push('("article_skills"."skillID" = ' + skill + ' AND "articles"."id" = "article_skills"."articleID")');
+		selectorQueries.push('("article_skills"."skills" = ' + skill + ' AND "articles"."id" = "article_skills"."articleID")');
 	}
 	if (tool != undefined) {
 		imports.push('"article_tools"');
@@ -59,14 +59,14 @@ export default async (req, res) => {
 		const mainResult = await conn.query(mainQuery);
 
 		for (let i = 0; i < mainResult.rows.length; i++) {
-			mainResult.rows[i].skillIDs = [];
+			mainResult.rows[i].skills = [];
 			mainResult.rows[i].toolIDs  = [];
 
 			// Skills
 			const skillsSideQuery = "SELECT * FROM article_skills WHERE \"articleID\" = " + mainResult.rows[i].id + ";";
 			const skillsSideResult = await conn.query(skillsSideQuery);
 			for (let j = 0; j < skillsSideResult.rows.length; j++) {
-				mainResult.rows[i].skillIDs.push(skillsSideResult.rows[j].skillID);
+				mainResult.rows[i].skills.push(skillsSideResult.rows[j].skill);
 			}
 
 			// Tools

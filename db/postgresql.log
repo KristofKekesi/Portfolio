@@ -1283,3 +1283,50 @@
 2022-06-07 22:41:10.099 CEST [96440] ERROR:  column "redirect" of relation "articles" contains null values
 2022-06-07 22:41:10.099 CEST [96440] STATEMENT:  alter table articles
 	    alter column redirect set not null
+2022-06-08 20:37:58.849 CEST [3680] ERROR:  foreign key constraint "article_skills_skillID_fk" cannot be implemented
+2022-06-08 20:37:58.849 CEST [3680] DETAIL:  Key columns "skillID" and "id" are of incompatible types: character varying and integer.
+2022-06-08 20:37:58.849 CEST [3680] STATEMENT:  alter table article_skills
+	    alter column "skillID" type varchar using "skillID"::varchar
+2022-06-08 21:26:44.755 CEST [4208] ERROR:  duplicate key value violates unique constraint "article_skills2_pk"
+2022-06-08 21:26:44.755 CEST [4208] DETAIL:  Key ("articleID")=(6) already exists.
+2022-06-08 21:26:44.755 CEST [4208] STATEMENT:  INSERT INTO public.article_skills ("articleID", skill) VALUES ($1::integer, $2::varchar)
+2022-06-08 21:40:15.805 CEST [4180] ERROR:  cannot drop index article_skills2_pk because constraint article_skills2_pk on table article_skills requires it
+2022-06-08 21:40:15.805 CEST [4180] HINT:  You can drop constraint article_skills2_pk on table article_skills instead.
+2022-06-08 21:40:15.805 CEST [4180] STATEMENT:  drop index article_skills2_pk
+2022-06-08 21:40:20.252 CEST [4180] ERROR:  cannot drop index article_skills2_pk because constraint article_skills2_pk on table article_skills requires it
+2022-06-08 21:40:20.252 CEST [4180] HINT:  You can drop constraint article_skills2_pk on table article_skills instead.
+2022-06-08 21:40:20.252 CEST [4180] STATEMENT:  drop index article_skills2_pk
+2022-06-08 21:40:37.817 CEST [4180] ERROR:  cannot drop index article_skills2_pk because constraint article_skills2_pk on table article_skills requires it
+2022-06-08 21:40:37.817 CEST [4180] HINT:  You can drop constraint article_skills2_pk on table article_skills instead.
+2022-06-08 21:40:37.817 CEST [4180] STATEMENT:  drop index article_skills2_pk
+2022-06-08 21:40:45.850 CEST [4180] ERROR:  cannot drop index article_skills2_pk because constraint article_skills2_pk on table article_skills requires it
+2022-06-08 21:40:45.850 CEST [4180] HINT:  You can drop constraint article_skills2_pk on table article_skills instead.
+2022-06-08 21:40:45.850 CEST [4180] STATEMENT:  drop index article_skills2_pk
+2022-06-08 21:41:01.895 CEST [4180] ERROR:  cannot drop index article_skills2_pk because constraint article_skills2_pk on table article_skills requires it
+2022-06-08 21:41:01.895 CEST [4180] HINT:  You can drop constraint article_skills2_pk on table article_skills instead.
+2022-06-08 21:41:01.895 CEST [4180] STATEMENT:  drop index article_skills2_pk
+2022-06-08 22:03:10.035 CEST [4180] ERROR:  foreign key constraint "project_skills_skillID_fk" cannot be implemented
+2022-06-08 22:03:10.035 CEST [4180] DETAIL:  Key columns "skillID" and "id" are of incompatible types: character varying and integer.
+2022-06-08 22:03:10.035 CEST [4180] STATEMENT:  alter table project_skills
+	    alter column "skillID" type varchar using "skillID"::varchar
+2022-06-08 22:03:19.893 CEST [4180] ERROR:  foreign key constraint "project_skills_skillID_fk" cannot be implemented
+2022-06-08 22:03:19.893 CEST [4180] DETAIL:  Key columns "skillID" and "id" are of incompatible types: character varying and integer.
+2022-06-08 22:03:19.893 CEST [4180] STATEMENT:  alter table project_skills
+	    alter column "skillID" type varchar using "skillID"::varchar
+2022-06-08 22:03:24.853 CEST [4180] ERROR:  foreign key constraint "project_skills_skillID_fk" cannot be implemented
+2022-06-08 22:03:24.853 CEST [4180] DETAIL:  Key columns "skillID" and "id" are of incompatible types: character varying and integer.
+2022-06-08 22:03:24.853 CEST [4180] STATEMENT:  alter table project_skills
+	    alter column "skillID" type varchar using "skillID"::varchar
+2022-06-08 22:03:25.510 CEST [4180] ERROR:  foreign key constraint "project_skills_skillID_fk" cannot be implemented
+2022-06-08 22:03:25.510 CEST [4180] DETAIL:  Key columns "skillID" and "id" are of incompatible types: character varying and integer.
+2022-06-08 22:03:25.510 CEST [4180] STATEMENT:  alter table project_skills
+	    alter column "skillID" type varchar using "skillID"::varchar
+2022-06-08 22:03:25.903 CEST [4180] ERROR:  foreign key constraint "project_skills_skillID_fk" cannot be implemented
+2022-06-08 22:03:25.903 CEST [4180] DETAIL:  Key columns "skillID" and "id" are of incompatible types: character varying and integer.
+2022-06-08 22:03:25.903 CEST [4180] STATEMENT:  alter table project_skills
+	    alter column "skillID" type varchar using "skillID"::varchar
+2022-06-08 23:04:55.211 CEST [52837] LOG:  received fast shutdown request
+2022-06-08 23:04:55.212 CEST [52837] LOG:  aborting any active transactions
+2022-06-08 23:04:55.215 CEST [52837] LOG:  background worker "logical replication launcher" (PID 52844) exited with exit code 1
+2022-06-08 23:04:55.217 CEST [52839] LOG:  shutting down
+2022-06-08 23:04:55.228 CEST [52837] LOG:  database system is shut down

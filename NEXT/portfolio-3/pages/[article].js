@@ -1,5 +1,27 @@
+import React from 'react';
+
+import Script from 'next/script';
+import Head from 'next/head';
+
+import Article from '../components/Article/Article';
+import Navbar from '../components/Navbar/Navbar';
+import Cursor from '../components/Cursor/Cursor';
+import Dock from '../components/Dock/Dock';
+import Footer from '../components/Footer/Footer';
+
+import navbarToggle from '../functions/navbar.js';
+import cursorSetup from '../functions/cursor.js';
+
 import { server } from "../config";
-import Article from "../components/Article/Article";
+
+
+
+//    TURTLE - TEKI
+//    (°-°) _______
+//      \ \/ - - - \_
+//       \_  ___  ___>
+//         \__) \__)
+
 
 export const getStaticPaths = async () => {
 	const response = await fetch(server + "/api/articles");
@@ -10,7 +32,6 @@ export const getStaticPaths = async () => {
 	for (let i = 0; i < articles.length; i++) {
 		paths.push(articles[i].redirect || articles[i].id);
 	}
-	console.log(paths);
 
 	return {
 		paths: [],
@@ -18,14 +39,66 @@ export const getStaticPaths = async () => {
 	}
 }
 
-export default function ArticlePage({ props }) {
-	console.log(props.content)
+export default function ArticlePage({ props, tools }) {
+	const keywords = ["Kristóf Kékesi"];
+	keywords.push.apply(keywords, props.skills);
+	keywords.push.apply(keywords, tools);
+
 	return (
-	<main>
-		<Article url={server + "/" + props.content}/>
-		from {server + "/" + props.content}<br />
-		{props.name}
-	</main>
+		<>	
+			<Head>
+				<meta charSet="utf-8" />
+
+				<link rel="icon" href={server + "/favicon.png"} />
+
+				<meta name="viewport" content="width=device-width, initial-scale=1" />
+				<meta name="theme-color" content="#ffffff" />
+
+				<meta name="author" content="Kristóf Kékesi" />
+				<meta name="description" content={ props.description.replace( /(<([^>]+)>)/ig, '') } />
+				<meta name="keywords" content={ keywords.join(",") }/>
+
+				<meta name="twitter:card" content="summary" />
+				<meta name="twitter:site" content="@KristofKekesi" />
+				<meta name="twitter:title" content="Kristóf Kékesi" />
+				<meta name="twitter:description" content={ props.description.replace( /(<([^>]+)>)/ig, '') } />
+				<meta name="twitter:image" content={server + "/opengraph.jpg"}/>
+
+				<meta name="og:url" content={ server } />
+				<meta name="og:type" content="website" />
+				<meta name="og:description" content={ props.description.replace( /(<([^>]+)>)/ig, '') } />
+				<meta name="og:image" content={ server + "/opengraph.jpg" } />
+
+				<link rel="apple-touch-icon" href={server + "/favicon.png"} />
+				{//<link rel="manifest" href={server + "/manifest.json"} />
+				}
+
+				<Script async="" src="https://www.googletagmanager.com/gtag/js?id=G-NMTQ12KGY9"></Script>
+
+				<title>{ props.name.replace( /(<([^>]+)>)/ig, '') }</title>
+			</Head>
+
+
+			<Navbar />
+
+			<main>
+				<center className="w-full bg-cover" style={{paddingTop: "150px", paddingBottom: "75px", backgroundImage: `url('bg.jpeg')`}}>
+					<div className="w-max">
+					<h1
+						className="text-white text-7xl font-bold text-left font-interBold"
+						style={{paddingTop: "0vh", textShadow: "6px 6px 12px rgba(0, 0, 0, .5)"}}
+						dangerouslySetInnerHTML={{__html: props.name.replace( /(<([^>]+)>)/ig, '')}}
+					></h1>
+					</div>
+				</center>
+				<Article url={server + "/" + props.content} />
+			</main>
+
+			<Dock />
+			<Footer />
+
+			<Cursor />
+		</>
 	);
 }
 
@@ -35,7 +108,15 @@ export const getStaticProps = async ( params ) => {
 	console.log(article);
 	console.log(params);
 
+	const tools = [];
+	for (let i = 0; i < article[0].toolIDs.length; i++) {
+		console.log(article[0].toolIDs[i]);
+		const response = await fetch(server + "/api/tool?id=" + article[0].toolIDs[i]);
+		const tool = await response.json();
+		tools.push(tool.name);
+	}
+
 	return {
-		props: { props: article[0] },
+		props: { props: article[0], tools: tools},
 	};
 };
