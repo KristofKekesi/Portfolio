@@ -61,7 +61,7 @@ function ArticlePreviewSmoll(props) {
                 style={props.style}
                 className="article-preview-smoll target font-bold"
             >
-                <Link href={ linkURL }>
+                <a href={ linkURL }>
                     <div className="article-preview-link-smoll flex w-full h-full bg-secondaryLight">
                         <img
                             className="w-28 h-28 bg-cover"
@@ -75,7 +75,7 @@ function ArticlePreviewSmoll(props) {
                             />
                         </div>
                     </div>
-                </Link>
+                </a>
             </article>
         );
     } else {

@@ -1,4 +1,4 @@
-import React from 'react';
+import {useEffect} from 'react';
 
 import Script from 'next/script';
 import Head from 'next/head';
@@ -26,7 +26,6 @@ import { server } from "../config";
 export const getStaticPaths = async () => {
 	const response = await fetch(server + "/api/articles");
 	const articles = await response.json();
-	console.log(articles);
 
 	const paths = [];
 	for (let i = 0; i < articles.length; i++) {
@@ -39,10 +38,17 @@ export const getStaticPaths = async () => {
 	}
 }
 
-export default function ArticlePage({ props, tools }) {
+export default function ArticlePage({ props }) {
 	const keywords = ["Kristóf Kékesi"];
 	keywords.push.apply(keywords, props.skills);
-	keywords.push.apply(keywords, tools);
+	for (let i = 0; i < props.tools.length; i++) {
+		keywords.push(props.tools[i].name);
+	}
+
+	useEffect(() => {
+		navbarToggle();
+		cursorSetup();
+	} , []);
 
 	return (
 		<>	
@@ -105,18 +111,8 @@ export default function ArticlePage({ props, tools }) {
 export const getStaticProps = async ( params ) => {
 	const response = await fetch(server + "/api/articles?redirect=" + params.params.article);
 	const article = await response.json();
-	console.log(article);
-	console.log(params);
-
-	const tools = [];
-	for (let i = 0; i < article[0].toolIDs.length; i++) {
-		console.log(article[0].toolIDs[i]);
-		const response = await fetch(server + "/api/tool?id=" + article[0].toolIDs[i]);
-		const tool = await response.json();
-		tools.push(tool.name);
-	}
 
 	return {
-		props: { props: article[0], tools: tools},
+		props: { props: article[0]},
 	};
 };

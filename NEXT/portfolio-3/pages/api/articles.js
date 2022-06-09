@@ -1,5 +1,15 @@
 import { Pool } from "pg";
 
+import { server } from "../../config";
+
+
+//    TURTLE - TEKI
+//    (°-°) _______
+//      \ \/ - - - \_
+//       \_  ___  ___>
+//         \__) \__)
+
+
 let conn;
 
 if (!conn) {
@@ -17,7 +27,7 @@ export default async (req, res) => {
         query: { id, name, redirect, isVisible, content, skill, tool },
         method,
     } = req;
-    console.log("ID: " + id + " Name: " + name + " Redirect: " + redirect + " IsVisible: " + isVisible + " Content: " + content + " Skill: " + skill + " Tool: " + tool);
+    //console.log("ID: " + id + " Name: " + name + " Redirect: " + redirect + " IsVisible: " + isVisible + " Content: " + content + " Skill: " + skill + " Tool: " + tool);
 
 	let imports = ['"articles"'];
 	let selectorQueries = [];
@@ -55,26 +65,77 @@ export default async (req, res) => {
 
 	try {
 		const mainQuery = 'SELECT "articles".* ' + imports + ' ' + selectorQueries + ';';
-		console.log(mainQuery);
+		//console.log(mainQuery);
+
 		const mainResult = await conn.query(mainQuery);
 
 		for (let i = 0; i < mainResult.rows.length; i++) {
 			mainResult.rows[i].skills = [];
-			mainResult.rows[i].toolIDs  = [];
+			mainResult.rows[i].tools  = [];
 
 			// Skills
-			const skillsSideQuery = "SELECT * FROM article_skills WHERE \"articleID\" = " + mainResult.rows[i].id + ";";
+			const skillsSideQuery = "SELECT * FROM article_skills WHERE \"articleID\" = " + mainResult.rows[i].id + " ORDER BY \"skill\";";
 			const skillsSideResult = await conn.query(skillsSideQuery);
 			for (let j = 0; j < skillsSideResult.rows.length; j++) {
 				mainResult.rows[i].skills.push(skillsSideResult.rows[j].skill);
 			}
 
 			// Tools
-			const toolsSideQuery = "SELECT * FROM article_tools WHERE \"articleID\" = " + mainResult.rows[i].id + ";";
+			const toolsSideQuery = "SELECT * FROM article_tools WHERE \"articleID\" = " + mainResult.rows[i].id + " ORDER BY \"toolID\";";
 			const toolsSideResult = await conn.query(toolsSideQuery);
 			for (let j = 0; j < toolsSideResult.rows.length; j++) {
-				mainResult.rows[i].toolIDs.push(toolsSideResult.rows[j].toolID);
+				const toolSideQuery = "SELECT * FROM tools WHERE \"id\" = " + toolsSideResult.rows[j].toolID + ";";
+				const toolSideResult = await conn.query(toolSideQuery);
+
+				const tool = toolSideResult.rows[0]
+				delete tool.id;
+
+				mainResult.rows[i].tools.push(tool);
 			}
+
+			// Cover
+			const coverQuery = "SELECT * FROM images WHERE \"id\" = " + mainResult.rows[i].coverID + ";";
+
+			const coverResult = await conn.query(coverQuery);
+
+			const cover = coverResult.rows[0]
+			delete cover.id;
+			mainResult.rows[i].cover = cover;
+
+			delete mainResult.rows[i].coverID;
+
+			// Content
+			const contentResponse = await fetch(server + "/" + mainResult.rows[i].content);
+			const content = await contentResponse.json();
+
+			for (let j = 0; j < content.length; j++) {
+				if (content[j].type == "article-preview-smoll") {
+					console.log("Article preview smoll");
+					//TODO: Article preview smoll
+				} else if (content[j].type == "article-preview-big") {
+					console.log("Article preview big");
+					//TODO: Article preview big
+				} else if (content[j].type == "gallery") {
+					console.log("Gallery");
+					//TODO: Gallery
+				} else if (content[j].type == "section") {
+					for (let k = 0; k < content[j].content.length; k++) {
+						if (content[j].content[k].type == "article-preview-smoll") {
+							console.log("Article preview smoll");
+							//TODO: Article preview smoll
+						} else if (content[j].content[k].type == "article-preview-big") {
+							console.log("Article preview big");
+							//TODO: Article preview big
+						} else if (content[j].content[k].type == "gallery") {
+							console.log("Gallery");
+							//TODO: Gallery
+						}
+					}
+					//TODO: Section
+				}
+			}
+
+			mainResult.rows[i].content = content;
 
 			if (i === mainResult.rows.length - 1) {
 				return res.status(200).json(mainResult.rows);

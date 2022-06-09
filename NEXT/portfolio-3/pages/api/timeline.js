@@ -1,5 +1,13 @@
 import { Pool } from "pg";
 
+
+//    TURTLE - TEKI
+//    (°-°) _______
+//      \ \/ - - - \_
+//       \_  ___  ___>
+//         \__) \__)
+
+
 let conn;
 
 if (!conn) {
@@ -17,7 +25,7 @@ export default async (req, res) => {
         query: { id },
         method,
     } = req;
-	console.log("ID: " + id);
+	//console.log("ID: " + id);
 
 	let selectorQueries = [];
 
@@ -33,6 +41,8 @@ export default async (req, res) => {
 
 	try {
         const mainQuery = 'SELECT * FROM "timeline"' + selectorQueries + ';';
+		//console.log(mainQuery);
+
 		const mainResult = await conn.query(mainQuery);
 
 		for (let i = 0; i < mainResult.rows.length; i++) {

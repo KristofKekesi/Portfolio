@@ -58,7 +58,7 @@ function ArticlePreviewBig(props) {
 
         return(
             <article style={props.style} className="article-preview-big target w-96 flex flex-col bg-secondaryLight font-bold"> 
-                <Link href={ linkURL }>
+                <a href={ linkURL }>
                     <div className="w-full h-full bg-secondaryLight">
                         <img
                             className="max-w-full max-h-96"
@@ -74,7 +74,7 @@ function ArticlePreviewBig(props) {
                             dangerouslySetInnerHTML={{ __html: article.description }}
                         />
                     </div>
-                </Link>
+                </a>
             </article>
         );
     } else {

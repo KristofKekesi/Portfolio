@@ -34,9 +34,9 @@ export default function Footer() {
                     <li>
                         Policies
                         <ul>
-                            <li><Link href="/generalprivacypolicy">
-                                <a className="target">Privacy Policy</a>
-                            </Link></li>
+                            <li>
+                                <a href="/generalprivacypolicy" className="target">Privacy Policy</a>
+                            </li>
                         </ul>
                     </li>
                     <li id="copyright" className="hidden">

@@ -1,5 +1,13 @@
 import { Pool } from "pg";
 
+
+//    TURTLE - TEKI
+//    (°-°) _______
+//      \ \/ - - - \_
+//       \_  ___  ___>
+//         \__) \__)
+
+
 let conn;
 
 if (!conn) {
@@ -17,7 +25,7 @@ export default async (req, res) => {
         query: { id },
         method,
     } = req;
-	console.log("ID: " + id);
+	//console.log("ID: " + id);
 
 	let selectorQueries = [];
 
@@ -33,6 +41,8 @@ export default async (req, res) => {
 
 	try {
         const mainQuery = 'SELECT * FROM "tools"' + selectorQueries + ';';
+		//console.log(mainQuery);
+		
 		const mainResult = await conn.query(mainQuery);
 
 		for (let i = 0; i < mainResult.rows.length; i++) {
@@ -43,6 +53,6 @@ export default async (req, res) => {
 		return res.status(404).json("No results found");
 
 	} catch ( error ) {
-		console.log( error );
+		//console.log( error );
 	}
 };

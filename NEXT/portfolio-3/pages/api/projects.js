@@ -1,5 +1,13 @@
 import { Pool } from "pg";
 
+
+//    TURTLE - TEKI
+//    (°-°) _______
+//      \ \/ - - - \_
+//       \_  ___  ___>
+//         \__) \__)
+
+
 let conn;
 
 if (!conn) {
@@ -17,7 +25,7 @@ export default async (req, res) => {
         query: { id, name, version, role, platform, bundle, download, skill, tool },
         method,
     } = req;
-    console.log("ID: " + id + " Name: " + name + " Version: " + version + " Role: " + role + " Platform: " + platform + " Bundle: " + bundle + " Download: " + download + " Skill: " + skill + " Tool: " + tool);
+    //console.log("ID: " + id + " Name: " + name + " Version: " + version + " Role: " + role + " Platform: " + platform + " Bundle: " + bundle + " Download: " + download + " Skill: " + skill + " Tool: " + tool);
 
 	let imports = ['"projects"'];
 	let selectorQueries = [];
@@ -65,7 +73,8 @@ export default async (req, res) => {
 
 	try {
 		const mainQuery = 'SELECT "projects".* ' + imports + ' ' + selectorQueries + ';';
-		console.log(mainQuery);
+		//console.log(mainQuery);
+
 		const mainResult = await conn.query(mainQuery);
 
 		for (let i = 0; i < mainResult.rows.length; i++) {

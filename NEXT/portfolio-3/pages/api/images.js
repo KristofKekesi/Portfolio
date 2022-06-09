@@ -1,5 +1,13 @@
 import { Pool } from "pg";
 
+
+//    TURTLE - TEKI
+//    (°-°) _______
+//      \ \/ - - - \_
+//       \_  ___  ___>
+//         \__) \__)
+
+
 let conn;
 
 if (!conn) {
@@ -17,7 +25,7 @@ export default async (req, res) => {
         query: { id, type, copyright },
         method,
     } = req;
-	console.log("ID: " + id + " TYPE: " + type + " COPYRIGHT: " + copyright);
+	//console.log("ID: " + id + " TYPE: " + type + " COPYRIGHT: " + copyright);
 
 	let selectorQueries = [];
 
@@ -39,7 +47,7 @@ export default async (req, res) => {
 
 	try {
         const mainQuery = 'SELECT * FROM "images" ' + selectorQueries + ';';
-		console.log(mainQuery);
+		//console.log(mainQuery);
 
 		const mainResult = await conn.query(mainQuery);
 

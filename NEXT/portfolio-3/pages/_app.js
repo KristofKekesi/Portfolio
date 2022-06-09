@@ -16,6 +16,13 @@ import '../components/MadeWith/MadeWith.css';
 import '../components/Footer/Footer.css';
 
 
+//    TURTLE - TEKI
+//    (°-°) _______
+//      \ \/ - - - \_
+//       \_  ___  ___>
+//         \__) \__)
+
+
 export default function MyApp({ Component, pageProps }) {
   return <Component {...pageProps} />
 }

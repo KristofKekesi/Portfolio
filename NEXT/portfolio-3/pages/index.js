@@ -13,6 +13,14 @@ import favicon from '../public/favicon.png';
 import navbarToggle from '../functions/navbar.js';
 import cursorSetup from '../functions/cursor.js';
 
+
+//    TURTLE - TEKI
+//    (°-°) _______
+//      \ \/ - - - \_
+//       \_  ___  ___>
+//         \__) \__)
+
+
 export default function Home() {
   useEffect(() => {
     navbarToggle();

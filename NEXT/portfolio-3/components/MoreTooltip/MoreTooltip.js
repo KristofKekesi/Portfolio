@@ -14,31 +14,21 @@ function MoreTooltip() {
             <div id="more-tooltip" className="blur-dark fixed right-3 hidden rounded-2xl z-10">
                 <ul>
                     <li>
-                        <Link href="/translations">
-                            <a className="target">Translations</a>
-                        </Link>
+                        <a href="translations" className="target">Translations</a>
                     </li>
                     <li>
-                        <Link href="/photography">
-                            <a className="target">Photography</a>
-                        </Link>
+                        <a href="photography" className="target">Photography</a>
                     </li>
                     {//<li>
-                    //   <Link href="/articles">
-                    //     <a className="target">Articles</a>
-                    //   </Link>
+                    //   <a href="/articles" className="target">Articles</a>
                     //</li>
                     }
                     <hr className="w-full"/>
                     <li>
-                        <Link href="/timeline">
-                            <a className="target">Timeline</a>
-                        </Link>
+                        <a href="/timeline" className="target">Timeline</a>
                     </li>
                     <li>
-                        <Link href="/about">
-                            <a className="target">About</a>
-                        </Link>
+                        <a href="/about" className="target">About</a>
                     </li>
                 </ul>
             </div>

@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import Link from 'next/link';
 
 import projectTooltipPosition from "../../functions/project-tooltip";
 
@@ -74,25 +73,23 @@ export default function DockElement(props) {
 
         let href = "/project?" + project.id.replace("PROJ-", "") + "-" + project.name.replace(/[^a-zA-Z]/g, "");
         return(
-            <Link href={"/#" + href}>
+            <a href={"/#" + href}>
                 <div className="radius24 dock-element target" id={"dock-element-" + project.id}>
                     <center>
                         <img src={image.url} alt={image.name}/>
                         <p className="nowrap basis-full h-0 text-white">{ projectName }</p>
                     </center>
                 </div>
-            </Link>
+            </a>
         );
     } else {
         return (
-            <Link href="#">
-                <div className="radius24 dock-element target" id={"dock-element-" + props.id}>
-                    <center>
-                        <SpinnerLoader color="white"/>
-                        <p className="nowrap basis-full h-0 text-white">Loading...</p>
-                    </center>
-                </div>
-            </Link>
+            <a href="#" className="radius24 dock-element target" id={"dock-element-" + props.id}>
+                <center>
+                    <SpinnerLoader color="white"/>
+                    <p className="nowrap basis-full h-0 text-white">Loading...</p>
+                </center>
+            </a>
         );
     }
 };

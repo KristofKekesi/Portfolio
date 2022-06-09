@@ -13,27 +13,19 @@ export default function NavbarLink(props) {
 
     if (router.pathname === "/" && props.path === "/") {
         return (
-            <Link href={ props.path }>
-                <a className="target text-homeAccentLight font-normal font-interBold md:font-bold">{ props.children }</a>
-            </Link>
+            <a href={ props.path } className="target text-homeAccentLight font-normal font-interBold md:font-bold">{ props.children }</a>
         );
     } else if (router.pathname !== "/" && props.path === "/") {
         return (
-            <Link href={ props.path }>
-                <a className="text-homeAccentLight font-normal font-interBold md:font-bold">{ props.children }</a>
-            </Link>
+            <a href={ props.path } className="text-homeAccentLight font-normal font-interBold md:font-bold">{ props.children }</a>
         );
     } else if (router.pathname === props.path) {
         return (
-            <Link href={ props.path }>
-                <a className="text-white md:text-activeAccentLight font-normal md:font-bold">{ props.children }</a>
-            </Link>
+            <a href={ props.path } className="text-white md:text-activeAccentLight font-normal md:font-bold">{ props.children }</a>
         );
     } else {
         return (
-            <Link href={ props.path }>
-                <a className="target text-white md:text-black">{ props.children }</a>
-            </Link>
+            <a href={ props.path } className="target text-white md:text-black">{ props.children }</a>
         );
     }
 }

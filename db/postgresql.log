@@ -1330,3 +1330,24 @@
 2022-06-08 23:04:55.215 CEST [52837] LOG:  background worker "logical replication launcher" (PID 52844) exited with exit code 1
 2022-06-08 23:04:55.217 CEST [52839] LOG:  shutting down
 2022-06-08 23:04:55.228 CEST [52837] LOG:  database system is shut down
+2022-06-08 23:05:33.397 CEST [7030] LOG:  starting PostgreSQL 14.3 on aarch64-apple-darwin20.6.0, compiled by Apple clang version 12.0.5 (clang-1205.0.22.9), 64-bit
+2022-06-08 23:05:33.403 CEST [7030] LOG:  listening on IPv6 address "::1", port 5432
+2022-06-08 23:05:33.404 CEST [7030] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2022-06-08 23:05:33.405 CEST [7030] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2022-06-08 23:05:33.409 CEST [7031] LOG:  database system was shut down at 2022-06-08 23:04:55 CEST
+2022-06-08 23:05:33.413 CEST [7030] LOG:  database system is ready to accept connections
+2022-06-09 21:30:59.429 CEST [14243] ERROR:  column "id" does not exist at character 61
+2022-06-09 21:30:59.429 CEST [14243] STATEMENT:  SELECT * FROM article_skills WHERE "articleID" = 14ORDER BY id;
+2022-06-09 21:32:16.953 CEST [14295] ERROR:  column "skillID" does not exist at character 61
+2022-06-09 21:32:16.953 CEST [14295] HINT:  Perhaps you meant to reference the column "article_skills.skill".
+2022-06-09 21:32:16.953 CEST [14295] STATEMENT:  SELECT * FROM article_skills WHERE "articleID" = 14ORDER BY "skillID";
+2022-06-09 21:32:26.144 CEST [14306] ERROR:  column "skillID" does not exist at character 62
+2022-06-09 21:32:26.144 CEST [14306] HINT:  Perhaps you meant to reference the column "article_skills.skill".
+2022-06-09 21:32:26.144 CEST [14306] STATEMENT:  SELECT * FROM article_skills WHERE "articleID" = 14 ORDER BY "skillID";
+2022-06-09 22:38:31.528 CEST [7030] LOG:  received fast shutdown request
+2022-06-09 22:38:31.529 CEST [7030] LOG:  aborting any active transactions
+2022-06-09 22:38:31.529 CEST [14017] FATAL:  terminating connection due to administrator command
+2022-06-09 22:38:31.529 CEST [14589] FATAL:  terminating connection due to administrator command
+2022-06-09 22:38:31.530 CEST [7030] LOG:  background worker "logical replication launcher" (PID 7037) exited with exit code 1
+2022-06-09 22:38:31.530 CEST [7032] LOG:  shutting down
+2022-06-09 22:38:31.536 CEST [7030] LOG:  database system is shut down
