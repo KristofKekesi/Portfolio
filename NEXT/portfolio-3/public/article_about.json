@@ -25,7 +25,7 @@
     },
     {
         "type": "article-preview-smoll",
-        "IDs": ["ARTICLE-1"]
+        "articleIDs": [2]
     },
     {
         "type": "text-subtitle",
@@ -37,7 +37,7 @@
     },
     {
         "type": "article-preview-smoll",
-        "IDs": ["ARTICLE-0"]
+        "articleIDs": [1]
     },
     {
         "type": "text-title",

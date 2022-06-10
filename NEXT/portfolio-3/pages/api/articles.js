@@ -64,7 +64,7 @@ export default async (req, res) => {
 	}
 
 	try {
-		const mainQuery = 'SELECT "articles".* ' + imports + ' ' + selectorQueries + ';';
+		const mainQuery = 'SELECT "articles".* ' + imports + ' ' + selectorQueries + ' ORDER BY "articles"."id";';
 		//console.log(mainQuery);
 
 		const mainResult = await conn.query(mainQuery);
@@ -74,7 +74,7 @@ export default async (req, res) => {
 			mainResult.rows[i].tools  = [];
 
 			// Skills
-			const skillsSideQuery = "SELECT * FROM article_skills WHERE \"articleID\" = " + mainResult.rows[i].id + " ORDER BY \"skill\";";
+			const skillsSideQuery = 'SELECT * FROM article_skills WHERE "articleID" = ' + mainResult.rows[i].id + ' ORDER BY "skill";';
 			const skillsSideResult = await conn.query(skillsSideQuery);
 			for (let j = 0; j < skillsSideResult.rows.length; j++) {
 				mainResult.rows[i].skills.push(skillsSideResult.rows[j].skill);
@@ -108,30 +108,48 @@ export default async (req, res) => {
 			const contentResponse = await fetch(server + "/" + mainResult.rows[i].content);
 			const content = await contentResponse.json();
 
+			async function setArticlePreviewSmoll(articlePreviewSmoll) {
+				console.log("ArticlePreviewSmoll: " + JSON.stringify(articlePreviewSmoll));
+
+				for (let j = 0; j < articlePreviewSmoll.IDs.length; j++) {
+					const articleQuery = 'SELECT * FROM "articles" WHERE "id" = ' + articlePreviewSmoll.IDs[j] + ';';
+					const articleResult = await conn.query(articleQuery);
+					console.log(articleResult.rows[0]);
+				}
+
+				//TODO
+				return articlePreviewSmoll;
+			}
+			function setArticlePreviewBig(articlePreviewBig) {
+				console.log("ArticlePreviewBig: " + JSON.stringify(articlePreviewBig));
+
+				//TODO
+				return articlePreviewBig;
+			}
+			function setGallery(gallery) {
+				console.log("Gallery: " + JSON.stringify(gallery));
+
+				//TODO
+				return gallery;
+			}
+
 			for (let j = 0; j < content.length; j++) {
 				if (content[j].type == "article-preview-smoll") {
-					console.log("Article preview smoll");
-					//TODO: Article preview smoll
+					content[j] = setArticlePreviewSmoll(content[j]);
 				} else if (content[j].type == "article-preview-big") {
-					console.log("Article preview big");
-					//TODO: Article preview big
+					content[j] = setArticlePreviewBig(content[j]);
 				} else if (content[j].type == "gallery") {
-					console.log("Gallery");
-					//TODO: Gallery
+					content[j] = setGallery(content[j]);
 				} else if (content[j].type == "section") {
 					for (let k = 0; k < content[j].content.length; k++) {
 						if (content[j].content[k].type == "article-preview-smoll") {
-							console.log("Article preview smoll");
-							//TODO: Article preview smoll
+							content[j].content[k] = setArticlePreviewSmoll(content[j].content[k]);
 						} else if (content[j].content[k].type == "article-preview-big") {
-							console.log("Article preview big");
-							//TODO: Article preview big
+							content[j].content[k] = setArticlePreviewBig(content[j].content[k]);
 						} else if (content[j].content[k].type == "gallery") {
-							console.log("Gallery");
-							//TODO: Gallery
+							content[j].content[k] = setGallery(content[j].content[k]);
 						}
 					}
-					//TODO: Section
 				}
 			}
 

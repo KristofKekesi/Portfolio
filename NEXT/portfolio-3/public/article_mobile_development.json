@@ -40,7 +40,7 @@
             },
             {
                 "type": "gallery",
-                "value": ["IMG-31", "IMG-32", "IMG-33", "IMG-34", "IMG-35", "IMG-36"]
+                "imageIDs": [55, 56, 57, 58, 59, 60]
             },
             {
                 "type": "text-subsubtitle",
@@ -52,7 +52,7 @@
             },
             {
                 "type": "gallery",
-                "value": ["IMG-37", "IMG-38", "IMG-39"]
+                "imageIDs": [60, 61, 62]
             },
             {
                 "type": "text-subsubtitle",
@@ -64,7 +64,7 @@
             },
             {
                 "type": "gallery",
-                "value": ["IMG-40", "IMG-41", "IMG-42", "IMG-43", "IMG-44"]
+                "imageIDs": [64, 65, 67, 68]
             }
         ]
     },

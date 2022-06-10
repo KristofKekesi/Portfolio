@@ -1351,3 +1351,32 @@
 2022-06-09 22:38:31.530 CEST [7030] LOG:  background worker "logical replication launcher" (PID 7037) exited with exit code 1
 2022-06-09 22:38:31.530 CEST [7032] LOG:  shutting down
 2022-06-09 22:38:31.536 CEST [7030] LOG:  database system is shut down
+2022-06-10 13:15:32.184 CEST [19107] LOG:  starting PostgreSQL 14.3 on aarch64-apple-darwin20.6.0, compiled by Apple clang version 12.0.5 (clang-1205.0.22.9), 64-bit
+2022-06-10 13:15:32.193 CEST [19107] LOG:  listening on IPv6 address "::1", port 5432
+2022-06-10 13:15:32.193 CEST [19107] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2022-06-10 13:15:32.193 CEST [19107] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2022-06-10 13:15:32.198 CEST [19109] LOG:  database system was shut down at 2022-06-09 22:38:31 CEST
+2022-06-10 13:15:32.201 CEST [19107] LOG:  database system is ready to accept connections
+2022-06-10 13:18:03.747 CEST [19244] ERROR:  column articles.ids does not exist at character 47
+2022-06-10 13:18:03.747 CEST [19244] HINT:  Perhaps you meant to reference the column "articles.id".
+2022-06-10 13:18:03.747 CEST [19244] STATEMENT:  SELECT "articles".* FROM "articles"  ORDER BY "articles"."ids";
+2022-06-10 18:26:51.693 CEST [21743] ERROR:  column "article" does not exist at character 35
+2022-06-10 18:26:51.693 CEST [21743] STATEMENT:  SELECT * FROM images WHERE "id" = ARTICLE-1;
+2022-06-10 18:26:51.705 CEST [21744] ERROR:  column "article" does not exist at character 35
+2022-06-10 18:26:51.705 CEST [21744] STATEMENT:  SELECT * FROM images WHERE "id" = ARTICLE-0;
+2022-06-10 18:35:23.045 CEST [21877] ERROR:  column "article" does not exist at character 35
+2022-06-10 18:35:23.045 CEST [21877] STATEMENT:  SELECT * FROM images WHERE "id" = ARTICLE-1;
+2022-06-10 18:35:23.055 CEST [21878] ERROR:  column "article" does not exist at character 35
+2022-06-10 18:35:23.055 CEST [21878] STATEMENT:  SELECT * FROM images WHERE "id" = ARTICLE-0;
+2022-06-10 18:35:38.585 CEST [21898] ERROR:  column "article" does not exist at character 37
+2022-06-10 18:35:38.585 CEST [21898] STATEMENT:  SELECT * FROM articles WHERE "id" = ARTICLE-1;
+2022-06-10 18:35:38.601 CEST [21902] ERROR:  column "article" does not exist at character 37
+2022-06-10 18:35:38.601 CEST [21902] STATEMENT:  SELECT * FROM articles WHERE "id" = ARTICLE-0;
+2022-06-10 18:42:29.557 CEST [22028] ERROR:  column "article" does not exist at character 37
+2022-06-10 18:42:29.557 CEST [22028] STATEMENT:  SELECT * FROM articles WHERE "id" = ARTICLE-1;
+2022-06-10 18:42:29.563 CEST [22029] ERROR:  column "article" does not exist at character 37
+2022-06-10 18:42:29.563 CEST [22029] STATEMENT:  SELECT * FROM articles WHERE "id" = ARTICLE-0;
+2022-06-10 18:42:57.350 CEST [22062] ERROR:  column "article" does not exist at character 39
+2022-06-10 18:42:57.350 CEST [22062] STATEMENT:  SELECT * FROM "articles" WHERE "id" = ARTICLE-1;
+2022-06-10 18:42:57.364 CEST [22063] ERROR:  column "article" does not exist at character 39
+2022-06-10 18:42:57.364 CEST [22063] STATEMENT:  SELECT * FROM "articles" WHERE "id" = ARTICLE-0;

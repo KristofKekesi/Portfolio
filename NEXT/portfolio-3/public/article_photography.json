@@ -20,11 +20,11 @@
             },
             {
                 "type": "gallery",
-                "value": ["IMG-100", "IMG-92", "IMG-86", "IMG-101"]
+                "imageIDs": [136, 128, 122, 137]
             },
             {
                 "type": "gallery",
-                "value": ["IMG-93", "IMG-81", "IMG-53", "IMG-72"]
+                "imageIDs": [129, 116, 89, 108]
             },
             {
                 "type": "text-subtitle",
@@ -32,7 +32,7 @@
             },
             {
                 "type": "gallery",
-                "value": ["IMG-78", "IMG-89", "IMG-102", "IMG-103"]
+                "value": [114, 125, 138, 139]
             }
         ]
     },
@@ -45,11 +45,11 @@
             },
             {
                 "type": "gallery",
-                "value": ["IMG-51", "IMG-55", "IMG-65", "IMG-84"]
+                "imageIDs": ["IMG-51", "IMG-55", "IMG-65", "IMG-84"]
             },
             {
                 "type": "gallery",
-                "value": ["IMG-74", "IMG-75", "IMG-71"]
+                "imageIDs": ["IMG-74", "IMG-75", "IMG-71"]
             }
         ]
     },
@@ -66,35 +66,35 @@
             },
             {
                 "type": "gallery",
-                "value": ["IMG-59", "IMG-60", "IMG-61", "IMG-80"]
+                "imageIDs": ["IMG-59", "IMG-60", "IMG-61", "IMG-80"]
             },
             {
                 "type": "gallery",
-                "value": ["IMG-83", "IMG-90", "IMG-94"]
+                "imageIDs": ["IMG-83", "IMG-90", "IMG-94"]
             },
             {
                 "type": "gallery",
-                "value": ["IMG-69", "IMG-70", "IMG-64", "IMG-96"]
+                "imageIDs": ["IMG-69", "IMG-70", "IMG-64", "IMG-96"]
             },
             {
                 "type": "text-subtitle",
-                "value": "Plants and Flowers"
+                "imageIDs": "Plants and Flowers"
             },
             {
                 "type": "gallery",
-                "value": ["IMG-76", "IMG-58", "IMG-99" , "IMG-88"]
+                "imageIDs": ["IMG-76", "IMG-58", "IMG-99" , "IMG-88"]
             },
             {
                 "type": "gallery",
-                "value": ["IMG-45", "IMG-46", "IMG-56", "IMG-85", "IMG-104"]
+                "imageIDs": ["IMG-45", "IMG-46", "IMG-56", "IMG-85", "IMG-104"]
             },
             {
                 "type": "gallery",
-                "value": ["IMG-82", "IMG-79", "IMG-87", "IMG-98", "IMG-54"]
+                "imageIDs": ["IMG-82", "IMG-79", "IMG-87", "IMG-98", "IMG-54"]
             },
             {
                 "type": "gallery",
-                "value": ["IMG-62", "IMG-52", "IMG-51", "IMG-57", "IMG-91"]
+                "imageIDs": ["IMG-62", "IMG-52", "IMG-51", "IMG-57", "IMG-91"]
             }
         ]
     },
@@ -107,11 +107,11 @@
             },
             {
                 "type": "gallery",
-                "value": ["IMG-49", "IMG-63", "IMG-66", "IMG-67"]
+                "imageIDs": ["IMG-49", "IMG-63", "IMG-66", "IMG-67"]
             },
             {
                 "type": "gallery",
-                "value": ["IMG-68", "IMG-73", "IMG-95", "IMG-97"]
+                "imageIDs": ["IMG-68", "IMG-73", "IMG-95", "IMG-97"]
             }
         ]
     },
