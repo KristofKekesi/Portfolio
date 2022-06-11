@@ -32,7 +32,7 @@
             },
             {
                 "type": "gallery",
-                "value": [114, 125, 138, 139]
+                "imageIDs": [114, 125, 138, 139]
             }
         ]
     },
@@ -45,11 +45,11 @@
             },
             {
                 "type": "gallery",
-                "imageIDs": ["IMG-51", "IMG-55", "IMG-65", "IMG-84"]
+                "imageIDs": [87, 91, 101, 120]
             },
             {
                 "type": "gallery",
-                "imageIDs": ["IMG-74", "IMG-75", "IMG-71"]
+                "imageIDs": [110, 111, 107]
             }
         ]
     },
@@ -66,15 +66,15 @@
             },
             {
                 "type": "gallery",
-                "imageIDs": ["IMG-59", "IMG-60", "IMG-61", "IMG-80"]
+                "imageIDs": [95, 96, 97, 117]
             },
             {
                 "type": "gallery",
-                "imageIDs": ["IMG-83", "IMG-90", "IMG-94"]
+                "imageIDs": [119, 126, 131]
             },
             {
                 "type": "gallery",
-                "imageIDs": ["IMG-69", "IMG-70", "IMG-64", "IMG-96"]
+                "imageIDs": [105, 106, 100, 132]
             },
             {
                 "type": "text-subtitle",
@@ -82,19 +82,19 @@
             },
             {
                 "type": "gallery",
-                "imageIDs": ["IMG-76", "IMG-58", "IMG-99" , "IMG-88"]
+                "imageIDs": [112, 94, 135 , 124]
             },
             {
                 "type": "gallery",
-                "imageIDs": ["IMG-45", "IMG-46", "IMG-56", "IMG-85", "IMG-104"]
+                "imageIDs": [81, 82, 92, 121, 140]
             },
             {
                 "type": "gallery",
-                "imageIDs": ["IMG-82", "IMG-79", "IMG-87", "IMG-98", "IMG-54"]
+                "imageIDs": [118, 115, 123, 134, 90]
             },
             {
                 "type": "gallery",
-                "imageIDs": ["IMG-62", "IMG-52", "IMG-51", "IMG-57", "IMG-91"]
+                "imageIDs": [98, 88, 87, 93, 127]
             }
         ]
     },
@@ -107,11 +107,11 @@
             },
             {
                 "type": "gallery",
-                "imageIDs": ["IMG-49", "IMG-63", "IMG-66", "IMG-67"]
+                "imageIDs": [85, 99, 102, 103]
             },
             {
                 "type": "gallery",
-                "imageIDs": ["IMG-68", "IMG-73", "IMG-95", "IMG-97"]
+                "imageIDs": [104, 109, 130, 133]
             }
         ]
     },

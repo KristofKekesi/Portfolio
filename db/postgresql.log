@@ -1380,3 +1380,5 @@
 2022-06-10 18:42:57.350 CEST [22062] STATEMENT:  SELECT * FROM "articles" WHERE "id" = ARTICLE-1;
 2022-06-10 18:42:57.364 CEST [22063] ERROR:  column "article" does not exist at character 39
 2022-06-10 18:42:57.364 CEST [22063] STATEMENT:  SELECT * FROM "articles" WHERE "id" = ARTICLE-0;
+2022-06-11 17:50:30.216 CEST [31537] ERROR:  syntax error at or near "[" at character 39
+2022-06-11 17:50:30.216 CEST [31537] STATEMENT:  SELECT * FROM "articles" WHERE "id" = [object Object];

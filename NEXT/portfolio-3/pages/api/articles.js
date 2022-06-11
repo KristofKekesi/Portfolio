@@ -1,6 +1,4 @@
-import { Pool } from "pg";
-
-import { server } from "../../config";
+import conn, { server } from "../../config";
 
 
 //    TURTLE - TEKI
@@ -9,18 +7,6 @@ import { server } from "../../config";
 //       \_  ___  ___>
 //         \__) \__)
 
-
-let conn;
-
-if (!conn) {
-	conn = new Pool({
-		user: "kristofkekesi",
-		password: "",
-		host: "localhost",
-		port: 5432,
-		database: "portfolio",
-	});
-}
 
 export default async (req, res) => {
     const {
@@ -109,45 +95,70 @@ export default async (req, res) => {
 			const content = await contentResponse.json();
 
 			async function setArticlePreviewSmoll(articlePreviewSmoll) {
-				console.log("ArticlePreviewSmoll: " + JSON.stringify(articlePreviewSmoll));
+				articlePreviewSmoll.articles = [];
 
-				for (let j = 0; j < articlePreviewSmoll.IDs.length; j++) {
-					const articleQuery = 'SELECT * FROM "articles" WHERE "id" = ' + articlePreviewSmoll.IDs[j] + ';';
+				for (let j = 0; j < articlePreviewSmoll.articleIDs.length; j++) {
+					const articleQuery = 'SELECT * FROM "articles" WHERE "id" = ' + articlePreviewSmoll.articleIDs[j] + ';';
 					const articleResult = await conn.query(articleQuery);
-					console.log(articleResult.rows[0]);
+
+					const article = articleResult.rows[0];
+					delete article.content;
+
+					articlePreviewSmoll.articles.push(article);
 				}
 
-				//TODO
+				delete articlePreviewSmoll.articleIDs;
 				return articlePreviewSmoll;
 			}
-			function setArticlePreviewBig(articlePreviewBig) {
-				console.log("ArticlePreviewBig: " + JSON.stringify(articlePreviewBig));
 
-				//TODO
+			async function setArticlePreviewBig(articlePreviewBig) {
+				articlePreviewBig.articles = [];
+
+				for (let j = 0; j < articlePreviewBig.articleIDs.length; j++) {
+					const articleQuery = 'SELECT * FROM "articles" WHERE "id" = ' + articlePreviewBig.articleIDs[j] + ';';
+					const articleResult = await conn.query(articleQuery);
+
+					const article = articleResult.rows[0];
+					delete article.content;
+					
+					articlePreviewBig.articles.push(article);
+				}
+
+				delete articlePreviewBig.articleIDs;
 				return articlePreviewBig;
 			}
-			function setGallery(gallery) {
-				console.log("Gallery: " + JSON.stringify(gallery));
 
-				//TODO
+			async function setGallery(gallery) {
+				gallery.images = [];
+				for (let j = 0; j < gallery.imageIDs.length; j++) {
+					const imageQuery = 'SELECT * FROM "images" WHERE "id" = ' + gallery.imageIDs[j] + ';';
+					const imageResult = await conn.query(imageQuery);
+
+					const image = imageResult.rows[0];
+					delete image.id;
+
+					gallery.images.push(image);
+				}
+
+				delete gallery.imageIDs;
 				return gallery;
 			}
 
 			for (let j = 0; j < content.length; j++) {
 				if (content[j].type == "article-preview-smoll") {
-					content[j] = setArticlePreviewSmoll(content[j]);
+					content[j] = await setArticlePreviewSmoll(content[j]);
 				} else if (content[j].type == "article-preview-big") {
-					content[j] = setArticlePreviewBig(content[j]);
+					content[j] = await setArticlePreviewBig(content[j]);
 				} else if (content[j].type == "gallery") {
-					content[j] = setGallery(content[j]);
+					content[j] = await setGallery(content[j]);
 				} else if (content[j].type == "section") {
 					for (let k = 0; k < content[j].content.length; k++) {
 						if (content[j].content[k].type == "article-preview-smoll") {
-							content[j].content[k] = setArticlePreviewSmoll(content[j].content[k]);
+							content[j].content[k] = await setArticlePreviewSmoll(content[j].content[k]);
 						} else if (content[j].content[k].type == "article-preview-big") {
-							content[j].content[k] = setArticlePreviewBig(content[j].content[k]);
+							content[j].content[k] = await setArticlePreviewBig(content[j].content[k]);
 						} else if (content[j].content[k].type == "gallery") {
-							content[j].content[k] = setGallery(content[j].content[k]);
+							content[j].content[k] = await setGallery(content[j].content[k]);
 						}
 					}
 				}
