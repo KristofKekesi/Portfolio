@@ -117,7 +117,7 @@ export const getStaticProps = async ( params ) => {
 	const article = await articleResponse.json();
 
 	//TODO: custom dock elements from articles
-	const dockElementIDs = [0, 1, 4, 12, 5];
+	const dockElementIDs = [1, 2, 5, 9, 6];
 	const dockElements = [];
 	for (let i = 0; i < dockElementIDs.length; i++) {
 		const projectResponse = await fetch(server + "/api/projects?id=" + dockElementIDs[i]);
