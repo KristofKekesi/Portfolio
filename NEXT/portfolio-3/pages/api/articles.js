@@ -1,4 +1,5 @@
-import conn, { server } from "../../config";
+import conn from "../../db";
+import { server } from "../../config";
 
 
 //    TURTLE - TEKI
@@ -22,20 +23,20 @@ export default async (req, res) => {
 		selectorQueries.push('"articles"."id" = ' + id);
 	}
 	if (name != undefined) {
-		selectorQueries.push('"articles"."name" = ' + '\'' + name + '\'');
+		selectorQueries.push('"articles"."name" = \'' + name + '\'');
 	}
 	if (redirect != undefined) {
-		selectorQueries.push('"articles"."redirect" = ' + '\'' + redirect + '\'');
+		selectorQueries.push('"articles"."redirect" = \'' + redirect + '\'');
 	}
 	if (isVisible != undefined) {
 		selectorQueries.push('"articles"."isVisible" = ' + isVisible);
 	}
 	if (content != undefined) {
-		selectorQueries.push('"articles"."content" = ' + '\'' + content + '\'');
+		selectorQueries.push('"articles"."content" = \'' + content + '\'');
 	}
 	if (skill != undefined) {
 		imports.push('"article_skills"');
-		selectorQueries.push('("article_skills"."skills" = ' + skill + ' AND "articles"."id" = "article_skills"."articleID")');
+		selectorQueries.push('("article_skills"."skill" = \'' + skill + '\' AND "articles"."id" = "article_skills"."articleID")');
 	}
 	if (tool != undefined) {
 		imports.push('"article_tools"');
@@ -60,27 +61,39 @@ export default async (req, res) => {
 			mainResult.rows[i].tools  = [];
 
 			// Skills
-			const skillsSideQuery = 'SELECT * FROM article_skills WHERE "articleID" = ' + mainResult.rows[i].id + ' ORDER BY "skill";';
+			const skillsSideQuery = 'SELECT * FROM "article_skills" WHERE "articleID" = ' + mainResult.rows[i].id + ' ORDER BY "skill";';
 			const skillsSideResult = await conn.query(skillsSideQuery);
 			for (let j = 0; j < skillsSideResult.rows.length; j++) {
 				mainResult.rows[i].skills.push(skillsSideResult.rows[j].skill);
 			}
 
 			// Tools
-			const toolsSideQuery = "SELECT * FROM article_tools WHERE \"articleID\" = " + mainResult.rows[i].id + " ORDER BY \"toolID\";";
+			const toolsSideQuery = 'SELECT * FROM "article_tools" WHERE "articleID" = ' + mainResult.rows[i].id + ' ORDER BY "toolID";';
 			const toolsSideResult = await conn.query(toolsSideQuery);
 			for (let j = 0; j < toolsSideResult.rows.length; j++) {
-				const toolSideQuery = "SELECT * FROM tools WHERE \"id\" = " + toolsSideResult.rows[j].toolID + ";";
+				// Tool
+				const toolSideQuery = 'SELECT * FROM "tools" WHERE "id" = ' + toolsSideResult.rows[j].toolID + ';';
 				const toolSideResult = await conn.query(toolSideQuery);
 
-				const tool = toolSideResult.rows[0]
+				const tool = toolSideResult.rows[0];
 				delete tool.id;
+
+				const logoSideQuery = 'SELECT * FROM "images" WHERE "id" = ' + tool.imageID + ';';
+				const logoSideResult = await conn.query(logoSideQuery);
+
+				// Logo
+				const logo = logoSideResult.rows[0];
+				delete logo.id;
+
+				tool.logo = logo;
+				delete tool.imageID;
+
 
 				mainResult.rows[i].tools.push(tool);
 			}
 
 			// Cover
-			const coverQuery = "SELECT * FROM images WHERE \"id\" = " + mainResult.rows[i].coverID + ";";
+			const coverQuery = 'SELECT * FROM "images" WHERE "id" = ' + mainResult.rows[i].coverID + ';';
 
 			const coverResult = await conn.query(coverQuery);
 

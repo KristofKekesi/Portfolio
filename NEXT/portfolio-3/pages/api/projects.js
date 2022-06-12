@@ -1,4 +1,4 @@
-import { Pool } from "pg";
+import conn from "../../db";
 
 
 //    TURTLE - TEKI
@@ -7,18 +7,6 @@ import { Pool } from "pg";
 //       \_  ___  ___>
 //         \__) \__)
 
-
-let conn;
-
-if (!conn) {
-	conn = new Pool({
-		user: "kristofkekesi",
-		password: "",
-		host: "localhost",
-		port: 5432,
-		database: "portfolio",
-	});
-}
 
 export default async (req, res) => {
     const {
@@ -34,10 +22,10 @@ export default async (req, res) => {
 		selectorQueries.push('"projects"."id" = ' + id);
 	}
 	if (name != undefined) {
-		selectorQueries.push('"projects"."name" = ' + '\'' + name + '\'');
+		selectorQueries.push('"projects"."name" = \'' + name + '\'');
 	}
 	if (version != undefined) {
-		selectorQueries.push('"projects"."version" = ' + '\'' + version + '\'');
+		selectorQueries.push('"projects"."version" = \'' + version + '\'');
 	}
 	if (role != undefined) {
 		imports.push('"project_roles"');
@@ -57,7 +45,7 @@ export default async (req, res) => {
 	}
 	if (skill != undefined) {
 		imports.push('"project_skills"');
-		selectorQueries.push('("project_skills"."skillID" = ' + skill + ' AND "projects"."id" = "project_skills"."projectID")');
+		selectorQueries.push('("project_skills"."skill" = \'' + skill + '\' AND "projects"."id" = "project_skills"."projectID")');
 	}
 	if (tool != undefined) {
 		imports.push('"project_tools"');
@@ -72,7 +60,7 @@ export default async (req, res) => {
 	}
 
 	try {
-		const mainQuery = 'SELECT "projects".* ' + imports + ' ' + selectorQueries + ';';
+		const mainQuery = 'SELECT "projects".* ' + imports + ' ' + selectorQueries + ' ORDER BY "projects"."id";';
 		//console.log(mainQuery);
 
 		const mainResult = await conn.query(mainQuery);
@@ -83,18 +71,18 @@ export default async (req, res) => {
 			mainResult.rows[i].platforms = [];
 			mainResult.rows[i].roles = [];
 			mainResult.rows[i].screenshots = [];
-			mainResult.rows[i].skillIDs = [];
-			mainResult.rows[i].toolIDs  = [];
+			mainResult.rows[i].skills = [];
+			mainResult.rows[i].tools  = [];
 
 			// Project Bundles
-			const bundlesSideQuery = "SELECT * FROM project_bundles WHERE \"projectID\" = " + mainResult.rows[i].id;
+			const bundlesSideQuery = 'SELECT * FROM "project_bundles" WHERE "projectID" = ' + mainResult.rows[i].id + ';';
 			const bundlesSideResult = await conn.query(bundlesSideQuery);
 			for (let j = 0; j < bundlesSideResult.rows.length; j++) {
 				mainResult.rows[i].bundleIDs.push(bundlesSideResult.rows[j].bundleID);
 			}
 
 			// Downloads
-			const downloadsSideQuery = "SELECT * FROM project_downloads WHERE \"projectID\" = " + mainResult.rows[i].id;
+			const downloadsSideQuery = 'SELECT * FROM "project_downloads" WHERE "projectID" = ' + mainResult.rows[i].id + ';';
 			const downloadsSideResult = await conn.query(downloadsSideQuery);
 			for (let j = 0; j < downloadsSideResult.rows.length; j++) {
 				delete downloadsSideResult.rows[j].projectID;
@@ -102,39 +90,73 @@ export default async (req, res) => {
 			}
 
 			// Platforms
-			const platformsSideQuery = "SELECT * FROM project_platforms WHERE \"projectID\" = " + mainResult.rows[i].id;
+			const platformsSideQuery = 'SELECT * FROM "project_platforms" WHERE "projectID" = ' + mainResult.rows[i].id + ';';
 			const platformsSideResult = await conn.query(platformsSideQuery);
 			for (let j = 0; j < platformsSideResult.rows.length; j++) {
 				mainResult.rows[i].platforms.push(platformsSideResult.rows[j].platform);
 			}
 
 			// Roles
-			const rolesSideQuery = "SELECT * FROM project_roles WHERE \"projectID\" = " + mainResult.rows[i].id;
+			const rolesSideQuery = 'SELECT * FROM "project_roles" WHERE "projectID" = ' + mainResult.rows[i].id + ';';
 			const rolesSideResult = await conn.query(rolesSideQuery);
 			for (let j = 0; j < rolesSideResult.rows.length; j++) {
 				mainResult.rows[i].roles.push(rolesSideResult.rows[j].role);
 			}
 
 			// Screenshots
-			const screenshotsSideQuery = "SELECT * FROM project_screenshots WHERE \"projectID\" = " + mainResult.rows[i].id;
+			const screenshotsSideQuery = 'SELECT * FROM "project_screenshots" WHERE "projectID" = ' + mainResult.rows[i].id + ';';
 			const screenshotsSideResult = await conn.query(screenshotsSideQuery);
 			for (let j = 0; j < screenshotsSideResult.rows.length; j++) {
-				mainResult.rows[i].screenshots.push(screenshotsSideResult.rows[j].imageID);
+				const screenshotSideQuery = 'SELECT * FROM images WHERE "id" = ' + screenshotsSideResult.rows[j].imageID + ';';
+				const screenshotSideResult = await conn.query(screenshotSideQuery);
+
+				const screenshot = screenshotSideResult.rows[0];
+				delete screenshot.id;
+
+				mainResult.rows[i].screenshots.push(screenshot);
 			}
 
 			// Skills
-			const skillsSideQuery = "SELECT * FROM project_skills WHERE \"projectID\" = " + mainResult.rows[i].id;
+			const skillsSideQuery = 'SELECT * FROM "project_skills" WHERE "projectID" = ' + mainResult.rows[i].id + ';';
 			const skillsSideResult = await conn.query(skillsSideQuery);
 			for (let j = 0; j < skillsSideResult.rows.length; j++) {
-				mainResult.rows[i].skillIDs.push(skillsSideResult.rows[j].skillID);
+				mainResult.rows[i].skills.push(skillsSideResult.rows[j].skill);
 			}
 
 			// Tools
-			const toolsSideQuery = "SELECT * FROM project_tools WHERE \"projectID\" = " + mainResult.rows[i].id;
+			const toolsSideQuery = 'SELECT * FROM "project_tools" WHERE "projectID" = ' + mainResult.rows[i].id + ';';
 			const toolsSideResult = await conn.query(toolsSideQuery);
 			for (let j = 0; j < toolsSideResult.rows.length; j++) {
-				mainResult.rows[i].toolIDs.push(toolsSideResult.rows[j].toolID);
+				// Tool
+				const toolSideQuery = 'SELECT * FROM "tools" WHERE "id" = ' + toolsSideResult.rows[j].toolID + ';';
+				const toolSideResult = await conn.query(toolSideQuery);
+
+				const tool = toolSideResult.rows[0];
+				delete tool.id;
+
+				// Logo
+				const logoSideQuery = 'SELECT * FROM "images" WHERE "id" = ' + tool.imageID + ';';
+				const logoSideResult = await conn.query(logoSideQuery);
+
+				const logo = logoSideResult.rows[0];
+				delete logo.id;
+
+				tool.image = logo;
+				delete tool.imageID;
+
+
+				mainResult.rows[i].tools.push(tool);
 			}
+
+			// Logo
+			const logoSideQuery = 'SELECT * FROM "images" WHERE "id" = ' + mainResult.rows[i].logoID + ';';
+			const logoSideResult = await conn.query(logoSideQuery);
+
+			const logo = logoSideResult.rows[0];
+			delete logo.id;
+
+			mainResult.rows[i].logo = logo;
+			delete mainResult.rows[i].logoID;
 
 			if (i === mainResult.rows.length - 1) {
 				return res.status(200).json(mainResult.rows);

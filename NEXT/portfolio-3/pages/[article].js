@@ -11,6 +11,7 @@ import Footer from '../components/Footer/Footer';
 
 import navbarToggle from '../functions/navbar.js';
 import cursorSetup from '../functions/cursor.js';
+import setImageGalleries from '../functions/image-gallery';
 
 import { server } from "../config";
 
@@ -38,16 +39,19 @@ export const getStaticPaths = async () => {
 	}
 }
 
-export default function ArticlePage({ props }) {
+export default function ArticlePage({ article, dockElements }) {
+	console.log(dockElements);
+
 	const keywords = ["Kristóf Kékesi"];
-	keywords.push.apply(keywords, props.skills);
-	for (let i = 0; i < props.tools.length; i++) {
-		keywords.push(props.tools[i].name);
+	keywords.push.apply(keywords, article.skills);
+	for (let i = 0; i < article.tools.length; i++) {
+		keywords.push(article.tools[i].name);
 	}
 
 	useEffect(() => {
 		navbarToggle();
 		cursorSetup();
+		setImageGalleries();
 	} , []);
 
 	return (
@@ -61,18 +65,18 @@ export default function ArticlePage({ props }) {
 				<meta name="theme-color" content="#ffffff" />
 
 				<meta name="author" content="Kristóf Kékesi" />
-				<meta name="description" content={ props.description.replace( /(<([^>]+)>)/ig, '') } />
+				<meta name="description" content={ article.description.replace( /(<([^>]+)>)/ig, '') } />
 				<meta name="keywords" content={ keywords.join(",") }/>
 
 				<meta name="twitter:card" content="summary" />
 				<meta name="twitter:site" content="@KristofKekesi" />
 				<meta name="twitter:title" content="Kristóf Kékesi" />
-				<meta name="twitter:description" content={ props.description.replace( /(<([^>]+)>)/ig, '') } />
+				<meta name="twitter:description" content={ article.description.replace( /(<([^>]+)>)/ig, '') } />
 				<meta name="twitter:image" content={server + "/opengraph.jpg"}/>
 
 				<meta name="og:url" content={ server } />
 				<meta name="og:type" content="website" />
-				<meta name="og:description" content={ props.description.replace( /(<([^>]+)>)/ig, '') } />
+				<meta name="og:description" content={ article.description.replace( /(<([^>]+)>)/ig, '') } />
 				<meta name="og:image" content={ server + "/opengraph.jpg" } />
 
 				<link rel="apple-touch-icon" href={server + "/favicon.png"} />
@@ -81,7 +85,7 @@ export default function ArticlePage({ props }) {
 
 				<Script async="" src="https://www.googletagmanager.com/gtag/js?id=G-NMTQ12KGY9"></Script>
 
-				<title>{ props.name.replace( /(<([^>]+)>)/ig, '') }</title>
+				<title>{ article.name.replace( /(<([^>]+)>)/ig, '') }</title>
 			</Head>
 
 
@@ -93,11 +97,11 @@ export default function ArticlePage({ props }) {
 					<h1
 						className="text-white text-7xl font-bold text-left font-interBold"
 						style={{paddingTop: "0vh", textShadow: "6px 6px 12px rgba(0, 0, 0, .5)"}}
-						dangerouslySetInnerHTML={{__html: props.name.replace( /(<([^>]+)>)/ig, '')}}
+						dangerouslySetInnerHTML={{__html: article.name.replace( /(<([^>]+)>)/ig, '')}}
 					></h1>
 					</div>
 				</center>
-				<Article url={server + "/" + props.content} />
+				<Article content={article.content} />
 			</main>
 
 			<Dock />
@@ -109,10 +113,20 @@ export default function ArticlePage({ props }) {
 }
 
 export const getStaticProps = async ( params ) => {
-	const response = await fetch(server + "/api/articles?redirect=" + params.params.article);
-	const article = await response.json();
+	const articleResponse = await fetch(server + "/api/articles?redirect=" + params.params.article);
+	const article = await articleResponse.json();
+
+	//TODO: custom dock elements from articles
+	const dockElementIDs = [0, 1, 4, 12, 5];
+	const dockElements = [];
+	for (let i = 0; i < dockElementIDs.length; i++) {
+		const projectResponse = await fetch(server + "/api/projects?id=" + dockElementIDs[i]);
+		const project = await projectResponse.json();
+		console.log(project);
+		dockElements.push(project);
+	}
 
 	return {
-		props: { props: article[0]},
+		props: { article: article[0], dockElements: dockElements},
 	};
 };

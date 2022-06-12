@@ -1,4 +1,4 @@
-import conn from "../../config";
+import conn from "../../db";
 
 
 //    TURTLE - TEKI
@@ -36,7 +36,7 @@ export default async (req, res) => {
 	}
 
 	try {
-        const mainQuery = 'SELECT * FROM ' + imports + ' ' + selectorQueries + ';';
+        const mainQuery = 'SELECT "bundles".* FROM ' + imports + ' ' + selectorQueries + ' ORDER BY "bundles"."id";';
 		//console.log(mainQuery);
 
 		const mainResult = await conn.query(mainQuery);
@@ -45,10 +45,27 @@ export default async (req, res) => {
 			mainResult.rows[i].projects = [];
 
 			// Projects
-			const projectsSideQuery = "SELECT * FROM project_bundles WHERE \"bundleID\" = " + mainResult.rows[i].id + ";";
+			const projectsSideQuery = 'SELECT * FROM "project_bundles" WHERE "bundleID" = ' + mainResult.rows[i].id + ';';
 			const projectsSideResult = await conn.query(projectsSideQuery);
 			for (let j = 0; j < projectsSideResult.rows.length; j++) {
-				mainResult.rows[i].projects.push(projectsSideResult.rows[j].projectID);
+				// Project
+				const projectSideQuery = 'SELECT * FROM "projects" WHERE "id" = ' + projectsSideResult.rows[j].projectID + ';';
+				const projectSideResult = await conn.query(projectSideQuery);
+
+				const project = projectSideResult.rows[0];
+
+				
+				// Logo
+				const logoSideQuery = 'SELECT * FROM "images" WHERE "id" = ' + projectSideResult.rows[0].logoID + ';';
+				const logoSideResult = await conn.query(logoSideQuery);
+
+				const logo = logoSideResult.rows[0];
+				delete logo.id;
+
+				project.logo = logo;
+				delete project.logoID;
+
+				mainResult.rows[i].projects.push(project);
 			}
 
 			if (i === mainResult.rows.length - 1) {

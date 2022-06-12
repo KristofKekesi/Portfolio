@@ -1382,3 +1382,39 @@
 2022-06-10 18:42:57.364 CEST [22063] STATEMENT:  SELECT * FROM "articles" WHERE "id" = ARTICLE-0;
 2022-06-11 17:50:30.216 CEST [31537] ERROR:  syntax error at or near "[" at character 39
 2022-06-11 17:50:30.216 CEST [31537] STATEMENT:  SELECT * FROM "articles" WHERE "id" = [object Object];
+2022-06-12 11:59:27.833 CEST [38678] ERROR:  column article_skills.skills does not exist at character 240
+2022-06-12 11:59:27.833 CEST [38678] HINT:  Perhaps you meant to reference the column "article_skills.skill".
+2022-06-12 11:59:27.833 CEST [38678] STATEMENT:  SELECT "articles".* FROM "articles", "article_skills" WHERE "articles"."id" = 14 AND "articles"."name" = 'About' AND "articles"."redirect" = './about' AND "articles"."isVisible" = False AND "articles"."content" = 'article_about.json' AND ("article_skills"."skills" = 4 AND "articles"."id" = "article_skills"."articleID") ORDER BY "articles"."id";
+2022-06-12 11:59:29.452 CEST [38681] ERROR:  column article_skills.skills does not exist at character 240
+2022-06-12 11:59:29.452 CEST [38681] HINT:  Perhaps you meant to reference the column "article_skills.skill".
+2022-06-12 11:59:29.452 CEST [38681] STATEMENT:  SELECT "articles".* FROM "articles", "article_skills" WHERE "articles"."id" = 14 AND "articles"."name" = 'About' AND "articles"."redirect" = './about' AND "articles"."isVisible" = False AND "articles"."content" = 'article_about.json' AND ("article_skills"."skills" = 4 AND "articles"."id" = "article_skills"."articleID") ORDER BY "articles"."id";
+2022-06-12 12:01:48.976 CEST [38740] ERROR:  column article_skills.skills does not exist at character 240
+2022-06-12 12:01:48.976 CEST [38740] HINT:  Perhaps you meant to reference the column "article_skills.skill".
+2022-06-12 12:01:48.976 CEST [38740] STATEMENT:  SELECT "articles".* FROM "articles", "article_skills" WHERE "articles"."id" = 14 AND "articles"."name" = 'About' AND "articles"."redirect" = './about' AND "articles"."isVisible" = False AND "articles"."content" = 'article_about.json' AND ("article_skills"."skills" = 4 AND "articles"."id" = "article_skills"."articleID") ORDER BY "articles"."id";
+2022-06-12 12:33:15.946 CEST [39252] ERROR:  column article_skills.skills does not exist at character 240
+2022-06-12 12:33:15.946 CEST [39252] HINT:  Perhaps you meant to reference the column "article_skills.skill".
+2022-06-12 12:33:15.946 CEST [39252] STATEMENT:  SELECT "articles".* FROM "articles", "article_skills" WHERE "articles"."id" = 14 AND "articles"."name" = 'About' AND "articles"."redirect" = './about' AND "articles"."isVisible" = False AND "articles"."content" = 'article_about.json' AND ("article_skills"."skills" = 4 AND "articles"."id" = "article_skills"."articleID") ORDER BY "articles"."id";
+2022-06-12 12:33:57.996 CEST [39293] ERROR:  operator does not exist: character varying = integer at character 265
+2022-06-12 12:33:57.996 CEST [39293] HINT:  No operator matches the given name and argument types. You might need to add explicit type casts.
+2022-06-12 12:33:57.996 CEST [39293] STATEMENT:  SELECT "articles".* FROM "articles", "article_skills" WHERE "articles"."id" = 14 AND "articles"."name" = 'About' AND "articles"."redirect" = './about' AND "articles"."isVisible" = False AND "articles"."content" = 'article_about.json' AND ("article_skills"."skill" = 4 AND "articles"."id" = "article_skills"."articleID") ORDER BY "articles"."id";
+2022-06-12 12:36:03.664 CEST [39397] ERROR:  column "About" does not exist at character 106
+2022-06-12 12:36:03.664 CEST [39397] STATEMENT:  SELECT "articles".* FROM "articles", "article_skills" WHERE "articles"."id" = 14 AND "articles"."name" = "About" AND "articles"."redirect" = "./about" AND "articles"."isVisible" = False AND "articles"."content" = "article_about.json" AND ("article_skills"."skill" = "4" AND "articles"."id" = "article_skills"."articleID") ORDER BY "articles"."id";
+2022-06-12 12:54:30.590 CEST [39914] ERROR:  column bundles.bundleID does not exist at character 45
+2022-06-12 12:54:30.590 CEST [39914] STATEMENT:  SELECT "bundles".* FROM "bundles"  ORDER BY "bundles"."bundleID";
+2022-06-12 16:31:54.910 CEST [45413] ERROR:  column "undefined" does not exist at character 35
+2022-06-12 16:31:54.910 CEST [45413] STATEMENT:  SELECT * FROM images WHERE "id" = undefined;
+2022-06-12 16:32:15.307 CEST [45419] ERROR:  column "undefined" does not exist at character 35
+2022-06-12 16:32:15.307 CEST [45419] STATEMENT:  SELECT * FROM images WHERE "id" = undefined;
+2022-06-12 16:32:16.804 CEST [45422] ERROR:  column "undefined" does not exist at character 35
+2022-06-12 16:32:16.804 CEST [45422] STATEMENT:  SELECT * FROM images WHERE "id" = undefined;
+2022-06-12 16:32:39.200 CEST [45448] ERROR:  column "undefined" does not exist at character 35
+2022-06-12 16:32:39.200 CEST [45448] STATEMENT:  SELECT * FROM images WHERE "id" = undefined;
+2022-06-12 16:33:33.468 CEST [45479] ERROR:  column "undefined" does not exist at character 35
+2022-06-12 16:33:33.468 CEST [45479] STATEMENT:  SELECT * FROM images WHERE "id" = undefined;
+2022-06-12 16:33:35.746 CEST [45482] ERROR:  column "undefined" does not exist at character 35
+2022-06-12 16:33:35.746 CEST [45482] STATEMENT:  SELECT * FROM images WHERE "id" = undefined;
+2022-06-12 19:48:08.432 CEST [19107] LOG:  received fast shutdown request
+2022-06-12 19:48:08.433 CEST [19107] LOG:  aborting any active transactions
+2022-06-12 19:48:08.435 CEST [19107] LOG:  background worker "logical replication launcher" (PID 19115) exited with exit code 1
+2022-06-12 19:48:08.436 CEST [19110] LOG:  shutting down
+2022-06-12 19:48:08.453 CEST [19107] LOG:  database system is shut down

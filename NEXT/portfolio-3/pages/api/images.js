@@ -1,4 +1,4 @@
-import { Pool } from "pg";
+import conn from "../../db";
 
 
 //    TURTLE - TEKI
@@ -7,18 +7,6 @@ import { Pool } from "pg";
 //       \_  ___  ___>
 //         \__) \__)
 
-
-let conn;
-
-if (!conn) {
-	conn = new Pool({
-		user: "kristofkekesi",
-		password: "",
-		host: "localhost",
-		port: 5432,
-		database: "portfolio",
-	});
-}
 
 export default async (req, res) => {
 	const {

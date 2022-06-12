@@ -1,9 +1,6 @@
 import Hamburger from '../Hamburger/Hamburger.js';
 import MoreTooltip from "../MoreTooltip/MoreTooltip.js";
 
-import Link from 'next/link';
-import { useRouter } from 'next/router';
-
 import moreTooltipToggle from '../../functions/more-tooltip.js';
 import NavbarLink from './NavbarLink.js';
 
@@ -16,16 +13,6 @@ import NavbarLink from './NavbarLink.js';
 
 
 function Navbar() {
-    function linkStyle(path, additionalClasses) {
-        const router = useRouter();
-        console.log(router.pathname);
-        if (router.pathname === path) {
-            return "active textAccentLight " + additionalClasses;
-        } else {
-            return "inactive target " + additionalClasses;
-        }
-    }
-
     return(
         <>
             <nav className="bg-white text-black visited:text-black top blur-white text-xl fixed flex justify-between items-center w-screen h-16 z-40">
@@ -59,6 +46,7 @@ function Navbar() {
                 </ul>
                 <Hamburger />
             </nav>
+            
             <MoreTooltip/>
         </>
     );

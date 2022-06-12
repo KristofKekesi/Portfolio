@@ -1,4 +1,4 @@
-import { Pool } from "pg";
+import conn from "../../db";
 
 
 //    TURTLE - TEKI
@@ -7,18 +7,6 @@ import { Pool } from "pg";
 //       \_  ___  ___>
 //         \__) \__)
 
-
-let conn;
-
-if (!conn) {
-	conn = new Pool({
-		user: "kristofkekesi",
-		password: "",
-		host: "localhost",
-		port: 5432,
-		database: "portfolio",
-	});
-}
 
 export default async (req, res) => {
 	const {
@@ -46,9 +34,17 @@ export default async (req, res) => {
 		const mainResult = await conn.query(mainQuery);
 
 		for (let i = 0; i < mainResult.rows.length; i++) {
-			if (i === mainResult.rows.length - 1) {
-				return res.status(200).json(mainResult.rows[0]);
-			}
+			// Logo
+			const logoSideQuery = 'SELECT * FROM "images" WHERE "id" = ' + mainResult.rows[i].imageID + ';';
+			const logoSideResult = await conn.query(logoSideQuery);
+			
+			const logo = logoSideResult.rows[0];
+			delete logo.id;
+
+			mainResult.rows[i].logo = logo;
+			delete mainResult.rows[i].imageID;
+
+			return res.status(200).json(mainResult.rows[0]);
 		}
 		return res.status(404).json("No results found");
 

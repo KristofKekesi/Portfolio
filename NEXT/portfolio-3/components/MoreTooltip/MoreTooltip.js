@@ -1,6 +1,3 @@
-import Link from 'next/link';
-
-
 //    TURTLE - TEKI
 //    (°-°) _______
 //      \ \/ - - - \_

@@ -6,7 +6,6 @@
 
 
 function navbarToggle() {
-  console.log("aaaaa");
   // navbar
   document.getElementById("navbar-links").classList.toggle("navbar-links-active");
   // dock

@@ -1,14 +1,16 @@
+//TODO: refactor
+
 //    TURTLE - TEKI
 //    (°-°) _______
 //      \ \/ - - - \_
 //       \_  ___  ___>
 //         \__) \__)
 
-function theAlphaAndTheOmega(galleryId) {
-    window.removeEventListener("resize", function() {setImageGalleries(galleryId)});
-    window.addEventListener("resize", function() {setImageGalleries(galleryId)});
+function finalize(galleryId) {
+    window.removeEventListener("resize", function() {setImageGallery(galleryId)});
+    window.addEventListener("resize", function() {setImageGallery(galleryId)});
 
-    setImageGalleries(galleryId);
+    setImageGallery(galleryId);
 }
 
 function setImageGalleryHeight(galleryId) {
@@ -24,8 +26,16 @@ function setImageGalleryHeight(galleryId) {
 }
 
 
-function setImageGalleries(galleryId) {
-    var galleryImages = document.querySelectorAll("center#" + galleryId +".gallery img");
+function setImageGalleries() {
+    var galleryImages = document.querySelectorAll("center.gallery");
+
+    for (let i = 0; i < galleryImages.length; i++) {
+        finalize(galleryImages[i].id);
+    }
+}
+
+function setImageGallery(id) {
+    var galleryImages = document.querySelectorAll("center#" + id + ".gallery img");
 
     let counter = 0;
     [].forEach.call( galleryImages, function( img ) {
@@ -42,9 +52,9 @@ function setImageGalleries(galleryId) {
     function incrementCounter() {
         counter++;
         if ( counter === galleryImages.length ) {
-            setImageGalleryHeight(galleryId);
+            setImageGalleryHeight(id);
         }
     }
 }
 
-module.exports = theAlphaAndTheOmega;
+module.exports = setImageGalleries;

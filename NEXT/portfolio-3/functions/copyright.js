@@ -34,8 +34,8 @@ function setCopyright(product, name, link) {
 
         content.insertAdjacentHTML("beforeend", "<li><a class='target nowrap' href='" + link + "'>" + finalString +"</a></li>")
         cursorSetup();
-    } catch (e) {
-        console.log(e);
+    } catch (error) {
+        console.log(error);
     }
 }
 

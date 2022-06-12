@@ -1,8 +1,6 @@
-import React, { useState, useEffect } from "react";
-
 import setImageGallery from "../../functions/image-gallery";
 
-import API from '../../api/index';
+import { server } from "../../config";
 
 
 //    TURTLE - TEKI
@@ -13,28 +11,14 @@ import API from '../../api/index';
 
 
 export default function ImageGallery(props) {
-    const [finalContent, setContent] = useState( undefined );
-
-    useEffect(() => {
-        let content = new Array(props.IDs.length);
-        for (let index = 0; index < props.IDs.length; index++) {
-            API.getImage("https://www.kekesi.dev/api/img/" + props.IDs[index] + ".json").then(
-                image => {
-                    content[index] = <div style={{flex: image.width / image.height}} key={index}><img src={image.url} alt={image.name} /></div>;
-
-                    setContent(<>{content}</>);
-                }
-            );
-        }
-    }, [props.IDs]);
-    
-    if(finalContent !== undefined) {
-        return(
-            <center onLoad={setImageGallery("gallery-" + props.dataKey)} id={"gallery-" + props.dataKey} className={"gallery text overflow-hidden flex gap-3 " + props.galleryTag}>{ finalContent }</center>
+    const content = [];
+    for (let i = 0; i < props.images.length; i++) {
+        content.push(
+            <div style={{flex: props.images[i].width / props.images[i].height}} key={i}><img src={server + "/" + props.images[i].path} alt={props.images[i].name} /></div>
         );
-    } else if (finalContent === null) {
-        return(<div className={"gallery text overflow-hidden max-h-64 flex mb-3 gap-3 " + props.galleryTag}>Error loading images</div>);
-    } else {
-        return(<div className={"gallery text overflow-hidden max-h-64 flex mb-3 gap-3" + props.galleryTag}>Loading...</div>)
     }
+
+    return(
+        <center  id={"gallery-" + props.dataKey} className={"gallery text overflow-hidden flex gap-3 " + props.galleryTag}>{ content }</center>
+    );
 };
