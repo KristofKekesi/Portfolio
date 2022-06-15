@@ -1442,3 +1442,9 @@
 2022-06-14 23:57:01.196 CEST [16391] LOG:  background worker "logical replication launcher" (PID 16400) exited with exit code 1
 2022-06-14 23:57:01.196 CEST [16395] LOG:  shutting down
 2022-06-14 23:57:01.203 CEST [16391] LOG:  database system is shut down
+2022-06-15 00:46:03.401 CEST [16907] LOG:  starting PostgreSQL 14.3 on aarch64-apple-darwin20.6.0, compiled by Apple clang version 12.0.5 (clang-1205.0.22.9), 64-bit
+2022-06-15 00:46:03.403 CEST [16907] LOG:  listening on IPv6 address "::1", port 5432
+2022-06-15 00:46:03.403 CEST [16907] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2022-06-15 00:46:03.403 CEST [16907] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2022-06-15 00:46:03.406 CEST [16908] LOG:  database system was shut down at 2022-06-14 23:57:01 CEST
+2022-06-15 00:46:03.408 CEST [16907] LOG:  database system is ready to accept connections
