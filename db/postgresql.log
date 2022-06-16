@@ -1448,3 +1448,27 @@
 2022-06-15 00:46:03.403 CEST [16907] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
 2022-06-15 00:46:03.406 CEST [16908] LOG:  database system was shut down at 2022-06-14 23:57:01 CEST
 2022-06-15 00:46:03.408 CEST [16907] LOG:  database system is ready to accept connections
+2022-06-16 13:14:48.603 CEST [16907] LOG:  received fast shutdown request
+2022-06-16 13:14:48.604 CEST [16907] LOG:  aborting any active transactions
+2022-06-16 13:14:48.606 CEST [16907] LOG:  background worker "logical replication launcher" (PID 16914) exited with exit code 1
+2022-06-16 13:14:48.607 CEST [16909] LOG:  shutting down
+2022-06-16 13:14:48.613 CEST [16907] LOG:  database system is shut down
+2022-06-16 13:15:03.761 CEST [20370] LOG:  starting PostgreSQL 14.3 on aarch64-apple-darwin20.6.0, compiled by Apple clang version 12.0.5 (clang-1205.0.22.9), 64-bit
+2022-06-16 13:15:03.763 CEST [20370] LOG:  listening on IPv6 address "::1", port 5432
+2022-06-16 13:15:03.763 CEST [20370] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2022-06-16 13:15:03.763 CEST [20370] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2022-06-16 13:15:03.769 CEST [20371] LOG:  database system was shut down at 2022-06-16 13:14:48 CEST
+2022-06-16 13:15:03.772 CEST [20370] LOG:  database system is ready to accept connections
+2022-06-16 13:15:23.958 CEST [20370] LOG:  received fast shutdown request
+2022-06-16 13:15:23.958 CEST [20370] LOG:  aborting any active transactions
+2022-06-16 13:15:23.958 CEST [20370] LOG:  background worker "logical replication launcher" (PID 20377) exited with exit code 1
+2022-06-16 13:15:23.959 CEST [20372] LOG:  shutting down
+2022-06-16 13:15:23.963 CEST [20370] LOG:  database system is shut down
+2022-06-16 13:16:59.073 CEST [747] FATAL:  lock file "postmaster.pid" already exists
+2022-06-16 13:16:59.073 CEST [747] HINT:  Is another postmaster (PID 750) running in data directory "/Users/kristofkekesi/Developer/Web/Portfolio/db"?
+2022-06-16 13:16:59.078 CEST [750] LOG:  starting PostgreSQL 14.3 on aarch64-apple-darwin20.6.0, compiled by Apple clang version 12.0.5 (clang-1205.0.22.9), 64-bit
+2022-06-16 13:16:59.110 CEST [750] LOG:  listening on IPv6 address "::1", port 5432
+2022-06-16 13:16:59.110 CEST [750] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2022-06-16 13:16:59.110 CEST [750] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2022-06-16 13:16:59.115 CEST [751] LOG:  database system was shut down at 2022-06-16 13:15:23 CEST
+2022-06-16 13:16:59.120 CEST [750] LOG:  database system is ready to accept connections

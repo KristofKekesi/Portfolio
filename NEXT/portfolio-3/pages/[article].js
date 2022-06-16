@@ -101,13 +101,14 @@ export default function ArticlePage({ article, dockElements }) {
 					></h1>
 					</div>
 				</center>
-				<Article content={article.content} />
+				<Article content={ article.content } />
 			</main>
 
-			<Dock />
+			<Dock elements={ dockElements }/>
 			<Footer />
 
 			<Cursor />
+
 		</>
 	);
 }
