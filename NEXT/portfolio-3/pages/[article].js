@@ -40,8 +40,6 @@ export const getStaticPaths = async () => {
 }
 
 export default function ArticlePage({ article, dockElements }) {
-	console.log(dockElements);
-
 	const keywords = ["Kristóf Kékesi"];
 	keywords.push.apply(keywords, article.skills);
 	for (let i = 0; i < article.tools.length; i++) {

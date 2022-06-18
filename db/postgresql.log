@@ -1472,3 +1472,25 @@
 2022-06-16 13:16:59.110 CEST [750] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
 2022-06-16 13:16:59.115 CEST [751] LOG:  database system was shut down at 2022-06-16 13:15:23 CEST
 2022-06-16 13:16:59.120 CEST [750] LOG:  database system is ready to accept connections
+2022-06-17 14:52:11.865 CEST [750] LOG:  received fast shutdown request
+2022-06-17 14:52:11.866 CEST [750] LOG:  aborting any active transactions
+2022-06-17 14:52:11.867 CEST [750] LOG:  background worker "logical replication launcher" (PID 757) exited with exit code 1
+2022-06-17 14:52:11.867 CEST [752] LOG:  shutting down
+2022-06-17 14:52:11.871 CEST [750] LOG:  database system is shut down
+2022-06-17 14:52:15.089 CEST [6969] LOG:  starting PostgreSQL 14.4 on aarch64-apple-darwin20.6.0, compiled by Apple clang version 12.0.5 (clang-1205.0.22.9), 64-bit
+2022-06-17 14:52:15.101 CEST [6969] LOG:  listening on IPv6 address "::1", port 5432
+2022-06-17 14:52:15.101 CEST [6969] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2022-06-17 14:52:15.102 CEST [6969] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2022-06-17 14:52:15.105 CEST [6970] LOG:  database system was shut down at 2022-06-17 14:52:11 CEST
+2022-06-17 14:52:15.108 CEST [6969] LOG:  database system is ready to accept connections
+2022-06-17 15:01:04.235 CEST [6969] LOG:  received fast shutdown request
+2022-06-17 15:01:04.236 CEST [6969] LOG:  aborting any active transactions
+2022-06-17 15:01:04.237 CEST [6969] LOG:  background worker "logical replication launcher" (PID 6976) exited with exit code 1
+2022-06-17 15:01:04.237 CEST [6971] LOG:  shutting down
+2022-06-17 15:01:04.242 CEST [6969] LOG:  database system is shut down
+2022-06-17 15:01:06.736 CEST [7101] LOG:  starting PostgreSQL 14.4 on aarch64-apple-darwin20.6.0, compiled by Apple clang version 12.0.5 (clang-1205.0.22.9), 64-bit
+2022-06-17 15:01:06.739 CEST [7101] LOG:  listening on IPv6 address "::1", port 5432
+2022-06-17 15:01:06.739 CEST [7101] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2022-06-17 15:01:06.739 CEST [7101] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2022-06-17 15:01:06.742 CEST [7102] LOG:  database system was shut down at 2022-06-17 15:01:04 CEST
+2022-06-17 15:01:06.745 CEST [7101] LOG:  database system is ready to accept connections
