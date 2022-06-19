@@ -13,7 +13,7 @@ import navbarToggle from '../functions/navbar.js';
 import cursorSetup from '../functions/cursor.js';
 import setImageGalleries from '../functions/image-gallery';
 
-import { server } from "../config";
+import { dockElementIDs, server } from "../config";
 
 
 
@@ -102,7 +102,7 @@ export default function ArticlePage({ article, dockElements }) {
 				<Article content={ article.content } />
 			</main>
 
-			<Dock elements={ dockElements }/>
+			<Dock elements={ dockElements } />
 			<Footer />
 
 			<Cursor />
@@ -116,7 +116,6 @@ export const getStaticProps = async ( params ) => {
 	const article = await articleResponse.json();
 
 	//TODO: custom dock elements from articles
-	const dockElementIDs = [1, 2, 5, 9, 6];
 	const dockElements = [];
 	for (let i = 0; i < dockElementIDs.length; i++) {
 		const projectResponse = await fetch(server + "/api/projects?id=" + dockElementIDs[i]);

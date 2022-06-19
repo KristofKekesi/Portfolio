@@ -13,6 +13,8 @@ import favicon from '../public/favicon.png';
 import navbarToggle from '../functions/navbar.js';
 import cursorSetup from '../functions/cursor.js';
 
+import { dockElementIDs, server } from "../config";
+
 
 //    TURTLE - TEKI
 //    (°-°) _______
@@ -21,7 +23,7 @@ import cursorSetup from '../functions/cursor.js';
 //         \__) \__)
 
 
-export default function Home() {
+export default function Home({ dockElements }) {
   useEffect(() => {
     navbarToggle();
     cursorSetup();
@@ -72,9 +74,23 @@ export default function Home() {
         </div>
       </main>
 
-      <Dock />
+      <Dock elements={ dockElements } />
 
       <Cursor />
     </>
   )
 }
+
+export const getStaticProps = async ( _ ) => {
+	const dockElements = [];
+	for (let i = 0; i < dockElementIDs.length; i++) {
+		const projectResponse = await fetch(server + "/api/projects?id=" + dockElementIDs[i]);
+		const project = await projectResponse.json();
+		console.log(project);
+		dockElements.push(project);
+	}
+
+	return {
+		props: { dockElements: dockElements},
+	};
+};

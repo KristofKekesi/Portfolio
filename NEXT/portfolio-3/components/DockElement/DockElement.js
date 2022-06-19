@@ -39,7 +39,7 @@ export default function DockElement(props) {
             //        </center>
             //    </div>
             //</a>
-            <a href="">
+            <a href={server + "/project?" + props.project.id}>
                 <div className="radius24 dock-element target" id={"dock-element-" + "project.id"}>
                     <center>
                         <img src={server +  "/" + props.project.logo.path} alt={props.project.name}/>

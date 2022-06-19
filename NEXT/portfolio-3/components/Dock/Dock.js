@@ -19,7 +19,6 @@ export default function Dock(props) {
 
     return(
         <>
-            {JSON.stringify(props.elements)}
             {projectTooltips}
             <div id="dock" className="blur-dark z-30 fixed inline-block text-primaryLightHover bottom-0 md:bottom-3 left-1/2 p-3 rounded-none md:rounded-2xl">
                 <center>
