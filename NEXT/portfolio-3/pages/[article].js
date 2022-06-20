@@ -50,6 +50,8 @@ export default function ArticlePage({ article, dockElements }) {
 		navbarToggle();
 		cursorSetup();
 		setImageGalleries();
+
+		console.log("%cHello there!", "color:#ffffff;font-family:system-ui;font-size:2rem;font-weight:bold;text-shadow:2px 2px 0 #5ebd3e, 4px 4px 0 #ffbb00, 6px 6px 0 #f78400, 8px 8px 0 #e23838, 10px 10px 0 #973999, 12px 12px 0 #009cdf");
 	} , []);
 
 	return (
@@ -120,7 +122,6 @@ export const getStaticProps = async ( params ) => {
 	for (let i = 0; i < dockElementIDs.length; i++) {
 		const projectResponse = await fetch(server + "/api/projects?id=" + dockElementIDs[i]);
 		const project = await projectResponse.json();
-		console.log(project);
 		dockElements.push(project);
 	}
 

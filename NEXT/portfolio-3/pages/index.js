@@ -12,6 +12,8 @@ import favicon from '../public/favicon.png';
 
 import navbarToggle from '../functions/navbar.js';
 import cursorSetup from '../functions/cursor.js';
+import projectTooltipPosition from '../functions/project-tooltip-position.js';
+import setProjectTooltipState from '../functions/project-tooltip-state.js';
 
 import { dockElementIDs, server } from "../config";
 
@@ -27,6 +29,8 @@ export default function Home({ dockElements }) {
   useEffect(() => {
     navbarToggle();
     cursorSetup();
+    projectTooltipPosition();
+    dockElements.map(dockElement => {setProjectTooltipState(dockElement[0].id);});
   }, []);
 
   return (
