@@ -1505,3 +1505,9 @@
 2022-06-20 22:18:05.050 CEST [15522] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
 2022-06-20 22:18:05.053 CEST [15523] LOG:  database system was shut down at 2022-06-19 00:23:04 CEST
 2022-06-20 22:18:05.056 CEST [15522] LOG:  database system is ready to accept connections
+2022-06-21 17:35:18.301 CEST [26023] ERROR:  column "skills" does not exist at character 47
+2022-06-21 17:35:18.301 CEST [26023] HINT:  Perhaps you meant to reference the column "project_skills.skill".
+2022-06-21 17:35:18.301 CEST [26023] STATEMENT:  SELECT "skill" FROM "project_skills" GROUP BY "skills";
+2022-06-21 17:35:33.152 CEST [26051] ERROR:  column "skills" does not exist at character 47
+2022-06-21 17:35:33.152 CEST [26051] HINT:  Perhaps you meant to reference the column "project_skills.skill".
+2022-06-21 17:35:33.152 CEST [26051] STATEMENT:  SELECT "skill" FROM "project_skills" GROUP BY "skills";

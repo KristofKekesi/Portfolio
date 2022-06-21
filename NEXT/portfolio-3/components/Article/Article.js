@@ -16,6 +16,8 @@ import { MadeWith } from "../MadeWith/MadeWith";
 
 
 function Article(props) {
+    console.log(props.content)
+
     let terminalId = 0;
 
     let articleContent = [];
@@ -65,12 +67,12 @@ function Article(props) {
                 break
             case "article-preview-big":
                 articleContent.push(
-                    <ArticlePreviewsBig IDs={props.content[i]["IDs"]} key={i} />
+                    <ArticlePreviewsBig projects={props.content[i]["articles"]} key={i} />
                 );
                 break
             case "article-preview-smoll":
                 articleContent.push(
-                    <ArticlePreviewsSmoll IDs={props.content[i]["IDs"]} key={i} />
+                    <ArticlePreviewsSmoll projects={props.content[i]["articles"]} key={i} />
                 );
                 break
             case "made-with":

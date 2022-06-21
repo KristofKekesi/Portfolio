@@ -57,8 +57,16 @@ export default async (req, res) => {
 		const mainResult = await conn.query(mainQuery);
 
 		for (let i = 0; i < mainResult.rows.length; i++) {
+			mainResult.rows[i].dockElements = [];
 			mainResult.rows[i].skills = [];
 			mainResult.rows[i].tools  = [];
+
+			// Dock elements
+			const dockElementsSideQuery = 'SELECT * FROM "article_dockElements" WHERE "articleID" = ' + mainResult.rows[i].id + ';';
+			const dockElementsSideResult = await conn.query(dockElementsSideQuery);
+			for (let j = 0; j < dockElementsSideResult.rows.length; j++) {
+				mainResult.rows[i].dockElements.push(dockElementsSideResult.rows[j].projectID);
+			}
 
 			// Skills
 			const skillsSideQuery = 'SELECT * FROM "article_skills" WHERE "articleID" = ' + mainResult.rows[i].id + ' ORDER BY "skill";';

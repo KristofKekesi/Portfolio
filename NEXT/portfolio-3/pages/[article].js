@@ -1,20 +1,19 @@
 import {useEffect} from 'react';
 
-import Script from 'next/script';
-import Head from 'next/head';
-
 import Article from '../components/Article/Article';
 import Navbar from '../components/Navbar/Navbar';
 import Cursor from '../components/Cursor/Cursor';
 import Dock from '../components/Dock/Dock';
 import Footer from '../components/Footer/Footer';
+import Head from '../components/Head/Head';
 
 import navbarToggle from '../functions/navbar.js';
 import cursorSetup from '../functions/cursor.js';
 import setImageGalleries from '../functions/image-gallery';
+import projectTooltipPosition from '../functions/project-tooltip-position.js';
+import setProjectTooltipState from '../functions/project-tooltip-state.js';
 
-import { dockElementIDs, server } from "../config";
-
+import { defaultDockElementIDs, server } from "../config";
 
 
 //    TURTLE - TEKI
@@ -39,55 +38,22 @@ export const getStaticPaths = async () => {
 	}
 }
 
-export default function ArticlePage({ article, dockElements }) {
-	const keywords = ["Kristóf Kékesi"];
-	keywords.push.apply(keywords, article.skills);
-	for (let i = 0; i < article.tools.length; i++) {
-		keywords.push(article.tools[i].name);
-	}
 
+export default function ArticlePage({ article, dockElements, keywords }) {
 	useEffect(() => {
 		navbarToggle();
 		cursorSetup();
 		setImageGalleries();
+    
+		projectTooltipPosition();
+		dockElements.map(dockElement => {setProjectTooltipState(dockElement[0].id);});
 
 		console.log("%cHello there!", "color:#ffffff;font-family:system-ui;font-size:2rem;font-weight:bold;text-shadow:2px 2px 0 #5ebd3e, 4px 4px 0 #ffbb00, 6px 6px 0 #f78400, 8px 8px 0 #e23838, 10px 10px 0 #973999, 12px 12px 0 #009cdf");
 	} , []);
 
 	return (
 		<>	
-			<Head>
-				<meta charSet="utf-8" />
-
-				<link rel="icon" href={server + "/favicon.png"} />
-
-				<meta name="viewport" content="width=device-width, initial-scale=1" />
-				<meta name="theme-color" content="#ffffff" />
-
-				<meta name="author" content="Kristóf Kékesi" />
-				<meta name="description" content={ article.description.replace( /(<([^>]+)>)/ig, '') } />
-				<meta name="keywords" content={ keywords.join(",") }/>
-
-				<meta name="twitter:card" content="summary" />
-				<meta name="twitter:site" content="@KristofKekesi" />
-				<meta name="twitter:title" content="Kristóf Kékesi" />
-				<meta name="twitter:description" content={ article.description.replace( /(<([^>]+)>)/ig, '') } />
-				<meta name="twitter:image" content={server + "/opengraph.jpg"}/>
-
-				<meta name="og:url" content={ server } />
-				<meta name="og:type" content="website" />
-				<meta name="og:description" content={ article.description.replace( /(<([^>]+)>)/ig, '') } />
-				<meta name="og:image" content={ server + "/opengraph.jpg" } />
-
-				<link rel="apple-touch-icon" href={server + "/favicon.png"} />
-				{//<link rel="manifest" href={server + "/manifest.json"} />
-				}
-
-				<Script async="" src="https://www.googletagmanager.com/gtag/js?id=G-NMTQ12KGY9"></Script>
-
-				<title>{ article.name.replace( /(<([^>]+)>)/ig, '') }</title>
-			</Head>
-
+			<Head title={ article.name } description={ article.description } keywords={ keywords } />
 
 			<Navbar />
 
@@ -113,19 +79,35 @@ export default function ArticlePage({ article, dockElements }) {
 	);
 }
 
+
 export const getStaticProps = async ( params ) => {
 	const articleResponse = await fetch(server + "/api/articles?redirect=" + params.params.article);
 	const article = await articleResponse.json();
 
-	//TODO: custom dock elements from articles
+	console.log(article);
+
+	let dockElementIDs;
+	if (article[0].dockElements.length === 0) {
+		dockElementIDs = defaultDockElementIDs;
+	} else {
+		dockElementIDs = article[0].dockElements;
+	}
+
 	const dockElements = [];
 	for (let i = 0; i < dockElementIDs.length; i++) {
 		const projectResponse = await fetch(server + "/api/projects?id=" + dockElementIDs[i]);
 		const project = await projectResponse.json();
+	
 		dockElements.push(project);
 	}
 
+	const keywords = ["Kristóf Kékesi"];
+	keywords.push.apply(keywords, article[0].skills);
+	for (let i = 0; i < article[0].tools.length; i++) {
+		keywords.push(article[0].tools[i].name);
+	}
+
 	return {
-		props: { article: article[0], dockElements: dockElements},
+		props: { article: article[0], dockElements: dockElements, keywords: keywords.join(", ")},
 	};
 };

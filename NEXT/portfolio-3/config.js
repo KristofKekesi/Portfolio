@@ -11,7 +11,7 @@ export const server = dev ? 'http://localhost:3000' : 'https://www.kekesi.dev';
 
 
 // dock elements
-export const dockElementIDs = [1, 2, 5, 9, 6];
+export const defaultDockElementIDs = [1, 2, 5, 9, 6];
 
 
 // db credentials
@@ -20,3 +20,10 @@ export const password = "";
 export const host = "localhost";
 export const port = "5432";
 export const database = "portfolio";
+
+
+// metadata
+export const defaultDescription = "";
+export const defaultLanguage = "en";
+export const defaultOpenGraphImage = server + "/opengarph.jpg";
+export const defaultFavicon = server + "/favicon.png";
