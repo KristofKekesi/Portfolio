@@ -209,7 +209,10 @@ export const getStaticProps = async ( _ ) => {
 		dockElements.push(project);
 	}
 
+	const response = await fetch(server + "/api/keywords");
+    const keywords = await response.json();
+
 	return {
-		props: { dockElements: dockElements, keywords: keywords},
+		props: { dockElements: dockElements, keywords: keywords.join(", ")},
 	};
 };

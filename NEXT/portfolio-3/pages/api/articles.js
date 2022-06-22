@@ -125,6 +125,12 @@ export default async (req, res) => {
 					const article = articleResult.rows[0];
 					delete article.content;
 
+					// Cover
+					const coverQuery = 'SELECT * FROM "images" WHERE "id" = ' + article.coverID + ';';
+					const coverResult = await conn.query(coverQuery);
+
+					article.cover = coverResult.rows[0];
+
 					articlePreviewSmoll.articles.push(article);
 				}
 
@@ -141,6 +147,12 @@ export default async (req, res) => {
 
 					const article = articleResult.rows[0];
 					delete article.content;
+
+					// Cover
+					const coverQuery = 'SELECT * FROM "images" WHERE "id" = ' + article.coverID + ';';
+					const coverResult = await conn.query(coverQuery);
+					
+					article.cover = coverResult.rows[0];
 					
 					articlePreviewBig.articles.push(article);
 				}
@@ -163,6 +175,11 @@ export default async (req, res) => {
 
 				delete gallery.imageIDs;
 				return gallery;
+			}
+
+			async function setProjectBundle(projectBundle) {
+				const projectBundleResponse = await fetch(server + "/api/bundles?id=" + projectBundle.id);
+				const article = await articleResponse.json();
 			}
 
 			for (let j = 0; j < content.length; j++) {

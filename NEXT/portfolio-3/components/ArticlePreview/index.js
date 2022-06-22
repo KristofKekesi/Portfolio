@@ -1,34 +1,45 @@
 import ArticlePreviewBig from "./ArticlePreviewBig";
 import ArticlePreviewSmoll from "./ArticlePreviewSmoll";
 
+
 //    TURTLE - TEKI
 //    (°-°) _______
 //      \ \/ - - - \_
 //       \_  ___  ___>
 //         \__) \__)
 
+
 function ArticlePreviewsBig(props) {
-    let final = [];
-    for (let i = 0; i < props.IDs.length; i++) {
-        final.push(<ArticlePreviewBig id={props.IDs[i]} doesCareAboutVisibility={false} key={i}/>);
-    }
+    const previews = [];
+    props.articles.forEach((article, index) => {
+        previews.push(
+            <ArticlePreviewBig article={ article } key={ index }/>
+        );
+    });
 
     return (
-        {final}
-    );
-}
-function ArticlePreviewsSmoll(props) {
-    let final = [];
-    for (let i = 0; i < props.IDs.length; i++) {
-        final.push(<ArticlePreviewSmoll id={props.IDs[i]} doesCareAboutVisibility={false} key={i}/>);
-    }
-
-    return (
-        <div className="article-preview-smoll-container flex flex-wrap justify-start gap-10 px-12 my-2">
-            {final}
+        <div className="article-preview-smoll-container flex flex-wrap justify-start gap-10 px-12 my-12">
+            { previews }
         </div>
     );
 }
+
+
+function ArticlePreviewsSmoll(props) {
+    const previews = [];
+    props.articles.forEach((article, index) => {
+        previews.push(
+            <ArticlePreviewSmoll article={ article } key={ index }/>
+        );
+    });
+
+    return (
+        <div className="article-preview-smoll-container flex flex-wrap justify-start gap-10 px-12 my-2">
+            { previews }
+        </div>
+    );
+}
+
 
 export {
     ArticlePreviewBig, ArticlePreviewsBig,
