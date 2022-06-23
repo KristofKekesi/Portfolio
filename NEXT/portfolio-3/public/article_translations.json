@@ -29,12 +29,12 @@
         ]
     },
     {
-        "type": "proj-bundle",
-        "id": "PROJ-BUNDLE-1"
+        "type": "project-bundle",
+        "id": "2"
     },
     {
-        "type": "proj-bundle",
-        "id": "PROJ-BUNDLE-2"
+        "type": "project-bundle",
+        "id": "3"
     },
     {
         "type": "text-title",

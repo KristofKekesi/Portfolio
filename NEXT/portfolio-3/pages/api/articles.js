@@ -179,7 +179,10 @@ export default async (req, res) => {
 
 			async function setProjectBundle(projectBundle) {
 				const projectBundleResponse = await fetch(server + "/api/bundles?id=" + projectBundle.id);
-				const article = await articleResponse.json();
+				const projectBundleResult = await projectBundleResponse.json();
+
+				projectBundle.projectBundle = projectBundleResult;
+				return projectBundle;
 			}
 
 			for (let j = 0; j < content.length; j++) {
@@ -189,6 +192,8 @@ export default async (req, res) => {
 					content[j] = await setArticlePreviewBig(content[j]);
 				} else if (content[j].type == "gallery") {
 					content[j] = await setGallery(content[j]);
+				} else if (content[j].type == "project-bundle") {
+					content[j] = await setProjectBundle(content[j]);
 				} else if (content[j].type == "section") {
 					for (let k = 0; k < content[j].content.length; k++) {
 						if (content[j].content[k].type == "article-preview-smoll") {

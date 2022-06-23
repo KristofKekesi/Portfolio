@@ -56,9 +56,9 @@ function Article(props) {
                 );
 
                 break
-            case "proj-bundle":
+            case "project-bundle":
                 articleContent.push(
-                    <ProjectBundle id={props.content[i]["id"]} key={i} />
+                    <ProjectBundle projectBundle={props.content[i]["projectBundle"]} key={i} />
                 );
                 break
             case "article-preview-big":

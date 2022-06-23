@@ -1511,3 +1511,5 @@
 2022-06-21 17:35:33.152 CEST [26051] ERROR:  column "skills" does not exist at character 47
 2022-06-21 17:35:33.152 CEST [26051] HINT:  Perhaps you meant to reference the column "project_skills.skill".
 2022-06-21 17:35:33.152 CEST [26051] STATEMENT:  SELECT "skill" FROM "project_skills" GROUP BY "skills";
+2022-06-23 11:31:37.599 CEST [43425] ERROR:  column "proj" does not exist at character 58
+2022-06-23 11:31:37.599 CEST [43425] STATEMENT:  SELECT "bundles".* FROM "bundles" WHERE "bundles"."id" = PROJ-BUNDLE-1 ORDER BY "bundles"."id";
