@@ -46,6 +46,6 @@
     },
     {
         "type": "text",
-        "value": "My first program I translated were <a class='target' href=\"../project?6-Notepads\">Notepads</a>. <q>A modern, lightweight text editor with a minimalist design</q>, by <a class='target' href=\"https://github.com/JasonStein\">Jiaqi Liu</a>. It's a <abbr class='target' title='Universal Windows Platform'>UWP</abbr> application for Windows."
+        "value": "My first program I translated were <a class='target' href=\"../project?6-Notepads\">Notepads</a>. <q>A modern, lightweight text editor with a minimalist design</q>, by <a class='target' href=\"https://github.com/0x7c13\">Jiaqi Liu</a>. It's a <abbr class='target' title='Universal Windows Platform'>UWP</abbr> application for Windows."
     }
 ]

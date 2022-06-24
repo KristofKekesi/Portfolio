@@ -22,7 +22,7 @@ export default async (req, res) => {
 		selectorQueries.push('"projects"."id" = ' + id);
 	}
 	if (name != undefined) {
-		selectorQueries.push('"projects"."name" = \'' + name + '\'');
+		selectorQueries.push('LOWER("projects"."name") = LOWER(\'' + name + '\')');
 	}
 	if (version != undefined) {
 		selectorQueries.push('"projects"."version" = \'' + version + '\'');

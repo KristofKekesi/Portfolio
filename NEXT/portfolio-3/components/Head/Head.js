@@ -43,6 +43,7 @@ export default function AutoHead(props) {
 				<meta name="og:image" content={ opengraph } />
 
 				<link rel="apple-touch-icon" href={ favicon } />
+				<meta name="apple-mobile-web-app-status-bar" content="#ffffff" />
 				<link rel="manifest" href={ server + "/manifest.json" } />
 
 				<Script async="" src="https://www.googletagmanager.com/gtag/js?id=G-NMTQ12KGY9"></Script>

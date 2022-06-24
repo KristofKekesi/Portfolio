@@ -1,6 +1,3 @@
-import setCopyright from "../functions/copyright";
-
-
 //    TURTLE - TEKI
 //    (°-°) _______
 //      \ \/ - - - \_

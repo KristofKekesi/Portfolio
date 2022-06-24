@@ -181,7 +181,7 @@ export default async (req, res) => {
 				const projectBundleResponse = await fetch(server + "/api/bundles?id=" + projectBundle.id);
 				const projectBundleResult = await projectBundleResponse.json();
 
-				projectBundle.projectBundle = projectBundleResult;
+				projectBundle.projectBundle = projectBundleResult[0];
 				return projectBundle;
 			}
 

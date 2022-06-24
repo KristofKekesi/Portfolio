@@ -11,6 +11,10 @@ import { server } from "../../config";
 
 
 export default function ImageGallery(props) {
+    if (props.images.length == 0) {
+        return null;
+    }
+
     const content = [];
     for (let i = 0; i < props.images.length; i++) {
         content.push(
