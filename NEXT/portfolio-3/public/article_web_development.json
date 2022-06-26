@@ -9,11 +9,11 @@
     },
     {
         "type": "text",
-        "value": "I started web development back in <a class='target' href='../#/timeline#2018'>2018</a> when I was 14 (seventh grader in hungary). I started learning <abbr class='target' title='HyperText Markup Language'>HTML</abbr>, <abbr class='target' title='Cascadian Style Sheet'>CSS</abbr>, and JavaScript, the good old frontend web stack. For two years I concentrated on learning other technologies (mostly mobile)."
+        "value": "I started web development back in <a class='target' href='../timeline#2018'>2018</a> when I was 14 (seventh grader in hungary). I started learning <abbr class='target' title='' customtitle='HyperText Markup Language'>HTML</abbr>, <abbr class='target' title='' customtitle='Cascadian Style Sheet'>CSS</abbr>, and JavaScript, the good old frontend web stack. For two years I concentrated on learning other technologies (mostly mobile)."
     },
     {
         "type": "text",
-        "value": "My comeback for web dev was the first iteration of my website. For that I used the same frontend stack. In 2021 I released the second version of my website, in which I used React."
+        "value": "My comeback for web dev was the first iteration of my website. For that I used the same frontend stack. In <a class='target' href='../timeline#2021'>2021</a> I released the second version of my website, in which I used React."
     },
     {
         "type": "section",
@@ -24,11 +24,11 @@
             },
             {
                 "type": "text-subtitle",
-                "value": "My work since <a class='target' href='../#/timeline#2018'>2018</a>"
+                "value": "My work since <a class='target' href='../timeline#2018'>2018</a>"
             },
             {
                 "type": "text-subsubtitle",
-                "value": "kekesi.dev in <a class='target' href='../#/timeline#2020'>2020</a>"
+                "value": "kekesi.dev in <a class='target' href='../timeline#2020'>2020</a>"
             },
             {
                 "type": "text",
@@ -40,15 +40,15 @@
             },
             {
                 "type": "text-subsubtitle",
-                "value": "kekesi.dev in <a class='target' href='../#/timeline#2021'>2021</a>"
+                "value": "kekesi.dev in <a class='target' href='../timeline#2021'>2021</a>"
             },
             {
                 "type": "text",
-                "value": "The new site is a full rewrite of the original. It's mobile friendly, has animations and better refreshed <abbr class='target' title='User Interface'>UI</abbr>.  It's now home for more complex features and structure, yet has more simple code."
+                "value": "The new site is a full rewrite of the original. It's mobile friendly, has animations and better refreshed <abbr class='target' title='' customtitle='User Interface'>UI</abbr>.  It's now home for more complex features and structure, yet has more simple code."
             },
             {
                 "type": "text",
-                "value": "The biggest core change is that the site is using a really basic <q><abbr class='target' title='Application Programming Interface'>API</abbr></q> I made. It uses it to render projects and articles (as well as this text) and bigger objects like bundles of projects, images. It's biggest advantage is that if a projects name is changes I need to change one thing."
+                "value": "The biggest core change is that the site is using an <q><abbr class='target' title='' customtitle='Application Programming Interface'>API</abbr></q> I made. It uses it to render projects and articles (as well as this text) and bigger objects like bundles of projects, images. It's biggest advantage is that if a projects name is changes I need to change one thing."
             }
         ]
     },
@@ -58,7 +58,7 @@
     },
     {
         "type": "text-subtitle",
-        "value": "Web technologies I want to learn in 2022"
+        "value": "Web technologies I want to learn in <a class='target' href='../timeline#2022'>2022</a>"
     },
     {
         "type": "text",

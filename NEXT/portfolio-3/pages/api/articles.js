@@ -23,20 +23,20 @@ export default async (req, res) => {
 		selectorQueries.push('"articles"."id" = ' + id);
 	}
 	if (name != undefined) {
-		selectorQueries.push('"articles"."name" = \'' + name + '\'');
+		selectorQueries.push('LOWER("articles"."name") = LOWER(\'' + name + '\')');
 	}
 	if (redirect != undefined) {
-		selectorQueries.push('"articles"."redirect" = \'' + redirect + '\'');
+		selectorQueries.push('LOWER("articles"."redirect") = LOWER(\'' + redirect + '\')');
 	}
 	if (isVisible != undefined) {
 		selectorQueries.push('"articles"."isVisible" = ' + isVisible);
 	}
 	if (content != undefined) {
-		selectorQueries.push('"articles"."content" = \'' + content + '\'');
+		selectorQueries.push('LOWER("articles"."content") = LOWER(\'' + content + '\')');
 	}
 	if (skill != undefined) {
 		imports.push('"article_skills"');
-		selectorQueries.push('("article_skills"."skill" = \'' + skill + '\' AND "articles"."id" = "article_skills"."articleID")');
+		selectorQueries.push('(LOWER("article_skills"."skill") = LOWER(\'' + skill + '\') AND "articles"."id" = "article_skills"."articleID")');
 	}
 	if (tool != undefined) {
 		imports.push('"article_tools"');
@@ -76,28 +76,52 @@ export default async (req, res) => {
 			}
 
 			// Tools
-			const toolsSideQuery = 'SELECT * FROM "article_tools" WHERE "articleID" = ' + mainResult.rows[i].id + ' ORDER BY "toolID";';
-			const toolsSideResult = await conn.query(toolsSideQuery);
-			for (let j = 0; j < toolsSideResult.rows.length; j++) {
-				// Tool
-				const toolSideQuery = 'SELECT * FROM "tools" WHERE "id" = ' + toolsSideResult.rows[j].toolID + ';';
-				const toolSideResult = await conn.query(toolSideQuery);
+			// If About article add all tools
+			if (id == 14) {
+				let toolsSideQuery = 'SELECT * FROM "tools" ORDER BY "name";';
+				const toolsSideResult = await conn.query(toolsSideQuery);
 
-				const tool = toolSideResult.rows[0];
-				delete tool.id;
+				for (let j = 0; j < toolsSideResult.rows.length; j++) {
+					const tool = toolsSideResult.rows[j];
+					delete tool.id;
 
-				const logoSideQuery = 'SELECT * FROM "images" WHERE "id" = ' + tool.imageID + ';';
-				const logoSideResult = await conn.query(logoSideQuery);
+					// Logo
+					const logoSideQuery = 'SELECT * FROM "images" WHERE "id" = ' + tool.imageID + ';';
+					const logoSideResult = await conn.query(logoSideQuery);
 
-				// Logo
-				const logo = logoSideResult.rows[0];
-				delete logo.id;
+					const logo = logoSideResult.rows[0];
+					delete logo.id;
+	
+					tool.logo = logo;
+					delete tool.imageID;
+	
+					mainResult.rows[i].tools.push(tool);
+				}
+			} else {
+				let toolsSideQuery = 'SELECT * FROM "article_tools" WHERE "articleID" = ' + mainResult.rows[i].id + ' ORDER BY "toolID";';
+				const toolsSideResult = await conn.query(toolsSideQuery);
 
-				tool.logo = logo;
-				delete tool.imageID;
-
-
-				mainResult.rows[i].tools.push(tool);
+				for (let j = 0; j < toolsSideResult.rows.length; j++) {
+					// Tool
+					const toolSideQuery = 'SELECT * FROM "tools" WHERE "id" = ' + toolsSideResult.rows[j].toolID + 'ORDER BY "name";';
+					const toolSideResult = await conn.query(toolSideQuery);
+	
+					const tool = toolSideResult.rows[0];
+					delete tool.id;
+	
+					// Logo
+					const logoSideQuery = 'SELECT * FROM "images" WHERE "id" = ' + tool.imageID + ';';
+					const logoSideResult = await conn.query(logoSideQuery);
+					
+					const logo = logoSideResult.rows[0];
+					delete logo.id;
+	
+					tool.logo = logo;
+					delete tool.imageID;
+	
+	
+					mainResult.rows[i].tools.push(tool);
+				}
 			}
 
 			// Cover

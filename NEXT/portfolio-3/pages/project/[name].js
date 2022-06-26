@@ -1,6 +1,6 @@
 import {useEffect} from 'react';
 
-import Article from '../../components/Article/Article';
+import MadeWith from '../../components/MadeWith/MadeWith';
 import Navbar from '../../components/Navbar/Navbar';
 import Cursor from '../../components/Cursor/Cursor';
 import ImageGallery from '../../components/ImageGallery/ImageGallery';
@@ -55,7 +55,16 @@ export default function ArticlePage({ project, dockElements, keywords }) {
 		console.log("%cHello there!\n\n%cIf you are interested in the source code check out this site's repo at https://www.github.com/KristofKekesi/Portfolio.", "color:#ffffff;font-family:system-ui;font-size:2rem;font-weight:bold;text-shadow:2px 2px 0 #5ebd3e, 4px 4px 0 #ffbb00, 6px 6px 0 #f78400, 8px 8px 0 #e23838, 10px 10px 0 #973999, 12px 12px 0 #009cdf", "color:auto;font-size:1rem; font-family:monospace;");
 	} , []);
 
-    console.log(project);
+    // version
+    let versionDiv = null;
+    if (project.version != null) {
+        versionDiv = <>
+            <h1 className="text-subtitle selectable pb-0">
+                Latest version
+            </h1>
+            <div className="text selectable">{project.version}</div>
+        </>;
+    }
 
     // platforms
     let platformDiv = null;
@@ -92,8 +101,7 @@ export default function ArticlePage({ project, dockElements, keywords }) {
                                 <img src={ server + "/" + project.logo.path } alt={ project.name } className="w-auto h-auto ml-12 mr-0 py-12" style={{maxWidth: "7.5rem", maxHeight: "7.5rem", boxSizing: "content-box"}}></img>
                                 <div>
                                     <div className="mt-8 h-px" />
-                                    { //versionDiv 
-                                    }
+                                    { versionDiv }
                                     <h1 className="text-subtitle selectable pb-0">Worked on as</h1>
                                     <div className="text selectable">{ project.roles.join(", ").replace(/,([^,]*)$/, ' and $1') }</div>
                                     { platformDiv }
@@ -108,10 +116,9 @@ export default function ArticlePage({ project, dockElements, keywords }) {
                             </div>
                             <div className="mt-12 h-px" />
                         </div>
-                        <div className="mb-10 h-px" />
                         <ImageGallery galleryTag={"max"} className={"nosection"} images={project.screenshots}/>
-                        { //madeWithDiv 
-                        }
+                        <MadeWith tools={project.tools} title={"Tools that I used while working on " + project.name} />
+                        <div className="mt-10 h-px" />
                     </div>
                 </article>
 			</main>
@@ -134,10 +141,10 @@ export const getStaticProps = async ( params ) => {
     console.log(params.params.name)
 
 	const keywords = ["Kristóf Kékesi"];
-	//keywords.push.apply(keywords, project[0].skills);
-	//for (let i = 0; i < project[0].tools.length; i++) {
-	//	keywords.push(project[0].tools[i].name);
-	//}
+	keywords.push.apply(keywords, project[0].skills);
+    project[0].tools.forEach(tool => {
+        keywords.push(tool.name);
+    });
 
     const dockElements = [];
 	for (let i = 0; i < defaultDockElementIDs.length; i++) {

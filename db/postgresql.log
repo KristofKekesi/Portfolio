@@ -1513,3 +1513,31 @@
 2022-06-21 17:35:33.152 CEST [26051] STATEMENT:  SELECT "skill" FROM "project_skills" GROUP BY "skills";
 2022-06-23 11:31:37.599 CEST [43425] ERROR:  column "proj" does not exist at character 58
 2022-06-23 11:31:37.599 CEST [43425] STATEMENT:  SELECT "bundles".* FROM "bundles" WHERE "bundles"."id" = PROJ-BUNDLE-1 ORDER BY "bundles"."id";
+2022-06-25 01:02:08.669 CEST [63100] ERROR:  column "article_tools.articleID" must appear in the GROUP BY clause or be used in an aggregate function at character 8
+2022-06-25 01:02:08.669 CEST [63100] STATEMENT:  SELECT * FROM "article_tools" GROUP BY "toolID" ORDER BY "toolID";
+2022-06-25 01:03:05.366 CEST [63141] ERROR:  syntax error at or near "GROUP" at character 49
+2022-06-25 01:03:05.366 CEST [63141] STATEMENT:  SELECT * FROM "article_tools" ORDER BY "toolID" GROUP BY "toolID";
+2022-06-25 01:03:09.266 CEST [63145] ERROR:  syntax error at or near "GROUP" at character 49
+2022-06-25 01:03:09.266 CEST [63145] STATEMENT:  SELECT * FROM "article_tools" ORDER BY "toolID" GROUP BY "toolID";
+2022-06-25 01:03:48.098 CEST [63171] ERROR:  column "article_tools.articleID" must appear in the GROUP BY clause or be used in an aggregate function at character 8
+2022-06-25 01:03:48.098 CEST [63171] STATEMENT:  SELECT * FROM "article_tools" GROUP BY "toolID";
+2022-06-26 16:19:14.945 CEST [15522] LOG:  received fast shutdown request
+2022-06-26 16:19:14.946 CEST [15522] LOG:  aborting any active transactions
+2022-06-26 16:19:14.946 CEST [66130] FATAL:  terminating connection due to administrator command
+2022-06-26 16:19:14.946 CEST [66170] FATAL:  terminating connection due to administrator command
+2022-06-26 16:19:14.948 CEST [15522] LOG:  background worker "logical replication launcher" (PID 15529) exited with exit code 1
+2022-06-26 16:19:14.948 CEST [15524] LOG:  shutting down
+2022-06-26 16:19:14.959 CEST [15522] LOG:  database system is shut down
+2022-06-26 16:19:43.501 CEST [66289] LOG:  starting PostgreSQL 14.4 on aarch64-apple-darwin20.6.0, compiled by Apple clang version 12.0.5 (clang-1205.0.22.9), 64-bit
+2022-06-26 16:19:43.503 CEST [66289] LOG:  listening on IPv6 address "::1", port 5432
+2022-06-26 16:19:43.503 CEST [66289] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2022-06-26 16:19:43.503 CEST [66289] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2022-06-26 16:19:43.511 CEST [66290] LOG:  database system was shut down at 2022-06-26 16:19:14 CEST
+2022-06-26 16:19:43.513 CEST [66289] LOG:  database system is ready to accept connections
+2022-06-26 17:02:23.516 CEST [67012] ERROR:  column "tools.id" must appear in the GROUP BY clause or be used in an aggregate function at character 8
+2022-06-26 17:02:23.516 CEST [67012] STATEMENT:  SELECT * FROM "tools" GROUP BY "name";
+2022-06-26 17:08:37.144 CEST [67243] ERROR:  column "tools.id" must appear in the GROUP BY clause or be used in an aggregate function at character 8
+2022-06-26 17:08:37.144 CEST [67243] STATEMENT:  SELECT * FROM "tools" GROUP BY "name";
+2022-06-26 21:56:40.521 CEST [71380] ERROR:  duplicate key value violates unique constraint "timetable_pk"
+2022-06-26 21:56:40.521 CEST [71380] DETAIL:  Key (id)=(35) already exists.
+2022-06-26 21:56:40.521 CEST [71380] STATEMENT:  INSERT INTO public.timeline (id, date, name, "showMonth", "showDay") VALUES ($1::integer, $2::date, $3::varchar, $4::boolean, $5::boolean)

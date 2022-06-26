@@ -23,7 +23,7 @@ import { defaultDockElementIDs, server } from "../config";
 //         \__) \__)
 
 
-export default function Home({ dockElements, keywords }) {
+export default function Home({ timestamps, dockElements, keywords }) {
 	useEffect(() => {
 		navbarToggle();
 		cursorSetup();
@@ -37,33 +37,52 @@ export default function Home({ dockElements, keywords }) {
 		console.log("%cHello there!\n\n%cIf you are interested in the source code check out this site's repo at https://www.github.com/KristofKekesi/Portfolio.", "color:#ffffff;font-family:system-ui;font-size:2rem;font-weight:bold;text-shadow:2px 2px 0 #5ebd3e, 4px 4px 0 #ffbb00, 6px 6px 0 #f78400, 8px 8px 0 #e23838, 10px 10px 0 #973999, 12px 12px 0 #009cdf", "color:auto;font-size:1rem; font-family:monospace;");
 	} , []);
 
-	let timeline = <article id="timeline" className="flex flex-nowrap flex-row items-start justify-center bg-white">
-		<div className="hidden md:flex mt-10 flex-col">
-			<Link href="#2004">
-				<a className="text-title target">2004</a>
-			</Link>
-			<Link href="#2015">
-				<a className="text-title target">2015</a>
-			</Link>
-			<Link href="#2018">
-				<a className="text-title target">2018</a>
-			</Link>
-			<Link href="#2019">
-				<a className="text-title target">2019</a>
-			</Link>
-			<Link href="#2020">
-				<a className="text-title target">2020</a>
-			</Link>
-			<Link href="#2021">
-				<a className="text-title target">2021</a>
-			</Link>
-			<Link href="#2022">
-				<a className="text-title target">2022</a>
-			</Link>
-			<Link href="#2023">
-				<a className="text-title target">2023</a>
-			</Link>
+	timestamps.map(timestamp => {
+		timestamp.date = new Date(timestamp.date);
+	});
+
+	const years = [];
+	timestamps.forEach(timestamp => {
+		if (!years.includes(timestamp.date.getFullYear())) {
+			years.push(timestamp.date.getFullYear());
+		}
+	});
+	console.log(years);
+
+	const yearpicker = <div className="hidden md:flex mt-10 flex-col">
+		{years.map(year => {
+			return (
+				<Link href={ "#" + year } key={ year }>
+					<a className="text-title target">{ year }</a>
+				</Link>
+			);
+		})}
+	</div>;
+
+	let lastYear = null;
+	const timeline2 = <>
+		{//<div className="sticky mt-10 hidden md:flex" style={{backgroundImage: `url('bg.jpeg')`, top: "50px", left: "0px", width: "1rem", height: "calc(100vh)", marginBottom: "40px"}}><div className="sticky blur-dark" style={{width: "1rem", height: "100"}}></div></div>
+		
+		}<div>
+			{ timestamps.map(timestamp => {
+				if (lastYear !== timestamp.date.getFullYear()) {
+					lastYear = timestamp.date.getFullYear();
+					console.log(lastYear);
+					return (
+						<div className="m-10 section">
+							<div className="h-px mb-10" />
+							<div id="2004" className="text-title selectable">{ timestamp.date.getFullYear() }</div>
+							<div className="text selectable">Born</div>
+							<div className="h-px mt-10" />
+						</div>
+					);
+				}
+			})}
 		</div>
+	</>;
+
+	const timeline = <article id="timeline" className="flex flex-nowrap flex-row items-start justify-center bg-white">
+		{ yearpicker }
 		<div className="sticky mt-10 hidden md:flex" style={{backgroundImage: `url('bg.jpeg')`, top: "50px", left: "0px", width: "1rem", height: "calc(100vh)", marginBottom: "40px"}}><div className="sticky blur-dark" style={{width: "1rem", height: "100"}}></div></div>
 		<div>
 			<div className="m-10 section">
@@ -173,6 +192,8 @@ export default function Home({ dockElements, keywords }) {
 				<div className="text selectable">Graduating from Chernel István High School Hungary</div>
 				<div className="h-px mt-10" />
 			</div>
+			{ //timeline2
+			}
 		</div>
 	</article>
 
@@ -183,7 +204,7 @@ export default function Home({ dockElements, keywords }) {
 			<Navbar />
 
 			<main>
-			<center className="w-full bg-cover" style={{paddingTop: "150px", paddingBottom: "75px", backgroundImage: `url('bg.jpeg')`}}>
+			<center className="w-screen bg-cover" style={{paddingTop: "150px", paddingBottom: "75px", backgroundImage: `url('bg.jpeg')`}}>
 			<div className="w-max">
 			<h1 className="text-white text-7xl font-bold text-left font-interBold" style={{paddingTop: "0vh", textShadow: "6px 6px 12px rgba(0, 0, 0, .5)"}}>Timeline</h1>
 			</div>
@@ -201,6 +222,9 @@ export default function Home({ dockElements, keywords }) {
 
 
 export const getStaticProps = async ( _ ) => {
+	const timestampsResponse = await fetch(server + "/api/timeline");
+	let timestamps = await timestampsResponse.json();
+
 	const dockElements = [];
 	for (let i = 0; i < defaultDockElementIDs.length; i++) {
 		const projectResponse = await fetch(server + "/api/projects?id=" + defaultDockElementIDs[i]);
@@ -213,6 +237,6 @@ export const getStaticProps = async ( _ ) => {
     const keywords = await response.json();
 
 	return {
-		props: { dockElements: dockElements, keywords: keywords.join(", ")},
+		props: { timestamps: timestamps, dockElements: dockElements, keywords: keywords.join(", ")},
 	};
 };

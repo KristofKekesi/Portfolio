@@ -29,11 +29,11 @@ export default async (req, res) => {
 	}
 	if (role != undefined) {
 		imports.push('"project_roles"');
-		selectorQueries.push('("project_roles"."role" = \'' + role + '\' AND "projects"."id" = "project_roles"."projectID")');
+		selectorQueries.push('(LOWER("project_roles"."role") = LOWER(\'' + role + '\') AND "projects"."id" = "project_roles"."projectID")');
 	}
 	if (platform != undefined) {
 		imports.push('"project_platforms"');
-		selectorQueries.push('("project_platforms"."platform" = \'' + platform + '\' AND "projects"."id" = "project_platforms"."projectID")');
+		selectorQueries.push('(LOWER("project_platforms"."platform") = LOWER(\'' + platform + '\') AND "projects"."id" = "project_platforms"."projectID")');
 	}
 	if (bundle != undefined) {
 		imports.push('"project_bundles"');
@@ -41,11 +41,11 @@ export default async (req, res) => {
 	}
 	if (download != undefined) {
 		imports.push('"project_downloads"');
-		selectorQueries.push('("project_downloads"."type" = \'' + download + '\' AND "projects"."id" = "project_downloads"."projectID")');
+		selectorQueries.push('(LOWER("project_downloads"."type") = LOWER(\'' + download + '\') AND "projects"."id" = "project_downloads"."projectID")');
 	}
 	if (skill != undefined) {
 		imports.push('"project_skills"');
-		selectorQueries.push('("project_skills"."skill" = \'' + skill + '\' AND "projects"."id" = "project_skills"."projectID")');
+		selectorQueries.push('(LOWER("project_skills"."skill") = LOWER(\'' + skill + '\') AND "projects"."id" = "project_skills"."projectID")');
 	}
 	if (tool != undefined) {
 		imports.push('"project_tools"');
@@ -141,7 +141,7 @@ export default async (req, res) => {
 				const logo = logoSideResult.rows[0];
 				delete logo.id;
 
-				tool.image = logo;
+				tool.logo = logo;
 				delete tool.imageID;
 
 

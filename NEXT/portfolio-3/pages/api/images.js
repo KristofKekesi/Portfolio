@@ -21,10 +21,10 @@ export default async (req, res) => {
 		selectorQueries.push('"images"."id" = ' + id);
 	}
     if (type != undefined) {
-        selectorQueries.push('"images"."type" = \'' + type + '\'');
+        selectorQueries.push('LOWER("images"."type") = LOWER(\'' + type + '\')');
     }
     if (copyright != undefined) {
-        selectorQueries.push('("images"."copyrightHolder" = \'' + copyright + '\' OR "images"."copyrightURL" = \'' + copyright + '\')');
+        selectorQueries.push('(LOWER("images"."copyrightHolder") = LOWER(\'' + copyright + '\') OR LOWER("images"."copyrightURL") = LOWER(\'' + copyright + '\'))');
     }
 
 	if (selectorQueries.length > 0) {

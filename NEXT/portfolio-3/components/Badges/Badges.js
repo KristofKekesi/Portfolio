@@ -49,7 +49,7 @@ export default function Badges(props) {
         if(props.downloads[i].isAvailable == props.downloads[i].isAvailable) {
             if (props.downloads[i].type == "website") {
                 final.push(
-                    <a href={ props.downloads[i].value } key={i}>
+                    <a className="target" href={ props.downloads[i].value } key={i}>
                         Website
                     </a>
                 );

@@ -14,9 +14,8 @@ div.technologies-content {
 
 .technologies-content img {
     width: auto;
-    height: auto;
+    height: 5rem;
     max-width: 5rem;
-    max-height: 5rem;
     margin-top: 1rem;
     margin-bottom: .5rem;
 }

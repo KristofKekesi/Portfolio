@@ -144,15 +144,15 @@ function Article(props) {
     }
 
     if (props.madeWith !== null && props.madeWith !== undefined && props.madeWith.length > 0) {
-        articleContent.push(<MadeWith madeWith={props.madeWith} title={"Tools I used"} key={"made-with"}/>);
+        articleContent.push(<MadeWith tools={props.madeWith} title={"Tools I used"} key={"made-with"}/>);
     }
-
-    articleContent.push(<div className="mt-10 h-px" key={"last"}></div>)
 
     return(
         <article>
             <div className="article-content">
                 { articleContent }
+                { props.children }
+                <div className="mt-10 h-px" key={"last"}></div>
             </div>
         </article>
     );
