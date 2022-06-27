@@ -23,7 +23,9 @@ import { defaultDockElementIDs, server } from "../config";
 //         \__) \__)
 
 
-export default function Home({ timestamps, dockElements, keywords }) {
+const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+export default function Timeline({ timestamps, dockElements, keywords }) {
 	useEffect(() => {
 		navbarToggle();
 		cursorSetup();
@@ -47,7 +49,6 @@ export default function Home({ timestamps, dockElements, keywords }) {
 			years.push(timestamp.date.getFullYear());
 		}
 	});
-	console.log(years);
 
 	const yearpicker = <div className="hidden md:flex mt-10 flex-col">
 		{years.map(year => {
@@ -59,27 +60,95 @@ export default function Home({ timestamps, dockElements, keywords }) {
 		})}
 	</div>;
 
-	let lastYear = null;
-	const timeline2 = <>
-		{//<div className="sticky mt-10 hidden md:flex" style={{backgroundImage: `url('bg.jpeg')`, top: "50px", left: "0px", width: "1rem", height: "calc(100vh)", marginBottom: "40px"}}><div className="sticky blur-dark" style={{width: "1rem", height: "100"}}></div></div>
-		
-		}<div>
-			{ timestamps.map(timestamp => {
-				if (lastYear !== timestamp.date.getFullYear()) {
-					lastYear = timestamp.date.getFullYear();
-					console.log(lastYear);
-					return (
-						<div className="m-10 section">
-							<div className="h-px mb-10" />
-							<div id="2004" className="text-title selectable">{ timestamp.date.getFullYear() }</div>
-							<div className="text selectable">Born</div>
-							<div className="h-px mt-10" />
-						</div>
-					);
-				}
-			})}
-		</div>
-	</>;
+	const organisedTimestamps = {};
+	timestamps.forEach(timestamp => {
+		// Years
+		if (!organisedTimestamps[timestamp.date.getFullYear()]) {
+			organisedTimestamps[timestamp.date.getFullYear()] = {};
+		}
+		if (!timestamp.showMonth) {
+			if (!organisedTimestamps[timestamp.date.getFullYear()]["undefined"]) {
+				organisedTimestamps[timestamp.date.getFullYear()]["undefined"] = [];
+			}
+			organisedTimestamps[timestamp.date.getFullYear()]["undefined"].push(timestamp);
+
+			return;
+		}
+		// Months
+		if (!organisedTimestamps[timestamp.date.getFullYear()][timestamp.date.getMonth()]) {
+			organisedTimestamps[timestamp.date.getFullYear()][timestamp.date.getMonth()] = {};
+		}
+		if (timestamp.showMonth && !timestamp.showDay) {
+			if (!organisedTimestamps[timestamp.date.getFullYear()][timestamp.date.getMonth()]["undefined"]) {
+				organisedTimestamps[timestamp.date.getFullYear()][timestamp.date.getMonth()]["undefined"] = [];
+			}
+			organisedTimestamps[timestamp.date.getFullYear()][timestamp.date.getMonth()]["undefined"].push(timestamp);
+
+			return;
+		}
+		// Days
+		if (!organisedTimestamps[timestamp.date.getFullYear()][timestamp.date.getMonth()][timestamp.date.getDate()]) {
+			organisedTimestamps[timestamp.date.getFullYear()][timestamp.date.getMonth()][timestamp.date.getDate()] = [];
+		}
+		organisedTimestamps[timestamp.date.getFullYear()][timestamp.date.getMonth()][timestamp.date.getDate()].push(timestamp);
+	});
+
+	const timeline2 = <div>
+		{Object.keys(organisedTimestamps).map(year => {
+			return (
+				<div className="m-10 section" key={ year }>
+					<div className="h-px mb-10" />
+					<div id={ year } className="text-title selectable">{ year }</div>
+					{ // Year timestamps
+					organisedTimestamps[year]["undefined"] ? organisedTimestamps[year]["undefined"].map( timestamp => {
+						return (
+							<div className="text selectable" key={ timestamp.id } dangerouslySetInnerHTML={{ __html: timestamp.name }} />
+						);
+					}) : null}
+					{ // Month timestamps
+					Object.keys(organisedTimestamps[year]).map( month => {
+						if (month == "undefined") {
+							{ organisedTimestamps[year][month].map( timestamp => {
+								return (
+									<div className="text selectable" key={ timestamp.id } dangerouslySetInnerHTML={{ __html: timestamp.name }}></div>
+								)
+							})}
+						} else {
+							return (
+								<div key={ month }>
+									<div className="text-subtitle selectable" style={{paddingTop: "0"}}>{ months[month] }</div>
+									{
+										Object.keys(organisedTimestamps[year][month]).map( day => {
+											if (day == "undefined") {
+												return (
+												 organisedTimestamps[year][month][day].map( timestamp => {
+													return (
+														<div className="text selectable" key={ timestamp.id } dangerouslySetInnerHTML={{ __html: timestamp.name }}></div>
+													)
+												}))
+											} else {
+												return (
+													<div key={ day }>
+														<div className="text-subsubtitle selectable">{months[month] + " " + day}</div>
+														{ organisedTimestamps[year][month][day].map( timestamp => {
+															return (
+																<div className="text selectable" key={ timestamp.id } dangerouslySetInnerHTML={{ __html: timestamp.name }}></div>
+															)
+														})}
+													</div>
+												);
+											}
+										})
+									}
+								</div>
+							);
+						}})}
+					<div className="h-px mt-10" />
+				</div>
+			);
+		})}
+	</div>
+
 
 	const timeline = <article id="timeline" className="flex flex-nowrap flex-row items-start justify-center bg-white">
 		{ yearpicker }
@@ -192,7 +261,7 @@ export default function Home({ timestamps, dockElements, keywords }) {
 				<div className="text selectable">Graduating from Chernel István High School Hungary</div>
 				<div className="h-px mt-10" />
 			</div>
-			{ //timeline2
+			{ timeline2
 			}
 		</div>
 	</article>
