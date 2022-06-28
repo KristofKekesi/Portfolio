@@ -59,7 +59,7 @@ export default function Home({ dockElements, keywords }) {
 export const getStaticProps = async ( _ ) => {
 	const dockElements = [];
 	for (let i = 0; i < defaultDockElementIDs.length; i++) {
-		const projectResponse = await fetch(server + "/api/projects?id=" + defaultDockElementIDs[i]);
+		const projectResponse = await fetch(server + "/api/projects?id=" + encodeURIComponent(defaultDockElementIDs[i]));
 		const project = await projectResponse.json();
 
 		dockElements.push(project);

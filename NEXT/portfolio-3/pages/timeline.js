@@ -93,192 +93,79 @@ export default function Timeline({ timestamps, dockElements, keywords }) {
 		organisedTimestamps[timestamp.date.getFullYear()][timestamp.date.getMonth()][timestamp.date.getDate()].push(timestamp);
 	});
 
-	const timeline2 = <div>
-		{Object.keys(organisedTimestamps).map(year => {
-			return (
-				<div className="m-10 section" key={ year }>
-					<div className="h-px mb-10" />
-					<div id={ year } className="text-title selectable">{ year }</div>
-					{ // Year timestamps
-					organisedTimestamps[year]["undefined"] ? organisedTimestamps[year]["undefined"].map( timestamp => {
-						return (
-							<div className="text selectable" key={ timestamp.id } dangerouslySetInnerHTML={{ __html: timestamp.name }} />
-						);
-					}) : null}
-					{ // Month timestamps
-					Object.keys(organisedTimestamps[year]).map( month => {
-						if (month == "undefined") {
-							{ organisedTimestamps[year][month].map( timestamp => {
-								return (
-									<div className="text selectable" key={ timestamp.id } dangerouslySetInnerHTML={{ __html: timestamp.name }}></div>
-								)
-							})}
-						} else {
-							return (
-								<div key={ month }>
-									<div className="text-subtitle selectable" style={{paddingTop: "0"}}>{ months[month] }</div>
-									{
-										Object.keys(organisedTimestamps[year][month]).map( day => {
-											if (day == "undefined") {
-												return (
-												 organisedTimestamps[year][month][day].map( timestamp => {
-													return (
-														<div className="text selectable" key={ timestamp.id } dangerouslySetInnerHTML={{ __html: timestamp.name }}></div>
-													)
-												}))
-											} else {
-												return (
-													<div key={ day }>
-														<div className="text-subsubtitle selectable">{months[month] + " " + day}</div>
-														{ organisedTimestamps[year][month][day].map( timestamp => {
-															return (
-																<div className="text selectable" key={ timestamp.id } dangerouslySetInnerHTML={{ __html: timestamp.name }}></div>
-															)
-														})}
-													</div>
-												);
-											}
-										})
-									}
-								</div>
-							);
-						}})}
-					<div className="h-px mt-10" />
-				</div>
-			);
-		})}
-	</div>
-
-
 	const timeline = <article id="timeline" className="flex flex-nowrap flex-row items-start justify-center bg-white">
 		{ yearpicker }
 		<div className="sticky mt-10 hidden md:flex" style={{backgroundImage: `url('bg.jpeg')`, top: "50px", left: "0px", width: "1rem", height: "calc(100vh)", marginBottom: "40px"}}><div className="sticky blur-dark" style={{width: "1rem", height: "100"}}></div></div>
 		<div>
-			<div className="m-10 section">
-				<div className="h-px mb-10" />
-				<div id="2004" className="text-title selectable">2004</div>
-				<div className="text selectable">Born</div>
-				<div className="h-px mt-10" />
-			</div>
-			<div className="m-10 section">
-				<div className="h-px mb-10" />
-				<div id="2015" className="text-title selectable">2015</div>
-				<div className="text selectable">Started learning English</div>
-				<div className="h-px mt-10" />
-			</div>
-			<div className="m-10 section">
-				<div className="h-px mb-10" />
-				<div id="2018" className="text-title selectable">2018</div>
-				<div className="text selectable">Started learning <abbr className="target" title="HyperText Markup Language">HTML</abbr>, <abbr className="target" title="Cascadian Style Sheet">CSS</abbr> and JavaScript</div>
-				<div className="h-px mt-10" />
-			</div>
-			<div className="m-10 section">
-				<div className="h-px mb-10" />
-				<div id="2019" className="text-title selectable">2019</div>
-				<div className="text-subtitle selectable" style={{paddingTop: "0"}}>December</div>
-				<div className="text selectable">Started learning Flutter and Dart</div>
-				<div className="h-px mt-10" />
-			</div>
-			<div className="m-10 section">
-				<div className="h-px mb-10" />
-				<div id="2020" className="text-title selectable">2020</div>
-				<div className="text-subtitle selectable" style={{paddingTop: "0"}}>May</div>
-				<div className="text-subsubtitle selectable">May 16</div>
-				<div className="text selectable">Translated Notepads to Hungarian</div>
-				<div className="text-subtitle selectable">July</div>
-				<div className="text-subsubtitle selectable">July 6</div>
-				<div className="text selectable">Released Elements version 0.1</div>
-				<div className="text-subsubtitle selectable">July 12</div>
-				<div className="text selectable">Released Elements version 0.2</div>
-				<div className="text-subsubtitle selectable">July 22</div>
-				<div className="text selectable">Released NASA Mira 0.1</div>
-				<div className="text-subsubtitle selectable">July 24</div>
-				<div className="text selectable">Released kekesi.dev</div>
-				<div className="text-subsubtitle selectable">July 29</div>
-				<div className="text selectable">Released NASA Mira 1.0</div>
-				<div className="text-subtitle selectable">August</div>
-				<div className="text-subsubtitle selectable">August 2</div>
-				<div className="text selectable">Released Elements version 0.3</div>
-				<div className="text-subtitle selectable">September</div>
-				<div className="text-subsubtitle selectable">September 1</div>
-				<div className="text selectable">Released Elements version 0.4</div>
-				<div className="text-subtitle selectable">October</div>
-				<div className="text-subsubtitle selectable">October 16</div>
-				<div className="text selectable">Translated Files to Hungarian</div>
-				<div className="text-subtitle selectable">November</div>
-				<div className="text-subsubtitle selectable">November 9</div>
-				<div className="text selectable">Translated Ambie to Hungarian</div>
-				<div className="text-subtitle selectable">December</div>
-				<div className="text-subsubtitle selectable">December 8</div>
-				<div className="text selectable">Translated Quick Pad to Hungarian</div>
-				<div className="text-subsubtitle selectable">December 14</div>
-				<div className="text selectable">Released Preacher</div>
-				<div className="h-px mt-10" />
-			</div>
-			<div className="m-10 section">
-				<div className="h-px mb-10" />
-				<div id="2021" className="text-title selectable">2021</div>
-				<div className="text-subtitle selectable" style={{paddingTop: "0"}}>February</div>
-				<div className="text-subsubtitle selectable">February 15</div>
-				<div className="text selectable">Translated Replica to Hungarian</div>
-				<div className="text-subsubtitle selectable">February 17</div>
-				<div className="text selectable">Translated Quick Picture Viewer to Hungarian</div>
-				<div className="text-subtitle selectable">March</div>
-				<div className="text-subsubtitle selectable">March 2</div>
-				<div className="text selectable">Translated DogeHouse to Hungarian</div>
-				<div className="text-subsubtitle selectable">March 19</div>
-				<div className="text selectable">Released Elements version 1.0</div>
-				<div className="text-subtitle selectable">April</div>
-				<div className="text-subsubtitle selectable">April 13</div>
-				<div className="text selectable">Released NASA Mira 2</div>
-				<div className="text-subsubtitle selectable">April 16</div>
-				<div className="text selectable">Translated Vinyls to Hungarian</div>
-				<div className="text-subtitle selectable">June</div>
-				<div className="text selectable">Started learning React</div>
-				<div className="text-subtitle selectable">September</div>
-				<div className="text selectable">Math and <abbr className="target" title="Computer Science">CS</abbr> Major</div>
-				<div className="text-subtitle selectable">October</div>
-				<div className="text-subsubtitle selectable">October 26</div>
-				<div className="text selectable">Graduated from <abbr className="target" title="Computer Science">CS</abbr> level B</div>
-				<div className="text-subtitle selectable">December</div>
-				<div className="text-subsubtitle selectable">December 23</div>
-				<div className="text selectable">Translated Navi to Hungarian</div>
-				<div className="h-px mt-10" />
-			</div>
-			<div className="m-10 section">
-				<div className="h-px mb-10" />
-				<div id="2022" className="text-title selectable">2022</div>
-				<div className="text-subtitle selectable" style={{paddingTop: "0"}}>March</div>
-				<div className="text-subsubtitle selectable">March 6</div>
-				<div className="text selectable">Translated Posture Pal to Hungarian</div>
-				<div className="text-subsubtitle selectable">March 10</div>
-				<div className="text selectable">Released NASA Mira version 3</div>
-				<div className="h-px mt-10" />
-			</div>
-			<div className="m-10 section">
-				<div className="h-px mb-10" />
-				<div id="2023" className="text-title selectable">2023</div>
-				<div className="text selectable">Graduating from Chernel István High School Hungary</div>
-				<div className="h-px mt-10" />
-			</div>
-			{ timeline2
-			}
+			{Object.keys(organisedTimestamps).map(year => {
+				return (
+					<div className="m-10 section" key={ year }>
+						<div className="h-px mb-10" />
+						<div id={ year } className="text-title selectable">{ year }</div>
+						{ // Year timestamps
+						organisedTimestamps[year]["undefined"] ? organisedTimestamps[year]["undefined"].map( timestamp => {
+							return (
+								<div className="text selectable" key={ timestamp.id } dangerouslySetInnerHTML={{ __html: timestamp.name }} />
+							);
+						}) : null}
+						{ // Month timestamps
+						Object.keys(organisedTimestamps[year]).map( month => {
+							if (month == "undefined") {
+								{ organisedTimestamps[year][month].map( timestamp => {
+									return (
+										<div className="text selectable" key={ timestamp.id } dangerouslySetInnerHTML={{ __html: timestamp.name }}></div>
+									)
+								})}
+							} else {
+								return (
+									<div key={ month }>
+										<div className="text-subtitle selectable" style={{paddingTop: "0"}}>{ months[month] }</div>
+										{
+											Object.keys(organisedTimestamps[year][month]).map( day => {
+												if (day == "undefined") {
+													return (
+													organisedTimestamps[year][month][day].map( timestamp => {
+														return (
+															<div className="text selectable" key={ timestamp.id } dangerouslySetInnerHTML={{ __html: timestamp.name }}></div>
+														)
+													}))
+												} else {
+													return (
+														<div key={ day }>
+															<div className="text-subsubtitle selectable">{months[month] + " " + day}</div>
+															{ organisedTimestamps[year][month][day].map( timestamp => {
+																return (
+																	<div className="text selectable" key={ timestamp.id } dangerouslySetInnerHTML={{ __html: timestamp.name }}></div>
+																)
+															})}
+														</div>
+													);
+												}
+											})
+										}
+									</div>
+								);
+							}})}
+						<div className="h-px mt-10" />
+					</div>
+				);
+			})}
 		</div>
 	</article>
 
 	return (
 		<>
-			<Head title="timeline" description="" keywords={ keywords } />
+			<Head title="Timeline" description="Important dates and events in my career." keywords={ keywords } />
 
 			<Navbar />
 
 			<main>
-			<center className="w-screen bg-cover" style={{paddingTop: "150px", paddingBottom: "75px", backgroundImage: `url('bg.jpeg')`}}>
-			<div className="w-max">
-			<h1 className="text-white text-7xl font-bold text-left font-interBold" style={{paddingTop: "0vh", textShadow: "6px 6px 12px rgba(0, 0, 0, .5)"}}>Timeline</h1>
-			</div>
-			</center>
-			{ timeline }
+				<center className="w-screen bg-cover" style={{paddingTop: "150px", paddingBottom: "75px", backgroundImage: `url('bg.jpeg')`}}>
+					<div className="w-max">
+						<h1 className="text-white text-7xl font-bold text-left font-interBold" style={{paddingTop: "0vh", textShadow: "6px 6px 12px rgba(0, 0, 0, .5)"}}>Timeline</h1>
+					</div>
+				</center>
+				{ timeline }
 			</main>
 
 			<Dock elements={ dockElements } />
@@ -296,7 +183,7 @@ export const getStaticProps = async ( _ ) => {
 
 	const dockElements = [];
 	for (let i = 0; i < defaultDockElementIDs.length; i++) {
-		const projectResponse = await fetch(server + "/api/projects?id=" + defaultDockElementIDs[i]);
+		const projectResponse = await fetch(server + "/api/projects?id=" + encodeURIComponent(defaultDockElementIDs[i]));
 		const project = await projectResponse.json();
 		
 		dockElements.push(project);

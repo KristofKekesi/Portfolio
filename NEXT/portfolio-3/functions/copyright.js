@@ -61,4 +61,5 @@ function setCopyright(json) {
 }
 
 
-export default setCopyright;
+export default function() {//setCopyright();
+};

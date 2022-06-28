@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
-import Link from 'next/link';
 
 import footerDockSpacer from "../../functions/footer";
 
+import { server } from "../../config";
 
 //    TURTLE - TEKI
 //    (°-°) _______
@@ -35,7 +35,7 @@ export default function Footer() {
                         Policies
                         <ul>
                             <li>
-                                <a href="/generalprivacypolicy" className="target">Privacy Policy</a>
+                                <a href="/generalprivacypolicy.txt" className="target">Privacy Policy</a>
                             </li>
                         </ul>
                     </li>
@@ -46,7 +46,7 @@ export default function Footer() {
                     <li>
                         RSS
                         <ul>
-                            <li><a className="target" href="https://rss.kekesi.dev/rss.xml">Subscribe</a></li>
+                            <li><a className="target" href={ server + "/rss.xml" }>Subscribe</a></li>
                         </ul>
                     </li>
                 </ul>

@@ -1541,3 +1541,12 @@
 2022-06-26 21:56:40.521 CEST [71380] ERROR:  duplicate key value violates unique constraint "timetable_pk"
 2022-06-26 21:56:40.521 CEST [71380] DETAIL:  Key (id)=(35) already exists.
 2022-06-26 21:56:40.521 CEST [71380] STATEMENT:  INSERT INTO public.timeline (id, date, name, "showMonth", "showDay") VALUES ($1::integer, $2::date, $3::varchar, $4::boolean, $5::boolean)
+2022-06-28 15:17:22.379 CEST [88207] ERROR:  cannot use column reference in DEFAULT expression
+2022-06-28 15:17:22.379 CEST [88207] STATEMENT:  alter table articles
+	    add "sitemapChangeFrequency" varchar default monthly
+2022-06-28 15:18:58.169 CEST [88207] ERROR:  column "sitemapPriority" of relation "articles" already exists
+2022-06-28 15:18:58.169 CEST [88207] STATEMENT:  alter table articles
+	    add "sitemapPriority" int default 0.8
+2022-06-28 15:19:08.407 CEST [88207] ERROR:  column "sitemapPriority" of relation "articles" already exists
+2022-06-28 15:19:08.407 CEST [88207] STATEMENT:  alter table articles
+	    add "sitemapPriority" int default 0.8

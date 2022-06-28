@@ -11,10 +11,10 @@ import { server } from "../../config";
 
 export default async (req, res) => {
     const {
-        query: { id, name, redirect, isVisible, content, skill, tool },
+        query: { id, name, redirect, isVisible, content, skill, tool, sitemapChangeFrequency, sitemapPriority },
         method,
     } = req;
-    //console.log("ID: " + id + " Name: " + name + " Redirect: " + redirect + " IsVisible: " + isVisible + " Content: " + content + " Skill: " + skill + " Tool: " + tool);
+    //console.log("ID: " + id + " Name: " + name + " Redirect: " + redirect + " IsVisible: " + isVisible + " Content: " + content + " Skill: " + skill + " Tool: " + tool, "SitemapChangeFrequency: " + sitemapChangeFrequency + " SitemapPriority: " + sitemapPriority);
 
 	let imports = ['"articles"'];
 	let selectorQueries = [];
@@ -41,6 +41,12 @@ export default async (req, res) => {
 	if (tool != undefined) {
 		imports.push('"article_tools"');
 		selectorQueries.push('("article_tools"."toolID" = ' + tool + ' AND "articles"."id" = "article_tools"."articleID")');
+	}
+	if (sitemapChangeFrequency != undefined) {
+		selectorQueries.push('LOWER("articles"."sitemapChangeFrequency") = LOWER(\'' + sitemapChangeFrequency + '\')');
+	}
+	if (sitemapPriority != undefined) {
+		selectorQueries.push('"articles"."sitemapPriority" = ' + sitemapPriority);
 	}
 
 	imports = 'FROM ' + imports.join(", ");
@@ -136,7 +142,7 @@ export default async (req, res) => {
 			delete mainResult.rows[i].coverID;
 
 			// Content
-			const contentResponse = await fetch(server + "/" + mainResult.rows[i].content);
+			const contentResponse = await fetch(server + "/" + encodeURIComponent(mainResult.rows[i].content));
 			const content = await contentResponse.json();
 
 			async function setArticlePreviewSmoll(articlePreviewSmoll) {
@@ -202,7 +208,7 @@ export default async (req, res) => {
 			}
 
 			async function setProjectBundle(projectBundle) {
-				const projectBundleResponse = await fetch(server + "/api/bundles?id=" + projectBundle.id);
+				const projectBundleResponse = await fetch(server + "/api/bundles?id=" + encodeURIComponent(projectBundle.id));
 				const projectBundleResult = await projectBundleResponse.json();
 
 				projectBundle.projectBundle = projectBundleResult[0];

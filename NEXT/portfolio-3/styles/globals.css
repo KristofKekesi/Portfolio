@@ -164,7 +164,7 @@
   }
 
   #footer-content>li {
-	  @apply pt-7 px-10 inline-table text-xl text-primaryLightHover
+	  @apply pt-7 px-10 text-xl text-primaryLightHover
   }
 
   #footer-content li>ul {
