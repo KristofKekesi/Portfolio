@@ -1,0 +1,24 @@
+/*  TURTLE - TEKI
+    (°-°) _______
+      \ \/ - - - \_
+       \_  ___  ___>
+         \__) \__)    */
+
+
+.terminal {
+    width: fit-content;
+    height: min-content;
+}
+
+.terminal span{
+    font-family: "Sans Mono", "Consolas", "Courier", monospace;
+}
+
+pre.terminal-inner {
+    background-color: #202124;
+}
+
+/*.terminal:target>.terminal-inner {
+    border: 3px solid #ff4a4d;
+    width: min-content;
+}*/

@@ -1,0 +1,20 @@
+/*  TURTLE - TEKI
+    (°-°) _______
+      \ \/ - - - \_
+       \_  ___  ___>
+         \__) \__)    */
+
+
+article .gallery div {
+    height: min-content;
+    width: min-content;
+}
+
+article .gallery {
+    height: min-content;
+}
+
+article .gallery.max {
+    padding-left: 0;
+    padding-right: 0;
+}

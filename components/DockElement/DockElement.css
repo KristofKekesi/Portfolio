@@ -1,0 +1,12 @@
+/*  TURTLE - TEKI
+    (°-°) _______
+      \ \/ - - - \_
+       \_  ___  ___>
+         \__) \__)    */
+
+@media screen and (min-width: calc(768px)) {
+    #dock .dock-element  {
+        min-width: 6rem;
+        max-width: fit-content;
+    }
+}

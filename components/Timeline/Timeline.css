@@ -1,0 +1,12 @@
+#timeline > div > a {
+    color: #000000;
+}
+
+#timeline .text-subtitle {
+    padding-top: 1.5rem;
+    padding-bottom: 0rem;
+
+    font-size: 1.75rem;
+
+    font-family: "Inter";
+}

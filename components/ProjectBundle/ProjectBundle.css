@@ -1,0 +1,15 @@
+/*  TURTLE - TEKI
+    (°-°) _______
+      \ \/ - - - \_
+       \_  ___  ___>
+         \__) \__)    */
+
+
+.project-bundle-content > div {
+    width: min-content;
+}
+
+.project-bundle-content img {
+    max-height: 5rem;
+    max-width: 5rem;
+}

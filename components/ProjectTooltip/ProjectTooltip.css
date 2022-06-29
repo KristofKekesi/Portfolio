@@ -1,0 +1,31 @@
+/*  TURTLE - TEKI
+    (°-°) _______
+      \ \/ - - - \_
+       \_  ___  ___>
+         \__) \__)   */
+
+
+.project-tooltip {
+    transform: translateX(-50%);
+    min-width: 300px;
+    transition: opacity .15s ease-in-out, display .15s linear;
+}
+
+.project-tooltip li {
+    list-style: none;
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+
+    font-size: 1rem;
+}
+
+.project-tooltip li:first-child {
+    padding-top: 16px;
+    font-size: 1.25rem;
+}
+
+.project-tooltip li:last-child {
+    padding-bottom: 16px;
+}

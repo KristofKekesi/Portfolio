@@ -1,0 +1,181 @@
+/*  TURTLE - TEKI
+    (°-°) _______
+      \ \/ - - - \_
+       \_  ___  ___>
+         \__) \__)    */
+
+
+@font-face {
+  font-family: 'InterExtraLight';
+  src: url('../fonts/Inter-ExtraLight.ttf'); /* IE9 Compat Modes */
+  src: url('../fonts/Inter-ExtraLight.ttf')  format('truetype'), /* Safari, Android, iOS */
+}
+
+@font-face {
+  font-family: 'InterLight';
+  src: url('../fonts/Inter-Light.ttf'); /* IE9 Compat Modes */
+  src: url('../fonts/Inter-Light.ttf')  format('truetype'), /* Safari, Android, iOS */
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('../fonts/Inter-Regular.ttf'); /* IE9 Compat Modes */
+  src: url('../fonts/Inter-Regular.ttf')  format('truetype'), /* Safari, Android, iOS */
+}
+
+@font-face {
+  font-family: 'InterBold';
+  src: url('../fonts/Inter-Bold.ttf'); /* IE9 Compat Modes */
+  src: url('../fonts/Inter-Bold.ttf')  format('truetype'), /* Safari, Android, iOS */
+}
+
+/** Couses error on abbr tags with title attribute **/
+/*@tailwind base;*/
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  * {
+    @apply m-0 p-0 box-border select-none
+  }
+
+  body {
+    @apply min-h-screen w-screen font-inter
+  }
+
+  nav li {
+    @apply list-none
+  }
+
+  nav a {
+    @apply no-underline mx-5 align-middle text-white md:text-black
+  }
+
+  nav:first-child > a {
+    @apply ml-12
+  }
+
+  nav .last {
+    @apply mr-12
+  }
+
+  #more-tooltip li {
+    @apply list-none px-6 py-1
+  }
+
+  #more-tooltip a {
+    @apply align-middle text-primaryLightHover text-2xl no-underline hover:text-white
+  }
+
+  main a {
+    @apply text-white no-underline
+  }
+
+  article {
+	  @apply bg-white
+  }
+
+  article.article-preview-big a {
+    @apply text-black
+  }
+
+  article .article-content {
+    @apply m-auto
+  }
+
+  article .section {
+    @apply bg-secondaryLight my-10
+  }
+
+  article a {
+    @apply text-homeAccentLight font-bold
+  }
+
+  article .text-title {
+    @apply text-3xl font-bold mt-10 mb-4 px-12
+  }
+
+  article .text-subtitle {
+    @apply text-2xl italic mt-4 mb-2 mx-12
+  }
+
+  article .text-smallsubtitle {
+    @apply text-xl italic mt-4 mb-2 mx-12 font-normal
+  }
+
+  article .text-subsubtitle {
+    @apply text-xl mt-0 mb-2 px-12
+  }
+
+  article .text {
+    @apply text-base mt-0 mb-3 px-12 text-justify
+  }
+
+  article .null-padding {
+    @apply p-0 m-0
+  }
+
+  article .terminal {
+    @apply text-base my-0 px-12
+  }
+
+  .nowrap {
+	  @apply whitespace-nowrap
+  }
+
+  article .gallery {
+    @apply px-12 py-0 my-3
+  }
+
+  article .gallery img {
+    @apply max-w-full
+  }
+
+  article .project-bundle.text-title {
+    @apply pt-10 pb-4
+  }
+
+  hr {
+    @apply bg-white mt-1 mb-1 opacity-50
+  }
+
+  abbr {
+    @apply relative select-all no-underline font-bold text-homeAccentLight
+  }
+
+  #dock.inactive {
+    @apply -bottom-1/2 md:bottom-3
+  }
+
+  .dock-element {
+    @apply content-evenly w-32 py-3 inline-block text-lg md:text-base leading-8 md:p-2
+  }
+
+  .dock-element img {
+    @apply w-auto h-10 md:h-12
+  }
+
+  footer {
+	  @apply z-10 bg-tertiaryLight w-screen mx-0 my-auto
+  }
+
+  #footer-content li {
+	  @apply text-left list-none
+  }
+
+  #footer-content>li {
+	  @apply pt-7 px-10 text-xl text-primaryLightHover
+  }
+
+  #footer-content li>ul {
+	  @apply pt-2
+  }
+
+  #footer-content li>ul>li {
+	  @apply text-primaryLight text-base pb-1
+  }
+
+  footer a {
+	@apply text-primaryLight hover:text-primaryLightHover break-words
+  }
+}

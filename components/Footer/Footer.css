@@ -1,0 +1,18 @@
+/*  TURTLE - TEKI
+    (°-°) _______
+      \ \/ - - - \_
+       \_  ___  ___>
+         \__) \__)    */
+
+
+footer a {
+    transition: color .25s;
+}
+
+#footer-content>li {
+    width: fit-content;
+}
+
+#footer-content li>ul :last-child {
+    padding-bottom: 0;
+}
