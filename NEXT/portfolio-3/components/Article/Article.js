@@ -5,6 +5,8 @@ import ProjectBundle from "../ProjectBundle/ProjectBundle";
 import { ArticlePreviewsBig, ArticlePreviewsSmoll } from "../ArticlePreview/index";
 import { MadeWith } from "../MadeWith/MadeWith";
 
+import { months } from "../../config.js";
+
 
 //    TURTLE - TEKI
 //    (°-°) _______
@@ -14,6 +16,9 @@ import { MadeWith } from "../MadeWith/MadeWith";
 
 
 function Article(props) {
+    // PROPS
+    // content, madeWith, published, edited
+
     let terminalId = 0;
 
     let articleContent = [];
@@ -147,8 +152,26 @@ function Article(props) {
         articleContent.push(<MadeWith tools={props.madeWith} title={"Tools I used"} key={"made-with"}/>);
     }
 
+    let published = new Date(props.published);
+    published = new Date(published.getFullYear(), published.getMonth(), published.getDate());
+
+    let edited = new Date(props.edited);
+    edited = new Date(edited.getFullYear(), edited.getMonth(), edited.getDate());
+
+    let publishedString = "";
+    if (props.published != undefined) {
+        publishedString += "Published " + published.getFullYear() + " " + months[published.getMonth()] + " " + published.getDate();
+    }
+    if (props.edited != undefined && edited.getTime() > published.getTime()) {
+        publishedString += ", edited " + edited.getFullYear() + " " + months[edited.getMonth()] + " " + edited.getDate();
+    }
+    
+    console.log(props.published)
+    console.log(props.edited)
+
     return(
         <article>
+            <p className="article-content pt-6 px-12">{ publishedString }</p>
             <div className="article-content">
                 { articleContent }
                 { props.children }

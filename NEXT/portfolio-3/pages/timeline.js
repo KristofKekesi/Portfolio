@@ -13,7 +13,7 @@ import cursorSetup from "../functions/cursor";
 import setProjectTooltipState from '../functions/project-tooltip-state';
 import projectTooltipPosition from '../functions/project-tooltip-position';
 
-import { defaultDockElementIDs, server } from "../config";
+import { defaultDockElementIDs, server, months } from "../config";
 
 
 //    TURTLE - TEKI
@@ -22,8 +22,6 @@ import { defaultDockElementIDs, server } from "../config";
 //       \_  ___  ___>
 //         \__) \__)
 
-
-const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
 export default function Timeline({ timestamps, dockElements, keywords }) {
 	useEffect(() => {

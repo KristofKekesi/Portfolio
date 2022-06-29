@@ -41,6 +41,8 @@ export const getStaticPaths = async () => {
 
 
 export default function ArticlePage({ article, dockElements, keywords }) {
+	console.log(article.releaseDate);
+
 	useEffect(() => {
 		navbarToggle();
 		cursorSetup();
@@ -69,7 +71,7 @@ export default function ArticlePage({ article, dockElements, keywords }) {
 					></h1>
 					</div>
 				</center>
-				<Article content={ article.content } />
+				<Article content={ article.content } published={ article.releaseDate } edited={ article.lastModified } />
 			</main>
 
 			<Dock elements={ dockElements } />

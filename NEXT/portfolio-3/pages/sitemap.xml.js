@@ -31,7 +31,7 @@ function OBJtoXML(obj) {
 export default class Sitemap {
 	static async getInitialProps({ res }) {
 		const now = new Date();
-		const date = now.getFullYear() + "-" + ('0' + now.getMonth()).slice(-2) + "-" + ('0' + now.getDay()).slice(-2);
+		const date = now.getFullYear() + "-" + ('0' + now.getMonth()).slice(-2) + "-" + ('0' + now.getDate()).slice(-2);
 		
 		// List with all static pages
 		const pages = [

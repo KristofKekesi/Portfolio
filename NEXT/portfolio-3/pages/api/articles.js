@@ -145,6 +145,11 @@ export default async (req, res) => {
 			const contentResponse = await fetch(server + "/" + encodeURIComponent(mainResult.rows[i].content));
 			const content = await contentResponse.json();
 
+			// Last Modified header from content
+			const lastModified = new Date(contentResponse.headers.get('last-modified'));
+			mainResult.rows[i].lastModified = lastModified;
+			
+			// Back to content
 			async function setArticlePreviewSmoll(articlePreviewSmoll) {
 				articlePreviewSmoll.articles = [];
 

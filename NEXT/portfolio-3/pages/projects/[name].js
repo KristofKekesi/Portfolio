@@ -1,4 +1,5 @@
-import {useEffect} from 'react';
+import { useEffect } from 'react';
+import { QRCodeSVG } from "qrcode.react";
 
 import MadeWith from '../../components/MadeWith/MadeWith';
 import Navbar from '../../components/Navbar/Navbar';
@@ -98,7 +99,12 @@ export default function ArticlePage({ project, dockElements, keywords }) {
                         <div className="text nosection selectable">{ project.description }</div>
                         <div className="section">
                             <div className="flex">
-                                <img src={ server + "/" + project.logo.path } alt={ project.name } className="w-auto h-auto ml-12 mr-0 py-12" style={{maxWidth: "7.5rem", maxHeight: "7.5rem", boxSizing: "content-box"}}></img>
+                                <div className="w-auto h-auto ml-12 mr-0 py-12" style={{width: "7.5rem", height: "7.5rem"}}>
+                                    <div className="relative flex items-center justify-center" style={{width: "7.5rem", height: "7.5rem"}}>
+                                        <QRCodeSVG value={ project.downloads[0].value } bgColor={"#ffffff"} level={"Q"} className="fade2 bg-transparent absolute" style={{width: "7.5rem", height: "7.5rem", boxSizing: "content-box"}}/>
+                                        <img src={ server + "/" + project.logo.path } alt={ project.name } className="fade1 absolute" style={{maxWidth: "7.5rem", maxHeight: "7.5rem", boxSizing: "content-box"}}></img>
+                                    </div>
+                                </div>
                                 <div>
                                     <div className="mt-8 h-px" />
                                     { versionDiv }
