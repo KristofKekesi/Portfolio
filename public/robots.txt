@@ -1,13 +1,52 @@
-# https://www.robotstxt.org/robotstxt.html
-User-agent: *
+# For abusive bots.
+crawl-delay: 600
 
-# api
+# Disallow access to API.
+User-agent: *
 Disallow: /api/
 
-# local files
-Disallow: /favicon.png
-Disalllow: /screenshot1.png
-Disallow: /screenshot2.png
+# Disallow access to images.
+User-agent: *
+Disallow: /*.jpg$
+Disallow: /*.jpeg$
+Disallow: /*.png$
+Disallow: /*.gif$
+Disallow: /*.bmp$
+Disallow: /*.tiff$
+Disallow: /*.ico$
+Disallow: /*.svg$
 
-# sitemap
-Sitemap: https://www.kekesi.dev/sitemap.xml
+# Disallow access to stylesheets.
+User-agent: *
+Disallow: /*.css$
+
+# Disallow access to javascript.
+User-agent: *
+Disallow: /*.js$
+
+# Disallow access to videos.
+User-agent: *
+Disallow: /*.mp4$
+Disallow: /*.mov$
+Disallow: /*.wmv$
+Disallow: /*.avi$
+Disallow: /*.webm$
+
+# Disallow access to audio.
+User-agent: *
+Disallow: /*.mp3$
+Disallow: /*.wav$
+Disallow: /*.wma$
+Disallow: /*.ogg$
+
+# Disallow internal files.
+User-agent: *
+Disallow: /*.json$
+Disallow: /*.xml$
+Disallow: /*.txt$
+
+# Sitemap and robots.txt.
+User-agent: *
+Allow: /sitemap.xml
+Allow: /robots.txt
+Sitemap: http://www.kekesi.dev/sitemap.xml

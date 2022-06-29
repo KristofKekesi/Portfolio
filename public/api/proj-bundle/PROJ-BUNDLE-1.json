@@ -1,8 +1,0 @@
-{
-	"id": "PROJ-BUNDLE-1",
-	"name": "UWP Apps Translated",
-	"projects": ["PROJ-5", "PROJ-6", "PROJ-7"],
-	"style": {
-		"gradient": "HEX-2B32B2;HEX-1488CC;90deg;"
-	}
-}

@@ -1,18 +1,5 @@
-<center><h1>Second iteration of my portfolio website</h1></center>
+# Portfolio V3
+The third iteration of my portfolio. Built with React, Next.js, and TailwindCSS. The api is based on a PostgreSQL database located at /db.
 
-# Features
-
-## Kinda unique features
-    · RSS reader support
-    · Noscript page
-    · Custom cursor
-
-## Not unique features
-    · Mobile friendly
-
-# Made with
-
-    · HTML, CSS, Javascript
-    · React
-
-#
+## RSS Feed
+An RSS feed is available at www.kekesi.dev/rss.xml.

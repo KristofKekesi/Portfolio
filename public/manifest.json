@@ -1,36 +1,16 @@
 {
-  "short_name": "Kristóf Kékesi",
-  "name": "Portfolio of Kristóf Kékesi",
-
-  "lang": "en-US",
-  "dir": "ltr",
-  "orientation": "landscape-primary",
-  "description": "I'm Kristóf Kékesi, developer and translator.",
-
-  "icons": [
-    {
-      "src": "favicon.png",
-      "type": "image/png",
-      "sizes": "872x872"
-    }
-  ],
-
-  "screenshots" : [
-    {
-      "src": "screenshot1.png",
-      "sizes": "616x885",
-      "type": "image/png"
-    },
-    {
-      "src": "screenshot2.png",
-      "sizes": "323x144",
-      "type": "image/png"
-    }
-  ],
-
-  "categories": ["productivity"],
-  "start_url": ".",
-  "display": "fullscreen",
-  "theme_color": "#ffffff",
-  "background_color": "#ffffff"
-}
+    "name": "Portfolio of Kristóf Kékesi",
+    "short_name": "Kristóf Kékesi",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#ffffff",
+    "orientation": "portrait-primary",
+    "icons": [
+      {
+        "src": "/favicon.png",
+        "type": "image/png",
+        "sizes": "872x872"
+      }
+    ]
+  }
