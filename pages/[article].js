@@ -41,8 +41,6 @@ export const getStaticPaths = async () => {
 
 
 export default function ArticlePage({ article, dockElements, keywords }) {
-	console.log(article.releaseDate);
-
 	useEffect(() => {
 		navbarToggle();
 		cursorSetup();

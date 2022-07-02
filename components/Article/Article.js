@@ -3,7 +3,7 @@ import ImageGallery from "../ImageGallery/ImageGallery";
 
 import ProjectBundle from "../ProjectBundle/ProjectBundle";
 import { ArticlePreviewsBig, ArticlePreviewsSmoll } from "../ArticlePreview/index";
-import { MadeWith } from "../MadeWith/MadeWith";
+import MadeWith from "../MadeWith/MadeWith";
 
 import { months } from "../../config.js";
 
@@ -165,9 +165,6 @@ function Article(props) {
     if (props.edited != undefined && edited.getTime() > published.getTime()) {
         publishedString += ", edited " + edited.getFullYear() + " " + months[edited.getMonth()] + " " + edited.getDate();
     }
-    
-    console.log(props.published)
-    console.log(props.edited)
 
     return(
         <article>

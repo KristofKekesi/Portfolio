@@ -1,6 +1,4 @@
-import Image from 'next/image';
-import hamburgerImage from './hamburger.svg'
-
+import { server } from "../../config.js";
 
 //    TURTLE - TEKI
 //    (°-°) _______
@@ -12,7 +10,7 @@ import hamburgerImage from './hamburger.svg'
 export default function Hamburger() {
   return(
     <div className="target relative md:hidden mr-10 h-7 w-7">
-      <Image src={ hamburgerImage } id="hamburger" alt="Hamburger" layout="fill" objectFit="contain" />
+      <img src={server + "/hamburger.svg"} id="hamburger" alt="Hamburger" layout="fill"/>
     </div>
   );
 }
