@@ -14,7 +14,7 @@ import setImageGalleries from '../functions/image-gallery';
 import projectTooltipPosition from '../functions/project-tooltip-position.js';
 import setProjectTooltipState from '../functions/project-tooltip-state.js';
 
-import { defaultDockElementIDs, server } from "../config";
+import { api, defaultDockElementIDs, server } from "../config";
 
 
 //    TURTLE - TEKI
@@ -25,7 +25,7 @@ import { defaultDockElementIDs, server } from "../config";
 
 
 export const getStaticPaths = async () => {
-	const response = await fetch(server + "/api/articles");
+	const response = await fetch(api + "/api/articles");
 	const articles = await response.json();
 
 	const paths = [];
@@ -83,7 +83,7 @@ export default function ArticlePage({ article, dockElements, keywords }) {
 
 
 export const getStaticProps = async ( params ) => {
-	const articleResponse = await fetch(server + "/api/articles?redirect=" + encodeURIComponent(params.params.article));
+	const articleResponse = await fetch(api + "/api/articles?redirect=" + encodeURIComponent(params.params.article));
 	const article = await articleResponse.json();
 
 	let dockElementIDs;
@@ -95,7 +95,7 @@ export const getStaticProps = async ( params ) => {
 
 	const dockElements = [];
 	for (let i = 0; i < dockElementIDs.length; i++) {
-		const projectResponse = await fetch(server + "/api/projects?id=" + encodeURIComponent(dockElementIDs[i]));
+		const projectResponse = await fetch(api + "/api/projects?id=" + encodeURIComponent(dockElementIDs[i]));
 		const project = await projectResponse.json();
 	
 		dockElements.push(project);

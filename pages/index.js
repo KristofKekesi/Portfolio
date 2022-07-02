@@ -10,7 +10,7 @@ import cursorSetup from '../functions/cursor.js';
 import projectTooltipPosition from '../functions/project-tooltip-position.js';
 import setProjectTooltipState from '../functions/project-tooltip-state.js';
 
-import { defaultDockElementIDs, server } from "../config";
+import { api, defaultDockElementIDs, server } from "../config";
 
 
 //    TURTLE - TEKI
@@ -59,13 +59,13 @@ export default function Home({ dockElements, keywords }) {
 export const getStaticProps = async ( _ ) => {
 	const dockElements = [];
 	for (let i = 0; i < defaultDockElementIDs.length; i++) {
-		const projectResponse = await fetch(server + "/api/projects?id=" + encodeURIComponent(defaultDockElementIDs[i]));
+		const projectResponse = await fetch(api + "/api/projects?id=" + encodeURIComponent(defaultDockElementIDs[i]));
 		const project = await projectResponse.json();
 
 		dockElements.push(project);
 	}
 
-    const response = await fetch(server + "/api/keywords");
+    const response = await fetch(api + "/api/keywords");
     const keywords = await response.json();
 
 	return {
