@@ -5,10 +5,10 @@
 //         \__) \__)
 
 
-const dev = process.env.NODE_ENV !== 'production';
+const dev = process.env.NODE_ENV !== "production";
 
-//export const server = dev ? 'http://localhost:3000' : 'https://www.kekesi.dev';
-export const server = "http://localhost:3000";
+export const api = "http://localhost:3000";
+export const server = dev ? "http://localhost:3000" : "https://www.kekesi.dev";
 
 // dock elements
 export const defaultDockElementIDs = [1, 2, 5, 9, 6];

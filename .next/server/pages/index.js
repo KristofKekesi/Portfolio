@@ -99,11 +99,11 @@ function Home({ dockElements , keywords  }) {
 const getStaticProps = async (_)=>{
     const dockElements = [];
     for(let i = 0; i < _config__WEBPACK_IMPORTED_MODULE_8__/* .defaultDockElementIDs.length */ .hU.length; i++){
-        const projectResponse = await fetch(_config__WEBPACK_IMPORTED_MODULE_8__/* .server */ .fw + "/api/projects?id=" + encodeURIComponent(_config__WEBPACK_IMPORTED_MODULE_8__/* .defaultDockElementIDs */ .hU[i]));
+        const projectResponse = await fetch(_config__WEBPACK_IMPORTED_MODULE_8__/* .api */ .hi + "/api/projects?id=" + encodeURIComponent(_config__WEBPACK_IMPORTED_MODULE_8__/* .defaultDockElementIDs */ .hU[i]));
         const project = await projectResponse.json();
         dockElements.push(project);
     }
-    const response = await fetch(_config__WEBPACK_IMPORTED_MODULE_8__/* .server */ .fw + "/api/keywords");
+    const response = await fetch(_config__WEBPACK_IMPORTED_MODULE_8__/* .api */ .hi + "/api/keywords");
     const keywords = await response.json();
     return {
         props: {
