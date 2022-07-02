@@ -7,8 +7,8 @@
 
 const dev = process.env.NODE_ENV !== 'production';
 
-export const server = dev ? 'http://localhost:3000' : 'https://www.kekesi.dev';
-
+//export const server = dev ? 'http://localhost:3000' : 'https://www.kekesi.dev';
+export const server = "http://localhost:3000";
 
 // dock elements
 export const defaultDockElementIDs = [1, 2, 5, 9, 6];

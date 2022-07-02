@@ -1,7 +1,13 @@
-const withOffline = require("next-offline");
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  headers: [
+    {
+      source: "/rss.xml",
+      headers: [
+        {"key": "Content-Type", "value": "text/xml"},
+      ],
+    },
+  ],
   reactStrictMode: true,
   webpack5: true,
   webpack: (config) => {
@@ -11,4 +17,4 @@ const nextConfig = {
   },
 }
 
-module.exports = withOffline(nextConfig);
+module.exports = nextConfig;
