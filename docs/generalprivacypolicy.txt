@@ -1,6 +1,0 @@
-General Privacy Policy
-All apps developed by myself is free from storing any kind personal data.
-Third-party services
-My apps are using Google Analytics, for this service's policy I cannot take responsibility.
-Cookies
-Cookies are used for analytic purposes as well as for storing the settings of the page. These settings are local and will not be sent to anywhere on the internet.

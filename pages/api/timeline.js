@@ -8,7 +8,7 @@ import conn from "../../db";
 //         \__) \__)
 
 
-export default async (req, res) => {
+const timeline = async (req, res) => {
 	const {
         query: { id },
         method,
@@ -44,3 +44,5 @@ export default async (req, res) => {
 		console.log( error );
 	}
 };
+
+export default timeline;

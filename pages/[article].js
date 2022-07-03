@@ -5,7 +5,7 @@ import Navbar from '../components/Navbar/Navbar';
 import Cursor from '../components/Cursor/Cursor';
 import Dock from '../components/Dock/Dock';
 import Footer from '../components/Footer/Footer';
-import Head from '../components/Head/Head';
+import AutoHead from '../components/Head/Head';
 
 import cursorSetup from '../functions/cursor.js';
 import navbarToggle from '../functions/navbar.js';
@@ -30,7 +30,9 @@ export const getStaticPaths = async () => {
 
 	const paths = [];
 	for (let i = 0; i < articles.length; i++) {
-		paths.push(articles[i].redirect);
+		if (articles[i].redirect != "about") {
+			paths.push(articles[i].redirect);
+		}
 	}
 
 	return {
@@ -51,11 +53,11 @@ export default function ArticlePage({ article, dockElements, keywords }) {
 		dockElements.map(dockElement => {setProjectTooltipState(dockElement[0].id);});
 
 		console.log("%cHello there!\n\n%cIf you are interested in the source code check out this site's repo at https://www.github.com/KristofKekesi/Portfolio.", "color:#ffffff;font-family:system-ui;font-size:2rem;font-weight:bold;text-shadow:2px 2px 0 #5ebd3e, 4px 4px 0 #ffbb00, 6px 6px 0 #f78400, 8px 8px 0 #e23838, 10px 10px 0 #973999, 12px 12px 0 #009cdf", "color:auto;font-size:1rem; font-family:monospace;");
-	} , []);
+	} , [article.content, dockElements]);
 
 	return (
 		<>	
-			<Head title={ article.name } description={ article.description } keywords={ keywords } />
+			<AutoHead title={ article.name } description={ article.description } keywords={ keywords } />
 
 			<Navbar />
 
@@ -106,6 +108,8 @@ export const getStaticProps = async ( params ) => {
 	for (let i = 0; i < article[0].tools.length; i++) {
 		keywords.push(article[0].tools[i].name);
 	}
+
+	console.log(article[0].redirect);
 
 	return {
 		props: { article: article[0], dockElements: dockElements, keywords: keywords.join(", ")},

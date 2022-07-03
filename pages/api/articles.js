@@ -9,7 +9,7 @@ import { api } from "../../config";
 //         \__) \__)
 
 
-export default async (req, res) => {
+const articles = async (req, res) => {
     const {
         query: { id, name, redirect, isVisible, content, skill, tool, sitemapChangeFrequency, sitemapPriority },
         method,
@@ -255,3 +255,5 @@ export default async (req, res) => {
 		console.log( error );
 	}
 };
+
+export default articles;

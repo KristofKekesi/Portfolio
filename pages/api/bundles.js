@@ -8,7 +8,7 @@ import conn from "../../db";
 //         \__) \__)
 
 
-export default async (req, res) => {
+const bundles = async (req, res) => {
 	const {
         query: { id, name, app },
         method,
@@ -78,3 +78,5 @@ export default async (req, res) => {
 		console.log( error );
 	}
 };
+
+export default bundles;

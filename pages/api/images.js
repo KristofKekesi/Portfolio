@@ -8,7 +8,7 @@ import conn from "../../db";
 //         \__) \__)
 
 
-export default async (req, res) => {
+const images = async (req, res) => {
 	const {
         query: { id, type, copyright },
         method,
@@ -50,3 +50,5 @@ export default async (req, res) => {
 		console.log( error );
 	}
 };
+
+export default images;

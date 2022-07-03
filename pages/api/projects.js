@@ -8,7 +8,7 @@ import conn from "../../db";
 //         \__) \__)
 
 
-export default async (req, res) => {
+const projects = async (req, res) => {
     const {
         query: { id, name, version, role, platform, bundle, download, skill, tool },
         method,
@@ -169,3 +169,5 @@ export default async (req, res) => {
 		console.log( error );
 	}
 };
+
+export default projects;

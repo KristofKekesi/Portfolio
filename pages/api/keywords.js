@@ -8,7 +8,7 @@ import conn from "../../db";
 //         \__) \__)
 
 
-export default async (req, res) => {
+const keywords = async (req, res) => {
 	const {
         method,
     } = req;
@@ -34,3 +34,5 @@ export default async (req, res) => {
 		//console.log( error );
 	}
 };
+
+export default keywords;
