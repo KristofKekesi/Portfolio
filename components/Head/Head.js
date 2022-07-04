@@ -19,7 +19,8 @@ export default function AutoHead(props) {
     const title = props.title;
 
     return (
-        <Head>
+		<>
+        	<Head>
 				<meta charSet="utf-8" />
 
 				<link rel="icon" href={ favicon } />
@@ -46,9 +47,9 @@ export default function AutoHead(props) {
 				<meta name="apple-mobile-web-app-status-bar" content="#ffffff" />
 				<link rel="manifest" href={ server + "/manifest.json" } />
 
-				<Script async="" src="https://www.googletagmanager.com/gtag/js?id=G-NMTQ12KGY9"></Script>
-
 				<title>{ title.replace( /(<([^>]+)>)/ig, '') }</title>
 			</Head>
+			<Script async="" src="https://www.googletagmanager.com/gtag/js?id=G-NMTQ12KGY9"></Script>
+		</>
     );
 }

@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import Image from "next/image";
 
 import { server } from "../../config";
 
@@ -29,7 +30,7 @@ export default function DockElement(props) {
 		<a href={server + "/projects/" + encodeURIComponent(props.project.name)}>
 			<div className="radius24 dock-element target" id={"dock-element-id-" + props.project.id}>
 				<center>
-					<img src={server +  "/" + props.project.logo.path} alt={ projectName }/>
+					<Image src={server +  "/" + props.project.logo.path} alt={ projectName }/>
 					<p className="nowrap basis-full h-0 text-white">{ projectName }</p>
 				</center>
 			</div>

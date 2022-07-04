@@ -70,7 +70,7 @@ export default function ArticlePage({ article, dockElements, keywords }) {
 
 
 export const getStaticProps = async ( params ) => {
-	const articleResponse = await fetch(api + "/api/articles?id=14");
+	const articleResponse = await fetch("/api/articles?id=14");
 	const article = await articleResponse.json();
 
 	let dockElementIDs;
@@ -82,7 +82,7 @@ export const getStaticProps = async ( params ) => {
 
 	const dockElements = [];
 	for (let i = 0; i < dockElementIDs.length; i++) {
-		const projectResponse = await fetch(api + "/api/projects?id=" + encodeURIComponent(dockElementIDs[i]));
+		const projectResponse = await fetch("/api/projects?id=" + encodeURIComponent(dockElementIDs[i]));
 		const project = await projectResponse.json();
 	
 		dockElements.push(project);

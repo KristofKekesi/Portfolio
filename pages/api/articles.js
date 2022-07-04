@@ -142,7 +142,7 @@ const articles = async (req, res) => {
 			delete mainResult.rows[i].coverID;
 
 			// Content
-			const contentResponse = await fetch(api + "/" + encodeURIComponent(mainResult.rows[i].content));
+			const contentResponse = await fetch("/" + encodeURIComponent(mainResult.rows[i].content));
 			const content = await contentResponse.json();
 
 			// Last Modified header from content
@@ -213,7 +213,7 @@ const articles = async (req, res) => {
 			}
 
 			async function setProjectBundle(projectBundle) {
-				const projectBundleResponse = await fetch(api + "/api/bundles?id=" + encodeURIComponent(projectBundle.id));
+				const projectBundleResponse = await fetch("/api/bundles?id=" + encodeURIComponent(projectBundle.id));
 				const projectBundleResult = await projectBundleResponse.json();
 
 				projectBundle.projectBundle = projectBundleResult[0];

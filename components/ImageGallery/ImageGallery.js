@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 import setImageGallery from "../../functions/image-gallery";
 
 import { server } from "../../config";
@@ -18,7 +20,7 @@ export default function ImageGallery(props) {
     const content = [];
     for (let i = 0; i < props.images.length; i++) {
         content.push(
-            <div style={{flex: props.images[i].width / props.images[i].height}} key={i}><img src={server + "/" + props.images[i].path} alt={props.images[i].name} /></div>
+            <div style={{flex: props.images[i].width / props.images[i].height}} key={i}><Image src={server + "/" + props.images[i].path} alt={props.images[i].name} /></div>
         );
     }
 

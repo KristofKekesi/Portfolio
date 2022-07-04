@@ -1,5 +1,17 @@
 {
   "/_app": "pages/_app.js",
+  "/api/articles": "pages/api/articles.js",
+  "/api/bundles": "pages/api/bundles.js",
+  "/api/images": "pages/api/images.js",
+  "/api/keywords": "pages/api/keywords.js",
+  "/api/projects": "pages/api/projects.js",
+  "/api/timeline": "pages/api/timeline.js",
+  "/api/tool": "pages/api/tool.js",
   "/_error": "pages/_error.js",
+  "/about": "pages/about.js",
+  "/projects/[name]": "pages/projects/[name].js",
+  "/[article]": "pages/[article].js",
+  "/": "pages/index.js",
+  "/timeline": "pages/timeline.js",
   "/_document": "pages/_document.js"
 }
