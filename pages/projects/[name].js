@@ -30,7 +30,7 @@ import { api, defaultDockElementIDs, server } from "../../config";
 
 
 export const getStaticPaths = async () => {
-	const response = await fetch("/api/projects");
+	const response = await fetch(api + "/api/projects");
 	const projects = await response.json();
 
 	const paths = [];
@@ -142,7 +142,7 @@ export default function ArticlePage({ project, dockElements, keywords }) {
 
 
 export const getStaticProps = async ( params ) => {
-	const projectResponse = await fetch("/api/projects?name=" + encodeURIComponent(params.params.name));
+	const projectResponse = await fetch(api + "/api/projects?name=" + encodeURIComponent(params.params.name));
 	const project = await projectResponse.json();
 
     console.log(project);
@@ -156,7 +156,7 @@ export const getStaticProps = async ( params ) => {
 
     const dockElements = [];
 	for (let i = 0; i < defaultDockElementIDs.length; i++) {
-		const projectResponse = await fetch("/api/projects?id=" + encodeURIComponent(defaultDockElementIDs[i]));
+		const projectResponse = await fetch(api + "/api/projects?id=" + encodeURIComponent(defaultDockElementIDs[i]));
 		const project = await projectResponse.json();
 	
 		dockElements.push(project);

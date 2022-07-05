@@ -42,14 +42,14 @@ export const getStaticProps = async () => {
 	]
 
 	// Articles
-	const articlesResponse = await fetch("/api/articles?isVisible=true");
+	const articlesResponse = await fetch(api + "/api/articles?isVisible=true");
 	const articles = await articlesResponse.json();
 	articles.forEach(article => {
 		pages.push({"title": article.name, "description": article.description, "link": server + "/" + article.redirect, "guid": server + "/" + article.redirect, "pubDate": article.releaseDate},);
 	});
 
 	// Projects
-	const projectsResponse = await fetch("/api/projects");
+	const projectsResponse = await fetch(api + "/api/projects");
 	const projects = await projectsResponse.json();
 	projects.forEach(project => {
 		pages.push({"title": project.name, "description": project.description, "link": server + "/projects/" + encodeURIComponent(project.name), "guid": server + "/projects/" + encodeURIComponent(project.name), "pubDate": project.dateAdded},);

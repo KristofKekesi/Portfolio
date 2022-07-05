@@ -9,11 +9,7 @@ import { api } from "../../config";
 //         \__) \__)
 
 
-const articles = async (req, res) => {
-    const {
-        query: { id, name, redirect, isVisible, content, skill, tool, sitemapChangeFrequency, sitemapPriority },
-        method,
-    } = req;
+async function getArticles(id, name, redirect, isVisible, content, skill, tool, sitemapChangeFrequency, sitemapPriority) {
     console.log("ID: " + id + " Name: " + name + " Redirect: " + redirect + " IsVisible: " + isVisible + " Content: " + content + " Skill: " + skill + " Tool: " + tool, "SitemapChangeFrequency: " + sitemapChangeFrequency + " SitemapPriority: " + sitemapPriority);
 
 	let imports = ['"articles"'];
@@ -256,4 +252,4 @@ const articles = async (req, res) => {
 	}
 };
 
-export default articles;
+export default getArticles;
