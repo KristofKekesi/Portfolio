@@ -1,5 +1,3 @@
-import Image from "next/image.js";
-
 import { server } from "../../config.js";
 
 
@@ -18,7 +16,7 @@ function ArticlePreviewSmoll(props) {
         >
             <a href={ server + "/" + props.article.redirect }>
                 <div className="article-preview-link-smoll flex w-full h-full bg-secondaryLight">
-                    <Image
+                    <img
                         className="w-28 h-28 bg-cover"
                         src={ server + "/" + props.article.cover.path }
                         alt="Article cover"

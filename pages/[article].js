@@ -14,7 +14,9 @@ import setImageGalleries from '../functions/image-gallery';
 import projectTooltipPosition from '../functions/project-tooltip-position.js';
 import setProjectTooltipState from '../functions/project-tooltip-state.js';
 
-import { api, defaultDockElementIDs, server } from "../config";
+import { defaultDockElementIDs, server } from "../config";
+import getArticles from '../functions/api/articles';
+import getProjects from '../functions/api/projects';
 
 
 //    TURTLE - TEKI
@@ -25,18 +27,17 @@ import { api, defaultDockElementIDs, server } from "../config";
 
 
 export const getStaticPaths = async () => {
-	const response = await fetch(api + "/api/articles");
-	const articles = await response.json();
+	const articles = await getArticles();
 
 	const paths = [];
 	for (let i = 0; i < articles.length; i++) {
 		if (articles[i].redirect != "about") {
-			paths.push(articles[i].redirect);
+			paths.push("/" + articles[i].redirect);
 		}
 	}
 
 	return {
-		paths: [],
+		paths: paths,
 		fallback: false, 
 	}
 }
@@ -85,10 +86,7 @@ export default function ArticlePage({ article, dockElements, keywords }) {
 
 
 export const getStaticProps = async ( params ) => {
-	console.log(articles);
-
-	const articleResponse = await fetch(api + "/api/articles?redirect=" + encodeURIComponent(params.params.article));
-	const article = await articleResponse.json();
+	const article = await getArticles(undefined, undefined, params.params.article);
 
 	let dockElementIDs;
 	if (article[0].dockElements.length === 0) {
@@ -99,9 +97,8 @@ export const getStaticProps = async ( params ) => {
 
 	const dockElements = [];
 	for (let i = 0; i < dockElementIDs.length; i++) {
-		const projectResponse = await fetch(api + "/api/projects?id=" + encodeURIComponent(dockElementIDs[i]));
-		const project = await projectResponse.json();
-	
+		const project = await getProjects(dockElementIDs[i]);
+
 		dockElements.push(project);
 	}
 
@@ -110,8 +107,6 @@ export const getStaticProps = async ( params ) => {
 	for (let i = 0; i < article[0].tools.length; i++) {
 		keywords.push(article[0].tools[i].name);
 	}
-
-	console.log(article[0].redirect);
 
 	return {
 		props: { article: article[0], dockElements: dockElements, keywords: keywords.join(", ")},

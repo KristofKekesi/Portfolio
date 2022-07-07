@@ -1,5 +1,3 @@
-import Image from "next/image.js";
-
 import { server } from "../../config.js";
 
 
@@ -15,7 +13,8 @@ function ArticlePreviewBig(props) {
         <article style={ props.style } className="article-preview-big target w-96 flex flex-col bg-secondaryLight font-bold"> 
             <a href={ props.article.redirect }>
                 <div className="w-full h-full bg-secondaryLight">
-                    <Image
+                    <img
+                        layout="fill"
                         className="max-w-full max-h-96"
                         src={ server + "/" + props.article.cover.path }
                         alt="Article cover"

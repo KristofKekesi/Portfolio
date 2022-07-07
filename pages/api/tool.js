@@ -1,4 +1,4 @@
-import conn from "../../db";
+import getTool from "../../functions/api/tool";
 
 
 //    TURTLE - TEKI
@@ -13,43 +13,15 @@ const tool = async (req, res) => {
         query: { id },
         method,
     } = req;
-	//console.log("ID: " + id);
 
-	let selectorQueries = [];
+	const tool = await getTool(id);
 
-	if (id != undefined) {
-		selectorQueries.push('"tools"."id" = ' + id);
-	}
-
-	if (selectorQueries.length > 0) {
-		selectorQueries = 'WHERE ' + selectorQueries.join(' AND ');
+	if (tool == "No results found") {
+		return res.status(404).send(tool);
+	} else if (tool == "No query parameters provided") {
+		return res.status(500).send(tool);
 	} else {
-		return res.status(500).json("No query parameters provided");
-	}
-
-	try {
-        const mainQuery = 'SELECT * FROM "tools"' + selectorQueries + ';';
-		//console.log(mainQuery);
-		
-		const mainResult = await conn.query(mainQuery);
-
-		for (let i = 0; i < mainResult.rows.length; i++) {
-			// Logo
-			const logoSideQuery = 'SELECT * FROM "images" WHERE "id" = ' + mainResult.rows[i].imageID + ';';
-			const logoSideResult = await conn.query(logoSideQuery);
-			
-			const logo = logoSideResult.rows[0];
-			delete logo.id;
-
-			mainResult.rows[i].logo = logo;
-			delete mainResult.rows[i].imageID;
-
-			return res.status(200).json(mainResult.rows[0]);
-		}
-		return res.status(404).json("No results found");
-
-	} catch ( error ) {
-		//console.log( error );
+		return res.status(200).json(tool);
 	}
 };
 

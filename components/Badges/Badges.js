@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 import { server } from "../../config";
 
 
@@ -56,7 +54,7 @@ export default function Badges(props) {
                     </a>
                 );
             } else {
-                final.push(<a className="target" href={ props.downloads[i].value } key={i}><Image className="h-16" alt={"Download " + props.projectName + " from " + platform + "."} src={ server + "/" + badge }></Image></a>);
+                final.push(<a className="target" href={ props.downloads[i].value } key={i}><img className="h-16" alt={"Download " + props.projectName + " from " + platform + "."} src={ server + "/" + badge }></img></a>);
             }
         }
 

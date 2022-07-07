@@ -1,4 +1,4 @@
-import conn from "../../db";
+import getTimeline from "../../functions/api/timeline";
 
 
 //    TURTLE - TEKI
@@ -13,35 +13,13 @@ const timeline = async (req, res) => {
         query: { id },
         method,
     } = req;
-	//console.log("ID: " + id);
+	
+	const timeline = await getTimeline(id);
 
-	let selectorQueries = [];
-
-	if (id != undefined) {
-		selectorQueries.push('"timeline"."id" = ' + id);
-	}
-
-	if (selectorQueries.length > 0) {
-		selectorQueries = 'WHERE ' + selectorQueries.join(' AND ');
+	if (timeline == "No results found") {
+		return res.status(404).send(timeline);
 	} else {
-		selectorQueries = '';
-	}
-
-	try {
-        const mainQuery = 'SELECT * FROM "timeline"' + selectorQueries + ' ORDER BY "date";';
-		//console.log(mainQuery);
-
-		const mainResult = await conn.query(mainQuery);
-
-		for (let i = 0; i < mainResult.rows.length; i++) {
-			if (i === mainResult.rows.length - 1) {
-				return res.status(200).json(mainResult.rows);
-			}
-		}
-		return res.status(404).json("No results found");
-
-	} catch ( error ) {
-		console.log( error );
+		return res.status(200).json(timeline);
 	}
 };
 

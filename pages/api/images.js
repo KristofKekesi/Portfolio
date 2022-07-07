@@ -1,4 +1,5 @@
-import conn from "../../db";
+import getImages from "../../functions/api/images";
+import bundles from "./bundles";
 
 
 //    TURTLE - TEKI
@@ -13,41 +14,15 @@ const images = async (req, res) => {
         query: { id, type, copyright },
         method,
     } = req;
-	//console.log("ID: " + id + " TYPE: " + type + " COPYRIGHT: " + copyright);
+	
+	const images = await getImages(id, type, copyright);
 
-	let selectorQueries = [];
-
-	if (id != undefined) {
-		selectorQueries.push('"images"."id" = ' + id);
-	}
-    if (type != undefined) {
-        selectorQueries.push('LOWER("images"."type") = LOWER(\'' + type + '\')');
-    }
-    if (copyright != undefined) {
-        selectorQueries.push('(LOWER("images"."copyrightHolder") = LOWER(\'' + copyright + '\') OR LOWER("images"."copyrightURL") = LOWER(\'' + copyright + '\'))');
-    }
-
-	if (selectorQueries.length > 0) {
-		selectorQueries = 'WHERE ' + selectorQueries.join(' AND ');
+	if (images == "No results found") {
+		return res.status(404).send(images);
+	} else if (images == "No query parameters provided") {
+		return res.status(500).send(images);
 	} else {
-		return res.status(500).json("No query parameters provided");
-	}
-
-	try {
-        const mainQuery = 'SELECT * FROM "images" ' + selectorQueries + ';';
-		//console.log(mainQuery);
-
-		const mainResult = await conn.query(mainQuery);
-
-		for (let i = 0; i < mainResult.rows.length; i++) {
-			if (i === mainResult.rows.length - 1) {
-				return res.status(200).json(mainResult.rows);
-			}
-		}
-		return res.status(404).json("No results found");
-
-	} catch ( error ) {
-		console.log( error );
+		return res.status(200).json(images);
 	}
 };
 

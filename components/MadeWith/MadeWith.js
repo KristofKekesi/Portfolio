@@ -1,5 +1,3 @@
-import Image from "next/image.js";
-
 import { server } from "../../config.js";
 
 
@@ -19,7 +17,7 @@ function MadeWith(props) {
 	function TechnologyElement(props) {
 		return (
 			<div className="technologies-content" key={props.tool.name}>
-				<Image src={server + "/" + props.tool.logo.path} alt={props.tool.name} />
+				<img src={server + "/" + props.tool.logo.path} alt={props.tool.name} />
 				<h3 className="text selectable null-padding text-center">{props.tool.name}</h3>
 			</div>  
 		);

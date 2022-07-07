@@ -1,5 +1,6 @@
 import conn from "../../db";
 import { api } from "../../config";
+import getBundles from "../../functions/api/bundles";
 
 
 //    TURTLE - TEKI
@@ -10,7 +11,7 @@ import { api } from "../../config";
 
 
 async function getArticles(id, name, redirect, isVisible, content, skill, tool, sitemapChangeFrequency, sitemapPriority) {
-    console.log("ID: " + id + " Name: " + name + " Redirect: " + redirect + " IsVisible: " + isVisible + " Content: " + content + " Skill: " + skill + " Tool: " + tool, "SitemapChangeFrequency: " + sitemapChangeFrequency + " SitemapPriority: " + sitemapPriority);
+    //console.log("ID: " + id + " Name: " + name + " Redirect: " + redirect + " IsVisible: " + isVisible + " Content: " + content + " Skill: " + skill + " Tool: " + tool, "SitemapChangeFrequency: " + sitemapChangeFrequency + " SitemapPriority: " + sitemapPriority);
 
 	let imports = ['"articles"'];
 	let selectorQueries = [];
@@ -142,8 +143,11 @@ async function getArticles(id, name, redirect, isVisible, content, skill, tool, 
 			const content = await contentResponse.json();
 
 			// Last Modified header from content
-			const lastModified = new Date(contentResponse.headers.get('last-modified'));
+			const lastModified = contentResponse.headers.get('last-modified');
 			mainResult.rows[i].lastModified = lastModified;
+
+			// Release date
+			mainResult.rows[i].releaseDate = mainResult.rows[i].releaseDate.toString();
 			
 			// Back to content
 			async function setArticlePreviewSmoll(articlePreviewSmoll) {
@@ -209,8 +213,7 @@ async function getArticles(id, name, redirect, isVisible, content, skill, tool, 
 			}
 
 			async function setProjectBundle(projectBundle) {
-				const projectBundleResponse = await fetch(api + "/api/bundles?id=" + encodeURIComponent(projectBundle.id));
-				const projectBundleResult = await projectBundleResponse.json();
+				const projectBundleResult = await getBundles(projectBundle.id, undefined, undefined)
 
 				projectBundle.projectBundle = projectBundleResult[0];
 				return projectBundle;
@@ -241,10 +244,11 @@ async function getArticles(id, name, redirect, isVisible, content, skill, tool, 
 			mainResult.rows[i].content = content;
 
 			if (i === mainResult.rows.length - 1) {
-				return res.status(200).json(mainResult.rows);
+				return mainResult.rows;
 			}
 		}
-		return res.status(404).json("No results found");
+        
+		return "No results found";
 
 
 	} catch ( error ) {
