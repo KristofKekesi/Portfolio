@@ -9,8 +9,6 @@ import ProjectBundleContent from "./ProjectBundleContent";
 
 
 function ProjectBundle(props) {
-    console.log(props.projectBundle);
-
     return(
         <div className={"project-bundle text-white my-10"} style={{background: `linear-gradient(${props.projectBundle.background.split(";")[2]}, ${props.projectBundle.background.split(";")[0]} 0%, ${props.projectBundle.background.split(";")[1]} 75%)`}}>
             <div className="mb-10 h-px"></div>

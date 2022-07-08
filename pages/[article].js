@@ -5,7 +5,7 @@ import Navbar from '../components/Navbar/Navbar';
 import Cursor from '../components/Cursor/Cursor';
 import Dock from '../components/Dock/Dock';
 import Footer from '../components/Footer/Footer';
-import Head from '../components/Head/Head';
+import AutoHead from '../components/Head/Head';
 
 import cursorSetup from '../functions/cursor.js';
 import navbarToggle from '../functions/navbar.js';
@@ -14,7 +14,9 @@ import setImageGalleries from '../functions/image-gallery';
 import projectTooltipPosition from '../functions/project-tooltip-position.js';
 import setProjectTooltipState from '../functions/project-tooltip-state.js';
 
-import { api, defaultDockElementIDs, server } from "../config";
+import { defaultDockElementIDs, server } from "../config";
+import getArticles from '../functions/api/articles';
+import getProjects from '../functions/api/projects';
 
 
 //    TURTLE - TEKI
@@ -25,17 +27,18 @@ import { api, defaultDockElementIDs, server } from "../config";
 
 
 export const getStaticPaths = async () => {
-	const response = await fetch(api + "/api/articles");
-	const articles = await response.json();
+	const articles = await getArticles();
 
 	const paths = [];
 	for (let i = 0; i < articles.length; i++) {
-		paths.push(articles[i].redirect);
+		if (articles[i].redirect != "about") {
+			paths.push("/" + articles[i].redirect);
+		}
 	}
 
 	return {
-		paths: [],
-		fallback: "blocking", 
+		paths: paths,
+		fallback: false, 
 	}
 }
 
@@ -51,11 +54,11 @@ export default function ArticlePage({ article, dockElements, keywords }) {
 		dockElements.map(dockElement => {setProjectTooltipState(dockElement[0].id);});
 
 		console.log("%cHello there!\n\n%cIf you are interested in the source code check out this site's repo at https://www.github.com/KristofKekesi/Portfolio.", "color:#ffffff;font-family:system-ui;font-size:2rem;font-weight:bold;text-shadow:2px 2px 0 #5ebd3e, 4px 4px 0 #ffbb00, 6px 6px 0 #f78400, 8px 8px 0 #e23838, 10px 10px 0 #973999, 12px 12px 0 #009cdf", "color:auto;font-size:1rem; font-family:monospace;");
-	} , []);
+	} , [article.content, dockElements]);
 
 	return (
 		<>	
-			<Head title={ article.name } description={ article.description } keywords={ keywords } />
+			<AutoHead title={ article.name } description={ article.description } keywords={ keywords } />
 
 			<Navbar />
 
@@ -83,8 +86,7 @@ export default function ArticlePage({ article, dockElements, keywords }) {
 
 
 export const getStaticProps = async ( params ) => {
-	const articleResponse = await fetch(api + "/api/articles?redirect=" + encodeURIComponent(params.params.article));
-	const article = await articleResponse.json();
+	const article = await getArticles(undefined, undefined, params.params.article);
 
 	let dockElementIDs;
 	if (article[0].dockElements.length === 0) {
@@ -95,9 +97,8 @@ export const getStaticProps = async ( params ) => {
 
 	const dockElements = [];
 	for (let i = 0; i < dockElementIDs.length; i++) {
-		const projectResponse = await fetch(api + "/api/projects?id=" + encodeURIComponent(dockElementIDs[i]));
-		const project = await projectResponse.json();
-	
+		const project = await getProjects(dockElementIDs[i]);
+
 		dockElements.push(project);
 	}
 

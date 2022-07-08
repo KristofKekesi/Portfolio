@@ -14,6 +14,7 @@ function ArticlePreviewBig(props) {
             <a href={ props.article.redirect }>
                 <div className="w-full h-full bg-secondaryLight">
                     <img
+                        layout="fill"
                         className="max-w-full max-h-96"
                         src={ server + "/" + props.article.cover.path }
                         alt="Article cover"

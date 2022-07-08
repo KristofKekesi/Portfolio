@@ -7,7 +7,7 @@ import Cursor from '../../components/Cursor/Cursor';
 import ImageGallery from '../../components/ImageGallery/ImageGallery';
 import Dock from '../../components/Dock/Dock';
 import Footer from '../../components/Footer/Footer';
-import Head from '../../components/Head/Head';
+import AutoHead from '../../components/Head/Head';
 import Badges from '../../components/Badges/Badges';
 
 import cursorSetup from '../../functions/cursor.js';
@@ -18,6 +18,7 @@ import projectTooltipPosition from '../../functions/project-tooltip-position.js'
 import setProjectTooltipState from '../../functions/project-tooltip-state.js';
 
 import { api, defaultDockElementIDs, server } from "../../config";
+import getProjects from '../../functions/api/projects';
 
 
 //    TURTLE - TEKI
@@ -28,17 +29,16 @@ import { api, defaultDockElementIDs, server } from "../../config";
 
 
 export const getStaticPaths = async () => {
-	const response = await fetch(api + "/api/projects");
-	const projects = await response.json();
+	const projects = await getProjects();
 
 	const paths = [];
 	for (let i = 0; i < projects.length; i++) {
-		paths.push(projects[i].name);
+		paths.push("/projects/" + projects[i].name);
 	}
 
 	return {
-		paths: [],
-		fallback: "blocking", 
+		paths: paths,
+		fallback: false, 
 	}
 }
 
@@ -54,7 +54,7 @@ export default function ArticlePage({ project, dockElements, keywords }) {
 		dockElements.map(dockElement => {setProjectTooltipState(dockElement[0].id);});
 
 		console.log("%cHello there!\n\n%cIf you are interested in the source code check out this site's repo at https://www.github.com/KristofKekesi/Portfolio.", "color:#ffffff;font-family:system-ui;font-size:2rem;font-weight:bold;text-shadow:2px 2px 0 #5ebd3e, 4px 4px 0 #ffbb00, 6px 6px 0 #f78400, 8px 8px 0 #e23838, 10px 10px 0 #973999, 12px 12px 0 #009cdf", "color:auto;font-size:1rem; font-family:monospace;");
-	} , []);
+	} , [project.logo, project.screenshots, dockElements]);
 
     // version
     let versionDiv = null;
@@ -78,7 +78,7 @@ export default function ArticlePage({ project, dockElements, keywords }) {
 
 	return (
 		<>	
-            <Head title={ project.name } description={ project.description } keywords={ keywords } />
+            <AutoHead title={ project.name } description={ project.description } keywords={ keywords } />
 
 			<Navbar />
 
@@ -140,11 +140,7 @@ export default function ArticlePage({ project, dockElements, keywords }) {
 
 
 export const getStaticProps = async ( params ) => {
-	const projectResponse = await fetch(api + "/api/projects?name=" + encodeURIComponent(params.params.name));
-	const project = await projectResponse.json();
-
-    console.log(project);
-    console.log(params.params.name)
+	const project = await getProjects(undefined, params.params.name);
 
 	const keywords = ["Kristóf Kékesi"];
 	keywords.push.apply(keywords, project[0].skills);

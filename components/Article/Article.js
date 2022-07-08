@@ -83,7 +83,7 @@ function Article(props) {
                 break
             case "section":
                 let sectionContent = [];
-                sectionContent.push(<div className="mb-10 h-px"></div>)
+                sectionContent.push(<div className="mb-10 h-px" key={i + "first"}></div>)
 
                 for (let k = 0; k < props.content[i]["content"].length; k++) {
                     switch(props.content[i]["content"][k].type) {
@@ -93,23 +93,23 @@ function Article(props) {
                                     id={props.content[i]["content"][k]["value"].toLowerCase().replace(" ", "-")}
                                     className={"selectable text-title"}
                                     dangerouslySetInnerHTML={{ __html: props.content[i]["content"][k]["value"] }}
-                                    key={i + "-" + k}
+                                    key={k}
                                 />
                             );
                             break
                         case "text-subtitle":
                             sectionContent.push(
-                                <h2 className={"selectable text-subtitle"} dangerouslySetInnerHTML={{ __html: props.content[i]["content"][k]["value"] }}  key={i + "-" + k}/>
+                                <h2 className={"selectable text-subtitle"} dangerouslySetInnerHTML={{ __html: props.content[i]["content"][k]["value"] }}  key={k}/>
                             );
                             break
                         case "text-subsubtitle":
                             sectionContent.push(
-                                <h3 className={"selectable text-subsubtitle"} dangerouslySetInnerHTML={{ __html: props.content[i]["content"][k]["value"] }}  key={i + "-" + k}/>
+                                <h3 className={"selectable text-subsubtitle"} dangerouslySetInnerHTML={{ __html: props.content[i]["content"][k]["value"] }}  key={k}/>
                             );
                             break
                         case "text":
                             sectionContent.push(
-                                <div className={"selectable text"} dangerouslySetInnerHTML={{ __html: props.content[i]["content"][k]["value"] }}  key={i + "-" + k}/>
+                                <div className={"selectable text"} dangerouslySetInnerHTML={{ __html: props.content[i]["content"][k]["value"] }}  key={k}/>
                             );
                             break
                         case "terminal":
@@ -119,7 +119,7 @@ function Article(props) {
                                     className={"terminal"}
                                     language={props.content[i]["content"][k]["language"]}
                                     code={props.content[i]["content"][k]["code"]}
-                                    key={i + "-" + k}
+                                    key={k}
                                 />
                             );
                             terminalId++;
@@ -128,8 +128,8 @@ function Article(props) {
                             sectionContent.push(
                                 <ImageGallery
                                     images={props.content[i]["content"][k]["images"]}
-                                    dataKey={i + "-" + k}
-                                    key={i + "-" + k}
+                                    dataKey={k}
+                                    key={k}
                                 />
                             );
 
@@ -139,8 +139,8 @@ function Article(props) {
                             break
                     }
                 }
-                sectionContent.push(<div className="mt-10 h-px"></div>)
-                articleContent.push(<div className={"section"}>{ sectionContent }</div>);
+                sectionContent.push(<div className="mt-10 h-px" key={i + "a"}></div>)
+                articleContent.push(<div className={"section"} key={i + "b"}>{ sectionContent }</div>);
                 break
             default:
                 console.warn(props.content[i])
