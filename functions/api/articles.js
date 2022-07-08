@@ -1,5 +1,5 @@
 import conn from "../../db";
-import { api } from "../../config";
+import { server } from "../../config";
 import getBundles from "../../functions/api/bundles";
 
 
@@ -139,7 +139,7 @@ async function getArticles(id, name, redirect, isVisible, content, skill, tool, 
 			delete mainResult.rows[i].coverID;
 
 			// Content
-			const contentResponse = await fetch(api + "/" + encodeURIComponent(mainResult.rows[i].content));
+			const contentResponse = await fetch(server + "/" + encodeURIComponent(mainResult.rows[i].content));
 			const content = await contentResponse.json();
 
 			// Last Modified header from content

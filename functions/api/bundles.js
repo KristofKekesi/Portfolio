@@ -48,6 +48,9 @@ async function getBundles(id, name, app) {
 				const projectSideQuery = 'SELECT * FROM "projects" WHERE "id" = ' + projectsSideResult.rows[j].projectID + ';';
 				const projectSideResult = await conn.query(projectSideQuery);
 
+				// Project date added
+				projectSideResult.rows[i].dateAdded = new Date(projectSideResult.rows[i].dateAdded).toString();
+
 				const project = projectSideResult.rows[0];
 
 				

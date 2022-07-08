@@ -18,6 +18,7 @@ import projectTooltipPosition from '../../functions/project-tooltip-position.js'
 import setProjectTooltipState from '../../functions/project-tooltip-state.js';
 
 import { api, defaultDockElementIDs, server } from "../../config";
+import getProjects from '../../functions/api/projects';
 
 
 //    TURTLE - TEKI
@@ -28,16 +29,15 @@ import { api, defaultDockElementIDs, server } from "../../config";
 
 
 export const getStaticPaths = async () => {
-	const response = await fetch(api + "/api/projects");
-	const projects = await response.json();
+	const projects = await getProjects();
 
 	const paths = [];
 	for (let i = 0; i < projects.length; i++) {
-		paths.push(projects[i].name);
+		paths.push("/projects/" + projects[i].name);
 	}
 
 	return {
-		paths: [],
+		paths: paths,
 		fallback: false, 
 	}
 }
@@ -140,11 +140,7 @@ export default function ArticlePage({ project, dockElements, keywords }) {
 
 
 export const getStaticProps = async ( params ) => {
-	const projectResponse = await fetch(api + "/api/projects?name=" + encodeURIComponent(params.params.name));
-	const project = await projectResponse.json();
-
-    console.log(project);
-    console.log(params.params.name)
+	const project = await getProjects(undefined, params.params.name);
 
 	const keywords = ["Kristóf Kékesi"];
 	keywords.push.apply(keywords, project[0].skills);
