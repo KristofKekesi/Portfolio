@@ -30,6 +30,9 @@ async function getTimeline(id) {
 		const mainResult = await conn.query(mainQuery);
 
 		for (let i = 0; i < mainResult.rows.length; i++) {
+			// Date
+			mainResult.rows[i].date = new Date(mainResult.rows[i].date).toString();
+
 			if (i === mainResult.rows.length - 1) {
 				return mainResult.rows;
 			}

@@ -150,8 +150,7 @@ export const getStaticProps = async ( params ) => {
 
     const dockElements = [];
 	for (let i = 0; i < defaultDockElementIDs.length; i++) {
-		const projectResponse = await fetch(api + "/api/projects?id=" + encodeURIComponent(defaultDockElementIDs[i]));
-		const project = await projectResponse.json();
+		const project = await getProjects(defaultDockElementIDs[i]);
 	
 		dockElements.push(project);
 	}

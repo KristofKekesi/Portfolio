@@ -14,6 +14,9 @@ import setProjectTooltipState from '../functions/project-tooltip-state';
 import projectTooltipPosition from '../functions/project-tooltip-position';
 
 import { api, defaultDockElementIDs, months } from "../config";
+import getTimeline from '../functions/api/timeline';
+import getProjects from '../functions/api/projects';
+import getKeywords from '../functions/api/keywords';
 
 
 //    TURTLE - TEKI
@@ -176,19 +179,16 @@ export default function Timeline({ timestamps, dockElements, keywords }) {
 
 
 export const getStaticProps = async ( _ ) => {
-	const timestampsResponse = await fetch(api + "/api/timeline");
-	let timestamps = await timestampsResponse.json();
+	const timestamps = await getTimeline();
 
 	const dockElements = [];
 	for (let i = 0; i < defaultDockElementIDs.length; i++) {
-		const projectResponse = await fetch(api + "/api/projects?id=" + encodeURIComponent(defaultDockElementIDs[i]));
-		const project = await projectResponse.json();
+		const project = await getProjects(defaultDockElementIDs[i])
 		
 		dockElements.push(project);
 	}
 
-	const response = await fetch(api + "/api/keywords");
-    const keywords = await response.json();
+    const keywords =  await getKeywords();
 
 	return {
 		props: { timestamps: timestamps, dockElements: dockElements, keywords: keywords.join(", ")},
