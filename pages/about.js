@@ -17,6 +17,9 @@ import setProjectTooltipState from '../functions/project-tooltip-state.js';
 import { api, defaultDockElementIDs, server } from "../config";
 import MadeWith from '../components/MadeWith/MadeWith';
 
+import getArticles from '../functions/api/articles';
+import getProjects from '../functions/api/projects';
+
 
 //    TURTLE - TEKI
 //    (°-°) _______
@@ -70,8 +73,7 @@ export default function ArticlePage({ article, dockElements, keywords }) {
 
 
 export const getStaticProps = async ( params ) => {
-	const articleResponse = await fetch(api + "/api/articles?id=14");
-	const article = await articleResponse.json();
+	const article = await getArticles(14);
 
 	let dockElementIDs;
 	if (article[0].dockElements.length === 0) {
@@ -82,8 +84,7 @@ export const getStaticProps = async ( params ) => {
 
 	const dockElements = [];
 	for (let i = 0; i < dockElementIDs.length; i++) {
-		const projectResponse = await fetch(api + "/api/projects?id=" + encodeURIComponent(dockElementIDs[i]));
-		const project = await projectResponse.json();
+		const project = await getProjects(defaultDockElementIDs[i]);
 	
 		dockElements.push(project);
 	}

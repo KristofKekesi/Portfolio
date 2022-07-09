@@ -166,6 +166,9 @@ async function getArticles(id, name, redirect, isVisible, content, skill, tool, 
 
 					article.cover = coverResult.rows[0];
 
+					// Release date
+					article.releaseDate = new Date(article.releaseDate).toString();
+
 					articlePreviewSmoll.articles.push(article);
 				}
 
@@ -188,6 +191,9 @@ async function getArticles(id, name, redirect, isVisible, content, skill, tool, 
 					const coverResult = await conn.query(coverQuery);
 					
 					article.cover = coverResult.rows[0];
+
+					// Release date
+					article.releaseDate = new Date(article.releaseDate).toString();
 					
 					articlePreviewBig.articles.push(article);
 				}

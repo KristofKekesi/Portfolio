@@ -1584,3 +1584,8 @@
 2022-06-30 00:47:52.375 CEST [1489] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
 2022-06-30 00:47:52.378 CEST [1490] LOG:  database system was shut down at 2022-06-30 00:36:47 CEST
 2022-06-30 00:47:52.383 CEST [1489] LOG:  database system is ready to accept connections
+2022-07-10 01:16:05.798 CEST [1489] LOG:  received fast shutdown request
+2022-07-10 01:16:05.799 CEST [1489] LOG:  aborting any active transactions
+2022-07-10 01:16:05.800 CEST [1489] LOG:  background worker "logical replication launcher" (PID 1496) exited with exit code 1
+2022-07-10 01:16:05.801 CEST [1491] LOG:  shutting down
+2022-07-10 01:16:05.808 CEST [1489] LOG:  database system is shut down
