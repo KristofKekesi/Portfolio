@@ -1595,3 +1595,27 @@
 2022-07-10 01:16:22.332 CEST [52660] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
 2022-07-10 01:16:22.337 CEST [52661] LOG:  database system was shut down at 2022-07-10 01:16:05 CEST
 2022-07-10 01:16:22.340 CEST [52660] LOG:  database system is ready to accept connections
+2022-07-10 01:37:35.030 CEST [52660] LOG:  received fast shutdown request
+2022-07-10 01:37:35.031 CEST [52660] LOG:  aborting any active transactions
+2022-07-10 01:37:35.032 CEST [52660] LOG:  background worker "logical replication launcher" (PID 52667) exited with exit code 1
+2022-07-10 01:37:35.032 CEST [52662] LOG:  shutting down
+2022-07-10 01:37:35.038 CEST [52660] LOG:  database system is shut down
+2022-07-10 01:45:00.910 CEST [53524] LOG:  starting PostgreSQL 14.4 on aarch64-apple-darwin20.6.0, compiled by Apple clang version 12.0.5 (clang-1205.0.22.9), 64-bit
+2022-07-10 01:45:00.916 CEST [53524] LOG:  listening on IPv6 address "::1", port 5432
+2022-07-10 01:45:00.916 CEST [53524] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2022-07-10 01:45:00.916 CEST [53524] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2022-07-10 01:45:00.920 CEST [53525] LOG:  database system was shut down at 2022-07-10 01:37:35 CEST
+2022-07-10 01:45:00.922 CEST [53524] LOG:  database system is ready to accept connections
+2022-07-10 02:08:29.441 CEST [53524] LOG:  received fast shutdown request
+2022-07-10 02:08:29.441 CEST [53524] LOG:  aborting any active transactions
+2022-07-10 02:08:29.442 CEST [53539] FATAL:  terminating connection due to administrator command
+2022-07-10 02:08:29.442 CEST [53538] FATAL:  terminating connection due to administrator command
+2022-07-10 02:08:29.442 CEST [53524] LOG:  background worker "logical replication launcher" (PID 53531) exited with exit code 1
+2022-07-10 02:08:29.444 CEST [53526] LOG:  shutting down
+2022-07-10 02:08:29.450 CEST [53524] LOG:  database system is shut down
+2022-07-10 15:34:31.290 CEST [57500] LOG:  starting PostgreSQL 14.4 on aarch64-apple-darwin20.6.0, compiled by Apple clang version 12.0.5 (clang-1205.0.22.9), 64-bit
+2022-07-10 15:34:31.293 CEST [57500] LOG:  listening on IPv6 address "::1", port 5432
+2022-07-10 15:34:31.293 CEST [57500] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2022-07-10 15:34:31.293 CEST [57500] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2022-07-10 15:34:31.296 CEST [57501] LOG:  database system was shut down at 2022-07-10 02:08:29 CEST
+2022-07-10 15:34:31.299 CEST [57500] LOG:  database system is ready to accept connections

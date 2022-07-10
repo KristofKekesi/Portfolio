@@ -1,0 +1,8 @@
+[
+    {"name": "Homepage", "route": "/", "title": "Kristóf Kékesi"},
+    {"name": "Mobile Development", "route": "/mobile", "title": "Mobile Development"},
+    {"name": "Web Development", "route": "/web", "title": "Web Development"},
+    {"name": "Translations", "route": "/translations", "title": "Translations"},
+    {"name": "Timeline", "route": "/timeline", "title": "Timeline"},
+    {"name": "About", "route": "/about", "title": "About"}
+]
