@@ -1,5 +1,13 @@
 /// <reference types="cypress" />
 
+
+//    TURTLE - TEKI
+//    (°-°) _______
+//      \ \/ - - - \_
+//       \_  ___  ___>
+//         \__) \__)
+
+
 describe("Homepage tests", () => {
   beforeEach(() => {
     cy.visit("/");
@@ -14,7 +22,6 @@ describe("Homepage tests", () => {
   });
 
   it('dock', () => {
-    // Dock has elements
-    cy.get("#dock").should('be.visible');
+    cy.checkDock();
   });
 })

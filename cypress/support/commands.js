@@ -64,3 +64,14 @@ Cypress.Commands.add("checkTitles", (title, subtitle) => {
       cy.contains(subtitle);
     }
 });
+
+
+// Checking dock
+Cypress.Commands.add("checkDock", () => {
+    cy.get("#dock");
+});
+
+// Checking image alt props
+Cypress.Commands.add("checkImageAltProps", () => {
+  cy.get('img').should('have.attr', 'alt')
+});
