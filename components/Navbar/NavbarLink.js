@@ -9,7 +9,7 @@ import { useRouter } from 'next/router';
 //         \__) \__)
 
 export default function NavbarLink(props) {
-    const router = useRouter();
+    const router = useRouter() ?? "";
 
     if (router.pathname === "/" && props.path === "/") {
         return (

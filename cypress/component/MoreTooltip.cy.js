@@ -2,6 +2,8 @@
 
 import MoreTooltip from "../../components/MoreTooltip/MoreTooltip";
 
+import navbarItems from "../fixtures/navbar-elements.json";
+
 
 //    TURTLE - TEKI
 //    (°-°) _______
@@ -16,12 +18,10 @@ describe('MoreTooltip.cy.js', () => {
   });
 
   it("check content", () => {
-    const navbarItems = cy.fixture("navbar-elements");
-    console.log(navbarItems);
-
-    navbarItems.forEach(item => {
+    cy.get("#more-tooltip")
+    navbarItems.forEach((item) => {
       if (item.place == "#more-tooltip") {
-        cy.get("#more-tooltip").contains(item.text);
+        cy.contains(item.text);
       }
     });
   });
