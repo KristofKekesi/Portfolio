@@ -73,5 +73,5 @@ Cypress.Commands.add("checkDock", () => {
 
 // Checking image alt props
 Cypress.Commands.add("checkImageAltProps", () => {
-  cy.get('img').should('have.attr', 'alt')
+  cy.get("img").should("have.attr", "alt");
 });

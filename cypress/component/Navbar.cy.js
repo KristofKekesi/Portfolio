@@ -18,7 +18,7 @@ describe("Navbar.cy.js", () => {
   });
 
   it("check content", () => {
-    cy.get("nav")
+    cy.get("nav");
     navbarItems.forEach((item) => {
       if (item.place == "nav") {
         cy.contains(item.text);
