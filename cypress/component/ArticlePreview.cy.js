@@ -14,7 +14,7 @@ import article from "../fixtures/example-article.json";
 
 describe('ArticlePreview.cy.js', () => {
   it('ArticlePreviewSmoll - check content', () => {
-    cy.mount(<ArticlePreviewSmoll article={article}></ArticlePreviewSmoll>)
+    cy.mount(<ArticlePreviewSmoll article={article}></ArticlePreviewSmoll>);
 
     cy.checkImageAltProps();
 
@@ -23,8 +23,12 @@ describe('ArticlePreview.cy.js', () => {
     cy.contains(article.name);
   });
 
+  it('ArticlePreviewSmoll - fallback', () => {
+    cy.mount(<ArticlePreviewSmoll />);
+  });
+
   it('ArticlePreviewBig - check content', () => {
-    cy.mount(<ArticlePreviewBig article={article}></ArticlePreviewBig>)
+    cy.mount(<ArticlePreviewBig article={article}></ArticlePreviewBig>);
 
     cy.checkImageAltProps();
 
@@ -32,5 +36,21 @@ describe('ArticlePreview.cy.js', () => {
 
     cy.contains(article.name);
     cy.contains(article.description);
+  });
+
+  it('ArticlePreviewBig - fallback', () => {
+    cy.mount(<ArticlePreviewBig />);
+  });
+
+  it('ArticlePreviewsSmoll - fallback', () => {
+    cy.mount(<ArticlePreviewsSmoll />);
+  });
+
+  it('ArticlePreviewsBig - fallback', () => {
+    cy.mount(<ArticlePreviewsBig />);
+  });
+
+  after(() => {
+    cy.mount(<ArticlePreviewBig article={article}></ArticlePreviewBig>);
   });
 })
