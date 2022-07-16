@@ -25,4 +25,12 @@ describe('MoreTooltip.cy.js', () => {
       }
     });
   });
+
+  it("check link URLs", () => {
+    navbarItems.forEach((item) => {
+      if (item.place == "#mote-tooltip") {
+        cy.contains(item.text).invoke("attr", "href").should("contain", item.route)
+      }
+    })
+  });
 })

@@ -21,95 +21,97 @@ function Article(props) {
 
     let terminalId = 0;
 
+    const content = props.content ?? []
+
     let articleContent = [];
-    for (let i = 0; i < props.content.length; i++) {
-        if ((i === 0 || props.content[i - 1].type === "section") && props.content[i].type !== "section") {
+    for (let i = 0; i < content.length; i++) {
+        if ((i === 0 || content[i - 1].type === "section") && content[i].type !== "section") {
         }
-        if (((i === props.content.length - 1 || props.content[i + 1].type === "section") && props.content[i].type !== "selection") || (props.content[i].type === "selection" && i === props.content.length)) {
+        if (((i === content.length - 1 || content[i + 1].type === "section") && content[i].type !== "selection") || (content[i].type === "selection" && i === content.length)) {
         }
 
-        switch(props.content[i].type) {
+        switch(content[i].type) {
             case "text-title":
                 articleContent.push(
-                    <h1 id={props.content[i]["value"].toLowerCase().replace(" ", "-")} className={"selectable text-title nosection"} dangerouslySetInnerHTML={{ __html: props.content[i]["value"] }} key={i}/>
+                    <h1 id={content[i]["value"].toLowerCase().replace(" ", "-")} className={"selectable text-title nosection"} dangerouslySetInnerHTML={{ __html: content[i]["value"] }} key={i}/>
                 );
                 break
             case "text-subtitle":
                 articleContent.push(
-                    <h2 className={"selectable text-subtitle nosection"} dangerouslySetInnerHTML={{ __html: props.content[i]["value"] }} key={i}/>
+                    <h2 className={"selectable text-subtitle nosection"} dangerouslySetInnerHTML={{ __html: content[i]["value"] }} key={i}/>
                 );
                 break
             case "text-subsubtitle":
                 articleContent.push(
-                    <h3 className={"selectable text-subtitle nosection"} dangerouslySetInnerHTML={{ __html: props.content[i]["value"] }} key={i}/>
+                    <h3 className={"selectable text-subtitle nosection"} dangerouslySetInnerHTML={{ __html: content[i]["value"] }} key={i}/>
                 );
                 break
             case "text":
                 articleContent.push(
-                    <div className={"selectable text nosection"} dangerouslySetInnerHTML={{ __html: props.content[i]["value"] }} key={i}/>
+                    <p className={"selectable text nosection"} dangerouslySetInnerHTML={{ __html: content[i]["value"] }} key={i}/>
                 );
                 break
             case "terminal":
                 articleContent.push(
-                    <Terminal id={terminalId} className={"terminal nosection"} language={props.content[i]["language"]} code={article.content[i]["code"]} key={i}/>
+                    <Terminal id={terminalId} className={"terminal nosection"} language={content[i]["language"]} code={content[i]["code"]} key={i}/>
                 );
                 terminalId++;
                 break
             case "gallery":
                 articleContent.push(
-                    <ImageGallery className={"nosection"} images={props.content[i]["images"]} dataKey={i} key={i}/>
+                    <ImageGallery className={"nosection"} images={content[i]["images"]} dataKey={i} key={i}/>
                 );
 
                 break
             case "project-bundle":
                 articleContent.push(
-                    <ProjectBundle projectBundle={props.content[i]["projectBundle"]} key={i} />
+                    <ProjectBundle projectBundle={content[i]["projectBundle"]} key={i} />
                 );
                 break
             case "article-preview-big":
                 articleContent.push(
-                    <ArticlePreviewsBig articles={props.content[i]["articles"]} key={i} />
+                    <ArticlePreviewsBig articles={content[i]["articles"]} key={i} />
                 );
                 break
             case "article-preview-smoll":
                 articleContent.push(
-                    <ArticlePreviewsSmoll articles={props.content[i]["articles"]} key={i} />
+                    <ArticlePreviewsSmoll articles={content[i]["articles"]} key={i} />
                 );
                 break
             case "made-with":
                 articleContent.push(
-                    <MadeWith madeWith={props.content[i]["value"]} title={props.content[i]["title"]} key={i}/>
+                    <MadeWith madeWith={content[i]["value"]} title={content[i]["title"]} key={i}/>
                 );
                 break
             case "section":
                 let sectionContent = [];
                 sectionContent.push(<div className="mb-10 h-px" key={i + "first"}></div>)
 
-                for (let k = 0; k < props.content[i]["content"].length; k++) {
-                    switch(props.content[i]["content"][k].type) {
+                for (let k = 0; k < content[i]["content"].length; k++) {
+                    switch(content[i]["content"][k].type) {
                         case "text-title":
                             sectionContent.push(
                                 <h1
-                                    id={props.content[i]["content"][k]["value"].toLowerCase().replace(" ", "-")}
+                                    id={content[i]["content"][k]["value"].toLowerCase().replace(" ", "-")}
                                     className={"selectable text-title"}
-                                    dangerouslySetInnerHTML={{ __html: props.content[i]["content"][k]["value"] }}
+                                    dangerouslySetInnerHTML={{ __html: content[i]["content"][k]["value"] }}
                                     key={k}
                                 />
                             );
                             break
                         case "text-subtitle":
                             sectionContent.push(
-                                <h2 className={"selectable text-subtitle"} dangerouslySetInnerHTML={{ __html: props.content[i]["content"][k]["value"] }}  key={k}/>
+                                <h2 className={"selectable text-subtitle"} dangerouslySetInnerHTML={{ __html: content[i]["content"][k]["value"] }}  key={k}/>
                             );
                             break
                         case "text-subsubtitle":
                             sectionContent.push(
-                                <h3 className={"selectable text-subsubtitle"} dangerouslySetInnerHTML={{ __html: props.content[i]["content"][k]["value"] }}  key={k}/>
+                                <h3 className={"selectable text-subsubtitle"} dangerouslySetInnerHTML={{ __html: content[i]["content"][k]["value"] }}  key={k}/>
                             );
                             break
                         case "text":
                             sectionContent.push(
-                                <div className={"selectable text"} dangerouslySetInnerHTML={{ __html: props.content[i]["content"][k]["value"] }}  key={k}/>
+                                <div className={"selectable text"} dangerouslySetInnerHTML={{ __html: content[i]["content"][k]["value"] }}  key={k}/>
                             );
                             break
                         case "terminal":
@@ -117,8 +119,8 @@ function Article(props) {
                                 <Terminal
                                     id={terminalId}
                                     className={"terminal"}
-                                    language={props.content[i]["content"][k]["language"]}
-                                    code={props.content[i]["content"][k]["code"]}
+                                    language={content[i]["content"][k]["language"]}
+                                    code={content[i]["content"][k]["code"]}
                                     key={k}
                                 />
                             );
@@ -127,7 +129,7 @@ function Article(props) {
                         case "gallery":
                             sectionContent.push(
                                 <ImageGallery
-                                    images={props.content[i]["content"][k]["images"]}
+                                    images={content[i]["content"][k]["images"]}
                                     dataKey={k}
                                     key={k}
                                 />
@@ -135,7 +137,7 @@ function Article(props) {
 
                             break
                         default:
-                            console.warn(props.content[i]["content"][k])
+                            console.warn(content[i]["content"][k])
                             break
                     }
                 }
@@ -143,7 +145,7 @@ function Article(props) {
                 articleContent.push(<div className={"section"} key={i + "b"}>{ sectionContent }</div>);
                 break
             default:
-                console.warn(props.content[i])
+                console.warn(content[i])
                 break
         }
     }

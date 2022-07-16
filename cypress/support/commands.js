@@ -25,36 +25,6 @@
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
 
-// Checking navbar
-Cypress.Commands.add("checkNavbar", () => {
-    const visibleNavbarItems = ["Home", "Mobile Development", "Web Development", "More"];
-    const insibibleNavbarItems = ["Translations", "Photography", "Timeline", "About"];
-
-    // Navbar items
-    visibleNavbarItems.forEach(item => {
-      cy.contains(item);
-    });
-
-    insibibleNavbarItems.forEach(item => {
-      cy.contains(item).should('not.be.visible');
-    });
-
-    // More tooltip
-    cy.get("#more-button").click();
-
-    insibibleNavbarItems.forEach(item => {
-      cy.get("#more-tooltip").contains(item).should('be.visible');
-    });
-
-    // Links
-    cy.contains("Home").click();
-    cy.url().should('include', '/');
-
-    cy.contains("Mobile Development").click();
-    cy.url().should('include', '/mobile');
-});
-
-
 // Checking titles
 Cypress.Commands.add("checkTitles", (title, subtitle) => {
     cy.get("h1").contains(title);
@@ -63,12 +33,6 @@ Cypress.Commands.add("checkTitles", (title, subtitle) => {
     if (subtitle) {
       cy.contains(subtitle);
     }
-});
-
-
-// Checking dock
-Cypress.Commands.add("checkDock", () => {
-    cy.get("#dock");
 });
 
 // Checking image alt props

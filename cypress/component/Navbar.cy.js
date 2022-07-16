@@ -26,6 +26,14 @@ describe("Navbar.cy.js", () => {
     });
   });
 
+  it("check link URLs", () => {
+    navbarItems.forEach((item) => {
+      if (item.place == "nav") {
+        cy.contains(item.text).invoke("attr", "href").should("contain", item.route)
+      }
+    })
+  });
+
   it("more tooltip", () => {
     cy.get("#more-tooltip").should("not.be.visible")
     // to show #more-tooltip

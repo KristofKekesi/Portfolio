@@ -14,7 +14,7 @@ describe("Homepage tests", () => {
   });
 
   it('navbar', () => {
-    cy.checkNavbar();
+    cy.get("nav");
   });
 
   it('titles', () => {
@@ -22,6 +22,6 @@ describe("Homepage tests", () => {
   });
 
   it('dock', () => {
-    cy.checkDock();
+    cy.get("#dock");
   });
 })

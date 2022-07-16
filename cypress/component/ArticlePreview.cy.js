@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 
-import { ArticlePreviewSmoll, ArticlePreviewBig } from "../../components/ArticlePreview/index";
+import { ArticlePreviewSmoll, ArticlePreviewBig, ArticlePreviewsSmoll, ArticlePreviewsBig } from "../../components/ArticlePreview/index";
 
 import article from "../fixtures/example-article.json";
 

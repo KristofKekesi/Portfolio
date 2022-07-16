@@ -31,6 +31,12 @@ describe('Badges.cy.js', () => {
   });
   
   after(() => {
-    cy.mount(<Badges downloads={[{"type": "appStore", "value": "https://dummy.data"}]}></Badges>);
+    cy.mount(<Badges downloads={[
+      {"type": "appStore", "value": "https://dummy.data"},
+      {"type": "macAppStore", "value": "https://dummy.data"},
+      {"type": "appleTvAppStore", "value": "https://dummy.data"},
+      {"type": "playStore", "value": "https://dummy.data"},
+      {"type": "microsoftStore", "value": "https://dummy.data"},
+    ]}></Badges>);
   })
 })
