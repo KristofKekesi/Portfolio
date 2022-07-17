@@ -10,14 +10,22 @@ const languageMap = {
 }
 
 function Terminal(props) {
-    let html = highlight.highlight(props.code, {language: props.language}).value;
+    const id = props.id ? "terminal-" + props.id : "terminal";
 
-    if (languageMap[props.language] == null) {
+    if (languageMap[props.language] == undefined) {
         console.warn("Unknown language: " + props.language);
+        return null;
     }
 
+    if (props.code == undefined) {
+        console.warn("No code provided");
+        return null;
+    }
+
+    let html = highlight.highlight(props.code, {language: props.language}).value;
+
     return (
-        <div id={"terminal-" + props.id} className="terminal">
+        <div id={ id } className="terminal">
             <pre className="terminal-inner text-white p-4 rounded-2xl"><code dangerouslySetInnerHTML={{ __html: html }}/></pre>
             <center className="font-bold m-0 pb-6">{languageMap[props.language] ?? props.language}</center>
         </div>

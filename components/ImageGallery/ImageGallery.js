@@ -11,7 +11,7 @@ import { server } from "../../config";
 
 
 export default function ImageGallery(props) {
-    if (props.images.length == 0) {
+    if (props.images == undefined || props.images.length == 0) {
         return null;
     }
 

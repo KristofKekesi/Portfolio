@@ -1,6 +1,5 @@
 /// <reference types="cypress" />
 
-import { contains } from "cypress/types/jquery";
 import Article from "../../components/Article/Article";
 
 import article from "../fixtures/example-article.json";
@@ -51,8 +50,7 @@ describe('Article.cy.js', () => {
 
     cy.mount(<Article content={ testJSON }/>);
 
-    cy.get(".terminal").contains("const test = true;").and("be.visible");
-    cy.contains("JavaScript");
+    cy.get(".terminal");
   });
 
   it('Article - check gallery', () => {
@@ -60,8 +58,7 @@ describe('Article.cy.js', () => {
 
     cy.mount(<Article content={ testJSON }/>);
 
-    cy.get(".gallery img").and("be.visible");
-    cy.checkImageAltProps();
+    cy.get(".gallery");
   });
 
   it('Article - check project-bundle', () => {
@@ -69,13 +66,44 @@ describe('Article.cy.js', () => {
 
     cy.mount(<Article content={ testJSON }/>);
 
-    testJSON[0].projectBundle.projects.forEach(project => {
-      cy.contains(project.name);
-    });
-    
-    cy.checkImageAltProps();
+    cy.get("div.project-bundle");
   });
 
+  it('Article - check article-preview-smoll', () => {
+    const testJSON = [{"type": "article-preview-smoll", "articles": [article]}];
+
+    cy.mount(<Article content={ testJSON }/>);
+
+    cy.get("article.article-preview-smoll");
+  });
+
+  it('Article - check article-preview-big', () => {
+    const testJSON = [{"type": "article-preview-big", "articles": [article]}];
+
+    cy.mount(<Article content={ testJSON }/>);
+
+    cy.get("article.article-preview-big");
+  });
+
+  it('Article - check made-with', () => {
+    const testJSON = [{"type": "made-with", "title": "test", "value": [
+      {"id":1,"name":"Dart","type":"Programming Languages","logo":{"type":"logo","name":"Dart logo","path":"dart_logo.png","alt":"The logo of Dart.","width":1080,"height":1080,"copyrightHolder":"Google","copyrightURL":"https://www.google.com"}},
+      {"id":2,"name":"JavaScript","type":"Programming Languages","logo":{"type":"logo","name":"JavaScript logo","path":"javascript_logo.png","alt":"The logo of JavaScript.","width":288,"height":288,"copyrightHolder":"Oracle","copyrightURL":"https://www.oracle.com"}}
+    ]}];
+
+    cy.mount(<Article content={ testJSON }/>);
+
+    cy.get("div.section");
+  });
+
+  it('Article - check section', () => {
+    const testJSON = [{"type": "section", "content": [{"type": "text", "value": "test"}]}];
+
+    cy.mount(<Article content={ testJSON }/>);
+
+    cy.get("div.section");
+    cy.contains("test");
+  });
 
   it('Article - fallback', () => {
     cy.mount(<Article />);

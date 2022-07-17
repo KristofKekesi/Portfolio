@@ -80,7 +80,7 @@ function Article(props) {
                 break
             case "made-with":
                 articleContent.push(
-                    <MadeWith madeWith={content[i]["value"]} title={content[i]["title"]} key={i}/>
+                    <MadeWith tools={content[i]["value"]} title={content[i]["title"]} key={i}/>
                 );
                 break
             case "section":
