@@ -72,7 +72,7 @@ export default function ArticlePage({ article, dockElements, keywords }) {
 					></h1>
 					</div>
 				</center>
-				<Article content={ article.content } published={ article.releaseDate } edited={ article.lastModified } />
+				<Article content={ article.content } published={ article.releaseDate } edited={ article.lastModified } skills={ article.skills } />
 			</main>
 
 			<Dock elements={ dockElements } />

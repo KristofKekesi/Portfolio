@@ -5,6 +5,8 @@ import ProjectBundle from "../ProjectBundle/ProjectBundle";
 import { ArticlePreviewsBig, ArticlePreviewsSmoll } from "../ArticlePreview/index";
 import MadeWith from "../MadeWith/MadeWith";
 
+import Link from "next/link";
+
 import { months } from "../../config.js";
 
 
@@ -21,7 +23,26 @@ function Article(props) {
 
     let terminalId = 0;
 
-    const content = props.content ?? []
+    const content = props.content ?? [];
+    const skills = props.skills ?? [];
+
+    const bookmarkBold = '<img class="group-hover:inline hidden" style="height: 1em; width: 1em;" src="icon_add_link_bold.svg" alt="bookmark" />';
+
+    const bookmarkMedium = '<img class="group-hover:inline hidden" style="height: 1em; width: 1em;" src="icon_add_link_medium.svg" alt="bookmark" />';
+
+    function Bookmark(props) {
+        switch(props.weight) {
+            case "bold":
+                return(
+                    <Link href={"#" + props.id.replace( /(<([^>]+)>)/ig, '')}><a className="target" style={{height: "1em", width: "1em;"}}><img className="group-hover:inline hidden" style={{height: "1em", width: "1em"}} src="icon_add_link_bold.svg" alt="bookmark" /></a></Link>
+                );
+            case "medium":
+                return(
+                    <Link href={"#" + props.id.replace( /(<([^>]+)>)/ig, '')}><a className="target" style={{height: "1em", width: "1em;"}}><img className="group-hover:inline hidden" style={{height: "1em", width: "1em"}} src="icon_add_link_medium.svg" alt="bookmark" /></a></Link>
+                );
+            default: return null;
+        }
+    }
 
     let articleContent = [];
     for (let i = 0; i < content.length; i++) {
@@ -33,12 +54,12 @@ function Article(props) {
         switch(content[i].type) {
             case "text-title":
                 articleContent.push(
-                    <h1 id={content[i]["value"].toLowerCase().replace(" ", "-")} className={"selectable text-title nosection"} dangerouslySetInnerHTML={{ __html: content[i]["value"] }} key={i}/>
+                    <h1 id={content[i]["value"].toLowerCase().replaceAll(" ", "-").replace( /(<([^>]+)>)/ig, '')} className="selectable text-title nosection group flex items-center gap-2"><span dangerouslySetInnerHTML={{ __html: content[i]["value"] }} key={i} /><Bookmark weight="bold" id={content[i]["value"].toLowerCase().replaceAll(" ", "-")}/></h1>
                 );
                 break
             case "text-subtitle":
                 articleContent.push(
-                    <h2 className={"selectable text-subtitle nosection"} dangerouslySetInnerHTML={{ __html: content[i]["value"] }} key={i}/>
+                    <h2 id={content[i]["value"].toLowerCase().replaceAll(" ", "-").replace( /(<([^>]+)>)/ig, '')} className="selectable text-subtitle nosection group flex items-center gap-2"><span dangerouslySetInnerHTML={{ __html: content[i]["value"] }} key={i} /><Bookmark weight="medium" id={content[i]["value"].toLowerCase().replaceAll(" ", "-")}/></h2>
                 );
                 break
             case "text-subsubtitle":
@@ -91,17 +112,12 @@ function Article(props) {
                     switch(content[i]["content"][k].type) {
                         case "text-title":
                             sectionContent.push(
-                                <h1
-                                    id={content[i]["content"][k]["value"].toLowerCase().replace(" ", "-")}
-                                    className={"selectable text-title"}
-                                    dangerouslySetInnerHTML={{ __html: content[i]["content"][k]["value"] }}
-                                    key={k}
-                                />
+                                <h1 id={content[i]["content"][k]["value"].toLowerCase().replaceAll(" ", "-").replace( /(<([^>]+)>)/ig, '')} className="selectable text-title nosection group flex items-center gap-2"><span dangerouslySetInnerHTML={{ __html: content[i]["content"][k]["value"] }} key={k} /><Bookmark weight="bold" id={content[i]["content"][k]["value"].toLowerCase().replaceAll(" ", "-")}/></h1>
                             );
                             break
                         case "text-subtitle":
                             sectionContent.push(
-                                <h2 className={"selectable text-subtitle"} dangerouslySetInnerHTML={{ __html: content[i]["content"][k]["value"] }}  key={k}/>
+                                <h2 id={content[i]["content"][k]["value"].toLowerCase().replaceAll(" ", "-").replace( /(<([^>]+)>)/ig, '')} className="selectable text-subtitle nosection group flex items-center gap-2"><span dangerouslySetInnerHTML={{ __html: content[i]["content"][k]["value"] }} key={k} /><Bookmark weight="medium" id={content[i]["content"][k]["value"].toLowerCase().replaceAll(" ", "-")}/></h2>
                             );
                             break
                         case "text-subsubtitle":
@@ -167,10 +183,21 @@ function Article(props) {
     if (props.edited != undefined && edited.getTime() > published.getTime()) {
         publishedString += ", edited " + edited.getFullYear() + " " + months[edited.getMonth()] + " " + edited.getDate();
     }
+    publishedString += "<span class=\"md:inline hidden\">,</span>";
+
+    const skillTags = []
+    skills.forEach((skill) => {
+        skillTags.push(
+            <div className="mx-2"><div className="rounded-full text-base font-inter bg-secondaryLight px-3 line-clamp-1">{ skill }</div></div>
+        );
+    })
 
     return(
         <article>
-            <p className="article-content pt-6 px-12">{ publishedString }</p>
+            <div className="article-content pt-6 px-12" dangerouslySetInnerHTML={{ __html: publishedString }} />
+            { skills.length != 0 ? <div className="article-content flex md:px-12 px-7 pt-2 items-center">
+                    <div className="md:inline hidden">Contains</div> { skillTags }
+                </div> : null }
             <div className="article-content">
                 { articleContent }
                 { props.children }
