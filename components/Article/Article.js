@@ -4,6 +4,7 @@ import ImageGallery from "../ImageGallery/ImageGallery";
 import ProjectBundle from "../ProjectBundle/ProjectBundle";
 import { ArticlePreviewsBig, ArticlePreviewsSmoll } from "../ArticlePreview/index";
 import MadeWith from "../MadeWith/MadeWith";
+import Quote from "../Quote/Quote";
 
 import Link from "next/link";
 
@@ -54,56 +55,62 @@ function Article(props) {
         switch(content[i].type) {
             case "text-title":
                 articleContent.push(
-                    <h1 id={content[i]["value"].toLowerCase().replaceAll(" ", "-").replace( /(<([^>]+)>)/ig, '')} className="selectable text-title nosection group flex items-center gap-2"><span dangerouslySetInnerHTML={{ __html: content[i]["value"] }} key={i} /><Bookmark weight="bold" id={content[i]["value"].toLowerCase().replaceAll(" ", "-")}/></h1>
+                    <h1 id={content[i]["value"].toLowerCase().replaceAll(" ", "-").replace( /(<([^>]+)>)/ig, '')} className="selectable text-title nosection group flex items-center gap-2"><span dangerouslySetInnerHTML={{ __html: content[i]["value"] }} key={i} /><Bookmark weight="bold" id={content[i]["value"].toLowerCase().replaceAll(" ", "-")} /></h1>
                 );
-                break
+                break;
             case "text-subtitle":
                 articleContent.push(
                     <h2 id={content[i]["value"].toLowerCase().replaceAll(" ", "-").replace( /(<([^>]+)>)/ig, '')} className="selectable text-subtitle nosection group flex items-center gap-2"><span dangerouslySetInnerHTML={{ __html: content[i]["value"] }} key={i} /><Bookmark weight="medium" id={content[i]["value"].toLowerCase().replaceAll(" ", "-")}/></h2>
                 );
-                break
+                break;
             case "text-subsubtitle":
                 articleContent.push(
                     <h3 className={"selectable text-subtitle nosection"} dangerouslySetInnerHTML={{ __html: content[i]["value"] }} key={i}/>
                 );
-                break
+                break;
             case "text":
                 articleContent.push(
                     <p className={"selectable text nosection"} dangerouslySetInnerHTML={{ __html: content[i]["value"] }} key={i}/>
                 );
-                break
+                break;
             case "terminal":
                 articleContent.push(
                     <Terminal id={terminalId} className={"terminal nosection"} language={content[i]["language"]} code={content[i]["code"]} key={i}/>
                 );
                 terminalId++;
-                break
+
+                break;
             case "gallery":
                 articleContent.push(
                     <ImageGallery className={"nosection"} images={content[i]["images"]} dataKey={i} key={i}/>
                 );
 
-                break
+                break;
             case "project-bundle":
                 articleContent.push(
                     <ProjectBundle projectBundle={content[i]["projectBundle"]} key={i} />
                 );
-                break
+                break;
             case "article-preview-big":
                 articleContent.push(
                     <ArticlePreviewsBig articles={content[i]["articles"]} key={i} />
                 );
-                break
+                break;
             case "article-preview-smoll":
                 articleContent.push(
                     <ArticlePreviewsSmoll articles={content[i]["articles"]} key={i} />
                 );
-                break
+                break;
             case "made-with":
                 articleContent.push(
                     <MadeWith tools={content[i]["value"]} title={content[i]["title"]} key={i}/>
                 );
-                break
+                break;
+            case "quote":
+                articleContent.push(
+                    <Quote quote={content[i]["quote"]} name={content[i]["name"]} image={content[i]["image"] } key={i}/>
+                );
+                break;
             case "section":
                 let sectionContent = [];
                 sectionContent.push(<div className="mb-10 h-px" key={i + "first"}></div>)
@@ -112,24 +119,24 @@ function Article(props) {
                     switch(content[i]["content"][k].type) {
                         case "text-title":
                             sectionContent.push(
-                                <h1 id={content[i]["content"][k]["value"].toLowerCase().replaceAll(" ", "-").replace( /(<([^>]+)>)/ig, '')} className="selectable text-title nosection group flex items-center gap-2"><span dangerouslySetInnerHTML={{ __html: content[i]["content"][k]["value"] }} key={k} /><Bookmark weight="bold" id={content[i]["content"][k]["value"].toLowerCase().replaceAll(" ", "-")}/></h1>
+                                <h1 id={content[i]["content"][k]["value"].toLowerCase().replaceAll(" ", "-").replace( /(<([^>]+)>)/ig, '')} className="selectable text-title nosection group flex items-center gap-2"><span dangerouslySetInnerHTML={{ __html: content[i]["content"][k]["value"] }} key={k} /><Bookmark weight="bold" id={content[i]["content"][k]["value"].toLowerCase().replaceAll(" ", "-")} /></h1>
                             );
-                            break
+                            break;
                         case "text-subtitle":
                             sectionContent.push(
                                 <h2 id={content[i]["content"][k]["value"].toLowerCase().replaceAll(" ", "-").replace( /(<([^>]+)>)/ig, '')} className="selectable text-subtitle nosection group flex items-center gap-2"><span dangerouslySetInnerHTML={{ __html: content[i]["content"][k]["value"] }} key={k} /><Bookmark weight="medium" id={content[i]["content"][k]["value"].toLowerCase().replaceAll(" ", "-")}/></h2>
                             );
-                            break
+                            break;
                         case "text-subsubtitle":
                             sectionContent.push(
                                 <h3 className={"selectable text-subsubtitle"} dangerouslySetInnerHTML={{ __html: content[i]["content"][k]["value"] }}  key={k}/>
                             );
-                            break
+                            break;
                         case "text":
                             sectionContent.push(
                                 <div className={"selectable text"} dangerouslySetInnerHTML={{ __html: content[i]["content"][k]["value"] }}  key={k}/>
                             );
-                            break
+                            break;
                         case "terminal":
                             sectionContent.push(
                                 <Terminal
@@ -141,7 +148,8 @@ function Article(props) {
                                 />
                             );
                             terminalId++;
-                            break
+
+                            break;
                         case "gallery":
                             sectionContent.push(
                                 <ImageGallery
@@ -151,10 +159,10 @@ function Article(props) {
                                 />
                             );
 
-                            break
+                            break;
                         default:
                             console.warn(content[i]["content"][k])
-                            break
+                            break;
                     }
                 }
                 sectionContent.push(<div className="mt-10 h-px" key={i + "a"}></div>)
