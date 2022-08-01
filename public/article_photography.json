@@ -78,7 +78,7 @@
             },
             {
                 "type": "text-subtitle",
-                "imageIDs": "Plants and Flowers"
+                "value": "Plants and Flowers"
             },
             {
                 "type": "gallery",

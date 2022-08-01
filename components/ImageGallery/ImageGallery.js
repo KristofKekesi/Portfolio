@@ -23,6 +23,6 @@ export default function ImageGallery(props) {
     }
 
     return(
-        <center  id={"gallery-" + props.dataKey} className={"gallery text overflow-hidden flex gap-3 " + props.galleryTag}>{ content }</center>
+        <center  id={"gallery-" + props.dataKey} className={"gallery overflow-hidden flex gap-3 " + props.galleryTag}>{ content }</center>
     );
 };

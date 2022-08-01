@@ -31,3 +31,6 @@ export const defaultFavicon = server + "/favicon.png";
 
 // months
 export const months = [ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ];
+
+// fallbacks
+export const imageFallback = "bg.jpeg";

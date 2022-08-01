@@ -27,19 +27,15 @@ function Article(props) {
     const content = props.content ?? [];
     const skills = props.skills ?? [];
 
-    const bookmarkBold = '<img class="group-hover:inline hidden" style="height: 1em; width: 1em;" src="icon_add_link_bold.svg" alt="bookmark" />';
-
-    const bookmarkMedium = '<img class="group-hover:inline hidden" style="height: 1em; width: 1em;" src="icon_add_link_medium.svg" alt="bookmark" />';
-
     function Bookmark(props) {
         switch(props.weight) {
             case "bold":
                 return(
-                    <Link href={"#" + props.id.replace( /(<([^>]+)>)/ig, '')}><a className="target" style={{height: "1em", width: "1em;"}}><img className="group-hover:inline hidden" style={{height: "1em", width: "1em"}} src="icon_add_link_bold.svg" alt="bookmark" /></a></Link>
+                    <Link href={"#" + props.id.replace( /(<([^>]+)>)/ig, '')}><a className="target" style={{height: "1em", width: "1em"}}><img className="group-hover:inline hidden" style={{height: "1em", width: "1em"}} src="icon_add_link_bold.svg" alt="bookmark" /></a></Link>
                 );
             case "medium":
                 return(
-                    <Link href={"#" + props.id.replace( /(<([^>]+)>)/ig, '')}><a className="target" style={{height: "1em", width: "1em;"}}><img className="group-hover:inline hidden" style={{height: "1em", width: "1em"}} src="icon_add_link_medium.svg" alt="bookmark" /></a></Link>
+                    <Link href={"#" + props.id.replace( /(<([^>]+)>)/ig, '')}><a className="target" style={{height: "1em", width: "1em"}}><img className="group-hover:inline hidden" style={{height: "1em", width: "1em"}} src="icon_add_link_medium.svg" alt="bookmark" /></a></Link>
                 );
             default: return null;
         }
@@ -54,13 +50,17 @@ function Article(props) {
 
         switch(content[i].type) {
             case "text-title":
+                console.log("a:" + content[i]["value"]);
+                //console.log("a:" + content[i]["value"].toLowerCase());
                 articleContent.push(
-                    <h1 id={content[i]["value"].toLowerCase().replaceAll(" ", "-").replace( /(<([^>]+)>)/ig, '')} className="selectable text-title nosection group flex items-center gap-2"><span dangerouslySetInnerHTML={{ __html: content[i]["value"] }} key={i} /><Bookmark weight="bold" id={content[i]["value"].toLowerCase().replaceAll(" ", "-")} /></h1>
+                    <h1 id={content[i]["value"].toLowerCase().replaceAll(" ", "-").replace( /(<([^>]+)>)/ig, '')} className="selectable text-title nosection group flex items-center gap-2" key={i}><span dangerouslySetInnerHTML={{ __html: content[i]["value"] }} /><Bookmark weight="bold" id={content[i]["value"].toLowerCase().replaceAll(" ", "-")} /></h1>
                 );
                 break;
             case "text-subtitle":
+                console.log("b:" + content[i]["value"]);
+                //console.log("b:" +content[i]["value"].toLowerCase());
                 articleContent.push(
-                    <h2 id={content[i]["value"].toLowerCase().replaceAll(" ", "-").replace( /(<([^>]+)>)/ig, '')} className="selectable text-subtitle nosection group flex items-center gap-2"><span dangerouslySetInnerHTML={{ __html: content[i]["value"] }} key={i} /><Bookmark weight="medium" id={content[i]["value"].toLowerCase().replaceAll(" ", "-")}/></h2>
+                    <h2 id={content[i]["value"].toLowerCase().replaceAll(" ", "-").replace( /(<([^>]+)>)/ig, '')} className="selectable text-subtitle nosection group flex items-center gap-2" key={i}><span dangerouslySetInnerHTML={{ __html: content[i]["value"] }} /><Bookmark weight="medium" id={content[i]["value"].toLowerCase().replaceAll(" ", "-")}/></h2>
                 );
                 break;
             case "text-subsubtitle":
@@ -75,16 +75,14 @@ function Article(props) {
                 break;
             case "terminal":
                 articleContent.push(
-                    <Terminal id={terminalId} className={"terminal nosection"} language={content[i]["language"]} code={content[i]["code"]} key={i}/>
+                    <Terminal id={terminalId} className="terminal nosection" language={content[i]["language"]} code={content[i]["code"]} key={i}/>
                 );
                 terminalId++;
-
                 break;
             case "gallery":
                 articleContent.push(
-                    <ImageGallery className={"nosection"} images={content[i]["images"]} dataKey={i} key={i}/>
+                    <ImageGallery className="nosection" dataClass="max" images={content[i]["images"]} dataKey={i} key={i}/>
                 );
-
                 break;
             case "project-bundle":
                 articleContent.push(
@@ -113,18 +111,22 @@ function Article(props) {
                 break;
             case "section":
                 let sectionContent = [];
-                sectionContent.push(<div className="mb-10 h-px" key={i + "first"}></div>)
+                sectionContent.push(<div className="mb-10 h-px" key={i + "-first"}></div>)
 
                 for (let k = 0; k < content[i]["content"].length; k++) {
                     switch(content[i]["content"][k].type) {
                         case "text-title":
+                            console.log("c:" + content[i]["content"][k]["value"]);
+                            //console.log("c:" + content[i]["content"][k]["value"].toLowerCase());
                             sectionContent.push(
-                                <h1 id={content[i]["content"][k]["value"].toLowerCase().replaceAll(" ", "-").replace( /(<([^>]+)>)/ig, '')} className="selectable text-title nosection group flex items-center gap-2"><span dangerouslySetInnerHTML={{ __html: content[i]["content"][k]["value"] }} key={k} /><Bookmark weight="bold" id={content[i]["content"][k]["value"].toLowerCase().replaceAll(" ", "-")} /></h1>
+                                <h1 id={content[i]["content"][k]["value"].toLowerCase().replaceAll(" ", "-").replace( /(<([^>]+)>)/ig, '')} className="selectable text-title nosection group flex items-center gap-2" key={k}><span dangerouslySetInnerHTML={{ __html: content[i]["content"][k]["value"] }} /><Bookmark weight="bold" id={content[i]["content"][k]["value"].toLowerCase().replaceAll(" ", "-")} /></h1>
                             );
                             break;
                         case "text-subtitle":
+                            console.log("d:" + content[i]["content"][k]["value"]);
+                            //console.log("d:" + content[i]["content"][k]["value"].toLowerCase());
                             sectionContent.push(
-                                <h2 id={content[i]["content"][k]["value"].toLowerCase().replaceAll(" ", "-").replace( /(<([^>]+)>)/ig, '')} className="selectable text-subtitle nosection group flex items-center gap-2"><span dangerouslySetInnerHTML={{ __html: content[i]["content"][k]["value"] }} key={k} /><Bookmark weight="medium" id={content[i]["content"][k]["value"].toLowerCase().replaceAll(" ", "-")}/></h2>
+                                <h2 id={(content[i]["content"][k]["value"] ?? "").toLowerCase().replaceAll(" ", "-").replace( /(<([^>]+)>)/ig, '')} className="selectable text-subtitle nosection group flex items-center gap-2" key={k}><span dangerouslySetInnerHTML={{ __html: content[i]["content"][k]["value"] }} /><Bookmark weight="medium" id={(content[i]["content"][k]["value"] ?? "").toLowerCase().replaceAll(" ", "-")}/></h2>
                             );
                             break;
                         case "text-subsubtitle":
@@ -175,7 +177,7 @@ function Article(props) {
     }
 
     if (props.madeWith !== null && props.madeWith !== undefined && props.madeWith.length > 0) {
-        articleContent.push(<MadeWith tools={props.madeWith} title={"Tools I used"} key={"made-with"}/>);
+        articleContent.push(<MadeWith tools={props.madeWith} title={"Tools I used"} key={i}/>);
     }
 
     let published = new Date(props.published);
@@ -196,7 +198,7 @@ function Article(props) {
     const skillTags = []
     skills.forEach((skill) => {
         skillTags.push(
-            <div className="mx-2"><div className="rounded-full text-base font-inter bg-secondaryLight px-3 line-clamp-1">{ skill }</div></div>
+            <div className="mx-2" key={skill}><div className="rounded-full text-base font-inter bg-secondaryLight px-3 line-clamp-1">{ skill }</div></div>
         );
     })
 
@@ -209,7 +211,7 @@ function Article(props) {
             <div className="article-content">
                 { articleContent }
                 { props.children }
-                <div className="mt-10 h-px" key={"last"}></div>
+                <div className="mt-10 h-px"></div>
             </div>
         </article>
     );
