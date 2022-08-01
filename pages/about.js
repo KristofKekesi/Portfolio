@@ -14,7 +14,7 @@ import setImageGalleries from '../functions/image-gallery';
 import projectTooltipPosition from '../functions/project-tooltip-position.js';
 import setProjectTooltipState from '../functions/project-tooltip-state.js';
 
-import { api, defaultDockElementIDs, server } from "../config";
+import { defaultDockElementIDs, server } from "../config";
 import MadeWith from '../components/MadeWith/MadeWith';
 
 import getArticles from '../functions/api/articles';
@@ -57,7 +57,7 @@ export default function ArticlePage({ article, dockElements, keywords }) {
 					></h1>
 					</div>
 				</center>
-				<Article content={ article.content }>
+				<Article content={ article.content } published={ article.releaseDate } edited={ article.lastModified } skills={ article.skills }>
                     <MadeWith tools={ article.tools } title="Tools I used" />
                 </Article>
 			</main>

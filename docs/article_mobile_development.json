@@ -11,6 +11,10 @@
         "type": "text",
         "value": "After web development I started learning Flutter and Dart. I started working on NASA Mira but I stoped developing it after one month. I focused on other things that time so I dropped mobile development for half a year. Next year I continued Mobile Development with another idea. I made Elements, my first commercially available mobile app. That summer I shipped NASA Mira as well. <a class='target' href='../timeline#2020'>2020</a> was a big year in mobile development for me, I released Preacher that autumn."
     },
+	{
+		"type": "project-bundle",
+		"id": "4"
+	},
     {
         "type": "section",
         "content": [

@@ -9,10 +9,9 @@ import { server } from "../../config.js";
 
 
 function MadeWith(props) {
-	if (props.tools.length == 0) {
+	if (props.tools == undefined || props.tools.length == 0) {
 		return null;
 	}
-
 
 	function TechnologyElement(props) {
 		return (
@@ -22,7 +21,6 @@ function MadeWith(props) {
 			</div>  
 		);
 	}
-
 
 	let technologyTypes = {};
 	props.tools.forEach(tool => {
@@ -46,7 +44,7 @@ function MadeWith(props) {
 	return(
 		<div className="section">
 			<div className="mh-10 h-px"></div>
-			<h1 className="text-title">{props.title}</h1>
+			{ props.title ?  <h1 className="text-title">{props.title}</h1> : null }
 			{ content }
 			<div className="mt-10 w-full bg-white h-px"/>
 		</div>

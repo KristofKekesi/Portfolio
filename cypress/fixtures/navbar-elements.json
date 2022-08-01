@@ -1,0 +1,9 @@
+[
+    {"text": "Home", "route": "/", "place": "nav"},
+    {"text": "Mobile Development", "route": "/mobile", "place": "nav"},
+    {"text": "Web Development", "route": "/web", "place": "nav"},
+    {"text": "Translations", "route": "/translations", "place": "#more-tooltip"},
+    {"text": "Photography", "route": "/photography", "place": "#more-tooltip"},
+    {"text": "Timeline", "route": "/timeline", "place": "#more-tooltip"},
+    {"text": "About", "route": "/about", "place": "#more-tooltip"}
+]

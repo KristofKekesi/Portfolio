@@ -92,23 +92,23 @@
   }
 
   article .text-title {
-    @apply text-3xl font-bold mt-10 mb-4 px-12
+    @apply text-3xl font-bold mt-10 mb-4 px-12 w-fit
   }
 
   article .text-subtitle {
-    @apply text-2xl italic mt-4 mb-2 mx-12
+    @apply text-2xl italic mt-4 mb-2 mx-12 w-fit
   }
 
   article .text-smallsubtitle {
-    @apply text-xl italic mt-4 mb-2 mx-12 font-normal
+    @apply text-xl italic mt-4 mb-2 mx-12 font-normal w-fit
   }
 
   article .text-subsubtitle {
-    @apply text-xl mt-0 mb-2 px-12
+    @apply text-xl mt-0 mb-2 px-12 w-fit
   }
 
   article .text {
-    @apply text-base mt-0 mb-3 px-12 text-justify
+    @apply text-base mt-0 mb-3 px-12 text-justify w-fit
   }
 
   article .null-padding {

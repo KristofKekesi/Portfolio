@@ -10,11 +10,15 @@ import { server } from "../../config";
 
 export default function Badges(props) {
     let final = [];
-    for (let i = 0; i < props.downloads.length; i++) {
+
+    const downloads = props.downloads ?? [];
+    const projectName = props.projectName ?? "";
+
+    for (let i = 0; i < downloads.length; i++) {
 
         let badge;
         let platform;
-        switch (props.downloads[i]["type"]) {
+        switch (downloads[i]["type"]) {
             case "appleTvAppStore":
                 badge = "apple_tv_app_store.svg";
                 platform = "Apple TV App Store";
@@ -42,19 +46,19 @@ export default function Badges(props) {
                 break;
             case "website": break;
             default:
-                console.log("Unknown download type: " + props.downloads[i].type);
+                console.log("Unknown download type: " + downloads[i].type);
                 break;
         }
 
-        if(props.downloads[i].isAvailable == props.downloads[i].isAvailable) {
-            if (props.downloads[i].type == "website") {
+        if(downloads[i].isAvailable == downloads[i].isAvailable) {
+            if (downloads[i].type == "website") {
                 final.push(
-                    <a className="target" href={ props.downloads[i].value } key={i}>
+                    <a className="target" href={ downloads[i].value } key={i}>
                         Website
                     </a>
                 );
             } else {
-                final.push(<a className="target" href={ props.downloads[i].value } key={i}><img className="h-16" alt={"Download " + props.projectName + " from " + platform + "."} src={ server + "/" + badge }></img></a>);
+                final.push(<a className="target" href={ downloads[i].value } key={i}><img className="h-16" alt={"Download " + projectName + " from " + platform + "."} src={ server + "/" + badge }></img></a>);
             }
         }
 

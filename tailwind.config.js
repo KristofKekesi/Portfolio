@@ -1,5 +1,5 @@
 const defaultTheme = require('tailwindcss/defaultTheme')
-const colors = require('tailwindcss/colors')
+const plugin = require('tailwindcss/plugin')
 
 module.exports = {
   content: [
@@ -12,6 +12,7 @@ module.exports = {
       // => @media (min-width: 640px) { ... }
 
       "md": "768px",
+      // TODO: bug when menu open
       // => @media (min-width: 768px) { ... }
 
       "lg": "1024px",
@@ -44,5 +45,7 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/line-clamp'),
+  ]
 }

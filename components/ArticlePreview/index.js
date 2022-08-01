@@ -11,7 +11,9 @@ import ArticlePreviewSmoll from "./ArticlePreviewSmoll";
 
 function ArticlePreviewsBig(props) {
     const previews = [];
-    props.articles.forEach((article, index) => {
+    const articles = props.articles ?? [];
+
+    articles.forEach((article, index) => {
         previews.push(
             <ArticlePreviewBig article={ article } key={ index }/>
         );
@@ -27,7 +29,9 @@ function ArticlePreviewsBig(props) {
 
 function ArticlePreviewsSmoll(props) {
     const previews = [];
-    props.articles.forEach((article, index) => {
+    const articles = props.articles ?? [];
+
+    articles.forEach((article, index) => {
         previews.push(
             <ArticlePreviewSmoll article={ article } key={ index }/>
         );

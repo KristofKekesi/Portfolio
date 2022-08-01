@@ -14,6 +14,7 @@ import '../components/ArticlePreview/ArticlePreviewBig.css';
 import '../components/ArticlePreview/ArticlePreviewSmoll.css';
 import '../components/MadeWith/MadeWith.css';
 import '../components/Footer/Footer.css';
+import '../components/Quote/Quote.css';
 
 
 //    TURTLE - TEKI
