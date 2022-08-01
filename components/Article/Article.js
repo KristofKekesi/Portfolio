@@ -50,15 +50,11 @@ function Article(props) {
 
         switch(content[i].type) {
             case "text-title":
-                console.log("a:" + content[i]["value"]);
-                //console.log("a:" + content[i]["value"].toLowerCase());
                 articleContent.push(
                     <h1 id={content[i]["value"].toLowerCase().replaceAll(" ", "-").replace( /(<([^>]+)>)/ig, '')} className="selectable text-title nosection group flex items-center gap-2" key={i}><span dangerouslySetInnerHTML={{ __html: content[i]["value"] }} /><Bookmark weight="bold" id={content[i]["value"].toLowerCase().replaceAll(" ", "-")} /></h1>
                 );
                 break;
             case "text-subtitle":
-                console.log("b:" + content[i]["value"]);
-                //console.log("b:" +content[i]["value"].toLowerCase());
                 articleContent.push(
                     <h2 id={content[i]["value"].toLowerCase().replaceAll(" ", "-").replace( /(<([^>]+)>)/ig, '')} className="selectable text-subtitle nosection group flex items-center gap-2" key={i}><span dangerouslySetInnerHTML={{ __html: content[i]["value"] }} /><Bookmark weight="medium" id={content[i]["value"].toLowerCase().replaceAll(" ", "-")}/></h2>
                 );
@@ -116,17 +112,13 @@ function Article(props) {
                 for (let k = 0; k < content[i]["content"].length; k++) {
                     switch(content[i]["content"][k].type) {
                         case "text-title":
-                            console.log("c:" + content[i]["content"][k]["value"]);
-                            //console.log("c:" + content[i]["content"][k]["value"].toLowerCase());
                             sectionContent.push(
                                 <h1 id={content[i]["content"][k]["value"].toLowerCase().replaceAll(" ", "-").replace( /(<([^>]+)>)/ig, '')} className="selectable text-title nosection group flex items-center gap-2" key={k}><span dangerouslySetInnerHTML={{ __html: content[i]["content"][k]["value"] }} /><Bookmark weight="bold" id={content[i]["content"][k]["value"].toLowerCase().replaceAll(" ", "-")} /></h1>
                             );
                             break;
                         case "text-subtitle":
-                            console.log("d:" + content[i]["content"][k]["value"]);
-                            //console.log("d:" + content[i]["content"][k]["value"].toLowerCase());
                             sectionContent.push(
-                                <h2 id={(content[i]["content"][k]["value"] ?? "").toLowerCase().replaceAll(" ", "-").replace( /(<([^>]+)>)/ig, '')} className="selectable text-subtitle nosection group flex items-center gap-2" key={k}><span dangerouslySetInnerHTML={{ __html: content[i]["content"][k]["value"] }} /><Bookmark weight="medium" id={(content[i]["content"][k]["value"] ?? "").toLowerCase().replaceAll(" ", "-")}/></h2>
+                                <h2 id={content[i]["content"][k]["value"].toLowerCase().replaceAll(" ", "-").replace( /(<([^>]+)>)/ig, '')} className="selectable text-subtitle nosection group flex items-center gap-2" key={k}><span dangerouslySetInnerHTML={{ __html: content[i]["content"][k]["value"] }} /><Bookmark weight="medium" id={content[i]["content"][k]["value"].toLowerCase().replaceAll(" ", "-")}/></h2>
                             );
                             break;
                         case "text-subsubtitle":
