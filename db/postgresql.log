@@ -1641,3 +1641,15 @@
 2022-07-18 15:06:27.612 CEST [43111] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
 2022-07-18 15:06:27.615 CEST [43112] LOG:  database system was shut down at 2022-07-18 01:41:31 CEST
 2022-07-18 15:06:27.618 CEST [43111] LOG:  database system is ready to accept connections
+2022-08-03 13:46:56.787 CEST [43111] LOG:  received smart shutdown request
+2022-08-03 13:46:56.828 CEST [43111] LOG:  background worker "logical replication launcher" (PID 43118) exited with exit code 1
+2022-08-03 13:46:56.828 CEST [43113] LOG:  shutting down
+2022-08-03 13:46:56.857 CEST [43111] LOG:  database system is shut down
+2022-08-03 14:08:29.781 CEST [8178] LOG:  starting PostgreSQL 14.4 on aarch64-apple-darwin20.6.0, compiled by Apple clang version 12.0.5 (clang-1205.0.22.9), 64-bit
+2022-08-03 14:08:29.795 CEST [8178] LOG:  listening on IPv6 address "::1", port 5432
+2022-08-03 14:08:29.795 CEST [8178] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2022-08-03 14:08:29.796 CEST [8178] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2022-08-03 14:08:29.807 CEST [8180] LOG:  database system was shut down at 2022-08-03 13:46:56 CEST
+2022-08-03 14:08:29.858 CEST [8178] LOG:  database system is ready to accept connections
+2022-08-03 14:08:43.801 CEST [8462] FATAL:  lock file "postmaster.pid" already exists
+2022-08-03 14:08:43.801 CEST [8462] HINT:  Is another postmaster (PID 8178) running in data directory "/Users/kristofkekesi/Developer/Web/Portfolio/db"?
