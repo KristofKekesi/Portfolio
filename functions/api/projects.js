@@ -37,7 +37,7 @@ async function getProjects(id, name, version, role, platform, bundle, download, 
 	}
 	if (download != undefined) {
 		imports.push('"project_downloads"');
-		selectorQueries.push('(LOWER("project_downloads"."type") = LOWER(\'' + download + '\') AND "projects"."id" = "project_downloads"."projectID")');
+		selectorQueries.push('(LOWER("project_downloads"."store") = LOWER(\'' + download + '\') AND "projects"."id" = "project_downloads"."projectID")');
 	}
 	if (skill != undefined) {
 		imports.push('"project_skills"');
@@ -60,7 +60,7 @@ async function getProjects(id, name, version, role, platform, bundle, download, 
 		//console.log(mainQuery);
 
 		const mainResult = await conn.query(mainQuery);
-
+		
 		for (let i = 0; i < mainResult.rows.length; i++) {
 			mainResult.rows[i].bundleIDs = [];
 			mainResult.rows[i].downloads = [];
@@ -131,7 +131,7 @@ async function getProjects(id, name, version, role, platform, bundle, download, 
 				delete tool.id;
 
 				// Logo
-				const logoSideQuery = 'SELECT * FROM "images" WHERE "id" = ' + tool.imageID + ';';
+				const logoSideQuery = 'SELECT * FROM "images" WHERE "id" = ' + tool.logoID + ';';
 				const logoSideResult = await conn.query(logoSideQuery);
 
 				const logo = logoSideResult.rows[0];

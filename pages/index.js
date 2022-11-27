@@ -10,8 +10,9 @@ import cursorSetup from '../functions/cursor.js';
 import projectTooltipPosition from '../functions/project-tooltip-position.js';
 import setProjectTooltipState from '../functions/project-tooltip-state.js';
 
-import { api, defaultDockElementIDs } from "../config";
+import { defaultDockElementIDs } from "../config";
 import getProjects from '../functions/api/projects';
+
 import getKeywords from '../functions/api/keywords';
 
 

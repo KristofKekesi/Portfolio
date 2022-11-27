@@ -12,7 +12,7 @@ import getBundles from "../../functions/api/bundles";
 
 async function getArticles(id, name, redirect, isVisible, content, skill, tool, sitemapChangeFrequency, sitemapPriority) {
     //console.log("ID: " + id + " Name: " + name + " Redirect: " + redirect + " IsVisible: " + isVisible + " Content: " + content + " Skill: " + skill + " Tool: " + tool, "SitemapChangeFrequency: " + sitemapChangeFrequency + " SitemapPriority: " + sitemapPriority);
-
+	
 	let imports = ['"articles"'];
 	let selectorQueries = [];
 
@@ -53,10 +53,10 @@ async function getArticles(id, name, redirect, isVisible, content, skill, tool, 
 		selectorQueries = '';
 	}
 
-	try {
+	//try {
 		const mainQuery = 'SELECT "articles".* ' + imports + ' ' + selectorQueries + ' ORDER BY "articles"."id";';
 		//console.log(mainQuery);
-
+		
 		const mainResult = await conn.query(mainQuery);
 
 		for (let i = 0; i < mainResult.rows.length; i++) {
@@ -70,33 +70,33 @@ async function getArticles(id, name, redirect, isVisible, content, skill, tool, 
 			for (let j = 0; j < dockElementsSideResult.rows.length; j++) {
 				mainResult.rows[i].dockElements.push(dockElementsSideResult.rows[j].projectID);
 			}
-
+			
 			// Skills
 			const skillsSideQuery = 'SELECT * FROM "article_skills" WHERE "articleID" = ' + mainResult.rows[i].id + ' ORDER BY "skill";';
 			const skillsSideResult = await conn.query(skillsSideQuery);
 			for (let j = 0; j < skillsSideResult.rows.length; j++) {
 				mainResult.rows[i].skills.push(skillsSideResult.rows[j].skill);
 			}
-
+			
 			// Tools
 			// If About article add all tools
 			if (id == 14) {
 				let toolsSideQuery = 'SELECT * FROM "tools" ORDER BY "name";';
 				const toolsSideResult = await conn.query(toolsSideQuery);
-
+				
 				for (let j = 0; j < toolsSideResult.rows.length; j++) {
 					const tool = toolsSideResult.rows[j];
 					delete tool.id;
-
+					
 					// Logo
-					const logoSideQuery = 'SELECT * FROM "images" WHERE "id" = ' + tool.imageID + ';';
+					const logoSideQuery = 'SELECT * FROM "images" WHERE "id" = ' + tool.logoID + ';';
 					const logoSideResult = await conn.query(logoSideQuery);
 
 					const logo = logoSideResult.rows[0];
 					delete logo.id;
 	
 					tool.logo = logo;
-					delete tool.imageID;
+					delete tool.logoID;
 	
 					mainResult.rows[i].tools.push(tool);
 				}
@@ -113,20 +113,20 @@ async function getArticles(id, name, redirect, isVisible, content, skill, tool, 
 					delete tool.id;
 	
 					// Logo
-					const logoSideQuery = 'SELECT * FROM "images" WHERE "id" = ' + tool.imageID + ';';
+					const logoSideQuery = 'SELECT * FROM "images" WHERE "id" = ' + tool.logoID + ';';
 					const logoSideResult = await conn.query(logoSideQuery);
 					
 					const logo = logoSideResult.rows[0];
 					delete logo.id;
 	
 					tool.logo = logo;
-					delete tool.imageID;
+					delete tool.logoID;
 	
 	
 					mainResult.rows[i].tools.push(tool);
 				}
 			}
-
+			
 			// Cover
 			const coverQuery = 'SELECT * FROM "images" WHERE "id" = ' + mainResult.rows[i].coverID + ';';
 
@@ -137,10 +137,11 @@ async function getArticles(id, name, redirect, isVisible, content, skill, tool, 
 			mainResult.rows[i].cover = cover;
 
 			delete mainResult.rows[i].coverID;
-
+			
 			// Content
 			const contentResponse = await fetch(server + "/" + encodeURIComponent(mainResult.rows[i].content));
 			const content = await contentResponse.json();
+			console.log(content[0])
 
 			// Last Modified header from content
 			const lastModified = contentResponse.headers.get('last-modified');
@@ -173,6 +174,7 @@ async function getArticles(id, name, redirect, isVisible, content, skill, tool, 
 				}
 
 				delete articlePreviewSmoll.articleIDs;
+				console.log("smoll")
 				return articlePreviewSmoll;
 			}
 
@@ -199,6 +201,7 @@ async function getArticles(id, name, redirect, isVisible, content, skill, tool, 
 				}
 
 				delete articlePreviewBig.articleIDs;
+				console.log("big")
 				return articlePreviewBig;
 			}
 
@@ -215,6 +218,7 @@ async function getArticles(id, name, redirect, isVisible, content, skill, tool, 
 				}
 
 				delete gallery.imageIDs;
+				console.log("gallery")
 				return gallery;
 			}
 
@@ -222,6 +226,7 @@ async function getArticles(id, name, redirect, isVisible, content, skill, tool, 
 				const projectBundleResult = await getBundles(projectBundle.id, undefined, undefined)
 
 				projectBundle.projectBundle = projectBundleResult[0];
+				console.log("projectBundle")
 				return projectBundle;
 			}
 
@@ -248,18 +253,22 @@ async function getArticles(id, name, redirect, isVisible, content, skill, tool, 
 			}
 
 			mainResult.rows[i].content = content;
-
+			console.log(mainResult.rows.length - 1)
+			console.log(i)
 			if (i === mainResult.rows.length - 1) {
+				console.log("works")
 				return mainResult.rows;
 			}
 		}
         
+		console.log("no res")
 		return "No results found";
 
 
-	} catch ( error ) {
-		console.log( error );
-	}
+	//} catch ( error ) {
+	//	console.log("e")
+	//	console.log( error );
+	//}
 };
 
 export default getArticles;

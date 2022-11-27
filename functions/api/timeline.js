@@ -14,7 +14,7 @@ async function getTimeline(id) {
 	let selectorQueries = [];
 
 	if (id != undefined) {
-		selectorQueries.push('"timeline"."id" = ' + id);
+		selectorQueries.push('"timestamps"."id" = ' + id);
 	}
 
 	if (selectorQueries.length > 0) {
@@ -24,7 +24,7 @@ async function getTimeline(id) {
 	}
 
 	try {
-        const mainQuery = 'SELECT * FROM "timeline"' + selectorQueries + ' ORDER BY "date";';
+        const mainQuery = 'SELECT * FROM "timestamps"' + selectorQueries + ' ORDER BY "date";';
 		//console.log(mainQuery);
 
 		const mainResult = await conn.query(mainQuery);

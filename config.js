@@ -11,7 +11,7 @@ export const api = "http://localhost:3000";
 export const server = dev ? "http://localhost:3000" : "https://www.kekesi.dev";
 
 // dock elements
-export const defaultDockElementIDs = [1, 2, 5, 9, 6];
+export const defaultDockElementIDs = [1, 2, 5, 6, 7];
 
 
 // db credentials
