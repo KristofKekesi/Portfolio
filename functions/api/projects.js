@@ -163,7 +163,6 @@ async function getProjects(id, name, version, role, platform, bundle, download, 
 		}
 		return "No results found";
 
-
 	} catch ( error ) {
 		console.log( error );
 	}

@@ -13,7 +13,7 @@ function MoreTooltip() {
             <div id="more-tooltip" className="blur-dark fixed right-3 hidden rounded-2xl z-10">
                 <ul>
                     <li>
-                        <Link href="/translations">
+                        <Link href="/translations" className="target">
                             <a className="target">Translations</a>
                         </Link>
                     </li>

@@ -82,19 +82,19 @@
             },
             {
                 "type": "gallery",
-                "imageIDs": [112, 94, 135 , 124]
+                "imageIDs": [45, 27, 68 , 57]
             },
             {
                 "type": "gallery",
-                "imageIDs": [81, 82, 92, 121, 140]
+                "imageIDs": [14, 15, 25, 54, 73]
             },
             {
                 "type": "gallery",
-                "imageIDs": [118, 115, 123, 134, 90]
+                "imageIDs": [51, 48, 56, 67, 23]
             },
             {
                 "type": "gallery",
-                "imageIDs": [98, 88, 87, 93, 127]
+                "imageIDs": [31, 21, 20, 26, 60]
             }
         ]
     },
@@ -107,11 +107,11 @@
             },
             {
                 "type": "gallery",
-                "imageIDs": [85, 99, 102, 103]
+                "imageIDs": [18, 32, 35, 36]
             },
             {
                 "type": "gallery",
-                "imageIDs": [104, 109, 130, 133]
+                "imageIDs": [37, 42, 63, 66]
             }
         ]
     },

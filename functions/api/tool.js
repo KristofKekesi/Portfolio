@@ -45,7 +45,7 @@ async function getTool(id) {
 		return "No results found";
 
 	} catch ( error ) {
-		//console.log( error );
+		console.log( error );
 	}
 };
 
