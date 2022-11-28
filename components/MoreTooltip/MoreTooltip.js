@@ -14,12 +14,12 @@ function MoreTooltip() {
                 <ul>
                     <li>
                         <Link href="/translations" className="target">
-                            <a className="target">Translations</a>
+                            Translations
                         </Link>
                     </li>
                     <li>
-                        <Link href="/photography">
-                            <a className="target">Photography</a>
+                        <Link href="/photography" className="target">
+                            Photography
                         </Link>
                     </li>
                     {//<li>
@@ -28,13 +28,13 @@ function MoreTooltip() {
                     }
                     <hr className="w-full"/>
                     <li>
-                        <Link href="/timeline">
-                            <a className="target">Timeline</a>
+                        <Link href="/timeline" className="target">
+                            Timeline
                         </Link>
                     </li>
                     <li>
-                        <Link href="/about">
-                            <a className="target">About</a>
+                        <Link href="/about" className="target">
+                            About
                         </Link>
                     </li>
                 </ul>
