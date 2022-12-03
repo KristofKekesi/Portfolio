@@ -23,7 +23,7 @@ async function getTimeline(id) {
 		selectorQueries = '';
 	}
 
-	try {
+	//try {
         const mainQuery = 'SELECT * FROM "timestamps"' + selectorQueries + ' ORDER BY "date";';
 		//console.log(mainQuery);
 
@@ -39,9 +39,9 @@ async function getTimeline(id) {
 		}
 		return "No results found";
 
-	} catch ( error ) {
-		console.log( error );
-	}
+	//} catch ( error ) {
+	//	console.log( error );
+	//}
 }
 
 export default getTimeline;

@@ -23,7 +23,7 @@ async function getTool(id) {
 		return "No query parameters provided";
 	}
 
-	try {
+	//try {
         const mainQuery = 'SELECT * FROM "tools"' + selectorQueries + ';';
 		//console.log(mainQuery);
 		
@@ -44,9 +44,9 @@ async function getTool(id) {
 		}
 		return "No results found";
 
-	} catch ( error ) {
-		console.log( error );
-	}
+	//} catch ( error ) {
+	//	console.log( error );
+	//}
 };
 
 export default getTool;

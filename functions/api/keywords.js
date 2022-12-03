@@ -9,7 +9,7 @@ import conn from "../../db";
 
 
 async function getKeywords() {
-	try {
+	//try {
         const keywords = ["Kristóf Kékesi"];
 
         const toolsQuery = 'SELECT "name" FROM "tools";';		
@@ -26,9 +26,9 @@ async function getKeywords() {
 
         return keywords;
 
-	} catch ( error ) {
-		console.log( error );
-	}
+	//} catch ( error ) {
+	//	console.log( error );
+	//}
 };
 
 export default getKeywords;

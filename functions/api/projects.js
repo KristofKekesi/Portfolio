@@ -55,7 +55,7 @@ async function getProjects(id, name, version, role, platform, bundle, download, 
 		selectorQueries = '';
 	}
 
-	try {
+	//try {
 		const mainQuery = 'SELECT "projects".* ' + imports + ' ' + selectorQueries + ' ORDER BY "projects"."id";';
 		//console.log(mainQuery);
 
@@ -163,9 +163,9 @@ async function getProjects(id, name, version, role, platform, bundle, download, 
 		}
 		return "No results found";
 
-	} catch ( error ) {
-		console.log( error );
-	}
+	//} catch ( error ) {
+	//	console.log( error );
+	//}
 }
 
 export default getProjects;

@@ -2,9 +2,5 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/projects/[name]": "pages/projects/[name].js",
-  "/[article]": "pages/[article].js",
-  "/timeline": "pages/timeline.js",
-  "/about": "pages/about.js",
-  "/": "pages/index.js"
+  "/api/bundles": "pages/api/bundles.js"
 }

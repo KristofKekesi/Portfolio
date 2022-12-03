@@ -44,7 +44,7 @@ function setCopyright(json) {
             finalString = product + " - " + name;
         }
 
-        try {
+        //try {
             copyright.classList.toggle = "hidden";
 
             for (let i = 0; i < content.children.length; i++) {
@@ -54,9 +54,9 @@ function setCopyright(json) {
             }
 
             content.insertAdjacentHTML("beforeend", "<li><a class='target nowrap' href='" + link + "'>" + finalString +"</a></li>")
-        } catch (error) {
-            console.log(error);
-        }
+        //} catch (error) {
+        //    console.log(error);
+        //}
     }
 }
 
