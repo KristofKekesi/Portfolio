@@ -155,7 +155,7 @@ async function getProjects(id, name, version, role, platform, bundle, download, 
 			delete mainResult.rows[i].logoID;
 
 			// Date added
-			mainResult.rows[i].dateAdded = new Date(mainResult.rows[i].dateAdded).toString();
+			mainResult.rows[0].dateAdded = new Date(mainResult.rows[0].dateAdded).toString();
 
 			if (i === mainResult.rows.length - 1) {
 				return mainResult.rows;

@@ -49,8 +49,7 @@ async function getBundles(id, name, app) {
 				const projectSideResult = await conn.query(projectSideQuery);
 
 				// Project date added
-				console.log(projectSideResult.rows[i])
-				projectSideResult.rows[i].dateAdded = new Date(projectSideResult.rows[i].dateAdded).toString();
+				projectSideResult.rows[0].dateAdded = new Date(projectSideResult.rows[0].dateAdded).toString();
 
 				const project = projectSideResult.rows[0];
 

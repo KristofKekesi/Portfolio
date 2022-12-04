@@ -31,11 +31,11 @@ function Article(props) {
         switch(props.weight) {
             case "bold":
                 return(
-                    <Link href={"#" + props.id.replace( /(<([^>]+)>)/ig, '')}><a className="target" style={{height: "1em", width: "1em"}}><img className="group-hover:inline hidden" style={{height: "1em", width: "1em"}} src="icon_add_link_bold.svg" alt="bookmark" /></a></Link>
+                    <Link href={"#" + props.id.replace( /(<([^>]+)>)/ig, '')} className="target" style={{height: "1em", width: "1em"}}><img className="group-hover:inline hidden" style={{height: "1em", width: "1em"}} src="icon_add_link_bold.svg" alt="bookmark" /></Link>
                 );
             case "medium":
                 return(
-                    <Link href={"#" + props.id.replace( /(<([^>]+)>)/ig, '')}><a className="target" style={{height: "1em", width: "1em"}}><img className="group-hover:inline hidden" style={{height: "1em", width: "1em"}} src="icon_add_link_medium.svg" alt="bookmark" /></a></Link>
+                    <Link href={"#" + props.id.replace( /(<([^>]+)>)/ig, '')} className="target" style={{height: "1em", width: "1em"}}><img className="group-hover:inline hidden" style={{height: "1em", width: "1em"}} src="icon_add_link_medium.svg" alt="bookmark" /></Link>
                 );
             default: return null;
         }

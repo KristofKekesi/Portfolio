@@ -19,7 +19,6 @@ import setProjectTooltipState from '../../functions/project-tooltip-state.js';
 
 import { api, defaultDockElementIDs, server } from "../../config";
 import getProjects from '../../functions/api/projects';
-import getArticles from '../../functions/api/articles';
 
 
 //    TURTLE - TEKI
@@ -31,8 +30,6 @@ import getArticles from '../../functions/api/articles';
 
 export const getStaticPaths = async () => {
 	const projects = await getProjects();
-    const articles = await getArticles();
-    console.log(articles)
 
 	const paths = [];
 	for (let i = 0; i < projects.length; i++) {

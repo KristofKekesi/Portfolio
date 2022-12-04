@@ -59,7 +59,9 @@ async function getArticles(id, name, redirect, isVisible, content, skill, tool, 
 		
 		const mainResult = await conn.query(mainQuery);
 
+		// Article
 		for (let i = 0; i < mainResult.rows.length; i++) {
+			console.log(mainResult.rows[i].content)
 			mainResult.rows[i].dockElements = [];
 			mainResult.rows[i].skills = [];
 			mainResult.rows[i].tools  = [];
@@ -141,7 +143,6 @@ async function getArticles(id, name, redirect, isVisible, content, skill, tool, 
 			// Content
 			const contentResponse = await fetch(server + "/" + encodeURIComponent(mainResult.rows[i].content));
 			const content = await contentResponse.json();
-			console.log(content[0])
 
 			// Last Modified header from content
 			const lastModified = contentResponse.headers.get('last-modified');
@@ -230,7 +231,9 @@ async function getArticles(id, name, redirect, isVisible, content, skill, tool, 
 				return projectBundle;
 			}
 
+			// Content sections
 			for (let j = 0; j < content.length; j++) {
+				console.log(j);
 				if (content[j].type == "article-preview-smoll") {
 					content[j] = await setArticlePreviewSmoll(content[j]);
 				} else if (content[j].type == "article-preview-big") {
@@ -241,6 +244,7 @@ async function getArticles(id, name, redirect, isVisible, content, skill, tool, 
 					content[j] = await setProjectBundle(content[j]);
 				} else if (content[j].type == "section") {
 					for (let k = 0; k < content[j].content.length; k++) {
+						console.log("k " + k.toString());
 						if (content[j].content[k].type == "article-preview-smoll") {
 							content[j].content[k] = await setArticlePreviewSmoll(content[j].content[k]);
 						} else if (content[j].content[k].type == "article-preview-big") {
@@ -253,14 +257,14 @@ async function getArticles(id, name, redirect, isVisible, content, skill, tool, 
 			}
 
 			mainResult.rows[i].content = content;
-			console.log(mainResult.rows.length - 1)
-			console.log(i)
+
 			if (i === mainResult.rows.length - 1) {
 				console.log("works")
 				return mainResult.rows;
 			}
 		}
         
+		return mainResult.rows;
 		console.log("no res")
 		return "No results found";
 

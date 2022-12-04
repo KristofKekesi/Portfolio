@@ -23,6 +23,7 @@ describe('Badges.cy.js', () => {
 
   it("check content - websites", () => {
     cy.mount(<Badges downloads={[{"type": "website", "value": "https://dummy.data"}]}></Badges>);
+    cy.contains("Visit their");
     cy.contains("Website");
   });
 
