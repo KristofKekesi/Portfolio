@@ -10,11 +10,11 @@ import getProjects from "../../functions/api/projects";
 
 const projects = async (req, res) => {
     const {
-        query: { id, name, version, role, platform, bundle, download, skill, tool },
+        query: { id, name, version, role, platform, award, bundle, download, skill, tool },
         method,
     } = req;
     
-	const projects = await getProjects(id, name, version, role, platform, bundle, download, skill, tool);
+	const projects = await getProjects(id, name, version, role, platform, award, bundle, download, skill, tool);
 	
 	if (projects == "No results found") {
 		return res.status(404).send(projects);

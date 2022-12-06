@@ -15,7 +15,7 @@ function ProjectBundle(props) {
     }
 
     return(
-        <div className={"project-bundle text-white my-10"} style={{backgroundImage: props.projectBundle.background + ", url('" + server + "/grain.png)'"}}>
+        <div className={"project-bundle text-white my-10"} style={{backgroundImage: props.projectBundle.background}}>
             <div className="mb-10 h-px"></div>
             { props.projectBundle.name ? <h1 className="text-title">{props.projectBundle.name}</h1> : null }
             <div className="project-bundle-content w-full flex justify-between px-12 mb-10">

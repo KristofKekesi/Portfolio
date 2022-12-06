@@ -1,0 +1,9 @@
+/*  TURTLE - TEKI
+    (°-°) _______
+      \ \/ - - - \_
+       \_  ___  ___>
+         \__) \__)    */
+
+img.award-right {
+    transform: scaleX(-1);
+}

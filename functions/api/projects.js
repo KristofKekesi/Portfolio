@@ -8,9 +8,10 @@ import conn from "../../db";
 //         \__) \__)
 
 
-async function getProjects(id, name, version, role, platform, bundle, download, skill, tool) {
-    //console.log("ID: " + id + " Name: " + name + " Version: " + version + " Role: " + role + " Platform: " + platform + " Bundle: " + bundle + " Download: " + download + " Skill: " + skill + " Tool: " + tool);
+async function getProjects(id, name, version, role, platform, award, bundle, download, skill, tool) {
+    //console.log("ID: " + id + " Name: " + name + " Version: " + version + " Role: " + role + " Platform: " + platform + " Award: " + award + " Bundle: " + bundle + " Download: " + download + " Skill: " + skill + " Tool: " + tool);
 
+	console.log(award)
 	let imports = ['"projects"'];
 	let selectorQueries = [];
 
@@ -30,6 +31,10 @@ async function getProjects(id, name, version, role, platform, bundle, download, 
 	if (platform != undefined) {
 		imports.push('"project_platforms"');
 		selectorQueries.push('(LOWER("project_platforms"."platform") = LOWER(\'' + platform + '\') AND "projects"."id" = "project_platforms"."projectID")');
+	}
+	if (award != undefined) {
+		imports.push('"project_awards"');
+		selectorQueries.push('(LOWER("project_awards"."awardName") = LOWER(\'' + award + '\') AND "projects"."id" = "project_awards"."projectID")')
 	}
 	if (bundle != undefined) {
 		imports.push('"project_bundles"');
@@ -65,6 +70,7 @@ async function getProjects(id, name, version, role, platform, bundle, download, 
 			mainResult.rows[i].bundleIDs = [];
 			mainResult.rows[i].downloads = [];
 			mainResult.rows[i].platforms = [];
+			mainResult.rows[i].awards = [];
 			mainResult.rows[i].roles = [];
 			mainResult.rows[i].screenshots = [];
 			mainResult.rows[i].skills = [];
@@ -90,6 +96,13 @@ async function getProjects(id, name, version, role, platform, bundle, download, 
 			const platformsSideResult = await conn.query(platformsSideQuery);
 			for (let j = 0; j < platformsSideResult.rows.length; j++) {
 				mainResult.rows[i].platforms.push(platformsSideResult.rows[j].platform);
+			}
+
+			// Awards
+			const awardsSideQuery = 'SELECT * FROM "project_awards" WHERE "projectID" = ' + mainResult.rows[i].id + ';';
+			const awardsSideResult = await conn.query(awardsSideQuery);
+			for (let j = 0; j < awardsSideResult.rows.length; j++) {
+				mainResult.rows[i].awards.push(awardsSideResult.rows[j].awardName);
 			}
 
 			// Roles

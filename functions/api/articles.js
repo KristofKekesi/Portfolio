@@ -61,7 +61,6 @@ async function getArticles(id, name, redirect, isVisible, content, skill, tool, 
 
 		// Article
 		for (let i = 0; i < mainResult.rows.length; i++) {
-			console.log(mainResult.rows[i].content)
 			mainResult.rows[i].dockElements = [];
 			mainResult.rows[i].skills = [];
 			mainResult.rows[i].tools  = [];
@@ -175,7 +174,6 @@ async function getArticles(id, name, redirect, isVisible, content, skill, tool, 
 				}
 
 				delete articlePreviewSmoll.articleIDs;
-				console.log("smoll")
 				return articlePreviewSmoll;
 			}
 
@@ -202,7 +200,6 @@ async function getArticles(id, name, redirect, isVisible, content, skill, tool, 
 				}
 
 				delete articlePreviewBig.articleIDs;
-				console.log("big")
 				return articlePreviewBig;
 			}
 
@@ -219,7 +216,6 @@ async function getArticles(id, name, redirect, isVisible, content, skill, tool, 
 				}
 
 				delete gallery.imageIDs;
-				console.log("gallery")
 				return gallery;
 			}
 
@@ -227,13 +223,11 @@ async function getArticles(id, name, redirect, isVisible, content, skill, tool, 
 				const projectBundleResult = await getBundles(projectBundle.id, undefined, undefined)
 
 				projectBundle.projectBundle = projectBundleResult[0];
-				console.log("projectBundle")
 				return projectBundle;
 			}
 
 			// Content sections
 			for (let j = 0; j < content.length; j++) {
-				console.log(j);
 				if (content[j].type == "article-preview-smoll") {
 					content[j] = await setArticlePreviewSmoll(content[j]);
 				} else if (content[j].type == "article-preview-big") {
@@ -244,7 +238,6 @@ async function getArticles(id, name, redirect, isVisible, content, skill, tool, 
 					content[j] = await setProjectBundle(content[j]);
 				} else if (content[j].type == "section") {
 					for (let k = 0; k < content[j].content.length; k++) {
-						console.log("k " + k.toString());
 						if (content[j].content[k].type == "article-preview-smoll") {
 							content[j].content[k] = await setArticlePreviewSmoll(content[j].content[k]);
 						} else if (content[j].content[k].type == "article-preview-big") {
@@ -259,12 +252,10 @@ async function getArticles(id, name, redirect, isVisible, content, skill, tool, 
 			mainResult.rows[i].content = content;
 
 			if (i === mainResult.rows.length - 1) {
-				console.log("works")
 				return mainResult.rows;
 			}
 		}
         
-		return mainResult.rows;
 		console.log("no res")
 		return "No results found";
 

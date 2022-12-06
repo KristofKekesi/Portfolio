@@ -9,6 +9,7 @@ import Dock from '../../components/Dock/Dock';
 import Footer from '../../components/Footer/Footer';
 import AutoHead from '../../components/Head/Head';
 import Badges from '../../components/Badges/Badges';
+import Award from '../../components/Award/Award';
 
 import cursorSetup from '../../functions/cursor.js';
 import navbarToggle from '../../functions/navbar.js';
@@ -17,7 +18,7 @@ import setImageGalleries from '../../functions/image-gallery';
 import projectTooltipPosition from '../../functions/project-tooltip-position.js';
 import setProjectTooltipState from '../../functions/project-tooltip-state.js';
 
-import { api, defaultDockElementIDs, server } from "../../config";
+import { defaultDockElementIDs, server } from "../../config";
 import getProjects from '../../functions/api/projects';
 
 
@@ -55,6 +56,25 @@ export default function ArticlePage({ project, dockElements, keywords }) {
 
 		console.log("%cHello there!\n\n%cIf you are interested in the source code check out this site's repo at https://www.github.com/KristofKekesi/Portfolio.", "color:#ffffff;font-family:system-ui;font-size:2rem;font-weight:bold;text-shadow:2px 2px 0 #5ebd3e, 4px 4px 0 #ffbb00, 6px 6px 0 #f78400, 8px 8px 0 #e23838, 10px 10px 0 #973999, 12px 12px 0 #009cdf", "color:auto;font-size:1rem; font-family:monospace;");
 	} , [project.logo, project.screenshots, dockElements]);
+
+    // awards
+    let awardsDiv = null;
+    console.log("a: " + project.awards.toString())
+    if (project.awards != []) {
+        let awards = [];
+        project.awards.forEach((awardName) => {
+            awards.push(<Award awardName={awardName} key={awardName} />);
+        });
+
+        awardsDiv = <div className="section">
+            <div className="mt-10 h-px" />
+            <h1 className="text-title selectable">Awards</h1>
+            <div className="flex flex-wrap gap-3 gap-x-12 mx-12">
+                {awards}
+            </div>
+            <div className="mt-12 h-px" />
+        </div>
+    }
 
     // version
     let versionDiv = null;
@@ -123,6 +143,7 @@ export default function ArticlePage({ project, dockElements, keywords }) {
                             <div className="mt-12 h-px" />
                         </div>
                         <ImageGallery galleryTag={"max"} className={"nosection"} images={project.screenshots}/>
+                        { awardsDiv }
                         <MadeWith tools={project.tools} title={"Tools that I used while working on " + project.name} />
                         <div className="mt-10 h-px" />
                     </div>
