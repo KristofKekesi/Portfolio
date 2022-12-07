@@ -19,14 +19,8 @@ function ArticlePreviewBig(props) {
                         src={ server + "/" + props.article.cover.path }
                         alt="Article cover"
                     />
-                    <h1
-                        className="text-title"
-                        dangerouslySetInnerHTML={{ __html: props.article.name.replace( /(<([^>]+)>)/ig, '') }}
-                    />
-                    <h2
-                        className="text-smallsubtitle" 
-                        dangerouslySetInnerHTML={{ __html: props.article.description.replace( /(<([^>]+)>)/ig, '') }}
-                    />
+                    <h1 className="text-title">{ props.article.name.replace( /(<([^>]+)>)/ig, '') }</h1>
+                    <h2 className="text-smallsubtitle">{ props.article.description.replace( /(<([^>]+)>)/ig, '') }</h2>
                 </div>
             </a>
         </article>

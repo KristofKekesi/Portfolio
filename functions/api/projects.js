@@ -11,7 +11,6 @@ import conn from "../../db";
 async function getProjects(id, name, version, role, platform, award, bundle, download, skill, tool) {
     //console.log("ID: " + id + " Name: " + name + " Version: " + version + " Role: " + role + " Platform: " + platform + " Award: " + award + " Bundle: " + bundle + " Download: " + download + " Skill: " + skill + " Tool: " + tool);
 
-	console.log(award)
 	let imports = ['"projects"'];
 	let selectorQueries = [];
 

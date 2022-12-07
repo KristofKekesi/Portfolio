@@ -5,11 +5,15 @@
 //         \__) \__)
 
 
-export default function projectTooltipPosition() {
+function setProjectTooltipPosition() {
+    console.log("runs")
     let dockTop = window.scrollX + document.getElementById("dock").getBoundingClientRect().top; // upper position of the dock element
 
     for (var i = 0; i < document.querySelectorAll(".project-tooltip").length; i++) {
         document.querySelectorAll(".project-tooltip")[i].style.bottom = (window.innerHeight - dockTop  + 10) + "px";
+
+        console.log(document.querySelectorAll(".project-tooltip")[i].getBoundingClientRect().left);
+        console.log(document.querySelectorAll(".project-tooltip")[i].getBoundingClientRect().right);
 
         let dockElementLeft = document.querySelectorAll(".dock-element")[i].getBoundingClientRect().left;
         let dockElementWidth = window.scrollX + document.querySelectorAll(".dock-element")[i].offsetWidth;
@@ -39,6 +43,11 @@ export default function projectTooltipPosition() {
     }
 }
 
-if (typeof window !== "undefined") {
-    window.addEventListener('resize', projectTooltipPosition);
+export default function ProjectTooltipPostition() {
+    setProjectTooltipPosition()
+
+    window.addEventListener('resize', setProjectTooltipPosition);
+    if (typeof window !== "undefined") {
+        window.addEventListener('resize', setProjectTooltipPosition);
+    }
 }

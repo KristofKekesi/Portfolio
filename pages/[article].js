@@ -28,16 +28,12 @@ import getProjects from '../functions/api/projects';
 
 export const getStaticPaths = async () => {
 	const articles = await getArticles();
-	console.log("a")
-	console.log(articles)
-	console.log("finished")
 
 	const paths = [];
 	for (let i = 0; i < articles.length; i++) {
 		if (articles[i].redirect != "about") {
 			paths.push("/" + articles[i].redirect);
 		}
-		console.log(paths)
 	}
 
 	return {

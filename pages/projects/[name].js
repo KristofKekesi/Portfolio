@@ -59,8 +59,7 @@ export default function ArticlePage({ project, dockElements, keywords }) {
 
     // awards
     let awardsDiv = null;
-    console.log("a: " + project.awards.toString())
-    if (project.awards != []) {
+    if (project.awards.length != 0) {
         let awards = [];
         project.awards.forEach((awardName) => {
             awards.push(<Award awardName={awardName} key={awardName} />);
