@@ -1,3 +1,5 @@
+import { server } from "../../config";
+
 import Link from "next/link";
 
 
@@ -12,7 +14,7 @@ function Bookmark(props) {
     // PROPS
     // color, weight, id
 
-    let src = "icon_add_link_" + (props.color ? props.color : "black") + "_" + (props.weight ? props.weight : "bold") + ".svg";
+    let src = server + "/icon_add_link_" + (props.color ? props.color : "black") + "_" + (props.weight ? props.weight : "bold") + ".svg";
 
     switch(props.weight) {
         case "bold":

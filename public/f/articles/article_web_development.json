@@ -53,6 +53,10 @@
         ]
     },
     {
+        "type": "project-bundle",
+        "id": "5"
+    },
+    {
         "type": "text-title",
         "value": "As for the future"
     },
