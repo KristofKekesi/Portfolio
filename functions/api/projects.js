@@ -8,8 +8,8 @@ import conn from "../../db";
 //         \__) \__)
 
 
-async function getProjects(id, name, version, role, platform, bundle, download, skill, tool) {
-    //console.log("ID: " + id + " Name: " + name + " Version: " + version + " Role: " + role + " Platform: " + platform + " Bundle: " + bundle + " Download: " + download + " Skill: " + skill + " Tool: " + tool);
+async function getProjects(id, name, version, role, platform, award, bundle, download, skill, tool) {
+    //console.log("ID: " + id + " Name: " + name + " Version: " + version + " Role: " + role + " Platform: " + platform + " Award: " + award + " Bundle: " + bundle + " Download: " + download + " Skill: " + skill + " Tool: " + tool);
 
 	let imports = ['"projects"'];
 	let selectorQueries = [];
@@ -31,13 +31,17 @@ async function getProjects(id, name, version, role, platform, bundle, download, 
 		imports.push('"project_platforms"');
 		selectorQueries.push('(LOWER("project_platforms"."platform") = LOWER(\'' + platform + '\') AND "projects"."id" = "project_platforms"."projectID")');
 	}
+	if (award != undefined) {
+		imports.push('"project_awards"');
+		selectorQueries.push('(LOWER("project_awards"."awardName") = LOWER(\'' + award + '\') AND "projects"."id" = "project_awards"."projectID")')
+	}
 	if (bundle != undefined) {
 		imports.push('"project_bundles"');
 		selectorQueries.push('("project_bundles"."bundleID" = \'' + bundle + '\' AND "projects"."id" = "project_bundles"."projectID")');
 	}
 	if (download != undefined) {
 		imports.push('"project_downloads"');
-		selectorQueries.push('(LOWER("project_downloads"."type") = LOWER(\'' + download + '\') AND "projects"."id" = "project_downloads"."projectID")');
+		selectorQueries.push('(LOWER("project_downloads"."store") = LOWER(\'' + download + '\') AND "projects"."id" = "project_downloads"."projectID")');
 	}
 	if (skill != undefined) {
 		imports.push('"project_skills"');
@@ -55,16 +59,17 @@ async function getProjects(id, name, version, role, platform, bundle, download, 
 		selectorQueries = '';
 	}
 
-	try {
+	//try {
 		const mainQuery = 'SELECT "projects".* ' + imports + ' ' + selectorQueries + ' ORDER BY "projects"."id";';
 		//console.log(mainQuery);
 
 		const mainResult = await conn.query(mainQuery);
-
+		
 		for (let i = 0; i < mainResult.rows.length; i++) {
 			mainResult.rows[i].bundleIDs = [];
 			mainResult.rows[i].downloads = [];
 			mainResult.rows[i].platforms = [];
+			mainResult.rows[i].awards = [];
 			mainResult.rows[i].roles = [];
 			mainResult.rows[i].screenshots = [];
 			mainResult.rows[i].skills = [];
@@ -90,6 +95,13 @@ async function getProjects(id, name, version, role, platform, bundle, download, 
 			const platformsSideResult = await conn.query(platformsSideQuery);
 			for (let j = 0; j < platformsSideResult.rows.length; j++) {
 				mainResult.rows[i].platforms.push(platformsSideResult.rows[j].platform);
+			}
+
+			// Awards
+			const awardsSideQuery = 'SELECT * FROM "project_awards" WHERE "projectID" = ' + mainResult.rows[i].id + ';';
+			const awardsSideResult = await conn.query(awardsSideQuery);
+			for (let j = 0; j < awardsSideResult.rows.length; j++) {
+				mainResult.rows[i].awards.push(awardsSideResult.rows[j].awardName);
 			}
 
 			// Roles
@@ -131,7 +143,7 @@ async function getProjects(id, name, version, role, platform, bundle, download, 
 				delete tool.id;
 
 				// Logo
-				const logoSideQuery = 'SELECT * FROM "images" WHERE "id" = ' + tool.imageID + ';';
+				const logoSideQuery = 'SELECT * FROM "images" WHERE "id" = ' + tool.logoID + ';';
 				const logoSideResult = await conn.query(logoSideQuery);
 
 				const logo = logoSideResult.rows[0];
@@ -155,7 +167,7 @@ async function getProjects(id, name, version, role, platform, bundle, download, 
 			delete mainResult.rows[i].logoID;
 
 			// Date added
-			mainResult.rows[i].dateAdded = new Date(mainResult.rows[i].dateAdded).toString();
+			mainResult.rows[0].dateAdded = new Date(mainResult.rows[0].dateAdded).toString();
 
 			if (i === mainResult.rows.length - 1) {
 				return mainResult.rows;
@@ -163,10 +175,9 @@ async function getProjects(id, name, version, role, platform, bundle, download, 
 		}
 		return "No results found";
 
-
-	} catch ( error ) {
-		console.log( error );
-	}
+	//} catch ( error ) {
+	//	console.log( error );
+	//}
 }
 
 export default getProjects;

@@ -14,7 +14,7 @@ async function getTimeline(id) {
 	let selectorQueries = [];
 
 	if (id != undefined) {
-		selectorQueries.push('"timeline"."id" = ' + id);
+		selectorQueries.push('"timestamps"."id" = ' + id);
 	}
 
 	if (selectorQueries.length > 0) {
@@ -23,8 +23,8 @@ async function getTimeline(id) {
 		selectorQueries = '';
 	}
 
-	try {
-        const mainQuery = 'SELECT * FROM "timeline"' + selectorQueries + ' ORDER BY "date";';
+	//try {
+        const mainQuery = 'SELECT * FROM "timestamps"' + selectorQueries + ' ORDER BY "date";';
 		//console.log(mainQuery);
 
 		const mainResult = await conn.query(mainQuery);
@@ -39,9 +39,9 @@ async function getTimeline(id) {
 		}
 		return "No results found";
 
-	} catch ( error ) {
-		console.log( error );
-	}
+	//} catch ( error ) {
+	//	console.log( error );
+	//}
 }
 
 export default getTimeline;

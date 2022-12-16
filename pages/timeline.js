@@ -54,8 +54,8 @@ export default function Timeline({ timestamps, dockElements, keywords }) {
 	const yearpicker = <div className="hidden md:flex mt-10 flex-col">
 		{years.map(year => {
 			return (
-				<Link href={ "#" + year } key={ year }>
-					<a className="text-title target">{ year }</a>
+				<Link href={ "#" + year } key={ year } className="text-title target">
+					{ year }
 				</Link>
 			);
 		})}
@@ -100,9 +100,9 @@ export default function Timeline({ timestamps, dockElements, keywords }) {
 		<div>
 			{Object.keys(organisedTimestamps).map(year => {
 				return (
-					<div className="m-10 section" key={ year }>
+					<div className="m-10 section" id={ year } key={ year }>
 						<div className="h-px mb-10" />
-						<div id={ year } className="text-title selectable">{ year }</div>
+						<div className="text-title selectable">{ year }</div>
 						{ // Year timestamps
 						organisedTimestamps[year]["undefined"] ? organisedTimestamps[year]["undefined"].map( timestamp => {
 							return (

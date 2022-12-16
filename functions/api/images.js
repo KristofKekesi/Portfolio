@@ -29,7 +29,7 @@ async function getImages(id, type, copyright) {
 		return "No query parameters provided";
 	}
 
-	try {
+	//try {
         const mainQuery = 'SELECT * FROM "images" ' + selectorQueries + ';';
 		//console.log(mainQuery);
 
@@ -42,9 +42,9 @@ async function getImages(id, type, copyright) {
 		}
 		return "No results found";
 
-	} catch ( error ) {
-		console.log( error );
-	}
+	//} catch ( error ) {
+	//	console.log( error );
+	//}
 };
 
 export default getImages;

@@ -5,6 +5,10 @@
          \__) \__)    */
 
 
+.project-bundle {
+    background-repeat: repeat;
+}
+
 .project-bundle-content > div {
     width: min-content;
 }

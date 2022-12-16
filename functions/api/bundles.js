@@ -31,7 +31,7 @@ async function getBundles(id, name, app) {
 		selectorQueries = '';
 	}
 
-	try {
+	//try {
         const mainQuery = 'SELECT "bundles".* FROM ' + imports + ' ' + selectorQueries + ' ORDER BY "bundles"."id";';
 		//console.log(mainQuery);
 
@@ -49,7 +49,7 @@ async function getBundles(id, name, app) {
 				const projectSideResult = await conn.query(projectSideQuery);
 
 				// Project date added
-				projectSideResult.rows[i].dateAdded = new Date(projectSideResult.rows[i].dateAdded).toString();
+				projectSideResult.rows[0].dateAdded = new Date(projectSideResult.rows[0].dateAdded).toString();
 
 				const project = projectSideResult.rows[0];
 
@@ -73,9 +73,9 @@ async function getBundles(id, name, app) {
 		}
 		return "No results found";
 
-	} catch ( error ) {
-		console.log( error );
-	}
+	//} catch ( error ) {
+	//	console.log( error );
+	//}
 };
 
 export default getBundles;

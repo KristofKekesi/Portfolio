@@ -1,3 +1,5 @@
+import Bookmark from "../Bookmark/Bookmark.js";
+
 import { server } from "../../config.js";
 
 
@@ -33,7 +35,7 @@ function MadeWith(props) {
 
 	let content = [];
 	for (let technologyType in technologyTypes) {
-		content.push(<h1 className="text-subtitle selectable pt-4 pb-2" key={technologyType + "-title"}>{technologyType}</h1>);
+		content.push(<h1 id={ technologyType.toLowerCase().replaceAll(" ", "-") } className="selectable text-subtitle nosection group flex items-center gap-2 pt-4 pb-2" key={ technologyType + "-title" }><span>{ technologyType }</span><Bookmark color="black" weight="medium" id={ technologyType.toLowerCase().replaceAll(" ", "-") } /></h1>);
 		let typeContent = [];
 		for (let i in technologyTypes[technologyType]) {
 			typeContent.push(<TechnologyElement tool={ technologyTypes[technologyType][i] } key={ i }/>);
@@ -42,9 +44,9 @@ function MadeWith(props) {
 	}
 
 	return(
-		<div className="section">
+		<div id={ props.title.toLowerCase().replaceAll(" ", "-") } className="section">
 			<div className="mh-10 h-px"></div>
-			{ props.title ?  <h1 className="text-title">{props.title}</h1> : null }
+			{ props.title ?  <h1 className="selectable text-title nosection group flex items-center gap-2" key={ props.title }><span>{ props.title }</span><Bookmark color="black" weight="bold" id={ props.title.toLowerCase().replaceAll(" ", "-") } /></h1> : null }
 			{ content }
 			<div className="mt-10 w-full bg-white h-px"/>
 		</div>

@@ -1,12 +1,10 @@
 import Terminal from "../Terminal/Terminal";
 import ImageGallery from "../ImageGallery/ImageGallery";
-
 import ProjectBundle from "../ProjectBundle/ProjectBundle";
 import { ArticlePreviewsBig, ArticlePreviewsSmoll } from "../ArticlePreview/index";
 import MadeWith from "../MadeWith/MadeWith";
 import Quote from "../Quote/Quote";
-
-import Link from "next/link";
+import Bookmark from "../Bookmark/Bookmark";
 
 import { months } from "../../config.js";
 
@@ -27,20 +25,6 @@ function Article(props) {
     const content = props.content ?? [];
     const skills = props.skills ?? [];
 
-    function Bookmark(props) {
-        switch(props.weight) {
-            case "bold":
-                return(
-                    <Link href={"#" + props.id.replace( /(<([^>]+)>)/ig, '')}><a className="target" style={{height: "1em", width: "1em"}}><img className="group-hover:inline hidden" style={{height: "1em", width: "1em"}} src="icon_add_link_bold.svg" alt="bookmark" /></a></Link>
-                );
-            case "medium":
-                return(
-                    <Link href={"#" + props.id.replace( /(<([^>]+)>)/ig, '')}><a className="target" style={{height: "1em", width: "1em"}}><img className="group-hover:inline hidden" style={{height: "1em", width: "1em"}} src="icon_add_link_medium.svg" alt="bookmark" /></a></Link>
-                );
-            default: return null;
-        }
-    }
-
     let articleContent = [];
     for (let i = 0; i < content.length; i++) {
         if ((i === 0 || content[i - 1].type === "section") && content[i].type !== "section") {
@@ -51,12 +35,12 @@ function Article(props) {
         switch(content[i].type) {
             case "text-title":
                 articleContent.push(
-                    <h1 id={content[i]["value"].toLowerCase().replaceAll(" ", "-").replace( /(<([^>]+)>)/ig, '')} className="selectable text-title nosection group flex items-center gap-2" key={i}><span dangerouslySetInnerHTML={{ __html: content[i]["value"] }} /><Bookmark weight="bold" id={content[i]["value"].toLowerCase().replaceAll(" ", "-")} /></h1>
+                    <h1 id={content[i]["value"].toLowerCase().replaceAll(" ", "-").replace( /(<([^>]+)>)/ig, '')} className="selectable text-title nosection group flex items-center gap-2" key={i}><span dangerouslySetInnerHTML={{ __html: content[i]["value"] }} /><Bookmark color="black" weight="bold" id={content[i]["value"].toLowerCase().replaceAll(" ", "-")} /></h1>
                 );
                 break;
             case "text-subtitle":
                 articleContent.push(
-                    <h2 id={content[i]["value"].toLowerCase().replaceAll(" ", "-").replace( /(<([^>]+)>)/ig, '')} className="selectable text-subtitle nosection group flex items-center gap-2" key={i}><span dangerouslySetInnerHTML={{ __html: content[i]["value"] }} /><Bookmark weight="medium" id={content[i]["value"].toLowerCase().replaceAll(" ", "-")}/></h2>
+                    <h2 id={content[i]["value"].toLowerCase().replaceAll(" ", "-").replace( /(<([^>]+)>)/ig, '')} className="selectable text-subtitle nosection group flex items-center gap-2" key={i}><span dangerouslySetInnerHTML={{ __html: content[i]["value"] }} /><Bookmark color="black" weight="medium" id={content[i]["value"].toLowerCase().replaceAll(" ", "-")}/></h2>
                 );
                 break;
             case "text-subsubtitle":
@@ -113,12 +97,12 @@ function Article(props) {
                     switch(content[i]["content"][k].type) {
                         case "text-title":
                             sectionContent.push(
-                                <h1 id={content[i]["content"][k]["value"].toLowerCase().replaceAll(" ", "-").replace( /(<([^>]+)>)/ig, '')} className="selectable text-title nosection group flex items-center gap-2" key={k}><span dangerouslySetInnerHTML={{ __html: content[i]["content"][k]["value"] }} /><Bookmark weight="bold" id={content[i]["content"][k]["value"].toLowerCase().replaceAll(" ", "-")} /></h1>
+                                <h1 id={content[i]["content"][k]["value"].toLowerCase().replaceAll(" ", "-").replace( /(<([^>]+)>)/ig, '')} className="selectable text-title nosection group flex items-center gap-2" key={k}><span dangerouslySetInnerHTML={{ __html: content[i]["content"][k]["value"] }} /><Bookmark color="black" weight="bold" id={content[i]["content"][k]["value"].toLowerCase().replaceAll(" ", "-")} /></h1>
                             );
                             break;
                         case "text-subtitle":
                             sectionContent.push(
-                                <h2 id={content[i]["content"][k]["value"].toLowerCase().replaceAll(" ", "-").replace( /(<([^>]+)>)/ig, '')} className="selectable text-subtitle nosection group flex items-center gap-2" key={k}><span dangerouslySetInnerHTML={{ __html: content[i]["content"][k]["value"] }} /><Bookmark weight="medium" id={content[i]["content"][k]["value"].toLowerCase().replaceAll(" ", "-")}/></h2>
+                                <h2 id={content[i]["content"][k]["value"].toLowerCase().replaceAll(" ", "-").replace( /(<([^>]+)>)/ig, '')} className="selectable text-subtitle nosection group flex items-center gap-2" key={k}><span dangerouslySetInnerHTML={{ __html: content[i]["content"][k]["value"] }} /><Bookmark color="black" weight="medium" id={content[i]["content"][k]["value"].toLowerCase().replaceAll(" ", "-")}/></h2>
                             );
                             break;
                         case "text-subsubtitle":
@@ -197,7 +181,7 @@ function Article(props) {
     return(
         <article>
             <div className="article-content pt-6 px-12" dangerouslySetInnerHTML={{ __html: publishedString }} />
-            { skills.length != 0 ? <div className="article-content flex md:px-12 px-7 pt-2 items-center">
+            { skills.length != 0 ? <div className="article-content flex flex-wrap gap-y-2 md:px-12 px-7 pt-2 items-center">
                     <div className="md:inline hidden">Contains</div> { skillTags }
                 </div> : null }
             <div className="article-content">
