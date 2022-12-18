@@ -1,0 +1,51 @@
+[
+    {
+        "type": "text-title",
+        "value": "Why I started translating"
+    },
+    {
+        "type": "text",
+        "value": "More and more people can understand english, but it's still a small portion of the hungarian population. Basic tools (like the first project I translated) should be available for anyone, especially if they are as good as <a class='target' href='../projects/notepads'>Notepads</a> or <a class='target' href='../projects/files'>Files</a>."
+    },
+    {
+        "type": "section",
+        "content": [
+            {
+                "type": "text-title",
+                "value": "Languages"
+            },
+            {
+                "type": "text-subtitle",
+                "value": "to translate from and for"
+            },
+            {
+                "type": "text",
+                "value": "I'm fluently speaking hungarian, my mother language. I'm currently learning english which I started in <a class='target' href='../timeline#2015'>2015</a>, and german."
+            },
+            {
+                "type": "text",
+                "value": "For most of my translations I translate from english to hungarian. I've translated several <abbr class='target' title='' customtitle='Universal Windows Platform'>UWP</abbr> applications, as well as some for Swift projects, but I'm open for other platforms too. If you are in need of a hungarian translator feel free to contact me."
+            }
+        ]
+    },
+    {
+        "type": "project-bundle",
+        "id": "3"
+    },
+    {
+        "type": "project-bundle",
+        "id": "4"
+    },
+    {
+        "type": "text-title",
+        "value": "Past projects"
+    },
+    {
+        "type": "text-subtitle",
+        "value": "10+ projects as a translator"
+    },
+    {
+        "type": "text",
+        "value": "My first program I translated were <a class='target' href=\"../projects/notepads\">Notepads</a>. <q>A modern, lightweight text editor with a minimalist design</q>, by <a class='target' href=\"https://github.com/0x7c13\">Jiaqi Liu</a>. It's a <abbr class='target' title='' customtitle='Universal Windows Platform'>UWP</abbr> application for Windows."
+    }
+]
