@@ -66,7 +66,7 @@ describe('Article.cy.js', () => {
 
     cy.mount(<Article content={ testJSON }/>);
 
-    cy.get("div.project-bundle");
+    cy.get("div.bundle");
   });
 
   it('Article - check article-preview-smoll', () => {

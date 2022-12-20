@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { QRCodeSVG } from "qrcode.react";
 
-import MadeWith from '../../components/MadeWith/MadeWith';
+import ExBundle from '../../components/ExBundle/ExBundle';
 import Navbar from '../../components/Navbar/Navbar';
 import Cursor from '../../components/Cursor/Cursor';
 import ImageGallery from '../../components/ImageGallery/ImageGallery';
@@ -143,7 +143,7 @@ export default function ArticlePage({ project, dockElements, keywords }) {
                         </div>
                         <ImageGallery galleryTag={"max"} className={"nosection"} images={project.screenshots}/>
                         { awardsDiv }
-                        <MadeWith tools={project.tools} title={"Tools that I used while working on " + project.name} />
+                        <ExBundle tools={project.tools} title={"Tools that I used while working on " + project.name} />
                         <div className="mt-10 h-px" />
                     </div>
                 </article>

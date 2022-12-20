@@ -8,7 +8,7 @@ import { server } from "../../config.js";
 //         \__) \__)
 
 
-function ProjectBundleContent(props) {
+function BundleContent(props) {
     const projects = [];
     props.projects.forEach(project => {
         projects.push(
@@ -28,4 +28,4 @@ function ProjectBundleContent(props) {
     );
 }
 
-export default ProjectBundleContent;
+export default BundleContent;

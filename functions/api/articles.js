@@ -219,11 +219,11 @@ async function getArticles(id, name, redirect, isVisible, content, skill, tool, 
 				return gallery;
 			}
 
-			async function setProjectBundle(projectBundle) {
-				const projectBundleResult = await getBundles(projectBundle.id, undefined, undefined)
+			async function setBundle(bundle) {
+				const bundleResult = await getBundles(bundle.id, undefined, undefined)
 
-				projectBundle.projectBundle = projectBundleResult[0];
-				return projectBundle;
+				bundle.bundle = bundleResult[0];
+				return bundle;
 			}
 
 			// Content sections
@@ -235,7 +235,7 @@ async function getArticles(id, name, redirect, isVisible, content, skill, tool, 
 				} else if (content[j].type == "gallery") {
 					content[j] = await setGallery(content[j]);
 				} else if (content[j].type == "project-bundle") {
-					content[j] = await setProjectBundle(content[j]);
+					content[j] = await setBundle(content[j]);
 				} else if (content[j].type == "section") {
 					for (let k = 0; k < content[j].content.length; k++) {
 						if (content[j].content[k].type == "article-preview-smoll") {
