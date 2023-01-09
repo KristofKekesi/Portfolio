@@ -1,7 +1,5 @@
 import Bookmark from "../Bookmark/Bookmark.js";
-import Label from "../Label/Label";
-
-import { server } from "../../config.js";
+import Label from "../Label/Label.js";
 
 
 //    TURTLE - TEKI
@@ -12,27 +10,48 @@ import { server } from "../../config.js";
 
 
 function ExBundle(props) {
-	if (props.tools == undefined || props.tools.length == 0) {
+	// PROPS
+	// name, children, background, theme
+
+	// PROP EXAMPLE
+	//*
+	let children = [
+		{type: "a", label: <Label size="xl" name="1" image={{"type":"logo","path":"f/images/steeped_logo.png","onIOS":null,"onMacOS":null,"copyrightHolder":"Steeped","copyrightURL":"https://www.steeped.app","width":512,"height":512,"alt":"The logo of Steeped."}}/>},
+		{type: "a", label: <Label size="xl" name="2" image={{"type":"logo","path":"f/images/steeped_logo.png","onIOS":null,"onMacOS":null,"copyrightHolder":"Steeped","copyrightURL":"https://www.steeped.app","width":512,"height":512,"alt":"The logo of Steeped."}}/>},
+		{type: "b", label: <Label size="xl" name="3" image={{"type":"logo","path":"f/images/steeped_logo.png","onIOS":null,"onMacOS":null,"copyrightHolder":"Steeped","copyrightURL":"https://www.steeped.app","width":512,"height":512,"alt":"The logo of Steeped."}}/>},
+	];
+	//*/
+
+
+	console.log("name: " + props.name + ", children: " + props.children + ", background: " + props.background + ", theme: " + props.theme);
+
+	if (props.children == undefined || props.children.length == 0) {
 		return null;
 	}
 
-	let technologyTypes = {};
-	props.tools.forEach(tool => {
-		if (tool.type in technologyTypes) {
-			technologyTypes[tool.type].push(tool);
+	let types = children.map(child => child["type"]);
+	types = [...new Set(types)];
+
+	console.log(types);
+
+	let contentTypes = {};
+	props.children.forEach(child => {
+		if (child.type in contentTypes) {
+			contentTypes[child.type].push(child);
 		} else {
-			technologyTypes[tool.type] = [tool];
+			contentTypes[child.type] = [child];
 		}
 	});
 
 	let content = [];
-	for (let technologyType in technologyTypes) {
-		content.push(<h1 id={ technologyType.toLowerCase().replaceAll(" ", "-") } className="selectable text-subtitle nosection group flex items-center gap-2 pt-4 pb-2" key={ technologyType + "-title" }><span>{ technologyType }</span><Bookmark color="black" weight="medium" id={ technologyType.toLowerCase().replaceAll(" ", "-") } /></h1>);
-		let typeContent = [];
-		for (let i in technologyTypes[technologyType]) {
-			typeContent.push(<Label size="xl" theme="dark" name={ technologyTypes[technologyType][i].name } image={ technologyTypes[technologyType][i].logo } href={ null } key={ i + "w" }/>);
+	for (let contentType in contentTypes) {
+		content.push(<h1 id={ contentType.toLowerCase().replaceAll(" ", "-") } className="selectable text-subtitle nosection group flex items-center gap-2 pt-4 pb-2" key={ contentType + "-title" }><span>{ contentType }</span><Bookmark color="black" weight="medium" id={ contentType.toLowerCase().replaceAll(" ", "-") } /></h1>);
+		let contentTypeContent = [];
+
+		for (let i in contentTypes[contentType]) {
+			contentTypeContent.push("label");
 		}
-		content.push(<div className="w-full flex flex-wrap flex-row gap-8 px-12 mb-10" key={technologyType + "-content"}>{typeContent}</div>);
+		content.push(<div className="w-full flex flex-wrap flex-row gap-8 px-12 mb-10" key={contentType + "-content"}>{contentTypeContent}</div>);
 	}
 
 	return(

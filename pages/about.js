@@ -6,6 +6,8 @@ import Cursor from '../components/Cursor/Cursor';
 import Dock from '../components/Dock/Dock';
 import Footer from '../components/Footer/Footer';
 import AutoHead from '../components/Head/Head';
+import ExBundle from '../components/ExBundle/ExBundle';
+import Label from '../components/Label/Label';
 
 import cursorSetup from '../functions/cursor.js';
 import navbarToggle from '../functions/navbar.js';
@@ -15,7 +17,6 @@ import projectTooltipPosition from '../functions/project-tooltip-position.js';
 import setProjectTooltipState from '../functions/project-tooltip-state.js';
 
 import { defaultDockElementIDs, server } from "../config";
-import ExBundle from '../components/ExBundle/ExBundle';
 
 import getArticles from '../functions/api/articles';
 import getProjects from '../functions/api/projects';
@@ -42,6 +43,8 @@ export default function ArticlePage({ article, dockElements, keywords }) {
 		console.log("%cHello there!\n\n%cIf you are interested in the source code check out this site's repo at https://www.github.com/KristofKekesi/Portfolio.", "color:#ffffff;font-family:system-ui;font-size:2rem;font-weight:bold;text-shadow:2px 2px 0 #5ebd3e, 4px 4px 0 #ffbb00, 6px 6px 0 #f78400, 8px 8px 0 #e23838, 10px 10px 0 #973999, 12px 12px 0 #009cdf", "color:auto;font-size:1rem; font-family:monospace;");
 	} , [article.content, dockElements]);
 
+	console.log(article.tools)
+
 	return (
 		<>	
 			<AutoHead title={ article.name } description={ article.description } keywords={ keywords } />
@@ -59,7 +62,9 @@ export default function ArticlePage({ article, dockElements, keywords }) {
 					</div>
 				</center>
 				<Article content={ article.content } published={ article.releaseDate } edited={ article.lastModified } skills={ article.skills }>
-                    <ExBundle tools={ article.tools } title="Tools I used" />
+                    <ExBundle children={[{type: "a", label: <Label size="xl" name="1" image={{"type":"logo","path":"f/images/steeped_logo.png","onIOS":null,"onMacOS":null,"copyrightHolder":"Steeped","copyrightURL":"https://www.steeped.app","width":512,"height":512,"alt":"The logo of Steeped."}}/>},
+		{type: "a", label: <Label size="xl" name="2" image={{"type":"logo","path":"f/images/steeped_logo.png","onIOS":null,"onMacOS":null,"copyrightHolder":"Steeped","copyrightURL":"https://www.steeped.app","width":512,"height":512,"alt":"The logo of Steeped."}}/>},
+		{type: "b", label: <Label size="xl" name="3" image={{"type":"logo","path":"f/images/steeped_logo.png","onIOS":null,"onMacOS":null,"copyrightHolder":"Steeped","copyrightURL":"https://www.steeped.app","width":512,"height":512,"alt":"The logo of Steeped."}}/>}]} title="Tools I used" />
                 </Article>
 			</main>
 
@@ -73,7 +78,7 @@ export default function ArticlePage({ article, dockElements, keywords }) {
 }
 
 
-export const getStaticProps = async ( params ) => {
+export const getStaticProps = async ( _ ) => {
 	const article = await getArticles(14);
 
 	let dockElementIDs;

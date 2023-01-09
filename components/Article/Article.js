@@ -71,11 +71,10 @@ function Article(props) {
                     bundleContent.push(<Label size="xl" theme="light" name={project.name} image={project.logo} href={ server + "/projects/" + project.name} key={ project.name } />);
                 })
 
-                console.log(content[i]["bundle"]["projects"][0])
                 articleContent.push(
                     <Bundle name={ content[i]["bundle"].name } 
                         children={ bundleContent }
-                        background={ content[i]["bundle"].background } key={i} 
+                        background={ content[i]["bundle"].background } selectable={ true } key={i} 
                     />
                 );
                 break;
@@ -91,7 +90,9 @@ function Article(props) {
                 break;
             case "made-with":
                 articleContent.push(
-                    <ExBundle tools={content[i]["value"]} title={content[i]["title"]} key={i}/>
+                    <ExBundle tools={content[i]["value"]} title={content[i]["title"]} children={[{type: "a", label: <Label size="xl" name="1" image={{"type":"logo","path":"f/images/steeped_logo.png","onIOS":null,"onMacOS":null,"copyrightHolder":"Steeped","copyrightURL":"https://www.steeped.app","width":512,"height":512,"alt":"The logo of Steeped."}}/>},
+                    {type: "a", label: <Label size="xl" name="2" image={{"type":"logo","path":"f/images/steeped_logo.png","onIOS":null,"onMacOS":null,"copyrightHolder":"Steeped","copyrightURL":"https://www.steeped.app","width":512,"height":512,"alt":"The logo of Steeped."}}/>},
+                    {type: "b", label: <Label size="xl" name="3" image={{"type":"logo","path":"f/images/steeped_logo.png","onIOS":null,"onMacOS":null,"copyrightHolder":"Steeped","copyrightURL":"https://www.steeped.app","width":512,"height":512,"alt":"The logo of Steeped."}}/>}]} key={i}/>
                 );
                 break;
             case "quote":
@@ -163,7 +164,9 @@ function Article(props) {
     }
 
     if (props.madeWith !== null && props.madeWith !== undefined && props.madeWith.length > 0) {
-        articleContent.push(<ExBundle tools={props.madeWith} title={"Tools I used"} key={i}/>);
+        articleContent.push(<ExBundle tools={props.madeWith} title={"Tools I used"} key={i} children={[{type: "a", label: <Label size="xl" name="1" image={{"type":"logo","path":"f/images/steeped_logo.png","onIOS":null,"onMacOS":null,"copyrightHolder":"Steeped","copyrightURL":"https://www.steeped.app","width":512,"height":512,"alt":"The logo of Steeped."}}/>},
+		{type: "a", label: <Label size="xl" name="2" image={{"type":"logo","path":"f/images/steeped_logo.png","onIOS":null,"onMacOS":null,"copyrightHolder":"Steeped","copyrightURL":"https://www.steeped.app","width":512,"height":512,"alt":"The logo of Steeped."}}/>},
+		{type: "b", label: <Label size="xl" name="3" image={{"type":"logo","path":"f/images/steeped_logo.png","onIOS":null,"onMacOS":null,"copyrightHolder":"Steeped","copyrightURL":"https://www.steeped.app","width":512,"height":512,"alt":"The logo of Steeped."}}/>}]}/>);
     }
 
     let published = new Date(props.published);
