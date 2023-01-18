@@ -10,6 +10,7 @@ import Footer from '../../components/Footer/Footer';
 import AutoHead from '../../components/Head/Head';
 import Badges from '../../components/Badges/Badges';
 import Award from '../../components/Award/Award';
+import Label from '../../components/Label/Label';
 
 import cursorSetup from '../../functions/cursor.js';
 import navbarToggle from '../../functions/navbar.js';
@@ -142,8 +143,13 @@ export default function ArticlePage({ project, dockElements, keywords }) {
                             <div className="mt-12 h-px" />
                         </div>
                         <ImageGallery galleryTag={"max"} className={"nosection"} images={project.screenshots}/>
-                        { awardsDiv }
-                        <ExBundle tools={project.tools} title={"Tools that I used while working on " + project.name} />
+                        <ExBundle
+                            children={project.tools.map((tool) => {
+                                tool.label = <Label size="xl" theme="dark" image={tool.logo} selectable />
+                                return tool
+                            })}
+                            title={"Tools that I used while working on " + project.name}
+                        />
                         <div className="mt-10 h-px" />
                     </div>
                 </article>

@@ -1,4 +1,4 @@
-import getTool from "../../functions/api/tool";
+import getTools from "../../functions/api/tools";
 
 
 //    TURTLE - TEKI
@@ -14,7 +14,7 @@ const tool = async (req, res) => {
         method,
     } = req;
 
-	const tool = await getTool(id);
+	const tool = await getTools(id);
 
 	if (tool == "No results found") {
 		return res.status(404).send(tool);

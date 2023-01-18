@@ -62,9 +62,13 @@ export default function ArticlePage({ article, dockElements, keywords }) {
 					</div>
 				</center>
 				<Article content={ article.content } published={ article.releaseDate } edited={ article.lastModified } skills={ article.skills }>
-                    <ExBundle children={[{type: "a", label: <Label size="xl" name="1" image={{"type":"logo","path":"f/images/steeped_logo.png","onIOS":null,"onMacOS":null,"copyrightHolder":"Steeped","copyrightURL":"https://www.steeped.app","width":512,"height":512,"alt":"The logo of Steeped."}}/>},
-		{type: "a", label: <Label size="xl" name="2" image={{"type":"logo","path":"f/images/steeped_logo.png","onIOS":null,"onMacOS":null,"copyrightHolder":"Steeped","copyrightURL":"https://www.steeped.app","width":512,"height":512,"alt":"The logo of Steeped."}}/>},
-		{type: "b", label: <Label size="xl" name="3" image={{"type":"logo","path":"f/images/steeped_logo.png","onIOS":null,"onMacOS":null,"copyrightHolder":"Steeped","copyrightURL":"https://www.steeped.app","width":512,"height":512,"alt":"The logo of Steeped."}}/>}]} title="Tools I used" />
+                    <ExBundle
+						children={article.tools.map((tool) => {
+							tool.label = <Label size="xl" theme="dark" image={tool.logo} selectable />
+							return tool
+						})}
+						title="Tools I used"
+					/>
                 </Article>
 			</main>
 

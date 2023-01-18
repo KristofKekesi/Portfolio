@@ -8,7 +8,7 @@ import conn from "../../db";
 //         \__) \__)
 
 
-async function getTool(id) {
+async function getTools(id) {
 	//console.log("ID: " + id);
 
 	let selectorQueries = [];
@@ -20,33 +20,39 @@ async function getTool(id) {
 	if (selectorQueries.length > 0) {
 		selectorQueries = 'WHERE ' + selectorQueries.join(' AND ');
 	} else {
-		return "No query parameters provided";
+		selectorQueries = '';
 	}
 
 	//try {
-        const mainQuery = 'SELECT * FROM "tools"' + selectorQueries + ';';
+        const mainQuery = 'SELECT * FROM "tools"' + selectorQueries + ' ORDER BY "tools"."id";';
 		//console.log(mainQuery);
 		
 		const mainResult = await conn.query(mainQuery);
+		//console.log(mainResult.rows);
 
 		for (let i = 0; i < mainResult.rows.length; i++) {
 			// Logo
-			const logoSideQuery = 'SELECT * FROM "images" WHERE "id" = ' + mainResult.rows[i].imageID + ';';
+			const logoSideQuery = 'SELECT * FROM "images" WHERE "id" = ' + mainResult.rows[i].logoID + ';';
 			const logoSideResult = await conn.query(logoSideQuery);
 			
 			const logo = logoSideResult.rows[0];
 			delete logo.id;
 
+			delete mainResult.rows[i].logoID;
+
 			mainResult.rows[i].logo = logo;
 			delete mainResult.rows[i].imageID;
-
-			return mainResult.rows[0];
 		}
-		return "No results found";
+
+		if (mainResult.rows.length != 0) {
+			return mainResult.rows;
+		} else {
+			return "No results found";
+		}
 
 	//} catch ( error ) {
 	//	console.log( error );
 	//}
 };
 
-export default getTool;
+export default getTools;

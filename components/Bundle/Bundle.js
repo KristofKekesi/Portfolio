@@ -1,5 +1,3 @@
-import BundleContent from "./BundleContent";
-import Label from "../Label/Label";
 import Bookmark from "../Bookmark/Bookmark";
 
 

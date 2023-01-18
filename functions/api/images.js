@@ -1,3 +1,4 @@
+import { server } from "../../config";
 import conn from "../../db";
 
 
@@ -37,7 +38,12 @@ async function getImages(id, type, copyright) {
 
 		for (let i = 0; i < mainResult.rows.length; i++) {
 			if (i === mainResult.rows.length - 1) {
-				return mainResult.rows;
+				const image = mainResult.rows[i];
+
+				image.url = server + "/" + image.path;
+				delete image.path;
+
+				return [image];
 			}
 		}
 		return "No results found";

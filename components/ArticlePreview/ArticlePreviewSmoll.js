@@ -10,7 +10,7 @@ import { server, imageFallback } from "../../config.js";
 
 function ArticlePreviewSmoll(props) {
     const redirect = props.article.redirect ? props.article.redirect ?? "#" : "#";
-    const coverPath = props.article ? props.article.cover.path ?? imageFallback : imageFallback;
+    const coverURL = props.article ? props.article.cover.url ?? imageFallback : imageFallback;
     const name = props.article ? (props.article.name ?? "").replace( /(<([^>]+)>)/ig, '') : "";
 
     return(
@@ -19,7 +19,7 @@ function ArticlePreviewSmoll(props) {
                 <div className="article-preview-link-smoll flex w-full h-full bg-secondaryLight">
                     <img
                         className="w-28 h-28 bg-cover"
-                        src={ server + "/" + coverPath }
+                        src={ coverURL }
                         alt="Article cover"
                     />
                     <div className="justify-center pb-2">

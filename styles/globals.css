@@ -160,6 +160,7 @@
   }
 
   .label-xl img {
+    max-width: 5rem;
     @apply w-auto h-20
   }
 

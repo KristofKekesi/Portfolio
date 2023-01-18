@@ -95,6 +95,9 @@ async function getArticles(id, name, redirect, isVisible, content, skill, tool, 
 
 					const logo = logoSideResult.rows[0];
 					delete logo.id;
+
+					logo.url = server + "/" + logo.path;
+					delete logo.path;
 	
 					tool.logo = logo;
 					delete tool.logoID;
@@ -119,6 +122,9 @@ async function getArticles(id, name, redirect, isVisible, content, skill, tool, 
 					
 					const logo = logoSideResult.rows[0];
 					delete logo.id;
+
+					logo.url = server + "/" + logo.path;
+					delete logo.path;
 	
 					tool.logo = logo;
 					delete tool.logoID;
@@ -135,6 +141,10 @@ async function getArticles(id, name, redirect, isVisible, content, skill, tool, 
 
 			const cover = coverResult.rows[0]
 			delete cover.id;
+
+			cover.url = server + "/" + cover.path;
+			delete cover.path;
+
 			mainResult.rows[i].cover = cover;
 
 			delete mainResult.rows[i].coverID;

@@ -5,9 +5,9 @@ import { ArticlePreviewsBig, ArticlePreviewsSmoll } from "../ArticlePreview/inde
 import ExBundle from "../ExBundle/ExBundle";
 import Quote from "../Quote/Quote";
 import Bookmark from "../Bookmark/Bookmark";
+import Label from "../Label/Label";
 
 import { months, server } from "../../config.js";
-import Label from "../Label/Label";
 
 
 //    TURTLE - TEKI
@@ -88,13 +88,6 @@ function Article(props) {
                     <ArticlePreviewsSmoll articles={content[i]["articles"]} key={i} />
                 );
                 break;
-            case "made-with":
-                articleContent.push(
-                    <ExBundle tools={content[i]["value"]} title={content[i]["title"]} children={[{type: "a", label: <Label size="xl" name="1" image={{"type":"logo","path":"f/images/steeped_logo.png","onIOS":null,"onMacOS":null,"copyrightHolder":"Steeped","copyrightURL":"https://www.steeped.app","width":512,"height":512,"alt":"The logo of Steeped."}}/>},
-                    {type: "a", label: <Label size="xl" name="2" image={{"type":"logo","path":"f/images/steeped_logo.png","onIOS":null,"onMacOS":null,"copyrightHolder":"Steeped","copyrightURL":"https://www.steeped.app","width":512,"height":512,"alt":"The logo of Steeped."}}/>},
-                    {type: "b", label: <Label size="xl" name="3" image={{"type":"logo","path":"f/images/steeped_logo.png","onIOS":null,"onMacOS":null,"copyrightHolder":"Steeped","copyrightURL":"https://www.steeped.app","width":512,"height":512,"alt":"The logo of Steeped."}}/>}]} key={i}/>
-                );
-                break;
             case "quote":
                 articleContent.push(
                     <Quote quote={content[i]["quote"]} name={content[i]["name"]} image={content[i]["image"] } key={i}/>
@@ -155,18 +148,12 @@ function Article(props) {
                     }
                 }
                 sectionContent.push(<div className="mt-10 h-px" key={i + "a"}></div>)
-                articleContent.push(<div className={"section"} key={i + "b"}>{ sectionContent }</div>);
+                articleContent.push(<div className="section" key={i + "b"}>{ sectionContent }</div>);
                 break
             default:
                 console.warn(content[i])
                 break
         }
-    }
-
-    if (props.madeWith !== null && props.madeWith !== undefined && props.madeWith.length > 0) {
-        articleContent.push(<ExBundle tools={props.madeWith} title={"Tools I used"} key={i} children={[{type: "a", label: <Label size="xl" name="1" image={{"type":"logo","path":"f/images/steeped_logo.png","onIOS":null,"onMacOS":null,"copyrightHolder":"Steeped","copyrightURL":"https://www.steeped.app","width":512,"height":512,"alt":"The logo of Steeped."}}/>},
-		{type: "a", label: <Label size="xl" name="2" image={{"type":"logo","path":"f/images/steeped_logo.png","onIOS":null,"onMacOS":null,"copyrightHolder":"Steeped","copyrightURL":"https://www.steeped.app","width":512,"height":512,"alt":"The logo of Steeped."}}/>},
-		{type: "b", label: <Label size="xl" name="3" image={{"type":"logo","path":"f/images/steeped_logo.png","onIOS":null,"onMacOS":null,"copyrightHolder":"Steeped","copyrightURL":"https://www.steeped.app","width":512,"height":512,"alt":"The logo of Steeped."}}/>}]}/>);
     }
 
     let published = new Date(props.published);

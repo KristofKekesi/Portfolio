@@ -16,7 +16,7 @@ function ArticlePreviewBig(props) {
                     <img
                         layout="fill"
                         className="max-w-full max-h-96"
-                        src={ server + "/" + props.article.cover.path }
+                        src={ props.article.cover.url }
                         alt="Article cover"
                     />
                     <h1 className="text-title">{ props.article.name.replace( /(<([^>]+)>)/ig, '') }</h1>
