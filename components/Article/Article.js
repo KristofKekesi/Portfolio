@@ -2,12 +2,11 @@ import Terminal from "../Terminal/Terminal";
 import ImageGallery from "../ImageGallery/ImageGallery";
 import Bundle from "../Bundle/Bundle";
 import { ArticlePreviewsBig, ArticlePreviewsSmoll } from "../ArticlePreview/index";
-import ExBundle from "../ExBundle/ExBundle";
 import Quote from "../Quote/Quote";
 import Bookmark from "../Bookmark/Bookmark";
 import Label from "../Label/Label";
 
-import { months, server } from "../../config.js";
+import { months } from "../../config.js";
 
 
 //    TURTLE - TEKI
@@ -19,7 +18,7 @@ import { months, server } from "../../config.js";
 
 function Article(props) {
     // PROPS
-    // content, madeWith, published, edited
+    // content, published, edited
 
     let terminalId = 0;
 
@@ -68,7 +67,7 @@ function Article(props) {
             case "project-bundle":
                 let bundleContent = [];
                 content[i]["bundle"].projects.forEach(project => {
-                    bundleContent.push(<Label size="xl" theme="light" name={project.name} image={project.logo} href={ server + "/projects/" + project.name} key={ project.name } />);
+                    bundleContent.push(<Label size="xl" theme="light" name={project.name} image={project.logo} href={ project.url } key={ project.name } />);
                 })
 
                 articleContent.push(

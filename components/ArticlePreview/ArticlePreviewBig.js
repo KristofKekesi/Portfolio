@@ -1,6 +1,3 @@
-import { server } from "../../config.js";
-
-
 //    TURTLE - TEKI
 //    (°-°) _______
 //      \ \/ - - - \_
@@ -9,9 +6,12 @@ import { server } from "../../config.js";
 
 
 function ArticlePreviewBig(props) {
+    // PROPS
+    // className (String), article (Object)
+
     return(
-        <article style={ props.style } className="article-preview-big target w-96 flex flex-col bg-secondaryLight font-bold"> 
-            <a href={ server + "/" + props.article.redirect }>
+        <article className={props.className + " article-preview-big target w-96 flex flex-col bg-secondaryLight font-bold"}> 
+            <a href={ props.article.url }>
                 <div className="w-full h-full bg-secondaryLight">
                     <img
                         layout="fill"

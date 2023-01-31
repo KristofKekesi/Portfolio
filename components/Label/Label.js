@@ -1,7 +1,5 @@
 import React, { useEffect } from "react";
 
-import { server } from "../../config";
-
 
 //    TURTLE - TEKI
 //    (°-°) _______

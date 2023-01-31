@@ -122,7 +122,7 @@ export default function ArticlePage({ project, dockElements, keywords }) {
                                 <div className="w-auto h-auto ml-12 mr-0 py-12" style={{width: "7.5rem", height: "7.5rem"}}>
                                     <div className="relative flex items-center justify-center" style={{width: "7.5rem", height: "7.5rem"}}>
                                         <QRCodeSVG value={ project.downloads[0].value } bgColor={"#ffffff"} level={"Q"} className="fade2 bg-transparent absolute" style={{width: "7.5rem", height: "7.5rem", boxSizing: "content-box"}}/>
-                                        <img src={ server + "/" + project.logo.path } alt={ project.name } className="fade1 absolute" style={{maxWidth: "7.5rem", maxHeight: "7.5rem", boxSizing: "content-box"}}></img>
+                                        <img src={ project.logo.url } alt={ project.name } className="fade1 absolute" style={{maxWidth: "7.5rem", maxHeight: "7.5rem", boxSizing: "content-box"}}></img>
                                     </div>
                                 </div>
                                 <div>

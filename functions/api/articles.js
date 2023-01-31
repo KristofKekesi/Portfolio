@@ -146,8 +146,11 @@ async function getArticles(id, name, redirect, isVisible, content, skill, tool, 
 			delete cover.path;
 
 			mainResult.rows[i].cover = cover;
-
 			delete mainResult.rows[i].coverID;
+
+			// url
+			//* must keep the redirect value because it's used by Next.js in [articles].js inside getStaticPaths.
+			mainResult.rows[i].url = server + "/" + mainResult.rows[i].redirect;
 			
 			// Content
 			const contentResponse = await fetch(server + "/" + encodeURIComponent(mainResult.rows[i].content));
@@ -165,6 +168,7 @@ async function getArticles(id, name, redirect, isVisible, content, skill, tool, 
 				articlePreviewSmoll.articles = [];
 
 				for (let j = 0; j < articlePreviewSmoll.articleIDs.length; j++) {
+					console.log(articlePreviewSmoll.articleIDs[j])
 					const articleQuery = 'SELECT * FROM "articles" WHERE "id" = ' + articlePreviewSmoll.articleIDs[j] + ';';
 					const articleResult = await conn.query(articleQuery);
 
@@ -175,10 +179,19 @@ async function getArticles(id, name, redirect, isVisible, content, skill, tool, 
 					const coverQuery = 'SELECT * FROM "images" WHERE "id" = ' + article.coverID + ';';
 					const coverResult = await conn.query(coverQuery);
 
-					article.cover = coverResult.rows[0];
+					const cover = coverResult.rows[0]
+					delete cover.id;
+
+					cover.url = server + "/" + cover.path;
+					delete cover.path;
+
+					article.cover = cover;
 
 					// Release date
 					article.releaseDate = new Date(article.releaseDate).toString();
+
+					// url
+					article.url = server + "/" + article.redirect;
 
 					articlePreviewSmoll.articles.push(article);
 				}
@@ -200,11 +213,21 @@ async function getArticles(id, name, redirect, isVisible, content, skill, tool, 
 					// Cover
 					const coverQuery = 'SELECT * FROM "images" WHERE "id" = ' + article.coverID + ';';
 					const coverResult = await conn.query(coverQuery);
-					
-					article.cover = coverResult.rows[0];
+
+					const cover = coverResult.rows[0]
+					delete cover.id;
+
+					cover.url = server + "/" + cover.path;
+					delete cover.path;
+
+					article.cover = cover;
 
 					// Release date
 					article.releaseDate = new Date(article.releaseDate).toString();
+
+					// url
+					article.url = server + "/" + article.redirect;
+
 					
 					articlePreviewBig.articles.push(article);
 				}

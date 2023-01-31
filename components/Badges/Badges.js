@@ -50,6 +50,7 @@ export default function Badges(props) {
                 break;
         }
 
+        // TODO(KristofKekesi): import laurel.svg instead of using it in a http request.
         if(downloads[i].isAvailable == downloads[i].isAvailable) {
             if (downloads[i].store == "website") {
                 final.push(
