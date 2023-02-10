@@ -143,6 +143,7 @@ export default function ArticlePage({ project, dockElements, keywords }) {
                             <div className="mt-12 h-px" />
                         </div>
                         <ImageGallery galleryTag={"max"} className={"nosection"} images={project.screenshots}/>
+                        { awardsDiv }
                         <ExBundle
                             children={project.tools.map((tool) => {
                                 tool.label = <Label size="xl" theme="dark" image={tool.logo} selectable />
