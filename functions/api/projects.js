@@ -76,6 +76,8 @@ async function getProjects(id, name, version, role, platform, award, bundle, dow
 			mainResult.rows[i].skills = [];
 			mainResult.rows[i].tools  = [];
 
+			mainResult.rows[i].url = encodeURI(server + "/projects/" + mainResult.rows[i].name);
+
 			// Project Bundles
 			const bundlesSideQuery = 'SELECT * FROM "project_bundles" WHERE "projectID" = ' + mainResult.rows[i].id + ';';
 			const bundlesSideResult = await conn.query(bundlesSideQuery);

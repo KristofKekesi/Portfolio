@@ -35,10 +35,10 @@
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
-    "/projects/[name]": [
+    "/timeline": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/projects/[name].js"
+      "static/chunks/pages/timeline.js"
     ]
   },
   "ampFirstPages": []

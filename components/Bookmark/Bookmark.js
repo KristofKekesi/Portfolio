@@ -14,6 +14,7 @@ function Bookmark(props) {
     // PROPS
     // color, weight, id
 
+    // TODO icons subfolder
     let src = server + "/icon_add_link_" + (props.color ? props.color : "black") + "_" + (props.weight ? props.weight : "bold") + ".svg";
 
     switch(props.weight) {

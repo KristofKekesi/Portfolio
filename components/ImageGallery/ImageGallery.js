@@ -1,7 +1,5 @@
 import setImageGallery from "../../functions/image-gallery";
 
-import { server } from "../../config";
-
 
 //    TURTLE - TEKI
 //    (°-°) _______

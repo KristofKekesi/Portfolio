@@ -12,6 +12,7 @@ function Award(props) {
     // PROPS
     // awardName
 
+    // todo refactor laurel.svg
     return(
         <div className="flex content-center gap-3 items-center">
             <img className="h-11" src={server + "/laurel.svg"}></img>

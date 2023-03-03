@@ -15,6 +15,7 @@ function Quote(props) {
         return null;
     }
 
+    // todo rework to use in site images
     return (
         <div className="section">
             <div className="mb-10 h-px"></div>
