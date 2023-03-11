@@ -54,8 +54,8 @@ async function getBundles(id, name, app) {
 				// Project date added
 				project.dateAdded = new Date(project.dateAdded).toString();
 
-				// Local URL
-				project.localURL = server + "/projects/" + project.name;
+				// URL
+				project.url = server + "/projects/" + project.name;
 
 				
 				// Logo

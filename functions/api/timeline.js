@@ -24,7 +24,7 @@ async function getTimeline(id) {
 	}
 
 	//try {
-        const mainQuery = 'SELECT * FROM "timestamps"' + selectorQueries + ' ORDER BY "date";';
+        const mainQuery = 'SELECT * FROM "timestamps"' + selectorQueries + ' ORDER BY EXTRACT(\'Year\' FROM "date"), EXTRACT(\'Month\' FROM "date"), "showMonth", EXTRACT(\'Day\' FROM "date"), "showDay";';
 		//console.log(mainQuery);
 
 		const mainResult = await conn.query(mainQuery);

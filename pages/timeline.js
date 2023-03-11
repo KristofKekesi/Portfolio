@@ -68,31 +68,33 @@ export default function Timeline({ timestamps, dockElements, keywords }) {
 			organisedTimestamps[timestamp.date.getFullYear()] = {};
 		}
 		if (!timestamp.showMonth) {
-			if (!organisedTimestamps[timestamp.date.getFullYear()]["undefined"]) {
-				organisedTimestamps[timestamp.date.getFullYear()]["undefined"] = [];
+			if (!organisedTimestamps[timestamp.date.getFullYear()]["0"]) {
+				organisedTimestamps[timestamp.date.getFullYear()]["0"] = [];
 			}
-			organisedTimestamps[timestamp.date.getFullYear()]["undefined"].push(timestamp);
+			organisedTimestamps[timestamp.date.getFullYear()]["0"].push(timestamp);
 
 			return;
 		}
 		// Months
-		if (!organisedTimestamps[timestamp.date.getFullYear()][timestamp.date.getMonth()]) {
-			organisedTimestamps[timestamp.date.getFullYear()][timestamp.date.getMonth()] = {};
+		if (!organisedTimestamps[timestamp.date.getFullYear()][timestamp.date.getMonth() + 1]) {
+			organisedTimestamps[timestamp.date.getFullYear()][timestamp.date.getMonth() + 1] = {};
 		}
 		if (timestamp.showMonth && !timestamp.showDay) {
-			if (!organisedTimestamps[timestamp.date.getFullYear()][timestamp.date.getMonth()]["undefined"]) {
-				organisedTimestamps[timestamp.date.getFullYear()][timestamp.date.getMonth()]["undefined"] = [];
+			if (!organisedTimestamps[timestamp.date.getFullYear()][timestamp.date.getMonth() + 1]["0"]) {
+				organisedTimestamps[timestamp.date.getFullYear()][timestamp.date.getMonth() + 1]["0"] = [];
 			}
-			organisedTimestamps[timestamp.date.getFullYear()][timestamp.date.getMonth()]["undefined"].push(timestamp);
+			organisedTimestamps[timestamp.date.getFullYear()][timestamp.date.getMonth() + 1]["0"].push(timestamp);
 
 			return;
 		}
 		// Days
-		if (!organisedTimestamps[timestamp.date.getFullYear()][timestamp.date.getMonth()][timestamp.date.getDate()]) {
-			organisedTimestamps[timestamp.date.getFullYear()][timestamp.date.getMonth()][timestamp.date.getDate()] = [];
+		if (!organisedTimestamps[timestamp.date.getFullYear()][timestamp.date.getMonth() + 1][timestamp.date.getDate()]) {
+			organisedTimestamps[timestamp.date.getFullYear()][timestamp.date.getMonth() + 1][timestamp.date.getDate()] = [];
 		}
-		organisedTimestamps[timestamp.date.getFullYear()][timestamp.date.getMonth()][timestamp.date.getDate()].push(timestamp);
+		organisedTimestamps[timestamp.date.getFullYear()][timestamp.date.getMonth() + 1][timestamp.date.getDate()].push(timestamp);
 	});
+
+	console.log(JSON.stringify(organisedTimestamps))
 
 	const timeline = <article id="timeline" className="flex flex-nowrap flex-row items-start justify-center bg-white">
 		{ yearpicker }
@@ -104,14 +106,14 @@ export default function Timeline({ timestamps, dockElements, keywords }) {
 						<div className="h-px mb-10" />
 						<div className="text-title selectable">{ year }</div>
 						{ // Year timestamps
-						organisedTimestamps[year]["undefined"] ? organisedTimestamps[year]["undefined"].map( timestamp => {
+						organisedTimestamps[year]["0"] ? organisedTimestamps[year]["0"].map( timestamp => {
 							return (
 								<div className="text selectable" key={ timestamp.id } dangerouslySetInnerHTML={{ __html: timestamp.name }} />
 							);
 						}) : null}
 						{ // Month timestamps
 						Object.keys(organisedTimestamps[year]).map( month => {
-							if (month == "undefined") {
+							if (month == "0") {
 								{ organisedTimestamps[year][month].map( timestamp => {
 									return (
 										<div className="text selectable" key={ timestamp.id } dangerouslySetInnerHTML={{ __html: timestamp.name }}></div>
@@ -120,10 +122,10 @@ export default function Timeline({ timestamps, dockElements, keywords }) {
 							} else {
 								return (
 									<div key={ month }>
-										<div className="text-subtitle selectable" style={{paddingTop: "0"}}>{ months[month] }</div>
+										<div className="text-subtitle selectable" style={{paddingTop: "0"}}>{ months[month - 1] }</div>
 										{
 											Object.keys(organisedTimestamps[year][month]).map( day => {
-												if (day == "undefined") {
+												if (day == "0") {
 													return (
 													organisedTimestamps[year][month][day].map( timestamp => {
 														return (
@@ -133,7 +135,7 @@ export default function Timeline({ timestamps, dockElements, keywords }) {
 												} else {
 													return (
 														<div key={ day }>
-															<div className="text-subsubtitle selectable">{months[month] + " " + day}</div>
+															<div className="text-subsubtitle selectable">{months[month - 1] + " " + day}</div>
 															{ organisedTimestamps[year][month][day].map( timestamp => {
 																return (
 																	<div className="text selectable" key={ timestamp.id } dangerouslySetInnerHTML={{ __html: timestamp.name }}></div>

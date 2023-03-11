@@ -64,13 +64,14 @@ export default function ProjectsPage({ projects, bundles, dockElements, keywords
 								<div className="md:inline hidden">Filter by: </div> 
 								<Link href="#skills"><div className="rounded-full text-base font-normal font-inter bg-secondaryLight text-black px-3 line-clamp-1 target">Skills</div></Link>
 								<Link href="#bundles"><div className="rounded-full text-base font-normal font-inter bg-secondaryLight text-black px-3 line-clamp-1 target">Bundles</div></Link>
-								<Link href="#tools"><div className="rounded-full text-base font-normal font-inter bg-secondaryLight text-black px-3 line-clamp-1 target">Tools</div></Link>
+								{//<Link href="#tools"><div className="rounded-full text-base font-normal font-inter bg-secondaryLight text-black px-3 line-clamp-1 target">Tools</div></Link>
+								}
 							</div>
 						</div>
 						<div className="section">
 							<ExBundle id="all"
 								children={projects.map((project) => {
-									project.label = <Label size="xl" theme="dark" name={project.name} image={project.logo} selectable cropName />
+									project.label = <Label size="xl" theme="dark" name={project.name} href={project.url} image={project.logo} selectable cropName />
 									project.type = "";
 									return project;
 								})}
@@ -85,7 +86,7 @@ export default function ProjectsPage({ projects, bundles, dockElements, keywords
 								<ExBundle id="translating"
 									children={projects.filter((project) => {
 										if (project.skills.includes("Translating")) {
-										project.label = <Label size="xl" theme="dark" name={project.name} image={project.logo} selectable cropName />
+										project.label = <Label size="xl" theme="dark" name={project.name} href={project.url} image={project.logo} selectable cropName />
 										project.type = "";
 										return project;
 										}
@@ -97,7 +98,7 @@ export default function ProjectsPage({ projects, bundles, dockElements, keywords
 								<ExBundle id="mobile"
 									children={projects.filter((project) => {
 										if (project.skills.includes("Mobile Development")) {
-										project.label = <Label size="xl" theme="dark" name={project.name} image={project.logo} selectable cropName />
+										project.label = <Label size="xl" theme="dark" name={project.name} href={project.url} image={project.logo} selectable cropName />
 										project.type = "";
 										return project;
 										}
@@ -109,7 +110,7 @@ export default function ProjectsPage({ projects, bundles, dockElements, keywords
 								<ExBundle id="web"
 									children={projects.filter((project) => {
 										if (project.skills.includes("Web Development")) {
-										project.label = <Label size="xl" theme="dark" name={project.name} image={project.logo} selectable cropName />
+										project.label = <Label size="xl" theme="dark" name={project.name} href={project.url} image={project.logo} selectable cropName />
 										project.type = "";
 										return project;
 										}
@@ -127,7 +128,7 @@ export default function ProjectsPage({ projects, bundles, dockElements, keywords
 									key={bundle.id}
 									title={bundle.name}
 									children={bundle.projects.map((project) => {
-										project.label = <Label size="xl" theme="light" name={project.name} image={project.logo} selectable cropName />
+										project.label = <Label size="xl" theme="light" name={project.name} href={project.url} image={project.logo} selectable cropName />
 										project.type = "";
 										return project;
 									})}
@@ -136,11 +137,12 @@ export default function ProjectsPage({ projects, bundles, dockElements, keywords
 								/>;
 							})}
 						</div>
-						<div id="tools">
-							<div className="text-title nosection selectable">
-								Tool based sections
-							</div>
-						</div>
+						{//<div id="tools">
+						//	<div className="text-title nosection selectable">
+						//		Tool based sections
+						//	</div>
+						//</div>
+						}
 					</div>
 				</article>
 			</main>

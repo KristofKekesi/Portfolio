@@ -24,11 +24,6 @@
         "value": "<a class='target' href='../timeline#2020'>2020</a> was the first year I took programming seriosly. I started making my porfolio site where I could display my projects. For that I bought this domain. The site was never really finished, so I rewrote the entire site from ground up using React and JavaScript."
     },
     {
-        "type": "quote",
-        "name": "a",
-        "quote": "a"
-    },
-    {
         "type": "article-preview-smoll",
         "articleIDs": [1]
     },
@@ -43,6 +38,14 @@
     {
         "type": "article-preview-smoll",
         "articleIDs": [2]
+    },
+    {
+        "type": "text-title",
+        "value": "Others opinions"},
+    {
+        "type": "quote",
+        "name": "Styevkó Lili",
+        "quote": "He makes quality work even in a short period of time."
     },
     {
         "type": "text-title",

@@ -54,7 +54,7 @@ function ExBundle(props) {
 				</div>
 			);
 		}
-		content.push(<div className="w-fit flex flex-wrap flex-row gap-16 gap-y-16 px-12 mb-10 justify-between" key={type + "-content"}>{output}</div>);
+		content.push(<div className="w-fit flex flex-wrap flex-row gap-16 gap-y-16 px-12 mb-10" key={type + "-content"}>{output}</div>);
 	}
 
 	return(

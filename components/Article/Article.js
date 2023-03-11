@@ -67,13 +67,13 @@ function Article(props) {
             case "project-bundle":
                 let bundleContent = [];
                 content[i]["bundle"].projects.forEach(project => {
-                    bundleContent.push(<Label size="xl" theme="light" name={project.name} image={project.logo} href={ project.url } key={ project.name } />);
+                    bundleContent.push(<Label size="xl" theme="light" name={project.name} image={project.logo} href={project.url} selectable key={ project.name } />);
                 })
 
                 articleContent.push(
                     <Bundle name={ content[i]["bundle"].name } 
                         children={ bundleContent }
-                        background={ content[i]["bundle"].background } selectable={ true } key={i} 
+                        background={ content[i]["bundle"].background } selectable={true} key={i} 
                     />
                 );
                 break;

@@ -64,7 +64,7 @@ export default function ArticlePage({ article, dockElements, keywords }) {
 				<Article content={ article.content } published={ article.releaseDate } edited={ article.lastModified } skills={ article.skills }>
                     <ExBundle
 						children={article.tools.map((tool) => {
-							tool.label = <Label size="xl" theme="dark" image={tool.logo} selectable />
+							tool.label = <Label size="xl" theme="dark" image={tool.logo} name={tool.name} selectable />
 							return tool
 						})}
 						title="Tools I used"

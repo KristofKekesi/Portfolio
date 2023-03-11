@@ -19,7 +19,7 @@ function Quote(props) {
     return (
         <div className="section">
             <div className="mb-10 h-px"></div>
-            <span className="text-9xl italic text-gray-500 absolute opacity-20 ml-4">&quot;</span>
+            <span className="text-9xl italic text-gray-500 absolute opacity-20 ml-4 w-36">&quot;</span>
             <blockquote className="text-subtitle pt-8 font-interBold indent-1 text-justify" dangerouslySetInnerHTML={{ __html: props.quote }} />
             <div className="flex flex-row justify-end">
                 <cite className="text-subsubtitle flex content-center gap-4">

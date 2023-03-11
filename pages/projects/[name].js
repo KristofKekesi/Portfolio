@@ -146,7 +146,7 @@ export default function ArticlePage({ project, dockElements, keywords }) {
                         { awardsDiv }
                         <ExBundle
                             children={project.tools.map((tool) => {
-                                tool.label = <Label size="xl" theme="dark" image={tool.logo} selectable />
+                                tool.label = <Label size="xl" theme="dark" image={tool.logo} name={tool.name} selectable />
                                 return tool
                             })}
                             title={"Tools that I used while working on " + project.name}

@@ -27,12 +27,14 @@ export default function Label(props) {
 		labelName += "...";
 	}
 
+console.log(props.href)
+
 	return(
 		<a href={ props.href }>
-			<div className={((props.size == "md") ? "label-md" : "label-xl") + " " + (props.href ? "target" : "") } id={ props.id }>
+			<div className={((props.size == "md") ? "label-md" : "label-xl") + " " + (props.href ? "target" : "")} id={ props.id }>
 				<center>
 					<img src={ props.image.url } alt={ props.name }/>
-					<p className={ `nowrap basis-full h-0 ${props.theme == "dark" ? "text-black" : "text-white"}` }>{ labelName }</p>
+					<p className={ `nowrap basis-full h-0 ${props.theme == "dark" ? "text-black" : "text-white" } ${props.selectable ? "selectable" : ""}` }>{ labelName }</p>
 				</center>
 			</div>
 		</a>
