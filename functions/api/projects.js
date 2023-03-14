@@ -79,7 +79,7 @@ async function getProjects(id, name, version, role, platform, award, bundle, dow
 			mainResult.rows[i].url = encodeURI(server + "/projects/" + mainResult.rows[i].name);
 
 			// Project Bundles
-			const bundlesSideQuery = 'SELECT * FROM "project_bundles" WHERE "projectID" = ' + mainResult.rows[i].id + ';';
+			const bundlesSideQuery = 'SELECT * FROM "project_bundles" WHERE "projectID" = ' + mainResult.rows[i].id + ' ORDER BY "project_bundles"."order";';
 			const bundlesSideResult = await conn.query(bundlesSideQuery);
 			for (let j = 0; j < bundlesSideResult.rows.length; j++) {
 				mainResult.rows[i].bundleIDs.push(bundlesSideResult.rows[j].bundleID);

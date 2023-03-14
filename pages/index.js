@@ -12,7 +12,6 @@ import setProjectTooltipState from '../functions/project-tooltip-state.js';
 
 import { defaultDockElementIDs } from "../config";
 import getProjects from '../functions/api/projects';
-
 import getKeywords from '../functions/api/keywords';
 
 

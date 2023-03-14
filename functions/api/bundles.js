@@ -42,7 +42,7 @@ async function getBundles(id, name, app) {
 			mainResult.rows[i].projects = [];
 
 			// Projects
-			const projectsSideQuery = 'SELECT * FROM "project_bundles" WHERE "bundleID" = ' + mainResult.rows[i].id + ';';
+			const projectsSideQuery = 'SELECT * FROM "project_bundles" WHERE "bundleID" = ' + mainResult.rows[i].id + ' ORDER BY "project_bundles"."order";';
 			const projectsSideResult = await conn.query(projectsSideQuery);
 			for (let j = 0; j < projectsSideResult.rows.length; j++) {
 				// Project
