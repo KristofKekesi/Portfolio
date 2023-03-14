@@ -11,7 +11,7 @@ import Bookmark from "../Bookmark/Bookmark";
 function Bundle(props) {
     // PROPS:
     // name, children, background, theme, selectable
-    console.log("name: " + props.name + ", children: " + props.children + ", background: " + props.background + ", theme: " + props.theme)
+    //console.log("name: " + props.name + ", children: " + props.children + ", background: " + props.background + ", theme: " + props.theme)
 
     if (props.children == undefined) {
         return null;

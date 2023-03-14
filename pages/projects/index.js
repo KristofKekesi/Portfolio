@@ -41,8 +41,6 @@ export default function ProjectsPage({ projects, bundles, dockElements, keywords
 		console.log("%cHello there!\n\n%cIf you are interested in the source code check out this site's repo at https://www.github.com/KristofKekesi/Portfolio.", "color:#ffffff;font-family:system-ui;font-size:2rem;font-weight:bold;text-shadow:2px 2px 0 #5ebd3e, 4px 4px 0 #ffbb00, 6px 6px 0 #f78400, 8px 8px 0 #e23838, 10px 10px 0 #973999, 12px 12px 0 #009cdf", "color:auto;font-size:1rem; font-family:monospace;");
 	} , [dockElements]);
 
-	console.log(bundles);
-
 	return (
 		<>
 			<AutoHead title="Projects" description="Every project I've ever worked on." keywords={ keywords } />
@@ -69,54 +67,50 @@ export default function ProjectsPage({ projects, bundles, dockElements, keywords
 							</div>
 						</div>
 						<div className="section">
-							<ExBundle id="all"
-								children={projects.map((project) => {
+							<ExBundle id="all" title={"All Projects"}>
+								{projects.map((project) => {
 									project.label = <Label size="xl" theme="dark" name={project.name} href={project.url} image={project.logo} selectable cropName />
 									project.type = "";
 									return project;
 								})}
-								title={"All Projects"}
-							/>
+							</ExBundle>
 						</div>
 						<div id="skills">
 							<div className="text-title nosection selectable">
 								Skill based sections
 							</div>
 							<div className="section">
-								<ExBundle id="translating"
-									children={projects.filter((project) => {
+								<ExBundle id="translating" title={"Translations"}>
+									{projects.filter((project) => {
 										if (project.skills.includes("Translating")) {
 										project.label = <Label size="xl" theme="dark" name={project.name} href={project.url} image={project.logo} selectable cropName />
 										project.type = "";
 										return project;
 										}
 									})}
-									title={"Translations"}
-								/>
+								</ExBundle>
 							</div>
 							<div className="section">
-								<ExBundle id="mobile"
-									children={projects.filter((project) => {
+								<ExBundle id="mobile" title={"Mobile Development"}>
+									{projects.filter((project) => {
 										if (project.skills.includes("Mobile Development")) {
 										project.label = <Label size="xl" theme="dark" name={project.name} href={project.url} image={project.logo} selectable cropName />
 										project.type = "";
 										return project;
 										}
 									})}
-									title={"Mobile Development"}
-								/>
+								</ExBundle>
 							</div>
 							<div className="section">
-								<ExBundle id="web"
-									children={projects.filter((project) => {
+								<ExBundle id="web" title={"Web Development"}>
+									{projects.filter((project) => {
 										if (project.skills.includes("Web Development")) {
 										project.label = <Label size="xl" theme="dark" name={project.name} href={project.url} image={project.logo} selectable cropName />
 										project.type = "";
 										return project;
 										}
 									})}
-									title={"Web Development"}
-								/>
+								</ExBundle>
 							</div>
 						</div>
 						<div id="bundles">
@@ -127,14 +121,15 @@ export default function ProjectsPage({ projects, bundles, dockElements, keywords
 								return <ExBundle
 									key={bundle.id}
 									title={bundle.name}
-									children={bundle.projects.map((project) => {
-										project.label = <Label size="xl" theme="light" name={project.name} href={project.url} image={project.logo} selectable cropName />
-										project.type = "";
-										return project;
-									})}
 									background={bundle.background}
 									theme="light"
-								/>;
+								>
+								{bundle.projects.map((project) => {
+									project.label = <Label size="xl" theme="light" name={project.name} href={project.url} image={project.logo} selectable cropName />
+									project.type = "";
+									return project;
+								})}
+								</ExBundle>;
 							})}
 						</div>
 						{//<div id="tools">
@@ -168,7 +163,6 @@ export const getStaticProps = async ( _ ) => {
 
     const keywords =  await getKeywords();
 
-	console.log(projects[0])
 
 	return {
 		props: { projects: projects, bundles: bundles, dockElements: dockElements, keywords: keywords.join(", ")},

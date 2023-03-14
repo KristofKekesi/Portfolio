@@ -43,8 +43,6 @@ export default function ArticlePage({ article, dockElements, keywords }) {
 		console.log("%cHello there!\n\n%cIf you are interested in the source code check out this site's repo at https://www.github.com/KristofKekesi/Portfolio.", "color:#ffffff;font-family:system-ui;font-size:2rem;font-weight:bold;text-shadow:2px 2px 0 #5ebd3e, 4px 4px 0 #ffbb00, 6px 6px 0 #f78400, 8px 8px 0 #e23838, 10px 10px 0 #973999, 12px 12px 0 #009cdf", "color:auto;font-size:1rem; font-family:monospace;");
 	} , [article.content, dockElements]);
 
-	console.log(article.tools)
-
 	return (
 		<>	
 			<AutoHead title={ article.name } description={ article.description } keywords={ keywords } />
@@ -62,13 +60,12 @@ export default function ArticlePage({ article, dockElements, keywords }) {
 					</div>
 				</center>
 				<Article content={ article.content } published={ article.releaseDate } edited={ article.lastModified } skills={ article.skills }>
-                    <ExBundle
-						children={article.tools.map((tool) => {
+                    <ExBundle title="Tools I used">
+						{article.tools.map((tool) => {
 							tool.label = <Label size="xl" theme="dark" image={tool.logo} name={tool.name} selectable />
 							return tool
 						})}
-						title="Tools I used"
-					/>
+					</ExBundle>
                 </Article>
 			</main>
 

@@ -27,8 +27,6 @@ export default function Label(props) {
 		labelName += "...";
 	}
 
-console.log(props.href)
-
 	return(
 		<a href={ props.href }>
 			<div className={((props.size == "md") ? "label-md" : "label-xl") + " " + (props.href ? "target" : "")} id={ props.id }>

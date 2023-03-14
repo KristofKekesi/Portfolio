@@ -11,8 +11,6 @@ function ArticlePreviewSmoll(props) {
 
     const name = props.article ? (props.article.name ?? "").replace( /(<([^>]+)>)/ig, '') : "";
 
-    console.log(props.article)
-
     return(
         <article className={props.className + " article-preview-smoll target font-bold"}>
             <a href={ props.article.url }>

@@ -38,6 +38,9 @@ async function getTools(id) {
 			const logo = logoSideResult.rows[0];
 			delete logo.id;
 
+			logo.url = server + "/" + cover.path;
+			delete logo.path;
+
 			delete mainResult.rows[i].logoID;
 
 			mainResult.rows[i].logo = logo;

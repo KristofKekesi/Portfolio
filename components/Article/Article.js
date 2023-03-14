@@ -71,10 +71,14 @@ function Article(props) {
                 })
 
                 articleContent.push(
-                    <Bundle name={ content[i]["bundle"].name } 
-                        children={ bundleContent }
-                        background={ content[i]["bundle"].background } selectable={true} key={i} 
-                    />
+                    <Bundle
+                        name={ content[i]["bundle"].name } 
+                        background={ content[i]["bundle"].background }
+                        selectable={true}
+                        key={i} 
+                    >
+                        { bundleContent }
+                    </Bundle>
                 );
                 break;
             case "article-preview-big":

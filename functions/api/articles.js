@@ -245,6 +245,9 @@ async function getArticles(id, name, redirect, isVisible, content, skill, tool, 
 					const image = imageResult.rows[0];
 					delete image.id;
 
+					image.url = server + "/" + image.path;
+					delete image.path;
+
 					gallery.images.push(image);
 				}
 
@@ -294,7 +297,6 @@ async function getArticles(id, name, redirect, isVisible, content, skill, tool, 
 
 
 	//} catch ( error ) {
-	//	console.log("e")
 	//	console.log( error );
 	//}
 };
