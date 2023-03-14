@@ -1,4 +1,5 @@
 import conn from "../../db";
+import { server } from "../../config";
 
 
 //    TURTLE - TEKI
@@ -48,10 +49,13 @@ async function getBundles(id, name, app) {
 				const projectSideQuery = 'SELECT * FROM "projects" WHERE "id" = ' + projectsSideResult.rows[j].projectID + ';';
 				const projectSideResult = await conn.query(projectSideQuery);
 
-				// Project date added
-				projectSideResult.rows[0].dateAdded = new Date(projectSideResult.rows[0].dateAdded).toString();
-
 				const project = projectSideResult.rows[0];
+
+				// Project date added
+				project.dateAdded = new Date(project.dateAdded).toString();
+
+				// URL
+				project.url = server + "/projects/" + project.name;
 
 				
 				// Logo
@@ -60,6 +64,9 @@ async function getBundles(id, name, app) {
 
 				const logo = logoSideResult.rows[0];
 				delete logo.id;
+
+				logo.url = server + "/" + logo.path;
+				delete logo.path;
 
 				project.logo = logo;
 				delete project.logoID;

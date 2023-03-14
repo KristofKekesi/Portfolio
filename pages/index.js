@@ -46,7 +46,7 @@ export default function Home({ dockElements, keywords }) {
 				<div className="w-max">
 				<h1 className="text-white text-7xl font-bold text-left font-interBold" style={{paddingTop: "33vh", textShadow: "6px 6px 12px rgba(0, 0, 0, .5)"}}>Kristóf Kékesi</h1>
 				<h2 className="text-white text-4xl font-bold text-left font-interBold" style={{textShadow: "6px 6px 12px rgba(0, 0, 0, .5)"}}>
-					Mobile Developer
+					Web Developer
 				</h2>
 				</div>
 			</main>

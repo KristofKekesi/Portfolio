@@ -10,6 +10,7 @@ import { server } from "../../config";
 
 export default function Badges(props) {
     let final = [];
+    // todo refactor to dont use the server variable
 
     const downloads = props.downloads ?? [];
     const projectName = props.projectName ?? "";

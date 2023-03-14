@@ -5,7 +5,7 @@
          \__) \__)    */
 
 
-@media screen and (min-width: calc(768px)) {
+@media screen and (min-width: calc(767px)) {
     #dock {
         width: fit-content;
         transition: bottom .5s linear;
@@ -13,10 +13,11 @@
     }
 }
 
-@media screen and (max-width: calc(768px)) {
+@media screen and (max-width: calc(767px)) {
     #dock {
         width: 100%;
         transition: bottom .4s linear;
         transform: translate(-50%, 0%);
+        height: 7rem;
     }
 }

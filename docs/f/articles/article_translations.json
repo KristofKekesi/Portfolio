@@ -42,10 +42,10 @@
     },
     {
         "type": "text-subtitle",
-        "value": "10+ projects as a translator"
+        "value": "20+ projects as a translator"
     },
     {
         "type": "text",
-        "value": "My first program I translated were <a class='target' href=\"../projects/notepads\">Notepads</a>. <q>A modern, lightweight text editor with a minimalist design</q>, by <a class='target' href=\"https://github.com/0x7c13\">Jiaqi Liu</a>. It's a <abbr class='target' title='' customtitle='Universal Windows Platform'>UWP</abbr> application for Windows."
+        "value": "My first program I translated was <a class='target' href=\"../projects/notepads\">Notepads</a>. <q>A modern, lightweight text editor with a minimalist design</q>, by <a class='target' href=\"https://github.com/0x7c13\">Jiaqi Liu</a>. It's a <abbr class='target' title='' customtitle='Universal Windows Platform'>UWP</abbr> application for Windows."
     }
 ]

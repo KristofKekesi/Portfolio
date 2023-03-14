@@ -1,10 +1,10 @@
 import Terminal from "../Terminal/Terminal";
 import ImageGallery from "../ImageGallery/ImageGallery";
-import ProjectBundle from "../ProjectBundle/ProjectBundle";
+import Bundle from "../Bundle/Bundle";
 import { ArticlePreviewsBig, ArticlePreviewsSmoll } from "../ArticlePreview/index";
-import MadeWith from "../MadeWith/MadeWith";
 import Quote from "../Quote/Quote";
 import Bookmark from "../Bookmark/Bookmark";
+import Label from "../Label/Label";
 
 import { months } from "../../config.js";
 
@@ -18,7 +18,7 @@ import { months } from "../../config.js";
 
 function Article(props) {
     // PROPS
-    // content, madeWith, published, edited
+    // content, published, edited
 
     let terminalId = 0;
 
@@ -65,8 +65,20 @@ function Article(props) {
                 );
                 break;
             case "project-bundle":
+                let bundleContent = [];
+                content[i]["bundle"].projects.forEach(project => {
+                    bundleContent.push(<Label size="xl" theme="light" name={project.name} image={project.logo} href={project.url} selectable key={ project.name } />);
+                })
+
                 articleContent.push(
-                    <ProjectBundle projectBundle={content[i]["projectBundle"]} key={i} />
+                    <Bundle
+                        name={ content[i]["bundle"].name } 
+                        background={ content[i]["bundle"].background }
+                        selectable={true}
+                        key={i} 
+                    >
+                        { bundleContent }
+                    </Bundle>
                 );
                 break;
             case "article-preview-big":
@@ -77,11 +89,6 @@ function Article(props) {
             case "article-preview-smoll":
                 articleContent.push(
                     <ArticlePreviewsSmoll articles={content[i]["articles"]} key={i} />
-                );
-                break;
-            case "made-with":
-                articleContent.push(
-                    <MadeWith tools={content[i]["value"]} title={content[i]["title"]} key={i}/>
                 );
                 break;
             case "quote":
@@ -144,16 +151,12 @@ function Article(props) {
                     }
                 }
                 sectionContent.push(<div className="mt-10 h-px" key={i + "a"}></div>)
-                articleContent.push(<div className={"section"} key={i + "b"}>{ sectionContent }</div>);
+                articleContent.push(<div className="section" key={i + "b"}>{ sectionContent }</div>);
                 break
             default:
                 console.warn(content[i])
                 break
         }
-    }
-
-    if (props.madeWith !== null && props.madeWith !== undefined && props.madeWith.length > 0) {
-        articleContent.push(<MadeWith tools={props.madeWith} title={"Tools I used"} key={i}/>);
     }
 
     let published = new Date(props.published);

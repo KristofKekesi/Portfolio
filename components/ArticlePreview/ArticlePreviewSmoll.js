@@ -1,6 +1,3 @@
-import { server, imageFallback } from "../../config.js";
-
-
 //    TURTLE - TEKI
 //    (°-°) _______
 //      \ \/ - - - \_
@@ -9,17 +6,18 @@ import { server, imageFallback } from "../../config.js";
 
 
 function ArticlePreviewSmoll(props) {
-    const redirect = props.article.redirect ? props.article.redirect ?? "#" : "#";
-    const coverPath = props.article ? props.article.cover.path ?? imageFallback : imageFallback;
+    // PROPS
+    // className (String), article (Object)
+
     const name = props.article ? (props.article.name ?? "").replace( /(<([^>]+)>)/ig, '') : "";
 
     return(
-        <article style={props.style} className="article-preview-smoll target font-bold">
-            <a href={ server + "/" + redirect }>
+        <article className={props.className + " article-preview-smoll target font-bold"}>
+            <a href={ props.article.url }>
                 <div className="article-preview-link-smoll flex w-full h-full bg-secondaryLight">
                     <img
                         className="w-28 h-28 bg-cover"
-                        src={ server + "/" + coverPath }
+                        src={ props.article.cover.url }
                         alt="Article cover"
                     />
                     <div className="justify-center pb-2">

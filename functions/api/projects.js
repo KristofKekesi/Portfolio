@@ -1,3 +1,4 @@
+import { server } from "../../config";
 import conn from "../../db";
 
 
@@ -75,6 +76,8 @@ async function getProjects(id, name, version, role, platform, award, bundle, dow
 			mainResult.rows[i].skills = [];
 			mainResult.rows[i].tools  = [];
 
+			mainResult.rows[i].url = encodeURI(server + "/projects/" + mainResult.rows[i].name);
+
 			// Project Bundles
 			const bundlesSideQuery = 'SELECT * FROM "project_bundles" WHERE "projectID" = ' + mainResult.rows[i].id + ';';
 			const bundlesSideResult = await conn.query(bundlesSideQuery);
@@ -121,6 +124,9 @@ async function getProjects(id, name, version, role, platform, award, bundle, dow
 				const screenshot = screenshotSideResult.rows[0];
 				delete screenshot.id;
 
+				screenshot.url = server + "/" + screenshot.path;
+				delete screenshot.path;
+
 				mainResult.rows[i].screenshots.push(screenshot);
 			}
 
@@ -149,8 +155,11 @@ async function getProjects(id, name, version, role, platform, award, bundle, dow
 				const logo = logoSideResult.rows[0];
 				delete logo.id;
 
+				logo.url = server + "/" + logo.path;
+				delete logo.path;
+
 				tool.logo = logo;
-				delete tool.imageID;
+				delete tool.logoID;
 
 
 				mainResult.rows[i].tools.push(tool);
@@ -163,11 +172,14 @@ async function getProjects(id, name, version, role, platform, award, bundle, dow
 			const logo = logoSideResult.rows[0];
 			delete logo.id;
 
+			logo.url = server + "/" + logo.path;
+			delete logo.path;
+
 			mainResult.rows[i].logo = logo;
 			delete mainResult.rows[i].logoID;
 
 			// Date added
-			mainResult.rows[0].dateAdded = new Date(mainResult.rows[0].dateAdded).toString();
+			mainResult.rows[i].dateAdded = new Date(mainResult.rows[i].dateAdded).toString();
 
 			if (i === mainResult.rows.length - 1) {
 				return mainResult.rows;

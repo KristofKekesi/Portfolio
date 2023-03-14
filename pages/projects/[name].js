@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { QRCodeSVG } from "qrcode.react";
 
-import MadeWith from '../../components/MadeWith/MadeWith';
+import ExBundle from '../../components/ExBundle/ExBundle';
 import Navbar from '../../components/Navbar/Navbar';
 import Cursor from '../../components/Cursor/Cursor';
 import ImageGallery from '../../components/ImageGallery/ImageGallery';
@@ -10,6 +10,7 @@ import Footer from '../../components/Footer/Footer';
 import AutoHead from '../../components/Head/Head';
 import Badges from '../../components/Badges/Badges';
 import Award from '../../components/Award/Award';
+import Label from '../../components/Label/Label';
 
 import cursorSetup from '../../functions/cursor.js';
 import navbarToggle from '../../functions/navbar.js';
@@ -121,7 +122,7 @@ export default function ArticlePage({ project, dockElements, keywords }) {
                                 <div className="w-auto h-auto ml-12 mr-0 py-12" style={{width: "7.5rem", height: "7.5rem"}}>
                                     <div className="relative flex items-center justify-center" style={{width: "7.5rem", height: "7.5rem"}}>
                                         <QRCodeSVG value={ project.downloads[0].value } bgColor={"#ffffff"} level={"Q"} className="fade2 bg-transparent absolute" style={{width: "7.5rem", height: "7.5rem", boxSizing: "content-box"}}/>
-                                        <img src={ server + "/" + project.logo.path } alt={ project.name } className="fade1 absolute" style={{maxWidth: "7.5rem", maxHeight: "7.5rem", boxSizing: "content-box"}}></img>
+                                        <img src={ project.logo.url } alt={ project.name } className="fade1 absolute" style={{maxWidth: "7.5rem", maxHeight: "7.5rem", boxSizing: "content-box"}}></img>
                                     </div>
                                 </div>
                                 <div>
@@ -143,7 +144,12 @@ export default function ArticlePage({ project, dockElements, keywords }) {
                         </div>
                         <ImageGallery galleryTag={"max"} className={"nosection"} images={project.screenshots}/>
                         { awardsDiv }
-                        <MadeWith tools={project.tools} title={"Tools that I used while working on " + project.name} />
+                        <ExBundle title={"Tools that I used while working on " + project.name}>
+                            {project.tools.map((tool) => {
+                                tool.label = <Label size="xl" theme="dark" image={tool.logo} name={tool.name} selectable />
+                                return tool
+                            })}
+                        </ExBundle>
                         <div className="mt-10 h-px" />
                     </div>
                 </article>

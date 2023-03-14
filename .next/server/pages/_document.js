@@ -19,7 +19,7 @@ var _react = _interopRequireWildcard(__webpack_require__(6689));
 var _constants = __webpack_require__(6724);
 var _getPageFiles = __webpack_require__(4140);
 var _htmlescape = __webpack_require__(9716);
-var _isError = _interopRequireDefault(__webpack_require__(676));
+var _isError = _interopRequireDefault(__webpack_require__(1313));
 var _htmlContext = __webpack_require__(8743);
 class Document extends _react.default.Component {
     /**

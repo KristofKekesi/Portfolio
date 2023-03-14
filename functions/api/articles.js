@@ -95,6 +95,9 @@ async function getArticles(id, name, redirect, isVisible, content, skill, tool, 
 
 					const logo = logoSideResult.rows[0];
 					delete logo.id;
+
+					logo.url = server + "/" + logo.path;
+					delete logo.path;
 	
 					tool.logo = logo;
 					delete tool.logoID;
@@ -119,6 +122,9 @@ async function getArticles(id, name, redirect, isVisible, content, skill, tool, 
 					
 					const logo = logoSideResult.rows[0];
 					delete logo.id;
+
+					logo.url = server + "/" + logo.path;
+					delete logo.path;
 	
 					tool.logo = logo;
 					delete tool.logoID;
@@ -135,9 +141,16 @@ async function getArticles(id, name, redirect, isVisible, content, skill, tool, 
 
 			const cover = coverResult.rows[0]
 			delete cover.id;
-			mainResult.rows[i].cover = cover;
 
+			cover.url = server + "/" + cover.path;
+			delete cover.path;
+
+			mainResult.rows[i].cover = cover;
 			delete mainResult.rows[i].coverID;
+
+			// url
+			//* must keep the redirect value because it's used by Next.js in [articles].js inside getStaticPaths.
+			mainResult.rows[i].url = server + "/" + mainResult.rows[i].redirect;
 			
 			// Content
 			const contentResponse = await fetch(server + "/" + encodeURIComponent(mainResult.rows[i].content));
@@ -155,6 +168,7 @@ async function getArticles(id, name, redirect, isVisible, content, skill, tool, 
 				articlePreviewSmoll.articles = [];
 
 				for (let j = 0; j < articlePreviewSmoll.articleIDs.length; j++) {
+					console.log(articlePreviewSmoll.articleIDs[j])
 					const articleQuery = 'SELECT * FROM "articles" WHERE "id" = ' + articlePreviewSmoll.articleIDs[j] + ';';
 					const articleResult = await conn.query(articleQuery);
 
@@ -165,10 +179,19 @@ async function getArticles(id, name, redirect, isVisible, content, skill, tool, 
 					const coverQuery = 'SELECT * FROM "images" WHERE "id" = ' + article.coverID + ';';
 					const coverResult = await conn.query(coverQuery);
 
-					article.cover = coverResult.rows[0];
+					const cover = coverResult.rows[0]
+					delete cover.id;
+
+					cover.url = server + "/" + cover.path;
+					delete cover.path;
+
+					article.cover = cover;
 
 					// Release date
 					article.releaseDate = new Date(article.releaseDate).toString();
+
+					// url
+					article.url = server + "/" + article.redirect;
 
 					articlePreviewSmoll.articles.push(article);
 				}
@@ -190,11 +213,21 @@ async function getArticles(id, name, redirect, isVisible, content, skill, tool, 
 					// Cover
 					const coverQuery = 'SELECT * FROM "images" WHERE "id" = ' + article.coverID + ';';
 					const coverResult = await conn.query(coverQuery);
-					
-					article.cover = coverResult.rows[0];
+
+					const cover = coverResult.rows[0]
+					delete cover.id;
+
+					cover.url = server + "/" + cover.path;
+					delete cover.path;
+
+					article.cover = cover;
 
 					// Release date
 					article.releaseDate = new Date(article.releaseDate).toString();
+
+					// url
+					article.url = server + "/" + article.redirect;
+
 					
 					articlePreviewBig.articles.push(article);
 				}
@@ -212,6 +245,9 @@ async function getArticles(id, name, redirect, isVisible, content, skill, tool, 
 					const image = imageResult.rows[0];
 					delete image.id;
 
+					image.url = server + "/" + image.path;
+					delete image.path;
+
 					gallery.images.push(image);
 				}
 
@@ -219,11 +255,11 @@ async function getArticles(id, name, redirect, isVisible, content, skill, tool, 
 				return gallery;
 			}
 
-			async function setProjectBundle(projectBundle) {
-				const projectBundleResult = await getBundles(projectBundle.id, undefined, undefined)
+			async function setBundle(bundle) {
+				const bundleResult = await getBundles(bundle.id, undefined, undefined)
 
-				projectBundle.projectBundle = projectBundleResult[0];
-				return projectBundle;
+				bundle.bundle = bundleResult[0];
+				return bundle;
 			}
 
 			// Content sections
@@ -235,7 +271,7 @@ async function getArticles(id, name, redirect, isVisible, content, skill, tool, 
 				} else if (content[j].type == "gallery") {
 					content[j] = await setGallery(content[j]);
 				} else if (content[j].type == "project-bundle") {
-					content[j] = await setProjectBundle(content[j]);
+					content[j] = await setBundle(content[j]);
 				} else if (content[j].type == "section") {
 					for (let k = 0; k < content[j].content.length; k++) {
 						if (content[j].content[k].type == "article-preview-smoll") {
@@ -261,7 +297,6 @@ async function getArticles(id, name, redirect, isVisible, content, skill, tool, 
 
 
 	//} catch ( error ) {
-	//	console.log("e")
 	//	console.log( error );
 	//}
 };

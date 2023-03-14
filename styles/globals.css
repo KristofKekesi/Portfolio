@@ -43,6 +43,10 @@
     @apply min-h-screen w-screen font-inter
   }
 
+  nav {
+    @apply whitespace-nowrap
+  }
+
   nav li {
     @apply list-none
   }
@@ -131,7 +135,7 @@
     @apply max-w-full
   }
 
-  article .project-bundle.text-title {
+  article .bundle.text-title {
     @apply pt-10 pb-4
   }
 
@@ -147,12 +151,17 @@
     @apply -bottom-1/2 md:bottom-3
   }
 
-  .dock-element {
+  .label-md {
     @apply content-evenly w-32 py-3 inline-block text-lg md:text-base leading-8 md:p-2
   }
 
-  .dock-element img {
+  .label-md img {
     @apply w-auto h-10 md:h-12
+  }
+
+  .label-xl img {
+    max-width: 5rem;
+    @apply w-auto h-20
   }
 
   footer {

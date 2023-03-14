@@ -28,6 +28,11 @@ function MoreTooltip() {
                     }
                     <hr className="w-full"/>
                     <li>
+                        <Link href="/projects" className="target">
+                            Projects
+                        </Link>
+                    </li>
+                    <li>
                         <Link href="/timeline" className="target">
                             Timeline
                         </Link>
