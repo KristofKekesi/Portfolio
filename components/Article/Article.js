@@ -35,17 +35,17 @@ function Article(props) {
         switch(content[i].type) {
             case "text-title":
                 articleContent.push(
-                    <h1 id={content[i]["value"].toLowerCase().replaceAll(" ", "-").replace( /(<([^>]+)>)/ig, '')} className="selectable text-title nosection group flex items-center gap-2" key={i}><span dangerouslySetInnerHTML={{ __html: content[i]["value"] }} /><Bookmark color="black" weight="bold" id={content[i]["value"].toLowerCase().replaceAll(" ", "-")} /></h1>
+                    <h2 id={content[i]["value"].toLowerCase().replaceAll(" ", "-").replace( /(<([^>]+)>)/ig, '')} className="selectable text-title nosection group flex items-center gap-2" key={i}><span dangerouslySetInnerHTML={{ __html: content[i]["value"] }} /><Bookmark color="black" weight="bold" id={content[i]["value"].toLowerCase().replaceAll(" ", "-")} /></h2>
                 );
                 break;
             case "text-subtitle":
                 articleContent.push(
-                    <h2 id={content[i]["value"].toLowerCase().replaceAll(" ", "-").replace( /(<([^>]+)>)/ig, '')} className="selectable text-subtitle nosection group flex items-center gap-2" key={i}><span dangerouslySetInnerHTML={{ __html: content[i]["value"] }} /><Bookmark color="black" weight="medium" id={content[i]["value"].toLowerCase().replaceAll(" ", "-")}/></h2>
+                    <h3 id={content[i]["value"].toLowerCase().replaceAll(" ", "-").replace( /(<([^>]+)>)/ig, '')} className="selectable text-subtitle nosection group flex items-center gap-2" key={i}><span dangerouslySetInnerHTML={{ __html: content[i]["value"] }} /><Bookmark color="black" weight="medium" id={content[i]["value"].toLowerCase().replaceAll(" ", "-")}/></h3>
                 );
                 break;
             case "text-subsubtitle":
                 articleContent.push(
-                    <h3 className={"selectable text-subtitle nosection"} dangerouslySetInnerHTML={{ __html: content[i]["value"] }} key={i}/>
+                    <h4 className={"selectable text-subtitle nosection"} dangerouslySetInnerHTML={{ __html: content[i]["value"] }} key={i}/>
                 );
                 break;
             case "text":
@@ -143,8 +143,6 @@ function Article(props) {
                                     key={k}
                                 />
                             );
-
-                            break;
                         default:
                             console.warn(content[i]["content"][k])
                             break;

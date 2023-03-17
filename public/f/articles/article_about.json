@@ -44,8 +44,13 @@
         "value": "Others opinions"},
     {
         "type": "quote",
-        "name": "Styevkó Lili",
+        "name": "Lili Styevkó",
         "quote": "He makes quality work even in a short period of time."
+    },
+    {
+        "type": "quote",
+        "name": "Tristan Otto - Steeped",
+        "quote": "Kristóf was a pleasure to work with on the translation of our app. He was dedicated, detail-oriented, and showed a genuine interest in our project. We couldn't have asked for a better partner!"
     },
     {
         "type": "text-title",

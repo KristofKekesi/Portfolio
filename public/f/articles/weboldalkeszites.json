@@ -1,0 +1,69 @@
+[
+    {
+        "type": "section",
+        "content": [
+            {
+                "type": "text-title",
+                "value": "Ár kalkulátor"
+            },
+            {
+                "type": "text",
+                "value": "Órabér: 1000Ft/óra"
+            },
+            {
+                "type": "text",
+                "value": "Állandó oldalak: 5000Ft/oldal"
+            },
+            {
+                "type": "text",
+                "value": "Változó oldalak: 10000Ft/oldal"
+            },
+            {
+                "type": "text",
+                "value": "Egyedi 404-ös és 405-ös hibaoldalak: 5000Ft"
+            },
+            {
+                "type": "text",
+                "value": "Tartalomkezelő rendszer: 10000Ft (Google Sheetsz alapú), 30000Ft (Strapi alapú)"
+            },
+            {
+                "type": "text",
+                "value": "Google Analytics: Ingyenes"
+            }
+        ]
+    },
+    {
+        "type": "section",
+        "content": [
+            {
+                "type": "text-title",
+                "value": "Gyakori kérdések"
+            },
+            {
+                "type": "text-subtitle",
+                "value": "Wordpress?"
+            },
+            {
+                "type": "text",
+                "value": "Nem! Egyedi kódot írok modern eszközökkel, a saját igényeire. Ennek köszönhetően a weboldal a tervezés alatt a szélsőkig módosítható, személyre szabható."
+            },
+            {
+                "type": "text-subtitle",
+                "value": "Tartalomkezelő rendszerrel mennyi idő a változtatás?"
+            },
+            {
+                "type": "text",
+                "value": "A weboldalon megjelenő adatokról ön gondoskodik <abbr class='target' title customtitle='Content Management System'>CMS</abbr>-el. <b>Várakozási idő nélkül.</b> A két opció közül mindenki megtalálja a sajátos igényeinek megfelelőt. Választhat Google Sheets alapút, mellyel a táblázat módosításával változtathat a weboldalának tartalmán (kevés adathoz). Második opció egy a weboldal mellett futó tartalomkezelő oldal. Itt a Wordpresshez hasonlóan bejelentkezés után tudja kezelni az adatait (bonyolultabb, több adathoz és oldalhoz)."
+            }
+        ]
+    },
+    {
+        "type": "section",
+        "content": [
+            {
+                "type": "text-title",
+                "value": "Kapcsolat"
+            }
+        ]
+    }
+]
